@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Shostix/Алгоритм Ланцоша для точной арифметики (без переортогонализации) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"6782e80b3dfcca69c05f100d","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Shostix/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)","wgTitle":"Shostix/Алгоритм Ланцоша для точной арифметики (без переортогонализации)","wgCurRevisionId":22468,"wgRevisionId":22468,"wgArticleId":1284,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Assignments/Formal","Assignments","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Shostix/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)","wgRelevantArticleId":1284,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Shostix","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Shostix_Алгоритм_Ланцоша_для_точной_арифметики_без_переортогонализации rootpage-Участник_Shostix skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Shostix/Алгоритм Ланцоша для точной арифметики (без переортогонализации)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_wait.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Symbol_wait.svg/langru-120px-Symbol_wait.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Symbol_wait.svg/langru-250px-Symbol_wait.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа прошла предварительную проверку<br /><i>Дата последней правки страницы:</i> </span></b>08.02.2017<b></b><br />Данная работа соответствует формальным критериям.<br />Проверено <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:ASA" title="Участник:ASA">ASA</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм Ланцоша для точной арифметики (без ортогонализации)
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(kn^2) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n(n+1)}{2} + 1 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ kn+k }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k*log(n)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+<b>Авторы</b>: А.В. Шостик.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p><b>Алгоритм Ланцоша</b> - один из итерационных методов вычисления собственных значений и собственных векторов симметричных матриц (задача <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax = \lambda x }[/math]</span>). Используется для работы с матрицами столь большими, что классические численные методы нахождения собственных значений неприменимы из-за высокой вычислительной сложности. На практике чаще всего используется для работы с большими разреженными матрицами.
+</p><p>Алгоритм был предложен в 1950 году венгерским физиком и математиком Корнелием Ланцошем. Основан на понятии построения крыловского подпространства и процедуре Рэлея-Ритца: строит последовательность трехдиагональных матриц с тем свойством, что экстремальные собственные значения для каждой последующей трехдиагональной матрицы дают все более точные оценки экстремальных собственных значений для А. 
+</p><p>В данной статье будет рассмотрен простой метод Ланцоша (без ортогонализации). К сожалению, на практике использование метода Ланцоша без ортогонализации затруднено ошибками округления. Центральная проблема - это потеря ортогональности получаемых итерационно векторов Ланцоша. Такая проблема решается усовершенствованием алгоритма Ланшоца (алгоритмами Ланшоца с выборочной и полной ортогонализацией)<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>В данной статье будем подразумевать отсутствие влияния ошибок округления на вычислительный процесс. 
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p><i>Исходные данные</i>:
+</p>
+<ul><li>симметрическая матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=A^T }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, элементы матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij}=a_{ji} }[/math]</span></li>
+<li>начальный вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v = {v_1, v_2, ..., v_n}, v \neq \theta }[/math]</span></li></ul>
+<p>Так как матрица является симметрической, достаточно хранить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n(n+1)}{2} }[/math]</span> ее элементов.
+</p><p>Для исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> строится крыловское подпространство. Крыловское подпространство - это линейная оболочка векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ [v, Av, A^2v, ..., A^{k-1}v] }[/math]</span>, называемых векторами Ланцоша.
+Каждый из векторов Ланцоша ортонормируется: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_k=\frac{A^kv}{\|A^kv\|} }[/math]</span>, и на шаге <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> алгоритма имеется Крыловская матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q = {q_0, ..., q_{k-1}} }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \times k }[/math]</span>. 
+</p><p>Соответствующий текущей итерации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> вектор Ланцоша считается <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-ым приближением собственного вектора исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+В качестве приближенных собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> берутся собственные значения симметричной трехдиагональной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k = Q^T_k A Q }[/math]</span> (числа Ритца). В качестве алгоритма нахождения собственных векторов и собственных значений симметрической трехдиагональной матрицы будем использовать метод "разделяй и властвуй", который требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k^3) }[/math]</span> операций.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p><i>Выходные данные</i>:
+</p>
+<ul><li>совокупность собственных векторов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span> (т.е. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-ых приближений собственных векторов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>)</li>
+<li>совокупность собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span> (т.е. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-ых приближений собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>)</li></ul>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p><b>Вычислительное ядро</b>. т.е. часть алгоритма, требующая наибольших вычислительных затрат на каждой итерации состоит из вычисления промежуточного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ z=Aq_i }[/math]</span>
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p><b> Итерация алгоритма: </b>
+</p>
+<ul><li>вычисление нормы вектора,</li>
+<li>деление вектора на число,</li>
+<li>умножение матрицы на вектор,</li>
+<li>линейная комбинация векторов (умножение на число и сложение).</li></ul>
+<p><b> Финальный расчет: </b>
+</p>
+<ul><li>вычисление собственных векторов и собственных значений трехдиагональной симметричной матрицы.</li></ul>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p><i>Псевдокод алгоритма</i><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>:
+</p>
+<pre><b>Вход</b> &#160;: размерность матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, элементы симметричной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>
+<b>Выход</b>&#160;: собственные вектора матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span>, матрица собственных значений 
+</pre>
+<p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+q_1 = &amp; b/ \|b\|_2,\; 
+\beta_0 = 0,\; 
+q_0 = 0\\
+for \; &amp; i = 1 \; to \; k \\
+&amp; z = Aq_i\\
+&amp; \alpha_i = q^T_i z\\
+&amp; z = z - \alpha_i q_i - \beta_{i-1}q_{i-1}\\
+&amp; \beta_i = \|z\|_2\\
+&amp; If \; \beta_i == 0 \; then \\ 
+&amp; \; \; \; \; exit\\
+&amp; else \\
+&amp; \; \; \; \; q_{i+1} = z / \beta_i \\
+end \; &amp; for
+\end{align};
+ }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ procedure(T_k) }[/math]</span>;
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ procedure() }[/math]</span> - процедура вычисления собственных векторов и собственных значений симметрической трехдиагональной матрицы.
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Глобально алгоритм состоит из инициализации, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> итераций и финального расчета собственных векторов и собственных значений.
+</p><p>Рассмотрим сложность каждой макрооперации алгоритма:
+</p>
+<ul><li>вычисление нормы вектора - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (n-1) }[/math]</span> сложений, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> умножений, операция извлечения корня</li>
+<li>деление вектора на число - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> операций</li>
+<li>умножение матрицы на вектор - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^2 }[/math]</span> операций</li>
+<li>скалярное произведение векторов - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> операций</li>
+<li>линейная комбинация векторов - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2n }[/math]</span> умножений и вычитаний</li>
+<li>вычисление собственных векторов и собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span> методом "Разделяй и властвуй"  - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k^3) }[/math]</span> операций.</li></ul>
+<p><b>Инициализация:</b> 
+</p>
+<ul><li>вычисление нормы вектора,</li>
+<li>деление вектора на число.</li></ul>
+<p><b>Одна итерация:</b> 
+</p>
+<ul><li>умножение матрицы на вектор,</li>
+<li>скалярное произведение векторов,</li>
+<li>линейная комбинация векторов,</li>
+<li>вычисление нормы вектора,</li>
+<li>деление вектора на число.</li></ul>
+<p><b>Финальный расчет:</b>
+</p>
+<ul><li>вычисление собственных векторов и собственных значений матрицы</li></ul>
+<p>Итого <b>последовательная сложность алгоритма</b> составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(3n+k(n^2+n+2n+2n+3n))+O(k^3) }[/math]</span>.
+</p><p>Так как на практике порядок матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> намного превышает количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>, сложность алгоритма Ланцоша можно рассматривать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(kn^2) }[/math]</span>.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Информационный граф алгоритма с входными и выходными данными можно описать в виде рисунка:
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/8/8a/%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88.png/600px-%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88.png" decoding="async" width="600" height="813" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/8/8a/%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88.png 1.5x" /></a><figcaption>Рисунок 1. Информационный граф алгоритма Ланцоша.<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \|.\| }[/math]</span> — операция вычисления нормы, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ / }[/math]</span> — операция деления, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> — операция умножения матрицы на вектор, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ * }[/math]</span>  — операция скалярного произведения,<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> — операция вычисления линейной комбинации векторов, <br /> ▽ - проверка условия <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{(\beta_i = 0)} }[/math]</span> и выход из цикла в случае выполнения условия</figcaption></figure>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Внутри каждой итерации алгоритма можно задействовать параллельные вычисления для суммирования векторов (использовать суммирование методом сдваивания элементов). Эта операция будет использована в макрооперации умножения матрицы на вектор, которая требует в последовательной реализации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> умножений и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n-1 }[/math]</span> сложение. В таком виде сложение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> элементов можно выполнить за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log_2 n }[/math]</span> действий.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><i>Входные данные</i>: симметрическая матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=A^T }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>.
+</p><p><i>Объем входных данных</i>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n(n+1)}{2} + 1 }[/math]</span>.
+</p><p><i>Выходные данные</i>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> собственных векторов, собственных значений матрицы на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-ом приближении.
+</p><p><i>Объем выходных данных</i>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ kn+k }[/math]</span>.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<ul><li>Сложность последовательной реализации алгоритма <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(kn^2) }[/math]</span>.</li>
+<li>Сложность параллельного алгоритма Ланцоша по высоте ЯПФ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k\log n) }[/math]</span>, по ширине ЯПФ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>.
+<ul><li>В умножении матрицы на вектор сложение n элементов выполняется в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log_2 n }[/math]</span> ярусов шириной <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n}{2}, \frac{n}{4}, ... , 1 }[/math]</span>, остальные операции внутри итерации выполняются последовательно</li></ul></li>
+<li>Отношение последовательной сложности  к параллельной <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{kn^2}{k \log{n}} }[/math]</span>.</li>
+<li>Вычислительная мощность алгоритма Ланцоша из последовательной сложности алгоритма <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{k(2n^2+8n-1)+3n}{n^2+2k} }[/math]</span>. Учитывая <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> много меньше  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, вычислительная мощность ≈ <span style="opacity:.5" class="smj-container">[math]\displaystyle{  2k }[/math]</span>.</li>
+<li>В алгоритме Ланцоша возможно выполнение числа итераций менее <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> если все собственные значения матрицы вычисляются раньше.</li>
+<li>Для найденных собственных значений справедливо: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lambda_i(T_{k+1})\geq \lambda_i(T_{k})\geq \lambda_{i+1}(T_{k+1})\geq \lambda_{i+1}(T_{k}) }[/math]</span>, т.е. в первую очередь находятся максимальные по модулю собственные значения.</li>
+<li>Как следствие предыдущего пункта алгоритм Ланцоша особенно удобен для вычисления собственных значений матрицы, находящихся на границе ее спектра.</li></ul>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<p>Исследование проводилось на суперкомпьютере "Ломоносов"<a rel="nofollow" class="external autonumber" href="http://parallel.ru/cluster/">[1]</a>.
+</p><p>Исследовалась реализация<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> на языке C++ с использованием MPI.  Компилятор GCC 5.2.1; версия MPI 1.8.4;
+</p><p>Для компиляции и запуска использовались следующие команды:
+</p>
+<pre>$ mpic++ -std=c++0x -O2 &lt;CPP_FILE&gt; -lm -static-libstdc++ -o &lt;EXE_FILE&gt;
+$ mpirun -np &lt;N_PROCESSORS&gt; &lt;EXE_FILE&gt;
+</pre>
+<ul><li>Число процессоров: 2, 4, 8, 16, 32, 64, 128.</li>
+<li>Размерность матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> от 5 000 до  50 000, шаг 5 000.</li>
+<li>Количество итераций алгоритма Ланцоша для всех экспериментов 200.</li></ul>
+<p>Результаты:
+</p>
+<table class="wikitable">
+<caption>Время выполнения алгоритма
+</caption>
+<tbody><tr>
+<th>
+</th>
+<th>2
+</th>
+<th>4
+</th>
+<th>8
+</th>
+<th>16
+</th>
+<th>32
+</th>
+<th>48
+</th>
+<th>64
+</th>
+<th>96
+</th>
+<th>128
+</th></tr>
+<tr>
+<th>5000
+</th>
+<td>1,5243
+</td>
+<td>1,0951
+</td>
+<td>0,9334
+</td>
+<td>0,6631
+</td>
+<td>0,7456
+</td>
+<td>0,7038
+</td>
+<td>0,7989
+</td>
+<td>0,9985
+</td>
+<td>0,985
+</td></tr>
+<tr>
+<th>10 000
+</th>
+<td>5,667
+</td>
+<td>4,2625
+</td>
+<td>2,7502
+</td>
+<td>3,6762
+</td>
+<td>3,4435
+</td>
+<td>3,6192
+</td>
+<td>3,5194
+</td>
+<td>3,8486
+</td>
+<td>3,2956
+</td></tr>
+<tr>
+<th>15 000
+</th>
+<td>12,5207
+</td>
+<td>6,5995
+</td>
+<td>7,2897
+</td>
+<td>8,5086
+</td>
+<td>8,539
+</td>
+<td>9,0018
+</td>
+<td>8,9427
+</td>
+<td>15,0132
+</td>
+<td>7,7088
+</td></tr>
+<tr>
+<th>20 000
+</th>
+<td>23,8143
+</td>
+<td>15,851
+</td>
+<td>10,6313
+</td>
+<td>13,7241
+</td>
+<td>12,8051
+</td>
+<td>14,3183
+</td>
+<td>13,2946
+</td>
+<td>14,0864
+</td>
+<td>13,7499
+</td></tr>
+<tr>
+<th>25 000
+</th>
+<td>37,5419
+</td>
+<td>17,9436
+</td>
+<td>15,5451
+</td>
+<td>18,3944
+</td>
+<td>19,6076
+</td>
+<td>18,5444
+</td>
+<td>19,1347
+</td>
+<td>21,8366
+</td>
+<td>21,4454
+</td></tr>
+<tr>
+<th>30 000
+</th>
+<td>55,014
+</td>
+<td>26,2702
+</td>
+<td>22,3943
+</td>
+<td>26,4935
+</td>
+<td>25,5618
+</td>
+<td>29,6784
+</td>
+<td>28,0853
+</td>
+<td>27,8872
+</td>
+<td>31,2415
+</td></tr>
+<tr>
+<th>35 000
+</th>
+<td>71,3969
+</td>
+<td>37,4811
+</td>
+<td>30,2274
+</td>
+<td>34,0041
+</td>
+<td>38,1028
+</td>
+<td>38,4912
+</td>
+<td>38,0174
+</td>
+<td>37,1407
+</td>
+<td>40,4463
+</td></tr>
+<tr>
+<th>40 000
+</th>
+<td>100,326
+</td>
+<td>47,4248
+</td>
+<td>40,2295
+</td>
+<td>44,0332
+</td>
+<td>50,0015
+</td>
+<td>52,9428
+</td>
+<td>46,2961
+</td>
+<td>51,4372
+</td>
+<td>49,7504
+</td></tr>
+<tr>
+<th>45 000
+</th>
+<td>142,93
+</td>
+<td>66,4829
+</td>
+<td>52,1382
+</td>
+<td>55,4683
+</td>
+<td>62,3042
+</td>
+<td>65,0885
+</td>
+<td>60,0512
+</td>
+<td>57,8891
+</td>
+<td>64,3764
+</td></tr></tbody></table>
+<p>Ниже приведен график зависимости времени выполнения программы от числа процессоров и размера исходной матрицы.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Lanzcos.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/8/80/Lanzcos.png" decoding="async" width="560" height="420" class="mw-file-element" /></a><figcaption>Рисунок 2. Время работы программы в зависимости от количества процессоров и размера матрицы.<br />  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Procs }[/math]</span> —  количество процессоров, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Size }[/math]</span> — размерность матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Time }[/math]</span> — время работы алгоритма в сек. <br /></figcaption></figure>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<p>Алгоритм Ланцоша для точной арифметики без переортогонализации на практике используется гораздо реже, чем алгоритм Ланцоша с частичной или полной ортогонализацией, но, тем не менее, существует множество реализаций данного алгоритма, как последовательных, так и параллельных. Ниже перечислены наиболее известные и обозреваемые в литературе <sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup> проекты на базе данного алгоритма. 
+</p>
+<ul><li>UNDERWOOD (1977) <sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>. Без переортогонализации и с частичной реортогонализацией. Язык Fortran 77.</li>
+<li>PROPACK (1998) <sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup>. Частичная реортогонализация. Язык Fortran 77, Matlab. Присутствует реализация с распараллеливанием на базе OpenMP.</li>
+<li>BLKLAN (2004) <sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup>. Без реортогонализации, с частичной реортогонализацией. Язык C, Matlab.</li>
+<li>IETL (2006) <sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup>. Только без реортогонализации. Язык C++.</li>
+<li>SLEPc (2009) <sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span class="cite-bracket">&#91;</span>12<span class="cite-bracket">&#93;</span></a></sup>. Без реортогонализации, с выборочной реортогонализацией, с частичной реортогонализацией, с полной реортогонализацией. Язык C. Присутствует реализация с распараллеливанием на базе MPI.</li>
+<li>Lanczos Plus Plus (2009) <sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span class="cite-bracket">&#91;</span>13<span class="cite-bracket">&#93;</span></a></sup>. Пример реализации алгоритма Ланцоша в применении к задаче расчета взаимодействия сильно кореллированных электронов. С частичной переортогонализацией, с полной переортогонализацией. Язык C++.</li></ul>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Деммель Д. Вычислительная линейная алгебра</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://en.wikipedia.org/wiki/Divide-and-conquer_eigenvalue_algorithm">https://en.wikipedia.org/wiki/Divide-and-conquer_eigenvalue_algorithm</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Деммель Д. Вычислительная линейная алгебра</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://pastebin.com/3W4uUVGj">http://pastebin.com/3W4uUVGj</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Hernandez V. et al. A survey of software for sparse eigenvalue problems //Universidad Politecnica de Valencia, Valencia, Spain, SLEPc Technical Report STR-6, – 2009.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Hernandez V. et al. Lanczos methods in SLEPc //Universidad Politécnica de Valencia, Valencia, Spain, SLEPc Technical Report STR-5. – 2006. – С. 136.</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.grycap.upv.es/slepc">http://www.grycap.upv.es/slepc</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text">Golub, G. H. and R. Underwood.  The Block Lanczos Method for Computing Eigenvalues.  In Mathematical Software III (edited by J. Rice), pp. 364{377. Academic Press, New York, NY, USA</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.daimi.au.dk/PB/537">http://www.daimi.au.dk/PB/537</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">Liu, G., W. Xu, and S. Qiao. Block Lanczos Tridiagonalization of Complex Symmetric Matrices. Technical  Report  CAS-04-07-SQ,  Department  of  Computing  and  Software,  McMaster  University, Hamilton, Ontario, Canada</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.comp-phys.org/software/ietl/">http://www.comp-phys.org/software/ietl/</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite_ref-12">↑</a></span> <span class="reference-text">Hernandez V., Roman J. E., Vidal V. SLEPc: A scalable and flexible toolkit for the solution of eigenvalue problems //ACM Transactions on Mathematical Software (TOMS).– Т. 31. – №. 3. – С. 351-362.</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite_ref-13">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://github.com/g1257/LanczosPlusPlus">https://github.com/g1257/LanczosPlusPlus</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092742
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.038 seconds
+Real time usage: 0.041 seconds
+Preprocessor visited node count: 877/1000000
+Post‐expand include size: 7604/2097152 bytes
+Template argument size: 2060/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 10294/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.205      1 -total
+ 74.10%    4.598      1 Шаблон:Algorithm
+ 47.17%    2.927      1 Шаблон:Level-a
+ 24.98%    1.550      1 Шаблон:Assignment
+ 18.84%    1.169      1 Шаблон:Infobox
+ 15.70%    0.974      1 Шаблон:Плашка
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:1284-0!canonical and timestamp 20260611092742 and revision id 22468. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Shostix/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)&amp;oldid=22468">https://algowiki-project.org/w/ru/index.php?title=Участник:Shostix/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)&amp;oldid=22468</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Formal" title="Категория:Assignments/Formal">Assignments/Formal</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AShostix%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9+%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8+%28%D0%B1%D0%B5%D0%B7+%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AShostix%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9+%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8+%28%D0%B1%D0%B5%D0%B7+%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Shostix" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Shostix"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Shostix"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;oldid=22468" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Shostix/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 8 февраля 2017 года в 15:07.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":140,"wgPageParseReport":{"limitreport":{"cputime":"0.038","walltime":"0.041","ppvisitednodes":{"value":877,"limit":1000000},"postexpandincludesize":{"value":7604,"limit":2097152},"templateargumentsize":{"value":2060,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":10294,"limit":5000000},"timingprofile":["100.00%    6.205      1 -total"," 74.10%    4.598      1 Шаблон:Algorithm"," 47.17%    2.927      1 Шаблон:Level-a"," 24.98%    1.550      1 Шаблон:Assignment"," 18.84%    1.169      1 Шаблон:Infobox"," 15.70%    0.974      1 Шаблон:Плашка"]},"cachereport":{"timestamp":"20260611092742","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Ivanov.kir.m/Быстрое дискретное преобразование Фурье — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"26c1a1529c14d5c8a3e4a923","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Ivanov.kir.m/Быстрое_дискретное_преобразование_Фурье","wgTitle":"Ivanov.kir.m/Быстрое дискретное преобразование Фурье","wgCurRevisionId":19467,"wgRevisionId":19467,"wgArticleId":489,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Assignments/Done/Kronberg","Assignments/Done","Assignments","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Ivanov.kir.m/Быстрое_дискретное_преобразование_Фурье","wgRelevantArticleId":489,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Ivanov.kir.m","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Ivanov_kir_m_Быстрое_дискретное_преобразование_Фурье rootpage-Участник_Ivanov_kir_m skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Ivanov.kir.m/Быстрое дискретное преобразование Фурье</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m" title="Участник:Ivanov.kir.m">Участник:Ivanov.kir.m</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_confirmed.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-120px-Symbol_confirmed.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-250px-Symbol_confirmed.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа успешно выполнена<br />Преподавателю: <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;wpNewTitle=%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5+%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5+%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;wpReason=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE">в основное пространство</a>, <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8%3A%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%2F%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5+%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5+%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;wpReason=%D0%9D%D0%B0+%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83">в подстраницу</a></span></b><br />Данное задание было проверено и зачтено.<br />Проверено <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Kronberg" title="Участник:Kronberg">Kronberg</a> и <a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IgorS&amp;action=edit&amp;redlink=1" class="new" title="Участник:IgorS (страница не существует)">IgorS</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм одномерного преобразования Фурье для действительных чисел
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O (N \log N) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> действительных чисел
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lfloor N/2 \rfloor+1 }[/math]</span> комплексных чисел
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O (\log N) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>
+</td></tr>
+</tbody></table>
+<p>Авторы описания <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m" title="Участник:Ivanov.kir.m"> К.М.Иванов</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Pumpkin" title="Участник:Pumpkin"> А.C.Сапин</a> Вклад каждого участника равномерный, поскольку каждый пункт вычитывался и исправлялся обоими участниками. При сильном приближении можно сказать,что больший вклад <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m" title="Участник:Ivanov.kir.m"> К.М.Иванов</a> внес в заполнение теоретической части, а <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Pumpkin" title="Участник:Pumpkin"> А.C.Сапин</a> в заполнение практической части. 
+</p><p><b>Быстрое преобразование Фурье (БПФ, FFT)</b>&#160;— алгоритм быстрого&#160; вычисления дискретного преобразования Фурье (ДПФ). То есть, алгоритм вычисления за количество действий, меньшее чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^{2}) }[/math]</span>, требуемых для прямого (по формуле) вычисления ДПФ. Иногда под БПФ понимается один из быстрых алгоритмов, называемый алгоритмом прореживания по частоте/времени или алгоритмом по основанию 2, имеющий сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N\log(N)) }[/math]</span>. Cуществует несколько различных алгоритмов для вычисления ДПФ считающимся быстрым преобразование Фурье:
+</p>
+<ul><li>Алгоритм Кули-Тьюки <a rel="nofollow" class="external autonumber" href="https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[1]</a></li>
+<li>Алгоритм Гуда-Томаса <a rel="nofollow" class="external autonumber" href="https://en.wikipedia.org/wiki/Prime-factor_FFT_algorithm">[2]</a></li>
+<li>Алгоритм Бруна  <a rel="nofollow" class="external autonumber" href="https://en.wikipedia.org/wiki/Bruun%27s_FFT_algorithm">[3]</a></li>
+<li>Алгоритм Блюштейна <a rel="nofollow" class="external autonumber" href="https://en.wikipedia.org/wiki/Chirp_Z-transform#Bluestein.27s_algorithm">[4]</a></li></ul>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#ЧАСТЬ._Свойства_и_структура_алгоритмов"><span class="tocnumber">1</span> <span class="toctext">ЧАСТЬ. Свойства и структура алгоритмов</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Рекурсивное_описание"><span class="tocnumber">1.2.1</span> <span class="toctext">Рекурсивное описание</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#ЧАСТЬ._Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">ЧАСТЬ. Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Особенности_последовательной_реализации_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности последовательной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Описание_платформы_IBM_Blue_Gene/P"><span class="tocnumber">2.4.1</span> <span class="toctext">Описание платформы IBM Blue Gene/P</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Оценка_масштабируемости_алгоритма"><span class="tocnumber">2.4.2</span> <span class="toctext">Оценка масштабируемости алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h1><span id=".D0.A7.D0.90.D0.A1.D0.A2.D0.AC._.D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2"></span><span class="mw-headline" id="ЧАСТЬ._Свойства_и_структура_алгоритмов">ЧАСТЬ. Свойства и структура алгоритмов</span></h1>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h2>
+<p><b>Быстрое дискретное преобразование Фурье</b> (<i>БПФ</i>) - популярный в современном мире математический метод преобразования вектора/матрицы комплексных/действительных чисел — <i>сигнала</i> — в вектор/матрицу комплексных чисел — <i>спектр</i>. С математической точки зрения преобразование сигнала <span style="opacity:.5" class="smj-container">[math]\displaystyle{ s }[/math]</span> (как функции по времени <span style="opacity:.5" class="smj-container">[math]\displaystyle{ t }[/math]</span>) в спектр <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{s} }[/math]</span> описывается формулой
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\hat{s}(\omega)=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty}s(t)e^{-it\omega}\,dt
+ }[/math]</span></dd></dl>
+<p>В отличие от своего классического аналога, БПФ имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N\log{N}) }[/math]</span>, а не <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span>, это достигается благодаря разделению исходного вектора на несколько частей так, чтобы, применив к этим частям БПФ и объединив результаты путем умножения на поворотные множители и дополнительного БПФ, можно было получить преобразование Фурье исходного вектора — принцип «разделяй и властвуй».
+</p><p>Область применения данного метода простирается от обработки аудио информации до собственно спектрального анализа.
+Поскольку в общем случае алгоритм БПФ применим к произвольным векторам чисел, выделяют отдельные подзадачи, для которых можно ввести дополнительную оптимизацию. Одной из таких подзадач является быстрое преобразование Фурье вектора действительных чисел, которому и посвящена данная статья. В качестве тестируемой реализации был выбран алгоритм Кули-Тьюки в библиотеке FFTW, написанной на языке C.
+</p><p><br />
+<b>Замечание</b>: Поскольку общие описание алгоритма БПФ весьма сложно, в некоторых пунктах данная статья будет ссылаться на простой случай — алгоритм Кули-Тьюки быстрого преобразование Фурье для векторов <i>с размерностью равной степени двойки</i>. Отличительной особенностью данного алгоритма является то, что он обходится без использования специфических приемов, использующихся именно для степеней четверки, восьмерки и т.п. Однако благодаря тому, что на вход данному алгоритму подается вектор чисто вещественных чисел, выходной вектор удовлетворяет <i>эрмитовой избыточности</i> (<i>Hermitian redundancy</i>) , т.е.  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ out[i] }[/math]</span> является сопряженным с <span style="opacity:.5" class="smj-container">[math]\displaystyle{ out[n-i] }[/math]</span>. Это обстоятельство позволяет достичь роста скорости и снижения затрат памяти примерно в 2 раза по сравнению с <i>комплексным</i> аналогом алгоритма.
+</p>
+<h2><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h2>
+<p>Входные данные: вектор действительных чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x = (x_1,x_2,...,x_N) }[/math]</span>.
+</p><p>Выходные данные: вектор комплексных чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X = (X_1,X_2,...,X_N) }[/math]</span>.
+</p><p>Дискретное преобразование Фурье задается следующей формулой:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ X_k = \sum_{n=0}^{N-1} x_n e^{-\frac{2\pi i}{N} nk}, k = \overline{0,N-1} }[/math]</span>
+</p><p>В простейшем случае(для степеней двойки) алгоритм Кули-Тьюки рассчитывает ДПФ для четных <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (x_{2m}=x_0, x_2, \ldots, x_{N-2}) }[/math]</span> и нечетных элементов отдельно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (x_{2m+1}=x_1, x_3, \ldots, x_{N-1}) }[/math]</span>. Затем результаты рассчетов объединяются для получения ДПФ всей последовательности: 
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+  \begin{matrix} X_k &amp; =
+&amp; \sum \limits_{m=0}^{N/2-1} x_{2m}e^{-\frac{2\pi i}{N} (2m)k}   +   \sum \limits_{m=0}^{N/2-1} x_{2m+1} e^{-\frac{2\pi i}{N} (2m+1)k}
+  \end{matrix}
+ }[/math]</span>
+</p><p>Таким образом, получается рекурсивный алгоритм, работающий по принципу <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%8F%D0%B9_%D0%B8_%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B2%D1%83%D0%B9_(%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">разделяй и влавствуй</a>.
+</p>
+<h3><span id=".D0.A0.D0.B5.D0.BA.D1.83.D1.80.D1.81.D0.B8.D0.B2.D0.BD.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Рекурсивное_описание">Рекурсивное описание</span></h3>
+<p>Алгоритм:
+</p>
+<ol><li>Входной вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a = (a_0,a_2,...,a_{N-1}) }[/math]</span> преобразуется в матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 \times n_2  }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=n_1 \cdot n_2 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 \lt  n_2 }[/math]</span></li></ol>
+<p><span style="opacity:.5" class="smj-container">[math]\displaystyle{  A = \begin{pmatrix}
+  a_0 &amp; a_1 &amp; \cdots &amp; a_{n_1-1} \\
+  a_{n_1} &amp; a_{n_1+1} &amp; \cdots &amp; a_{2n_1-1} \\
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+  a_{(n_2-1)\cdot n_1} &amp; a_{(n_2-1)\cdot n_1+1} &amp; \cdots &amp; a_{n_2\cdot n_1-1} 
+ \end{pmatrix}  }[/math]</span>
+</p>
+<ol><li>К каждой строке полученной матрицы применяется быстрое дискретное преобразование Фурье (БПФ) порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 }[/math]</span></li>
+<li>Каждый элемент полученный после применения БПФ умножается на <i>поворотные множители</i> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ exp (2 \pi i(m-1)(j-1)/N) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> - номер строки, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> - номер столбца</li>
+<li>Полученная после шагов 1-2 матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> транспонируется</li>
+<li>К каждой строке матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A^T }[/math]</span> применяется БПФ порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 }[/math]</span></li></ol>
+<p>Так как алгоритм реализует принцип «разделяй и властвуй», глубина рекурсии составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O (\log N) }[/math]</span> от числа входных элементов.
+</p><p><b>Замечание:</b> Как правило все <i>поворотные множители</i> вычисляются заранее и хранятся в специальном массиве.
+</p><p><b>Замечание:</b> В общем случае <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> разбивается на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 \cdot n_2 }[/math]</span> так, чтобы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 }[/math]</span> сами не являлись простыми числами и разлагались на множители, не являющиеся простыми числами.
+</p><p><b>Замечание:</b> В случае простого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> оно дополняется(как правило единицей) до составного числа. В процессе слияния добавленные значения отбрасываются.
+</p>
+<h2><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h2>
+<p>В случае размерности входа равной степени двойки, вычислительным ядром алгоритма является так называемая, "<i>бабочка</i>". В простейшем случае "<i>бабочка</i>" представляет из себя двухточечное преобразование. Рассмотрим этот случай:
+</p><p>На вход алгоритму подается двухэлементный вектор ‒ <span style="opacity:.5" class="smj-container">[math]\displaystyle{  v = (v[0], v[1])  }[/math]</span>. Тогда для вычисления будут происходить по следующим формулам:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ V[0] = W_2^0 v[0] + W_2^0 v[1] = v[0] + W_2^0 v[1]  }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ V[1] = W_2^0 v[0] + W_2^1 v[1] = v[0] + W_2^1 v[1]  }[/math]</span>
+</p><p>Данный процесс удобно изобразить с помощью следующей схемы:
+</p><p><span class="mw-default-size" typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Fftbutterfly.png" class="mw-file-description" title="Рис. 1. &quot;Бабочка&quot; для двумерного входа"><img alt="Рис. 1. &quot;Бабочка&quot; для двумерного входа" src="/w/ru/images/8/8a/Fftbutterfly.png" decoding="async" width="181" height="136" class="mw-file-element" /></a></span>
+</p><p>Для 4-х элеметного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v=(v[0],v[1],v[2],v[3]) }[/math]</span>, алгоритм строится похожим образом. Сначала создаются простейшие "<i>бабочки</i>", а потом их результаты соединяются с противоположеной "бабочкой":
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ V[0]=v[0]+W_2^0 v[2]+W_4^0(v[1]+W_2^0 v[3]) }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ V[1]=v[0]-W_2^0 v[2]+W_4^1(v[1]-W_2^0 v[3]) }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ V[2]=v[0]+W_2^0 v[2]-W_4^0(v[1]+W_2^0 v[3]) }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ V[3]=v[0]-W_2^0 v[2]-W_4^1(v[1]-W_2^0 v[3]) }[/math]</span>
+</p><p>Схема в таком случае будет выглядеть следующим образом:
+</p><p><span class="mw-default-size" typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Fftbutterfly4.png" class="mw-file-description" title="Рис. 2. &quot;Бабочка&quot; для четырёхмерного входа"><img alt="Рис. 2. &quot;Бабочка&quot; для четырёхмерного входа" src="/w/ru/images/2/2b/Fftbutterfly4.png" decoding="async" width="322" height="309" class="mw-file-element" /></a></span>
+</p><p>Для случая, когда вход не является степенью двойки, "<i>бабочки</i>" будут "<i>несимментричными</i>", но в остальном вычисления будут проходить схожим образом.
+</p>
+<h2><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h2>
+<p>Для исходного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a = (a_1,a_2,...,a_N) }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N = n_1 \cdot n_2 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 \lt  n_2 }[/math]</span> БПФ представляется как:
+</p>
+<ol><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 }[/math]</span> БПФ порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 }[/math]</span></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 \cdot n_2 }[/math]</span> умножение комплексных чисел</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 }[/math]</span> БПФ порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 }[/math]</span></li></ol>
+<h2><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h2>
+<p>Схема организации состоит в том, что на каждом шаге <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> для выполнения "<i>бабочки</i>" все элементы разбиваются на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_{i_1} }[/math]</span> векторов по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_{i_2} }[/math]</span> элементов, причем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_{i_1} \cdot n_{i_2} = n_i }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_i }[/math]</span> длина входного вектора на текущем шаге <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>. В случае если такое разбиение невозможно, по причине того что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_i }[/math]</span> простое число, исходный вектор на текущем шаге дополняется элементом. В зависимости от номера шага, разница координат для каждой пары элементов увеличивается соразмерно разбиению  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (n_{i_1},n_{i_2}) }[/math]</span>.
+При этом результат суммы записывается в элемент с меньшим номером, а результат вычитания с последующим умножением - в элемент с большим.
+</p>
+<h2><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h2>
+<p>Быстрое дискретное преобразование Фурье выполнимо за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N(n_1+\cdots+n_m)) }[/math]</span> действий при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=n_1n_2\cdots n_m }[/math]</span> (в простом случае, при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=2^m }[/math]</span> необходимо <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N\log_2(N)) }[/math]</span> действий). Дискретное преобразование Фурье преобразует вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a = (a_0, \dots, a_{N-1}) }[/math]</span> в вектор комплексных чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b = (b_0, \dots, b_{N-1}) }[/math]</span>, такой, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_i=\sum_{j=0}^{N-1}a_j\varepsilon^{ij} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \varepsilon^n=1 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \varepsilon^k\neq 1 }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0\lt k\lt N }[/math]</span>.
+</p><p>Основной шаг алгоритма состоит в сведении задачи для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> чисел к задаче для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1=N/n_2 }[/math]</span> числам, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 }[/math]</span>&#160;— делитель <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>.
+</p><p>Пусть мы уже умеем решать задачу для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N/n_2 }[/math]</span> чисел. Применим преобразование Фурье к векторам <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_i,a_{n_2+i}, \dots, a_{n_2(n_1-1)+i} }[/math]</span> для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i=0,1,\dots,n_2-1 }[/math]</span>. Покажем теперь, что за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(Np) }[/math]</span> действий можно решить исходную задачу. Заметим, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_i=\sum_{j=0}^{n_2-1} \varepsilon^{ij} \left(\sum_{k=0}^{n_1-1}a_{kn_2+j}\varepsilon^{kin_2}\right) }[/math]</span>.
+Выражения в скобках нам уже известны&#160;— это <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (i\mod p) }[/math]</span>-тое число после преобразования Фурье <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>-го вектора. Таким образом, для вычисления каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_i }[/math]</span> нужно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n_2) }[/math]</span> действий, а для вычисления всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_i }[/math]</span>&#160;всего <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(Nn_2) }[/math]</span> действий, что и требовалось.
+</p><p>В общем случае:
+</p><p>Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 4N\gt 2^k\ge2N }[/math]</span>. Заметим, что тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_i=\varepsilon^{-i^2/2}\sum_{j=0}^{N-1}\varepsilon^{(i+j)^2/2}\varepsilon^{-j^2/2}a_j }[/math]</span>. Обозначим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \bar{a}_i=\varepsilon^{-i^2/2}a_i }[/math]</span>,   <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \bar{b}_i=\varepsilon^{i^2/2}b_i }[/math]</span>,   <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_i=\varepsilon^{(2N-2-i)^2/2} }[/math]</span>. Тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \bar{b}_i=\sum_{j=0}^{2N-2-i}\bar{a}_jc_{2N-2-i-j} }[/math]</span>, если положить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \bar{a}_i=0 }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i\ge N }[/math]</span>.
+</p><p>Таким образом задача сведена к вычислению <i>свёртки</i>, а это можно сделать с помощью трёх преобразований Фурье для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^k }[/math]</span> элементов. Выполняем прямое преобразование Фурье для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (\bar{a_0}, \cdots, \bar{a}_{2^k-1}) }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (c_1,\cdots,c_{2^k-1}) }[/math]</span>, перемножаем поэлементно результаты и выполняем обратное преобразование Фурье.
+</p><p>Вычисления всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \bar{a}_i }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_i }[/math]</span> требуют <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span> действий, три преобразования Фурье требуют <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N\log(N)) }[/math]</span> действий, перемножение результатов преобразований Фурье требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span> действий, вычисление всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_i }[/math]</span> зная значения свертки требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span> действий. Итого для дискретного преобразования Фурье требуется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N\log(N)) }[/math]</span> действий для любого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>.
+</p>
+<h2><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h2>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:InfoGraph_Ivanov_Sapin.png" class="mw-file-description"><img src="/w/ru/images/thumb/c/c4/InfoGraph_Ivanov_Sapin.png/800px-InfoGraph_Ivanov_Sapin.png" decoding="async" width="800" height="627" class="mw-file-element" srcset="/w/ru/images/thumb/c/c4/InfoGraph_Ivanov_Sapin.png/1200px-InfoGraph_Ivanov_Sapin.png 1.5x, /w/ru/images/thumb/c/c4/InfoGraph_Ivanov_Sapin.png/1600px-InfoGraph_Ivanov_Sapin.png 2x" /></a><figcaption> Информационный граф алгоритма Кули-Тьюки для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N = 21 }[/math]</span>. Исходные данные обозначены зеленым, результат — синим.  Преобразования Фурье для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 = 7 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 = 3 \text{   } (N = n_1 \cdot n_2) }[/math]</span> представлены как «чёрные ящики». Умножение на поворотные коэффициенты (множители) представлено коричневыми ромбами.</figcaption></figure>
+<p>Как видно из рисунка, размер этого графа линейно-логарифмический, а формулы дуг имеют экспоненциальные компоненты.
+</p>
+<h2><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h2>
+<p>Если считать только главные члены выражений, то простой алгоритм Кули-Тьюки имеет критический путь, состоящий из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ log(N) }[/math]</span> операций комплексного сложения/вычитания и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ log(N) }[/math]</span> операций комплексного умножения (основание <span style="opacity:.5" class="smj-container">[math]\displaystyle{ log }[/math]</span> целиком зависит от выбранного на каждом шаге алгоритма разбиения). Здесь стоит отметить, что все рекурсивные вызовы БПФ на каждом шаге выполняются независимо, это приводит к тому, что их можно распределить по доступным вычислительным узлам. Аналогичная ситуация обстоит и с умножением на поворотные множетели, что позволяет независимо присоединять его к любому шагу. Таким образом алгоритм БПФ имеет высокий ресурс параллелизма, а алгоритм БПФ в общем случае может быть отнесён к <i>логарифмическому</i> классу по параллельной сложности. 
+</p><p>Кроме того, параллелизм БПФ можно увеличить, если брать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_1 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_2 }[/math]</span> по возможности близкими к кратным доступному количеству вычислительных узлов (а не брать просто один из множителей близким к нулю, как в традиционной реализации), это позволит равномерно распределить работу между вычислительными узлами, что сильно повысит эффективность алгоритма благодаря лишь одной внутренней пересылке данных.
+</p>
+<h2><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h2>
+<p><b>Входные данные:</b> вектор действительных/комплексных чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a = (a_1,a_2,...,a_N) }[/math]</span>.
+</p><p><b>Выходные данные:</b> вектор комплексных чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b = (b_1,b_2,...,b_{\lfloor N/2 \rfloor+1}) }[/math]</span>.
+</p><p>Есть несколько ситуаций, при которых количество потребляемой памяти для хранения входного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span> и выходного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> тможет быть снижено вдвое: 
+</p>
+<ol><li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span>&#160;— вектор действительных чисел, тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b = E\bar{b} }[/math]</span>;</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span>&#160;— вектор чисто-мнимых чисел, тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b = -E\bar{b} }[/math]</span>;</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a = E\bar{a} }[/math]</span>, тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span>&#160;— вектор действительных чисел;</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a = -E\bar{b} }[/math]</span>, то <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span>&#160;— вектор чисто-мнимых чисел.</li></ol>
+<p>Где матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ E }[/math]</span>:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+  E = \begin{bmatrix} 
+     1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 
+     0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \\
+     0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0 \\
+     0 &amp; 0 &amp; 0 &amp; \ddots &amp; 0 &amp; 0 \\
+     0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\
+     0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0
+ \end{bmatrix}
+ }[/math]</span></dd></dl>
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h2>
+<p>Таким образом в общем у алгоритма БПФ в случае неограниченных ресурсов:
+</p>
+<ul><li>последовательная сложность - <i>линейно-логарифмическая</i></li>
+<li>параллельная сложность  - <i>логарифмическая</i>.</li></ul>
+<p>При этом алгоритм полностью детерминирован.
+</p>
+<h1><span id=".D0.A7.D0.90.D0.A1.D0.A2.D0.AC._.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="ЧАСТЬ._Программная_реализация_алгоритма">ЧАСТЬ. Программная реализация алгоритма</span></h1>
+<p>В качестве тестируемой реализации была выбрана библиотека FFTW, а именно функция, выполняющая БПФ одномерного вектора действительных чисел.
+</p>
+<h2><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_последовательной_реализации_алгоритма">Особенности последовательной реализации алгоритма</span></h2>
+<p>Простейший вариант алгоритма для степеней двойки на языке C:
+</p>
+<div class="mw-highlight mw-highlight-lang-c++ mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;complex.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">complex</span><span class="w"> </span><span class="n">cplx</span><span class="p">;</span>
+<span class="w"> </span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">_fft</span><span class="p">(</span><span class="n">cplx</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">cplx</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">step</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="n">_fft</span><span class="p">(</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">//рекурсивный рассчет</span>
+<span class="w">	</span><span class="n">_fft</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">step</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">step</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	    </span><span class="n">cplx</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cexp</span><span class="p">(</span><span class="o">-</span><span class="n">I</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">step</span><span class="p">];</span>
+<span class="w">	    </span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">	    </span><span class="n">buf</span><span class="p">[(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="w"> </span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">fft</span><span class="p">(</span><span class="n">cplx</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">cplx</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w"> </span>
+<span class="w">    </span><span class="n">_fft</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h2>
+<h2><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h2>
+<h2><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h2>
+<p>Тестирование проводилось на вычислительном комплексе IBM Blue Gene/P
+</p>
+<h3><span id=".D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BB.D0.B0.D1.82.D1.84.D0.BE.D1.80.D0.BC.D1.8B_IBM_Blue_Gene.2FP"></span><span class="mw-headline" id="Описание_платформы_IBM_Blue_Gene/P">Описание платформы IBM Blue Gene/P</span></h3>
+<p>IBM Blue Gene/P — массивно-параллельная вычислительная система, которая состоит из двух стоек, включающих 8192 процессорных ядер (2 x 1024 четырехъядерных вычислительных узлов), с пиковой производительностью 27,9 терафлопс (27,8528 триллионов операций с плавающей точкой в секунду).
+</p><p>Характеристики системы:
+</p>
+<ul><li>две стойки с вычислительными узлами и узлами ввода-вывода</li>
+<li>1024 четырехъядерных вычислительных узла в каждой из стоек</li>
+<li>16 узлов ввода-вывода в стойке (в текущей конфигурации активны 8, т.е. одна I/O-карта на 128 вычислительных узлов)</li>
+<li>выделенные коммуникационные сети для межпроцессорных обменов и глобальных операций</li>
+<li>программирование с использованием MPI, OpenMP/pthreads, POSIX I/O</li>
+<li>высокая энергоэффективность: ∼ 372 MFlops/W (см. список Green500)</li>
+<li>система воздушного охлаждения</li></ul>
+<p>Стойка (rack, cabinet) состоит из двух midplane'ов. В midplane входит 16 node-карт (compute node card), на каждой из которых установлено 32 вычислительных узла (compute card). Midplane, 8 x 8 x 8 = 512 вычислительных узлов, — минимальный раздел, на котором становится доступна топология трехмерного тора; для разделов меньших размеров используется топология трехмерной решетки. Node-карта может содержать до двух узлов ввода-вывода (I/O card). Вычислительный узел включает в себя четырехъядерный процессор, 2 ГБ общей памяти и сетевые интерфейсы.
+</p><p>Микропроцессорное ядро:
+</p>
+<ul><li>модель: PowerPC 450</li>
+<li>рабочая частота: 850 MHz</li>
+<li>адресация: 32-битная</li>
+<li>кэш инструкций 1-го уровня (L1 instruction): 32 KB</li>
+<li>кэш данных 1-го уровня (L1 data): 32 KB</li>
+<li>кэш предвыборки (L2 prefetch): 14 потоков предварительной выборки (stream prefetching): 14 x 256 байтов</li>
+<li>два блока 64-битной арифметики с плавающей точкой (Floating Point Unit, FPU), каждый из которых может выдавать за один такт результат совмещенной операции умножения-сложения (Fused Multiply-Add, FMA)</li>
+<li>пиковая производительность: 2 FPU x 2 FMA x 850 MHz = 3,4 GFlop/sec per core</li></ul>
+<p>Вычислительные узлы и I/O-карты в аппаратном смысле неразличимы и являются взаимозаменяемыми, разница между ними состоит лишь в способе их использования. У них нет локальной файловой системы, поэтому все операции ввода-вывода перенаправляются внешним устройствам.
+</p><p>Вычислительной узел:
+</p>
+<ul><li>четыре микропроцессорных ядра PowerPC 450 (4-way SMP)</li>
+<li>пиковая производительность: 4 cores x 3,4 GFlop/sec per core = 13,6 GFlop/sec</li>
+<li>пропускная способность памяти: 13,6 GB/sec</li>
+<li>2 ГБ общей памяти</li>
+<li>2 x 4 МБ кэш-памяти 2-го уровня (в документации по BG/P носит название L3)</li>
+<li>легковесное ядро (compute node kernel, CNK), представляющее собой Linux-подобную операционную систему, поддерживающую значительное подмножество Linux-совместимых системных вызовов</li>
+<li>асинхронные операции межпроцессорных обменов (выполняются параллельно с вычислениями)</li>
+<li>операции ввода-вывода перенаправляются I/O-картам через сеть коллективных операций</li></ul>
+<h3><span id=".D0.9E.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BC.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Оценка_масштабируемости_алгоритма">Оценка масштабируемости алгоритма</span></h3>
+<p>Масштабируемость алгоритма проверялась с помощью тестовой программы расположенной по <a rel="nofollow" class="external text" href="https://github.com/alesapin/parallel_fftw">ссылке</a>. Для эксперимента использовались:
+</p>
+<ul><li>Компилятор mpicc</li>
+<li>Библиотека OpenMPI версии 1.68</li>
+<li>Библиотека FFTW 3.3.5</li></ul>
+<p>Алгоритм тестировался на входных векторах размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^{15} }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^{26} }[/math]</span>. При этом использовались от 8 до 128 процессоров с шагом степени двойки.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Fftw_time_good_cr.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/c/cd/Fftw_time_good_cr.png/800px-Fftw_time_good_cr.png" decoding="async" width="800" height="671" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/c/cd/Fftw_time_good_cr.png/1200px-Fftw_time_good_cr.png 1.5x, https://algowiki-project.org/algowiki/pool/images/c/cd/Fftw_time_good_cr.png 2x" /></a><figcaption> Замеры времени работы параллельной реализации FFTW для входного вектора действительных чисел. По оси Data Size указано <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> -- число входных элементов. По оси Procs Num указано <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> -- число задействованных процессоров. По оси Elapsed Time -- время затраченное на выполненине алгоритма в секундах.</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Fftw_efficency_good_cr.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/c/cb/Fftw_efficency_good_cr.png/800px-Fftw_efficency_good_cr.png" decoding="async" width="800" height="641" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/c/cb/Fftw_efficency_good_cr.png/1200px-Fftw_efficency_good_cr.png 1.5x, https://algowiki-project.org/algowiki/pool/images/c/cb/Fftw_efficency_good_cr.png 2x" /></a><figcaption> Эффективность параллельной реализации FFTW для входного вектора действительных чисел. По оси Data Size указано <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> -- число входных элементов. По оси Procs Num указано <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> -- число задействованных процессоров. По оси Effeciency -- эффективность алгоритма в процентах.</figcaption></figure>
+<p>Из графиков можно сделать следующие выводы:
+</p>
+<ul><li>Значительное увеличение числа процессоров не дает значимого уменьшения времени исполнения, что отражено и на графике эффективности. Это означает, что время, в основном, расходуется на пересылки данных, а не на рассчет.</li>
+<li>При большом количестве элементов и маленьком числе процессоров наблюдается сверхлинейное ускорение, что связано с маленьким число пересылок и активным использованием кеша.</li></ul>
+<h2><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h2>
+<h2><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h2>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<p>Наиболее известной библиотекой для выполнения различных вариантов быстрого преобразования Фурье является <a rel="nofollow" class="external text" href="http://www.fftw.org/">FFTW</a>, разработанная Матео Фриго и Стивеном Джонсоном в Массачусетском технологическом институте. Для преобразования небольших объемов данных используется алгоритм <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">Кули - Тьюки</a>, в случае входа больших размеров используется алгоритм <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Rader%27s_FFT_algorithm">Радера</a> или <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Chirp_Z-transform#Bluestein.27s_algorithm">Блюштейна</a>. Библиотека считается самой быстрой реализацией БПФ и на входах любых размеров и размерностей сохраняет ассимптотическую сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N\cdot log(N)) }[/math]</span>. Также, существует версия FFTW с поддержкой <a rel="nofollow" class="external text" href="http://www.fftw.org/doc/Distributed_002dmemory-FFTW-with-MPI.html#Distributed_002dmemory-FFTW-with-MPI">MPI</a>, которая позволяет с объемами данных не умещающимися в память.
+</p><p>FFTW изначально написана на языке C, однако имеет API для нескольких языков, в том числе Fortran и Ada. Открытая версия библиотеки распространяется под лицензией <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License</a>. Также существует реализация для коммерческого использования распространяемая под лицензией <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/MIT">MIT</a>.
+</p><p>Существует несколько реализаций алгоритма, для рассчета на GPU:
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://developer.nvidia.com/cufft">cuFFT</a> для рассчета на графических ускорителях от NVIDIA.</li>
+<li><a rel="nofollow" class="external text" href="http://gpuopen.com/compute-product/clfft/">clFFT</a> для рассчета на GPU и CPU.</li></ul>
+<h1><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h1>
+<p>[1] Википедия [Электронный ресурс]. Тема: Быстрое преобразование Фурье – Электрон. дан. – URL <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5">Быстрое преобразование Фурье</a> (дата обращения 17.09.2016)
+</p><p>[2] Бахвалов Н. С.,  Жидков Н. П., Кобельков. Г. М. — 6-е изд. — М.&#160;: БИНОМ. Лаборатория знаний, 2008. — 636 с.
+</p><p>[3] FFTW [Электронный ресурс]. Тема: One-Dimensional DFTs of Real Data – Электрон. дан. – URL <a rel="nofollow" class="external text" href="http://www.fftw.org/doc/One_002dDimensional-DFTs-of-Real-Data.html#One_002dDimensional-DFTs-of-Real-Data">One-Dimensional DFTs of Real Data</a> (последняя дата обращения 14.19.2016)
+</p><p>[4] FFTW [Электронный ресурс]. – Электрон. дан. – URL <a rel="nofollow" class="external text" href="http://www.fftw.org/">FFTW Lib</a> (последняя дата обращения 14.19.2016)
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260611092723
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.044 seconds
+Real time usage: 0.192 seconds
+Preprocessor visited node count: 1012/1000000
+Post‐expand include size: 16582/2097152 bytes
+Template argument size: 5601/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 21950/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.333      1 -total
+ 73.30%    4.642      1 Шаблон:Algorithm
+ 47.29%    2.995      1 Шаблон:Level-a
+ 26.04%    1.649      1 Шаблон:Assignment
+ 18.41%    1.166      1 Шаблон:Infobox
+ 17.36%    1.099      1 Шаблон:Плашка
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:489-0!canonical and timestamp 20260611092723 and revision id 19467. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Ivanov.kir.m/Быстрое_дискретное_преобразование_Фурье&amp;oldid=19467">https://algowiki-project.org/w/ru/index.php?title=Участник:Ivanov.kir.m/Быстрое_дискретное_преобразование_Фурье&amp;oldid=19467</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done/Kronberg" title="Категория:Assignments/Done/Kronberg">Assignments/Done/Kronberg</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done" title="Категория:Assignments/Done">Assignments/Done</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AIvanov.kir.m%2F%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5+%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5+%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AIvanov.kir.m%2F%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5+%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5+%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/ru/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" rel="discussion" title="Обсуждение основной страницы [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Ivanov.kir.m" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Ivanov.kir.m"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Ivanov.kir.m"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;oldid=19467" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov.kir.m/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Fast_Discrete_Fourier_Transform" title="Fast Discrete Fourier Transform — English" lang="en" hreflang="en" data-title="Fast Discrete Fourier Transform" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 29 ноября 2016 года в 17:09.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":292,"wgPageParseReport":{"limitreport":{"cputime":"0.044","walltime":"0.192","ppvisitednodes":{"value":1012,"limit":1000000},"postexpandincludesize":{"value":16582,"limit":2097152},"templateargumentsize":{"value":5601,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":21950,"limit":5000000},"timingprofile":["100.00%    6.333      1 -total"," 73.30%    4.642      1 Шаблон:Algorithm"," 47.29%    2.995      1 Шаблон:Level-a"," 26.04%    1.649      1 Шаблон:Assignment"," 18.41%    1.166      1 Шаблон:Infobox"," 17.36%    1.099      1 Шаблон:Плашка"]},"cachereport":{"timestamp":"20260611092723","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

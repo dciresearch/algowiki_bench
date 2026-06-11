@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Разложение Холецкого (метод квадратного корня) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"761ebd77f2691d9a185fcc61","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Разложение_Холецкого_(метод_квадратного_корня)","wgTitle":"Разложение Холецкого (метод квадратного корня)","wgCurRevisionId":28906,"wgRevisionId":28906,"wgArticleId":112,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма","Законченные статьи","Разложения матриц"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Разложение_Холецкого_(метод_квадратного_корня)","wgRelevantArticleId":112,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":28906,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%7Cext.pygments%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Разложение_Холецкого_метод_квадратного_корня rootpage-Разложение_Холецкого_метод_квадратного_корня skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Разложение Холецкого (метод квадратного корня)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Разложение Холецкого
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Frolov" title="Участник:Frolov">А.В.Фролов</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Симметричность_и_положительная_определённость_матрицы"><span class="tocnumber">1.1.1</span> <span class="toctext">Симметричность и положительная определённость матрицы</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Режим_накопления"><span class="tocnumber">1.1.2</span> <span class="toctext">Режим накопления</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.2</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Результаты_прогонов"><span class="tocnumber">2.3</span> <span class="toctext">Результаты прогонов</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.4</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p><b>Разложение Холецкого</b> впервые предложено французским офицером и математиком Андре-Луи Холецким в конце Первой Мировой войны, незадолго до его гибели в бою в августе 1918 г. Идея этого разложения была опубликована в 1924 г. его сослуживцем<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>.  Потом оно было использовано поляком Т. Банашевичем<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup> в 1938 г. В советской математической литературе называется также методом квадратного корня<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>; название связано с характерными операциями, отсутствующими в родственном разложении Гаусса. 
+</p><p>Первоначально разложение Холецкого использовалось исключительно для плотных симметричных положительно определенных матриц. В настоящее время его использование гораздо шире. Оно может быть применено также, например, к эрмитовым матрицам. Для  повышения производительности вычислений часто применяется блочная версия разложения.
+</p><p>Для разреженных матриц разложение Холецкого также широко применяется в качестве основного этапа прямого метода решения линейных систем. В этом случае используют специальные упорядочивания для уменьшения ширины профиля исключения, а следовательно и уменьшения количества арифметических операций. Другие упорядочивания используются для выделения независимых блоков вычислений при работе на системах с параллельной организацией.
+</p><p>Варианты разложения Холецкого нашли успешные применения и в итерационных методах для построения переобусловливателей разреженных симметричных положительно определенных матриц. В неполном треугольном разложении («по позициям») элементы переобусловливателя вычисляются только в заранее заданных позициях, например, в позициях ненулевых элементов исходной матрицы (так называемое разложение IC0). Для получения же более точного разложения применяется приближение, в котором фильтрация малых элементов производится «по значениям». В зависимости от используемого порога фильтрации можно получить более точное, но и более заполненное разложение. Существует и алгоритм разложения второго порядка точности<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>. В нём при таком же заполнении множителей разложения удается улучшить точность. Для такого разложения в параллельном режиме используется специальный вариант аддитивного переобуславливания на основе разложения второго порядка<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>На этой странице представлено исходное разложение Холецкого с новых позиций нашего суперкомпьютерного века. Приведено описание конкретной версии разложения Холецкого — для плотных вещественных симметричных положительно определённых матриц, но структура для ряда других версий, например, для комплексного случая, почти такая же, различия состоят в замене большинства вещественных операций на комплексные. Список остальных основных вариантов разложения можно посмотреть на странице <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)" title="Метод Холецкого (нахождение симметричного треугольного разложения)">Метод Холецкого (нахождение симметричного треугольного разложения)</a>.
+</p><p>Используется для разложения положительно определённых эрмитовых (<i>в вещественном случае - симметрических</i>) матриц в виде <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = L L^* }[/math]</span>,  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> — нижняя треугольная матрица, 
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+L = \begin{bmatrix}
+ l_{11} &amp; 0  &amp; 0 &amp;    \cdots &amp; \cdots &amp; 0 \\
+ l_{21} &amp; l_{22}  &amp; 0 &amp;  \cdots &amp; \cdots &amp; 0 \\
+ l_{31} &amp;  l_{32} &amp; l_{33}  &amp;     \cdots &amp; \cdots &amp; 0 \\
+ \vdots &amp; \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots \\
+ l_{n-1 1} &amp; \cdots &amp; \cdots &amp; l_{n-1\ n-2} &amp; l_{n-1\ n-1} &amp; 0 \\
+ l_{n 1} &amp; \cdots &amp; \cdots &amp; l_{n\ n-2} &amp; l_{n\ n-1}  &amp; l_{n\ n} \\
+\end{bmatrix}
+ }[/math]</span></dd></dl>
+<p>или в виде <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = U^* U }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span> — верхняя треугольная матрица,
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+U = \begin{bmatrix}
+ u_{11} &amp; u_{12}  &amp; u_{13} &amp;    \cdots &amp; u_{1\ n-1} &amp; u_{1\ n} \\
+ 0 &amp; u_{22}  &amp; u_{23}&amp;  \cdots &amp; u_{2\ n-1} &amp; u_{2\ n} \\
+ 0 &amp;  0 &amp; u_{33}  &amp;     \cdots &amp; u_{3\ n-1} &amp; u_{3\ n} \\
+ \vdots &amp; \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots \\
+ 0 &amp; \cdots &amp; \cdots &amp; 0 &amp; u_{n-1\ n-1}  &amp; u_{n-1\ n} \\
+ 0 &amp; \cdots &amp; \cdots &amp; 0 &amp; 0  &amp; u_{n\ n} \\
+\end{bmatrix}
+ }[/math]</span></dd></dl>
+<p>Эти разложения совершенно эквивалентны друг другу по вычислениям и различаются только способом представления данных). Он заключается в реализации формул для элементов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, получающихся из вышеприведённого равенства единственным образом. Получило широкое распространение благодаря следующим особенностям.
+</p>
+<h4><span id=".D0.A1.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B8_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Симметричность_и_положительная_определённость_матрицы">Симметричность и положительная определённость матрицы</span></h4>
+<p>Симметричность матрицы позволяет хранить и вычислять только чуть больше половины её элементов, что почти вдвое экономит как необходимые для вычислений объёмы памяти, так и количество операций в сравнении с, например, разложением по методу Гаусса. При этом альтернативное (без вычисления квадратных корней) LU-разложение, использующее симметрию матрицы, всё же несколько быстрее метода Холецкого (не использует извлечение квадратных корней), но требует хранения всей матрицы. 
+Благодаря тому, что разлагаемая матрица не только симметрична, но и положительно определена, её LU-разложения, в том числе и разложение методом Холецкого, имеют наименьшее <i><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Эквивалентное_возмущение" title="Глоссарий">эквивалентное возмущение</a></i> из всех известных разложений матриц.
+</p>
+<h4><span id=".D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_.D0.BD.D0.B0.D0.BA.D0.BE.D0.BF.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Режим_накопления">Режим накопления</span></h4>
+<p>Алгоритм позволяет использовать так называемый <i>режим накопления</i>, обусловленный тем, что значительную часть вычислений составляют <i>вычисления скалярных произведений</i>.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>Исходные данные: положительно определённая симметрическая матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>).
+</p><p>Вычисляемые данные: нижняя треугольная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ij} }[/math]</span>).
+</p><p>Формулы метода:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+l_{11} &amp; = \sqrt{a_{11}}, \\
+l_{j1} &amp; = \frac{a_{j1}}{l_{11}}, \quad j \in [2, n], \\
+l_{ii} &amp; = \sqrt{a_{ii} - \sum_{p = 1}^{i - 1} l_{ip}^2}, \quad i \in [2, n], \\
+l_{ji} &amp; = \left (a_{ji} - \sum_{p = 1}^{i - 1} l_{ip} l_{jp} \right ) / l_{ii}, \quad i \in [2, n - 1], j \in [i + 1, n].
+\end{align}
+ }[/math]</span></dd></dl>
+<p>Существует также блочная версия метода, однако в данном описании разобран только точечный метод.
+</p><p>В ряде реализаций деление на диагональный элемент выполняется в два этапа: вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{1}{l_{ii}} }[/math]</span> и затем умножение на него всех (видоизменённых) <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji} }[/math]</span> . Здесь мы этот вариант алгоритма не рассматриваем. Заметим только, что он имеет худшие параллельные характеристики, чем представленный.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро последовательной версии метода Холецкого можно составить из множественных (всего их <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n - 1)}{2} }[/math]</span>) вычислений скалярных произведений строк матрицы:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sum_{p = 1}^{i - 1} l_{ip} l_{jp} }[/math]</span></dd></dl>
+<p>в режиме накопления или без него, в зависимости от требований задачи. Во многих последовательных реализациях упомянутый способ представления не используется. Дело в том, что в них вычисление сумм типа
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji} - \sum_{p = 1}^{i - 1} l_{ip} l_{jp} }[/math]</span></dd></dl>
+<p>в которых и встречаются скалярные произведения, ведутся не в порядке «вычислили скалярное произведение, а потом вычли его из элемента», а путём вычитания из элемента покомпонентных произведений, являющихся частями скалярных произведений. Поэтому следует считать вычислительным ядром метода не вычисления скалярных произведений, а вычисления выражений
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji} - \sum_{p = 1}^{i - 1} l_{ip} l_{jp} }[/math]</span></dd></dl>
+<p>в <i>режиме накопления</i> или без него.
+</p><p>Тем не менее, в популярных зарубежных реализациях точечного метода Холецкого, в частности, в библиотеках LINPACK и LAPACK, основанных на BLAS, используются именно вычисления скалярных произведений в виде вызова соответствующих подпрограмм BLAS (конкретно — функции SDOT). На последовательном уровне это влечёт за собой дополнительную операцию суммирования на каждый из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span> вычисляемый элемент матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> и некоторое замедление работы программы (о других следствиях рассказано ниже в разделе «<a href="#Существующие_реализации_алгоритма">Существующие реализации алгоритма</a>»). Поэтому в данных вариантах ядром метода Холецкого будут вычисления этих скалярных произведений.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Как записано и в <a href="#Вычислительное_ядро_алгоритма">описании ядра алгоритма</a>, основную часть метода составляют множественные (всего <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n - 1)}{2} }[/math]</span>) вычисления сумм
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji}-\sum_{p=1}^{i-1}l_{ip} l_{jp} }[/math]</span></dd></dl>
+<p>в режиме накопления или без него.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p>Последовательность исполнения метода следующая:
+</p><p>1. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{11}= \sqrt{a_{11}} }[/math]</span>
+</p><p>2. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{j1}= \frac{a_{j1}}{l_{11}} }[/math]</span> (при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>).
+</p><p>Далее для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> по нарастанию выполняются 
+</p><p>3. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ii} = \sqrt{a_{ii} - \sum_{p = 1}^{i - 1} l_{ip}^2} }[/math]</span> и
+</p><p>4. (кроме <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = n }[/math]</span>): <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ji} = \left (a_{ji} - \sum_{p = 1}^{i - 1} l_{ip} l_{jp} \right ) / l_{ii} }[/math]</span> (для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i + 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>).
+</p><p>После этого (если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \lt  n }[/math]</span>) происходит переход к шагу 3 с бо́льшим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>.
+</p><p>Особо отметим, что вычисления сумм вида <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji} - \sum_{p = 1}^{i - 1} l_{ip} l_{jp} }[/math]</span> в обеих формулах производят в режиме накопления вычитанием из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji} }[/math]</span> произведений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ip} l_{jp} }[/math]</span> для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1 }[/math]</span>, c нарастанием <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span>.
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Для разложения матрицы порядка n методом Холецкого в последовательном (наиболее быстром) варианте требуется:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> вычислений квадратного корня,</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n(n-1)}{2} }[/math]</span> делений,</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n^3-n}{6} }[/math]</span> сложений (вычитаний),</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n^3-n}{6} }[/math]</span> умножений.</li></ul>
+<p>Умножения и сложения (вычитания) составляют <i>основную часть алгоритма</i>.
+</p><p>При этом использование режима накопления требует совершения умножений и вычитаний в режиме двойной точности (или использования функции вроде DPROD в Фортране), что ещё больше увеличивает долю умножений и сложений/вычитаний во времени, требуемом для выполнения метода Холецкого.
+</p><p>При классификации по последовательной сложности, таким образом, метод Холецкого относится к алгоритмам <i>с кубической сложностью</i>.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Опишем <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Граф_алгоритма" title="Глоссарий">граф алгоритма</a><sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup> как аналитически, так и в виде рисунка. 
+</p><p>Граф алгоритма состоит из трёх групп вершин, расположенных в целочисленных узлах трёх областей разной размерности.
+</p><p><b>Первая</b> группа вершин расположена в одномерной области, соответствующая ей операция вычисляет функцию SQRT. 
+Единственная координата каждой из вершин <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> меняется в диапазоне от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, принимая все целочисленные значения.
+</p><p>Аргумент этой функции 
+</p>
+<ul><li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1 }[/math]</span> — элемент <i>входных данных</i>, а именно  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{11} }[/math]</span>;</li>
+<li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \gt  1 }[/math]</span> — результат срабатывания операции, соответствующей вершине из третьей группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1 }[/math]</span>.</li></ul>
+<p>Результат срабатывания операции является <i>выходным данным</i> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ii} }[/math]</span>.
+</p><p><b>Вторая</b> группа вершин расположена в двумерной области, соответствующая ей операция <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a / b }[/math]</span>. 
+Естественно введённые координаты области таковы: 
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> — меняется в диапазоне от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n-1 }[/math]</span>, принимая все целочисленные значения;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> — меняется в диапазоне от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i+1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, принимая все целочисленные значения.</li></ul>
+<p>Аргументы операции следующие:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span>:
+<ul><li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1 }[/math]</span> — элементы <i>входных данных</i>, а именно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{j1} }[/math]</span>;</li>
+<li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \gt  1 }[/math]</span> — результат срабатывания операции, соответствующей вершине из третьей группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1, j, i - 1 }[/math]</span>;</li></ul></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> — результат срабатывания операции, соответствующей вершине из первой группы, с координатой <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>.</li></ul>
+<p>Результат срабатывания операции является <i>выходным данным</i> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ji} }[/math]</span>.
+</p><p><b>Третья</b> группа вершин расположена в трёхмерной области, соответствующая ей операция  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a - b * c }[/math]</span>. 
+Естественно введённые координаты области таковы: 
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> — меняется в диапазоне от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, принимая все целочисленные значения;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> — меняется в диапазоне от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, принимая все целочисленные значения;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> — меняется в диапазоне  от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1 }[/math]</span>, принимая все целочисленные значения.</li></ul>
+<p>Аргументы операции следующие:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span>:
+<ul><li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p = 1 }[/math]</span> элемент входных данных <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ji} }[/math]</span>;</li>
+<li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p \gt  1 }[/math]</span> — результат срабатывания операции, соответствующей вершине из третьей группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i, j, p - 1 }[/math]</span>;</li></ul></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> — результат срабатывания операции, соответствующей вершине из второй группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p, i }[/math]</span>;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ c }[/math]</span> — результат срабатывания операции, соответствующей вершине из второй группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p, j }[/math]</span>;</li></ul>
+<p>Результат срабатывания операции является <i>промежуточным данным</i> алгоритма.
+</p><p>Описанный граф можно посмотреть на рис.1 и рис.2, выполненных для случая <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n = 4 }[/math]</span>. Здесь вершины первой группы обозначены жёлтым цветом и буквосочетанием sq, вершины второй — зелёным цветом и знаком деления, третьей — красным цветом и буквой f. Вершины, соответствующие операциям, производящим выходные данные алгоритма, выполнены более крупно. Дублирующие друг друга дуги даны как одна. На рис.1 показан граф алгоритма согласно классическому определению , на рис.2 к графу алгоритма добавлены вершины , соответствующие входным (обозначены синим цветом) и выходным (обозначены розовым цветом) данным.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Cholesky_full.png" class="mw-file-description"><img src="/w/ru/images/thumb/4/44/Cholesky_full.png/1400px-Cholesky_full.png" decoding="async" width="1400" height="389" class="mw-file-element" srcset="/w/ru/images/thumb/4/44/Cholesky_full.png/2100px-Cholesky_full.png 1.5x, /w/ru/images/thumb/4/44/Cholesky_full.png/2800px-Cholesky_full.png 2x" /></a><figcaption>Рисунок 1. Граф алгоритма без отображения входных и выходных данных. SQ - вычисление квадратного корня, F - операция a-bc, Div - деление.</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Cholesky_full_in_out.png" class="mw-file-description"><img src="/w/ru/images/thumb/3/39/Cholesky_full_in_out.png/1400px-Cholesky_full_in_out.png" decoding="async" width="1400" height="486" class="mw-file-element" srcset="/w/ru/images/thumb/3/39/Cholesky_full_in_out.png/2100px-Cholesky_full_in_out.png 1.5x, /w/ru/images/3/39/Cholesky_full_in_out.png 2x" /></a><figcaption>Рисунок 2. Граф алгоритма с отображением входных и выходных данных. SQ - вычисление квадратного корня, F - операция a-bc, Div - деление, In - входные данные, Out - результаты.</figcaption></figure>
+<center>
+<p>
+
+<iframe src="/html/Algo_viewer_json/cholesky/Algo_view_cholesky4.html" frameborder="1" width="1300" height="800"></iframe>
+
+<br />
+Интерактивное изображение графа алгоритма без входных и выходных данных для n = 4.
+</p>
+</center>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Для разложения матрицы порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> методом Холецкого в параллельном варианте требуется последовательно выполнить следующие ярусы:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> ярусов с вычислением квадратного корня (единичные вычисления в каждом из ярусов),</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n - 1 }[/math]</span> ярус делений (в каждом из ярусов линейное количество делений, в зависимости от яруса — от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n - 1 }[/math]</span>),</li>
+<li>по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n - 1 }[/math]</span> ярусов умножений и сложений/вычитаний (в каждом из ярусов — квадратичное количество операций, от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n^2 - n}{2} }[/math]</span>.</li></ul>
+<p>Таким образом, в параллельном варианте, в отличие от последовательного, вычисления квадратных корней и делений будут определять довольно значительную долю требуемого времени. При реализации на конкретных архитектурах наличие в отдельных ярусах <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Ярусно-параллельная_форма_графа_алгоритма" title="Глоссарий">ЯПФ</a> отдельных вычислений квадратных корней может породить и другие проблемы. Например, при реализации на ПЛИСах остальные вычисления (деления и тем более умножения и сложения/вычитания) могут быть конвейеризованы, что даёт экономию и по ресурсам на программируемых платах; вычисления же квадратных корней из-за их изолированности приведут к занятию ресурсов на платах, которые будут простаивать большую часть времени. Таким образом, общая экономия в 2 раза, из-за которой метод Холецкого предпочитают в случае симметричных задач тому же методу Гаусса, в параллельном случае уже имеет место вовсе не по всем ресурсам, и главное - не по требуемому времени.
+</p><p>При этом использование режима накопления требует совершения умножений и вычитаний в режиме двойной точности, а в параллельном варианте это означает, что практически все промежуточные вычисления для выполнения метода Холецкого в режиме накопления должны быть двойной точности. В отличие от последовательного варианта это означает увеличение требуемой памяти почти в 2 раза.
+</p><p>При классификации по высоте ЯПФ, таким образом, метод Холецкого относится к алгоритмам со сложностью <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>. При классификации по ширине ЯПФ его сложность будет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><b>Входные данные</b>: плотная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>).
+Дополнительные ограничения:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> – симметрическая матрица, т. е. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij}= a_{ji}, i, j = 1, \ldots, n }[/math]</span>.</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> – положительно определённая матрица, т. е. для любых ненулевых векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{x} }[/math]</span> выполняется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{x}^T A \vec{x} \gt  0 }[/math]</span>.</li></ul>
+<p><b>Объём входных данных</b>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span> (в силу симметричности достаточно хранить только диагональ и над/поддиагональные элементы). В разных реализациях эта экономия хранения может быть выполнена разным образом. Например, в библиотеке, реализованной в НИВЦ МГУ, матрица A хранилась в одномерном массиве длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span> по строкам своего нижнего треугольника. 
+</p><p><b>Выходные данные</b>: нижняя треугольная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_{ij} }[/math]</span>).
+</p><p><b>Объём выходных данных</b>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span>  (в силу треугольности достаточно хранить только ненулевые элементы). В разных реализациях эта экономия хранения может быть выполнена разным образом. Например, в той же  библиотеке, созданной в НИВЦ МГУ, матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> хранилась в одномерном массиве длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n + 1)}{2} }[/math]</span> по строкам своей нижней части.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>Соотношение последовательной и параллельной сложности в случае неограниченных ресурсов, как хорошо видно, является <i>квадратичным</i> (отношение кубической к линейной). 
+</p><p>При этом вычислительная мощность алгоритма, как отношение числа операций к суммарному объему входных и выходных данных – всего лишь <i>линейна</i>.
+</p><p>При этом алгоритм почти полностью детерминирован, это гарантируется теоремой о единственности разложения. Использование другого порядка выполнения ассоциативных операций может привести к накоплению ошибок округления, однако это влияние в используемых вариантах алгоритма не так велико, как, скажем, отказ от использования режима накопления.
+</p><p>Дуги информационного графа, исходящие из вершин, соответствующих операциям квадратного корня и деления, образуют пучки т. н. рассылок линейной мощности (то есть степень исхода этих вершин и мощность работы с этими данными — линейная функция от порядка матрицы и координат этих вершин). При этом естественно наличие в этих пучках «длинных» дуг. Остальные дуги локальны. 
+</p><p>Наиболее известной является компактная укладка графа — его проекция на треугольник матрицы, который перевычисляется укладываемыми операциями. При этом «длинные» дуги можно убрать, заменив более дальнюю пересылку комбинацией нескольких ближних (к соседям).
+</p><p><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Эквивалентное_возмущение" title="Глоссарий">Эквивалентное возмущение</a> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> у метода Холецкого всего вдвое больше, чем возмущение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \delta A }[/math]</span>, вносимое в матрицу при вводе чисел в компьютер:
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+||M||_{E} \leq 2||\delta A||_{E}
+ }[/math]</span>
+</p><p>Это явление обусловлено положительной определённостью матрицы. Среди всех используемых разложений матриц это наименьшее из эквивалентных возмущений.
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>В простейшем (без перестановок суммирования) варианте метод Холецкого на Фортране можно записать так:
+</p>
+<div class="mw-highlight mw-highlight-lang-fortran mw-content-ltr" dir="ltr"><pre><span></span><span class="w">	</span><span class="k">DO  </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+<span class="w">		</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">I</span><span class="p">)</span>
+<span class="w">		</span><span class="k">DO  </span><span class="n">IP</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">			</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">DPROD</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">IP</span><span class="p">),</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">IP</span><span class="p">))</span>
+<span class="w">		</span><span class="k">END DO</span>
+<span class="k">		</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">SQRT</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="w">		</span><span class="k">DO  </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+<span class="w">			</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">I</span><span class="p">)</span>
+<span class="w">			</span><span class="k">DO  </span><span class="n">IP</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">				</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">DPROD</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">IP</span><span class="p">),</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">IP</span><span class="p">))</span>
+<span class="w">			</span><span class="k">END DO</span>
+<span class="k">			</span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">/</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">I</span><span class="p">)</span>
+<span class="w">		</span><span class="k">END DO</span>
+<span class="k">	END DO</span>
+</pre></div>
+<p>При этом для реализации режима накопления переменная <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S }[/math]</span> должна быть двойной точности. 
+</p><p>Отдельно следует обратить внимание на используемую в такой реализации функцию DPROD. Её появление как раз связано с тем, как математики могли использовать режим накопления вычислений. Дело в том, что, как правило, при выполнении умножения двух чисел с плавающей запятой сначала результат получается с удвоенными длинами мантиссы и порядка, и только при выполнении присваивания переменной одинарной точности результат округляется. Эта возможность даёт выполнять умножение действительных чисел с двойной точностью без предварительного приведения их к типу двойной точности. На ранних этапах развития вычислительных библиотек снятие результата без округление реализовали вставками специального кода в фортран-программы, но уже в 70-х гг. XX века в ряде трансляторов Фортрана появилась функция DPROD, реализующая это без обращения программиста к машинным кодам. Она была закреплена среди стандартных функций в стандарте Фортран 77, и реализована во всех современных трансляторах Фортрана. 
+</p><p>Для метода Холецкого существует блочная версия, которая отличается от точечной не тем, что операции над числами заменены на аналоги этих операций над блоками; её построение основано на том, что практически все циклы точечной версии имеют тип SchedDo в терминах методологии, основанной на исследовании информационного графа и, следовательно, могут быть развёрнуты. Тем не менее, обычно блочную версию метода Холецкого записывают не в виде программы с развёрнутыми и переставленными циклами, а в виде программы, подобной реализации точечного метода, в которой вместо соответствующих скалярных операций присутствуют операции над блоками.
+</p><p>Особенностью размещения массивов в Фортране является хранение их "по столбцам" (быстрее всего меняется первый индекс). Поэтому для обеспечения локальности работы с памятью представляется более эффективной такая схема метода Холецкого (полностью эквивалентная описанной), когда исходная матрица и её разложение хранятся не в нижнем, а в верхнем треугольнике. Тогда при вычислениях скалярных произведений программа будет "идти" по последовательным ячейкам памяти компьютера.
+</p><p>Есть и другой вариант точечной схемы: использовать вычисляемые элементы матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> в качестве аргументов непосредственно «сразу после» их вычисления. Такая программа будет выглядеть так:
+</p>
+<div class="mw-highlight mw-highlight-lang-fortran mw-content-ltr" dir="ltr"><pre><span></span><span class="w">	</span><span class="k">DO  </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+<span class="w">		</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">SQRT</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">))</span>
+<span class="w">		</span><span class="k">DO  </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+<span class="w">			</span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">I</span><span class="p">)</span><span class="o">/</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">I</span><span class="p">)</span>
+<span class="w">		</span><span class="k">END DO</span>
+<span class="k">		DO  </span><span class="n">K</span><span class="o">=</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<span class="w">			</span><span class="k">DO </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+<span class="w">				</span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="n">I</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">I</span><span class="p">)</span>
+<span class="w">			</span><span class="k">END DO	</span>
+<span class="k">		END DO</span>
+<span class="k">	END DO</span>
+</pre></div>
+<p>Как видно, в этом варианте для реализации режима накопления одинарной точности мы должны будем объявить двойную точность для массива, хранящего исходные данные и результат. Подчеркнём, что <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Граф_алгоритма" title="Глоссарий">граф алгоритма</a> обеих схем - один и тот же (из п.1.7), если не считать изменением замену умножения на функцию DPROD!
+</p>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Как нетрудно видеть по структуре графа алгоритма, вариантов распараллеливания алгоритма довольно много. Например, во втором варианте (см. раздел «<a href="#Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</a>») все внутренние циклы параллельны, в первом — параллелен цикл по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ J }[/math]</span>. Тем не менее, простое распараллеливание таким способом «в лоб» вызовет такое количество пересылок между процессорами с каждым шагом по внешнему циклу, которое почти сопоставимо с количеством арифметических операций. Поэтому перед размещением операций и данных между процессорами вычислительной системы предпочтительно разбиение всего пространства вычислений на блоки, с сопутствующим разбиением обрабатываемого массива.
+</p><p>Многое зависит от конкретного типа вычислительной системы. Присутствие конвейеров на узлах многопроцессорной системы делает рентабельным параллельное вычисление нескольких скалярных произведений сразу. Подобная возможность есть и на программировании ПЛИСов, но там быстродействие будет ограничено медленным последовательным выполнением операции извлечения квадратного корня. 
+</p><p>В принципе, возможно и использование т. н. «скошенного» параллелизма. Однако его на практике никто не использует, из-за усложнения управляющей структуры программы.
+</p><p>Точечный метод Холецкого реализован как в основных библиотеках программ отечественных организаций, так и в западных пакетах LINPACK, LAPACK, SCALAPACK и др. 
+</p><p>При этом в отечественных реализациях, как правило, выполнены стандартные требования к методу с точки зрения ошибок округления, то есть, реализован режим накопления, и обычно нет лишних операций. Ряд старых отечественных реализаций использует для экономии памяти упаковку матриц <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> в одномерный массив. 
+</p><p>Реализация точечного метода Холецкого в современных западных пакетах обычно происходит из одной и той же реализации метода в LINPACK, а та использует пакет BLAS. В BLAS скалярное произведение реализовано без режима накопления, но это легко исправляется при желании. 
+</p><p>Интересно, что в крупнейших библиотеках алгоритмов до сих пор предлагается именно разложение Холецкого, а более быстрый алгоритм LU-разложения без извлечения квадратных корней используется только в особых случаях (например, для трёхдиагональных матриц), в которых количество диагональных элементов уже сравнимо с количеством внедиагональных.
+</p>
+<h3><span id=".D0.A0.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B_.D0.BF.D1.80.D0.BE.D0.B3.D0.BE.D0.BD.D0.BE.D0.B2"></span><span class="mw-headline" id="Результаты_прогонов">Результаты прогонов</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<p>Как видно по показателям SCALAPACK на суперкомпьютерах, обмены при большом n хоть и уменьшают эффективность расчётов, но слабее, чем неоптимальность организации расчётов внутри одного узла. Поэтому, видимо, следует сначала оптимизировать не блочный алгоритм, а подпрограммы, используемые на отдельных процессорах: точечный метод Холецкого, перемножения матриц и др. подпрограммы. <a href="#Существующие_реализации_алгоритма">Ниже</a> содержится информация о возможном направлении такой оптимизации.
+</p><p>Вообще эффективность метода Холецкого для параллельных архитектур не может быть высокой. Это связано со следующим свойством информационной структуры алгоритма: если операции деления или вычисления выражений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a - bc }[/math]</span> являются не только массовыми, но и параллельными, и потому их вычисления сравнительно легко выстраивать в конвейеры или распределять по устройствам, то операции извлечения квадратных корней являются узким местом алгоритма. Поэтому для эффективной реализации  алгоритмов, столь же хороших по вычислительным характеристикам, как и метод квадратного корня, следует использовать не метод Холецкого, а его давно известную модификацию без извлечения квадратных корней — <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)#.5C.28LDL.5ET.5C.29_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5" title="Метод Холецкого (нахождение симметричного треугольного разложения)">разложение матрицы в произведение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L D L^T }[/math]</span></a><sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span class="cite-bracket">&#91;</span>12<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Commandant Benoit, Note sur une méthode de résolution des équations normales provenant de l'application de la méthode des moindres carrés à un système d'équations linéaires en nombre inférieur à celui des inconnues (Procédé du Commandant Cholesky), Bulletin Géodésique 2 (1924), 67-77.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Banachiewicz T. Principles d'une nouvelle technique de la méthode des moindres carrês. Bull. Intern. Acad. Polon. Sci. A., 1938,  134-135.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Banachiewicz T. Méthode de résoltution numérique des équations linéaires, du calcul des déterminants et des inverses et de réduction des formes quardatiques. Bull. Intern. Acad. Polon. Sci. A., 1938, 393-401.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Воеводин В.В. Вычислительные основы линейной алгебры. М.: Наука, 1977.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Воеводин В.В., Кузнецов Ю.А. Матрицы и вычисления. М.: Наука, 1984.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Фаддеев Д.К., Фаддева В.Н. Вычислительные основы линейной алгебры. М.-Л.: Физматгиз, 1963.</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text">Kaporin I.E. High quality preconditioning of a general symmetric positive definite matrix based on its UTU + UTR + RTU-decomposition. Numer. Lin. Algebra Appl. (1998) Vol. 5, No. 6, 483-509.</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text">Капорин И.Е., Коньшин И.Н. Параллельное решение симметричных положительно-определенных систем на основе перекрывающегося разбиения на блоки. Ж. вычисл. матем. и матем. физ.,  2001, Т, 41, N. 4, C. 515–528.</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">Воеводин В.В.  Математические основы параллельных вычислений// М.: Изд. Моск. ун-та, 1991. 345 с.</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">Воеводин В.В., Воеводин Вл.В. Параллельные вычисления. – СПб.: БХВ - Петербург, 2002. – 608 с.</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text">Фролов А.В.. Принципы построения и описание языка Сигма. Препринт ОВМ АН N 236. М.: ОВМ АН СССР, 1989.</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite_ref-12">↑</a></span> <span class="reference-text">Krishnamoorthy A., Menon D. Matrix Inversion Using Cholesky Decomposition. 2013. eprint arXiv:1111.4144</span>
+</li>
+</ol></div></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Разложение_Холецкого_(метод_квадратного_корня)&amp;oldid=28906">https://algowiki-project.org/w/ru/index.php?title=Разложение_Холецкого_(метод_квадратного_корня)&amp;oldid=28906</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Категория:Законченные статьи">Законченные статьи</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86" title="Категория:Разложения матриц">Разложения матриц</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE+%28%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BA%D0%BE%D1%80%D0%BD%D1%8F%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE+%28%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BA%D0%BE%D1%80%D0%BD%D1%8F%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/ru/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)" rel="discussion" title="Обсуждение основной страницы [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)&amp;oldid=28906" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Cholesky_decomposition" title="Cholesky decomposition — English" lang="en" hreflang="en" data-title="Cholesky decomposition" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 3 июля 2022 года в 11:30.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":89,"wgPageParseReport":{"limitreport":{"cputime":"0.049","walltime":"0.344","ppvisitednodes":{"value":1048,"limit":1000000},"postexpandincludesize":{"value":5091,"limit":2097152},"templateargumentsize":{"value":1202,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":2,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":26274,"limit":5000000},"timingprofile":["100.00%   13.500      1 -total"," 41.30%    5.576      1 Шаблон:Algorithm"," 23.14%    3.124      1 Шаблон:Level-a"," 10.87%    1.467      1 Шаблон:Infobox"," 10.87%    1.467      1 Шаблон:LCommon"," 10.82%    1.461      1 Шаблон:UCommon"]},"cachereport":{"timestamp":"20260520112124","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

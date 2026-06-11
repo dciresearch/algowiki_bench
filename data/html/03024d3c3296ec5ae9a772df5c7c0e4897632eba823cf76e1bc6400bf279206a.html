@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:EasyBreezy/Стабилизированный метод бисопряженных градиентов (BiCGSTAB) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"7d21be94f086b2ebfc7759ec","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:EasyBreezy/Стабилизированный_метод_бисопряженных_градиентов_(BiCGSTAB)","wgTitle":"EasyBreezy/Стабилизированный метод бисопряженных градиентов (BiCGSTAB)","wgCurRevisionId":21469,"wgRevisionId":21469,"wgArticleId":704,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:EasyBreezy/Стабилизированный_метод_бисопряженных_градиентов_(BiCGSTAB)","wgRelevantArticleId":704,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"EasyBreezy","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_EasyBreezy_Стабилизированный_метод_бисопряженных_градиентов_BiCGSTAB rootpage-Участник_EasyBreezy skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">EasyBreezy/Стабилизированный метод бисопряженных градиентов (BiCGSTAB)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy" title="Участник:EasyBreezy">Участник:EasyBreezy</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p>Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Novikov_alexander" title="Участник:Novikov alexander">Александр Новиков (1.4, 1.6, 1.7, 2.4, 2.7, 3)</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy" title="Участник:EasyBreezy">Гаврилов Алексей (1.1 - 1.3, 1.5, 1.8, 1.9, 2.7, 3)</a>
+</p><p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">BiCGSTAB
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{  O(I * N^2)  }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{  N  }[/math]</span> - размерность СЛАУ, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I }[/math]</span> - количество итераций
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;">матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A \in R^{N \times N} }[/math]</span> ( <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C^{N \times N} }[/math]</span> ) и вектор правой части <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b \in R^N }[/math]</span> ( <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C^N }[/math]</span> )
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;">вектор решения системы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x \in R^N }[/math]</span> ( <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C^N }[/math]</span> )
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{  O(k*(6 \sqrt N + 4N + 5 \lceil \frac{N}{p} \rceil))  }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{  2 \sqrt N  }[/math]</span>
+</td></tr>
+</tbody></table>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Локальность_реализации_алгоритма"><span class="tocnumber">2.2.1</span> <span class="toctext">Локальность реализации алгоритма</span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="#Структура_обращений_в_память_и_качественная_оценка_локальности"><span class="tocnumber">2.2.1.1</span> <span class="toctext">Структура обращений в память и качественная оценка локальности</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="#Количественная_оценка_локальности"><span class="tocnumber">2.2.1.2</span> <span class="toctext">Количественная оценка локальности</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="#Анализ_на_основе_теста_Apex-Map"><span class="tocnumber">2.2.1.3</span> <span class="toctext">Анализ на основе теста Apex-Map</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#Масштабируемость_алгоритма"><span class="tocnumber">2.4.1</span> <span class="toctext">Масштабируемость алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#Масштабируемость_реализации_алгоритма"><span class="tocnumber">2.4.2</span> <span class="toctext">Масштабируемость реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<dl><dd>Стабилизированный метод бисопряженных градиентов, так же известный как BiCGSTAB (Biconjugate gradient stabilized method), был предложен голландским математиком Хенком ван дер Ворстом<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup> в 1992 году. Статья, в которой описывался метод, стала самым цитируемым научным трудом в области математики в 1990х годах.</dd></dl>
+<dl><dd>Метод появился, как ответ на задачу о построении способа решения систем линейных алгебраических уравнений произвольного вида. На момент появления BiCGSTAB уже существовали методы решения СЛАУ произвольного типа, в том числе и в комплексном пространстве, например метод бисопряженных градиентов. Однако существующие на тот момент методы либо обладали недостаточной скоростью сходимости, либо использовали в вычислениях тяжелые операции, такие как транспонирования матрицы, которые усложняли распараллеливание на многопроцессорных машинах.</dd>
+<dd>BiCGSTAB является итерационным методом решения систем линейных алгебраических уравнений. Мощь метода заключается в том, что его можно применять к матрицам общего вида, в том числе с комплексными коэффициентами. В процессе выполнения BiCGSTAB не использует для вычисления плохо распараллеливаемых операций, не допускает накопления погрешностей округления и нестабильного поведения невязки. Эти факторы выгодно отличают его от предшественников: метода бисопряженных градиентов и квадратичного метода сопряженных градиентов, из которого BiCGSTAB фактически и вытекает. К преимуществам так же можно добавить более высокую в общем случае скорость сходимости относительно ближайших конкурентов. Тем не менее, для некоторых видов СЛАУ BiCGSTAB может уступать более простым методам.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup></dd></dl>
+<dl><dd>Благодаря свойствам алгоритма область применения метода весьма широка. Фактически, он используется во всех задачах, где требуется решать СЛАУ, в том числе СЛАУ большой размерности, к которым сводится большое количество численных методов, применяемых при решении задач математического моделирования.</dd></dl>
+<dl><dd>BiCGSTAB относится к классу так называемых проекционных методов. Основная идея методов данного класса: искать итерационным способом наилучшее приближение решения в некотором подпространстве пространства <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R^n }[/math]</span>, и чем шире подпространство, в котором ищется приближение решения, тем ближе будет приближенное решение к точному на каждой итерации. В качестве такого подпространства используются пространства Крылова, порожденные матрицей системы и невязкой первого приближения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K^m (A, r^0) = \rm span(r^0, Ar^0, A^2r^0, ..., A^{m-1} r^0). }[/math]</span><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup></dd></dl>
+<p><br />
+</p>
+<dl><dd>Изложим основную идею любого проекционного метода, заложенную в том числе и в BiCGSTAB. Для простоты выкладок и рассуждений здесь и далее будем считать, что матрица системы и ее правая часть вещественны. Без ограничения общности все дальнейшие рассуждения могут быть перенесены и на комплексный случай. Итак, пусть решается система <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax=b }[/math]</span> с невырожденной матрицей  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A \in R^{n \times n} }[/math]</span> и ненулевым  вектором  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b \in R^n }[/math]</span>.  Имеются  два подпространства <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K_n }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L_n }[/math]</span>. Требуется найти вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x \in K_n }[/math]</span>, который обеспечивает решение  системы, оптимальное относительно подпространства  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, то есть требуется выполнение условия Петрова-Галеркина: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (Ax,z)=(b,z), \forall z \in L_n }[/math]</span>. В данном случае вектор x называется обобщенным решением системы.</dd></dl>
+<dl><dd>Условие Петрова-Галеркина можно записать и через определение невязки. Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r = b - Ax }[/math]</span> - невязка, тогда условие Петрова-Галеркина перепишется в виде: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (b - Ax, z)=(r, z),\forall z \in L_n }[/math]</span>. Это равносильно тому, что вектор невязки ортогонален пространству <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L_n }[/math]</span>.</dd></dl>
+<dl><dd>Пусть для СЛАУ известно некоторое приближение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^0 }[/math]</span> точного решения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^* }[/math]</span>. Данное приближение требуется уточнить поправкой <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \delta: b - Ax^0 + \delta \perp L }[/math]</span>. Невязка уточненного решения имеет вид: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_{new} = b - Ax^0 + \delta = r^0- A\delta }[/math]</span>. Условие Петрова-Галеркина тогда можно переписать так: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (r_{new}, z)= r^0 - (A\delta, z) = 0, \forall z \in L }[/math]</span></dd></dl>
+<dl><dd>Пусть  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm dim K = dim L = m, V = (v_1, ..., v_n) \in R^{n \times m}, W = (w_1, ... w_n) \in R^{n \times m} }[/math]</span>, где &lt;marh&gt;V&lt;/math&gt; и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ W }[/math]</span> – матрицы, столбцы которых образуют базисы пространств <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> соответственно. Пусть так же <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \delta = Vy, z = Wq }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y }[/math]</span> – коэффициенты разложения вектора поправки по базису пространства <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span>, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q }[/math]</span> – коэффициенты разложения вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ z }[/math]</span> в пространстве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>. Тогда новое приближение решения можно записать в виде: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^1 = x^0 + \delta= x^0 + Vy }[/math]</span>. Из условия ортогональности Петрова-Галеркина получаем, что: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (r - AVy, Wq) = (W^Tr^0 - AVy, q) = 0 }[/math]</span>. Поскольку <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q \neq 0 }[/math]</span>, то получаем СЛАУ для вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y }[/math]</span>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ W^TAVy = W^Tr^0 }[/math]</span>. Если предположить, что матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ W^TAVy }[/math]</span> невырождена, то вектор y однозначно определяется и равен: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y = W^TAV^{-1}W^Tr^0 }[/math]</span>. Подставляя найденные коэффициенты разложения в выражение для первого приближения получаем: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^1 = x^0 + \delta = x^0 + W^TAV^{-1}W^Tr^0y }[/math]</span></dd></dl>
+<dl><dd>Подведем итог. Общий порядок шагов любого проекционного метода следующий:</dd></dl>
+<ol><li>Выбрать пару подпространств <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span></li>
+<li>Найти базис V пространства K и базис W пространства <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>;</li>
+<li>Вычислить невязку</li>
+<li>Найти <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y = W^T AV^{-1} W^T r^0 }[/math]</span></li>
+<li>Положить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x = x + Vy }[/math]</span></li>
+<li>Если не достигнут критерий остановки итерационного процесса, то повторить алгоритм, начиная с первого шага.</li></ol>
+<dl><dd>Как будет показано далее, в BiCGSTAB не требуется вычислять матрицу  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ W^T AV^{-1} }[/math]</span> в явном виде.</dd></dl>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<dl><dd>Рассмотрим СЛАУ с вещественными коэффициентами:</dd></dl>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax = b, A \in R^{N \times N}, b \in R^N }[/math]</span></center>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{  }[/math]</span></center>
+<dl><dd>В основу алгоритма ложиться идея проекционного метода и использование свойства A-бисопряженности системы векторов, а именно: векторы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p^1, p^2, ... }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \overline p^1, \overline p^2, ... }[/math]</span> бисопряжены, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (Ap^i,p^j ) = 0, }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \neq j }[/math]</span>. Фактически, данное условие эквивалентно биортогональности относительно энергетического скалярного произведения.</dd></dl>
+<dl><dd>Общая концепция проекционных методов предписывает нам выбрать два подпространства. В нашем случае подпространства мы выберем два подпространства, задаваемые матрицей системы А, вектором невязки на нулевой итерации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r^0 }[/math]</span> и вектором <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \overline r^0 }[/math]</span>. который выбирается из условия <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (r^0, \overline r^0) \neq 0 }[/math]</span>:</dd></dl>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ K = K^k(A, r^0), L = K^k(A, \overline r^0) }[/math]</span></center>
+<dl><dd>Метод основан на построении биортогонального базиса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p^0, p^1, ... p^k ..  }[/math]</span> пространства <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K^k (A, r^0)  }[/math]</span> и вычислении поправки такой, что новое приближение на очередной итерации было бы ортогонально второму подпространству Крылова. Базисные вектора строятся до тех пор, пока не будет достигнут критерий остановки итерационного процесса, а каждое последующее приближение формируется, как сумма приближения на предыдущей итерации и найденной поправки. Критерием останова итерационного процесса является достижения невязкой значения, которое меньше некоторого наперед заданного числа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \epsilon }[/math]</span>.</dd></dl>
+<dl><dd>Основной итерационный процесс задается формулами:</dd></dl>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^{k + 1} = x^k + \alpha_k p_k + \omega_k s_k }[/math]</span></center>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ p^{k + 1} = r^{k + 1} + \beta_k p_k - \omega_k Ap_k }[/math]</span></center>
+<dl><dd>где:</dd></dl>
+<ol><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^{k + 1} }[/math]</span> - приближение на следующей итерации</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^k }[/math]</span> - приближение на предыдущей итерации</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ p_k }[/math]</span> - базисный вектор подпространства Крылова, порожденного матрице СЛАУ и невязкой</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha_k, \omega_k }[/math]</span> - вспомогательные скаляры, определяемые для каждого шага итерации</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ s_k }[/math]</span> - вспомогательный вектор</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ p^{k + 1} }[/math]</span> - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k + 1 }[/math]</span>-ый базисный вектор</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ r^{k + 1} }[/math]</span> - невязка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k + 1 }[/math]</span>-ой итерации</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta_k }[/math]</span> - вспомогательный коэффициент</li></ol>
+<dl><dd>Вспомогательный вектор выражается следующим образом:</dd></dl>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ s_k = r^k - \alpha_k Ap_k }[/math]</span></li></ul>
+<dl><dd>Вспомогательные коэффициенты вычисляются по формулам:</dd></dl>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha_k = \frac{(r^k, \overline r^0)}{(Ap_k, \overline r^0)} }[/math]</span></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \omega_k = \frac{(As_k, s_k)}{(As_k, As_k)} }[/math]</span></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta_k = \frac{(r^{k + 1}, \overline r^0)}{(r^k, \overline r^0)} }[/math]</span></li></ul>
+<dl><dd>Подведем итог и запишем итерационный процесс</dd>
+<dd>Подготовительный этап:</dd></dl>
+<ol><li>Выбирается некоторое начальное приближение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^0 }[/math]</span></li>
+<li>По выбранному приближению находится невязка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r^0 = b - Ax^0 }[/math]</span></li>
+<li>Из условия <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (r^0, \overline r^0) \neq 0 }[/math]</span> выбирается вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \overline r^0 }[/math]</span></li>
+<li>Положим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p^0 = r^0 }[/math]</span></li>
+<li>Устанавливаем счетчик итераций: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n = 0 }[/math]</span></li></ol>
+<dl><dd>Итерационный процесс:</dd></dl>
+<ol><li>Находим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha_k }[/math]</span></li>
+<li>По найденному <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha_k }[/math]</span> вычисляем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ s_k }[/math]</span></li>
+<li>По найденному <span style="opacity:.5" class="smj-container">[math]\displaystyle{ s_k }[/math]</span> вычисляется вспомогательный коэффициент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \omega_k }[/math]</span></li>
+<li>Находится новое приближение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^{k + 1} }[/math]</span></li>
+<li>Вычисляется невязка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r^{k + 1} }[/math]</span>. Если выполнено условие <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \parallel r^{k + 1} \parallel \lt  \epsilon }[/math]</span>, то алгоритм завершается.</li>
+<li>Вычисляется вспомогательный коэффициент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta_k }[/math]</span></li>
+<li>Вычисляется новый базисный вектор: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p^{k + 1} }[/math]</span></li>
+<li>Увеличивается номер итерации: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n = n + 1 }[/math]</span></li>
+<li>Переход к первому шагу итерационного процесса.</li></ol>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<dl><dd>Вычислительное ядро полностью совпадает с итерационным процессом. Подготовка к итерационному процессу в ядро не включается.</dd></dl>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>На каждой итерации алгоритма используются:
+</p>
+<ol><li><a href="/ru/%D0%A1%D0%BA%D0%B0%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2,_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F,_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE-%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82" title="Скалярное произведение векторов, вещественная версия, последовательно-параллельный вариант">Скалярное произведение векторов, вещественная версия, последовательно-параллельный вариант</a> x 4 раза</li>
+<li><a href="/ru/%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80" title="Умножение плотной матрицы на вектор">Умножение плотной матрицы на вектор </a> х 2 раза</li></ol>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<dl><dd>Всего в вычислительном блоке алгоритма присутствует 20 трудоемких операций: 2 операции умножения матрицы на вектор, 6 скалярных произведений и 6 сложений/вычитаний векторов и 6 умножений вектора на число.</dd></dl>
+<dl><dd>Каждое скалярное произведение требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> произведений и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N - 1 }[/math]</span> сложение, то есть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2N - 1 }[/math]</span> операции. Скалярных произведений всего 6 штук (включая поиск нормы), что дает нам <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 12N - 6 }[/math]</span> операций.</dd></dl>
+<dl><dd>Умножение матрицы размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times N }[/math]</span> на вектор эквивалентно взятию еще <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> скаляров, и так как таких операций в вычислительном ядре 2, то дополнительно имеется еще <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2N(2N - 1) }[/math]</span> операций.</dd></dl>
+<dl><dd>Наконец, сложение или вычитание векторов требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6N }[/math]</span> соотвествующих операций. Столько же требует 6 произведений вектора на число.</dd></dl>
+<dl><dd>Итого: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2N(2N - 1) + 12N - 6 + 6N + 6N = 4N^2 + 22N - 6 }[/math]</span> операций за одну итерацию. Домножая это на количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I }[/math]</span>, получаем итоговую сложность алгоритма: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I * (4N^2 + 22N - 6) }[/math]</span></dd></dl>
+<dl><dd>Имеются так же операции как, извлечение квадратного корня и деление вещественных чисел друг на друга, но они не принимаются в расчет, так как они не влияют на итоговый результат. Окончательно можно заключить, что последовательная сложность алгоритма эквивалента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(I * N^2) }[/math]</span></dd></dl>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:BiCGStabIterations.jpg" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/2/21/BiCGStabIterations.jpg/800px-BiCGStabIterations.jpg" decoding="async" width="800" height="459" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/2/21/BiCGStabIterations.jpg/1200px-BiCGStabIterations.jpg 1.5x, https://algowiki-project.org/algowiki/pool/images/2/21/BiCGStabIterations.jpg 2x" /></a><figcaption><center>Информационный граф.</center></figcaption></figure>
+<p>На графе представлены связи между операциями, выполняющимися в первых трех итерациях метода. При выполнении большего, чем 3, количества итераций, структура каждой новой будет повторять структуру третьей. Связи между итерациями не представлены, т.к. они не важны для понимания параллельной структуры алгоритма. Серым обозначено перемножение чисел, красным - умножение числа на вектор
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Основной прирост производительности параллельной версии алгоритма дает использование параллельных операций вычисления скалярного произведения, суммы векторов, а так же произведения матрицы на вектор. Каждая из операций вычисления скалярного произведения и суммы векторов, выполняемая на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> процессорах, за счет метода сдваивания может ускориться до <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \frac{p}{\log_2 p}  }[/math]</span> раз. Ускорение же умножения матрицы на вектор может достигать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> раз.
+</p><p>Ширина и высота ЯПФ графа данного алгоритма напрямую зависит от конкретных реализаций макроопераций и входных данных.
+</p><p>Для последовательно-параллельной реализации операции взятия скалярного произведения в наиболее оптимальном случае (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ p= \sqrt N }[/math]</span>) высота будет равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 \sqrt N - 1 }[/math]</span>, а ширина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sqrt N }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> - это длина вектора решения.
+</p><p>Высота ЯПФ простейшего алгоритма умножения матрицы на вектор равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2N }[/math]</span>, а ширина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> - это уже упомянутая длина вектора(она же ширина матрицы), а m - высота матрицы.
+</p><p>Высота ЯПФ операции умножения вектора на число равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{N}{p} }[/math]</span>, а ширина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span>.
+</p><p>Высота ЯПФ операции вычисления разности векторов = <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \log_2 p  }[/math]</span>, а ширина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span>.
+</p><p>В конечном счете общую высоту ЯПФ одной итерации алгоритма можно оценить, как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6 \sqrt N-3 + 4N + 3 + 1 + 3\lceil \frac{N}{p} \rceil + 2 \lceil \frac{N}{p} \rceil = 6 \sqrt N + 4N + 5 \lceil \frac{N}{p} \rceil + 1 }[/math]</span>, а ширину, как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 \sqrt N }[/math]</span>, если не брать в рассчет проверку критерия сходимости и упрощенности первой итерации по сравнению с остальными.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<dl><dd>Входные данные</dd></dl>
+<ol><li>Матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A \in R^{N \times N} }[/math]</span> ( <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C^{N \times N} }[/math]</span> )</li>
+<li>Вектор правой части <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b \in R^N }[/math]</span> ( <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C^N }[/math]</span> )</li></ol>
+<dl><dd>Выходные данные:</dd></dl>
+<ol><li>Вектор решения СЛАУ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x \in R^N }[/math]</span> ( <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C^N }[/math]</span> )</li></ol>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<dl><dd>BiCGSTAB хорошо зарекомендовал себя для решения систем линейных алгебраический уравнений, поскольку обладает некоторыми важными свойствами:</dd></dl>
+<ol><li>Благодаря применению подхода Петрова-Галеркина и техники ортогонализации, он численно устойчив</li>
+<li>Не меняется вид матрицы в процессе решения</li>
+<li>Эффективен для решения систем большой размерности с разреженной матрицей, поскольку в методе самая трудоемкая операция - умножение матрицы на вектор</li>
+<li>Лучше подходит под распределенные системы, поскольку не содержит операции транспонирования матрицы</li>
+<li>Применим для решения систем с несимметричными матрицами.</li>
+<li>Вычислительная мощность: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N/4 }[/math]</span></li></ol>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h4><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Локальность_реализации_алгоритма">Локальность реализации алгоритма</span></h4>
+<h5><span id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D1.8C_.D0.B8_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Структура_обращений_в_память_и_качественная_оценка_локальности">Структура обращений в память и качественная оценка локальности</span></h5>
+<h5><span id=".D0.9A.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Количественная_оценка_локальности">Количественная оценка локальности</span></h5>
+<h5><span id=".D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D0.BD.D0.B0_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B5_.D1.82.D0.B5.D1.81.D1.82.D0.B0_Apex-Map"></span><span class="mw-headline" id="Анализ_на_основе_теста_Apex-Map">Анализ на основе теста Apex-Map</span></h5>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_алгоритма">Масштабируемость алгоритма</span></h4>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_реализации_алгоритма">Масштабируемость реализации алгоритма</span></h4>
+<p>Исследование масштабируемости реализации стабилизированного метода бисопряженных градиентов проводилось согласно <a href="/ru/Scalability_methodology" title="Scalability methodology">методике</a>  на суперкомпьютере "Ломоносов"<sup id="cite_ref-Lom_4-0" class="reference"><a href="#cite_note-Lom-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> <a rel="nofollow" class="external text" href="http://parallel.ru/cluster">Суперкомпьютерного комплекса Московского университета</a>.
+</p><p>Набор и границы значений изменяемых <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Параметры_запуска" title="Глоссарий">параметров запуска</a> реализации алгоритма: 
+</p>
+<ul><li>число процессоров [2&#160;: 16] с шагом 1;</li>
+<li>размер матрицы [262144&#160;: 11239424].</li></ul>
+<p>В результате проведённых экспериментов был получен следующий диапазон <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Эффективность_реализации" title="Глоссарий">эффективности реализации</a> алгоритма:
+</p>
+<ul><li>минимальная эффективность реализации 60,00%;</li>
+<li>максимальная эффективность реализации 98,33%.</li></ul>
+<p>На следующих рисунках приведены графики <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Производительность" title="Глоссарий">производительности</a> и эффективности выбранной реализации стабилизированного метода бисопряженных градиентов в зависимости от изменяемых параметров запуска.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/3/3a/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png/700px-%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png" decoding="async" width="700" height="333" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/3/3a/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png/1050px-%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png 1.5x, https://algowiki-project.org/algowiki/pool/images/3/3a/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png 2x" /></a><figcaption>Параллельная реализация стабилизированного метода бисопряженных градиентов. Изменение производительности в зависимости от числа процессоров и размера матрицы.</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/7/75/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png/700px-%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png" decoding="async" width="700" height="333" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/7/75/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png/1050px-%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png 1.5x, https://algowiki-project.org/algowiki/pool/images/7/75/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_BiCGSTAB_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png 2x" /></a><figcaption>Параллельная реализация стабилизированного метода бисопряженных градиентов. Изменение эффективности в зависимости от числа процессоров и размера матрицы.</figcaption></figure>
+<p><a rel="nofollow" class="external text" href="https://github.com/LLNL/hypre/blob/master/src/krylov/HYPRE_bicgstab.c">Исследованная параллельная реализация на языке C</a>
+</p>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<ul><li>Параллельная реализация алгоритма, предложенная MIT: <a rel="nofollow" class="external text" href="http://ab-initio.mit.edu/~meep/meep/src/bicgstab.cpp">MIT BiCGSTAB</a></li>
+<li>Параллельная реализация алгоритма в бесплатной библиотеке, поддерживающей MPI и OpenMP, HYPRE: <a rel="nofollow" class="external text" href="http://acts.nersc.gov/hypre/">Официальная страница</a> <a rel="nofollow" class="external text" href="https://github.com/LLNL/hypre/blob/master/src/krylov/bicgstab.c">Исходный код</a></li>
+<li>Параллельная реализация алгоритма на CUDA в условно бесплатной библиотеке <a rel="nofollow" class="external text" href="https://developer.nvidia.com/amgx/">NVIDIA AmgX</a></li></ul>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Henk A. vander Vorst, Iterative Krylov Methods for Large Linear Systems, Cambridge University Press 2003, 230p</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Горбаченко В.И, Вычислительная линейная алгебра с примерами на MATLAB. — СПб.: БХВ-Петербург, 2011. — 320 с.: ил. — (Учебное пособие)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Горбаченко В.И, Вычислительная линейная алгебра с примерами на MATLAB. — СПб.: БХВ-Петербург, 2011. — 320 с.: ил. — (Учебное пособие)</span>
+</li>
+<li id="cite_note-Lom-4"><span class="mw-cite-backlink"><a href="#cite_ref-Lom_4-0">↑</a></span> <span class="reference-text">Воеводин Вл., Жуматий С., Соболев С., Антонов А., Брызгалов П., Никитенко Д., Стефанов К., Воеводин Вад. Практика суперкомпьютера «Ломоносов» // Открытые системы, 2012, N 7, С. 36-39.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092714
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.034 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 939/1000000
+Post‐expand include size: 6061/2097152 bytes
+Template argument size: 2673/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 13858/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.031      1 Шаблон:Algorithm
+100.00%    5.031      1 -total
+ 62.22%    3.130      1 Шаблон:Level-a
+ 24.99%    1.257      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:704-0!canonical and timestamp 20260611092714 and revision id 21469. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:EasyBreezy/Стабилизированный_метод_бисопряженных_градиентов_(BiCGSTAB)&amp;oldid=21469">https://algowiki-project.org/w/ru/index.php?title=Участник:EasyBreezy/Стабилизированный_метод_бисопряженных_градиентов_(BiCGSTAB)&amp;oldid=21469</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категория</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AEasyBreezy%2F%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85+%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%28BiCGSTAB%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AEasyBreezy%2F%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85+%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%28BiCGSTAB%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/EasyBreezy" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/EasyBreezy"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/EasyBreezy"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)&amp;oldid=21469" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:EasyBreezy/%D0%A1%D1%82%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%BE%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_(BiCGSTAB)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 20 декабря 2016 года в 18:36.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":126,"wgPageParseReport":{"limitreport":{"cputime":"0.034","walltime":"0.036","ppvisitednodes":{"value":939,"limit":1000000},"postexpandincludesize":{"value":6061,"limit":2097152},"templateargumentsize":{"value":2673,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":13858,"limit":5000000},"timingprofile":["100.00%    5.031      1 Шаблон:Algorithm","100.00%    5.031      1 -total"," 62.22%    3.130      1 Шаблон:Level-a"," 24.99%    1.257      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092714","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Bulatral/QR-разложение плотной вещественной матрицы методом вращений Гивенса — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"dc29c2107ded3f2ce092d4b7","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Bulatral/QR-разложение_плотной_вещественной_матрицы_методом_вращений_Гивенса","wgTitle":"Bulatral/QR-разложение плотной вещественной матрицы методом вращений Гивенса","wgCurRevisionId":28739,"wgRevisionId":28739,"wgArticleId":2415,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Bulatral/QR-разложение_плотной_вещественной_матрицы_методом_вращений_Гивенса","wgRelevantArticleId":2415,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Bulatral","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Bulatral_QR-разложение_плотной_вещественной_матрицы_методом_вращений_Гивенса rootpage-Участник_Bulatral skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Bulatral/QR-разложение плотной вещественной матрицы методом вращений Гивенса</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">QR-разложения квадратной матрицы методом вращений Гивенса
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2n^3 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^2 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^2 }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 11n-16 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p>Автор: <a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral&amp;action=edit&amp;redlink=1" class="new" title="Участник:Bulatral (страница не существует)">Б.И.Валиахметов</a>
+</p><p>Необходимо построить QR-разложение квадратной вещественной <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \times n }[/math]</span> матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> методом вращений Гивенса.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Программная_реализация"><span class="tocnumber">2</span> <span class="toctext">Программная реализация</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Масштабируемость_алгоритма"><span class="tocnumber">2.4.1</span> <span class="toctext">Масштабируемость алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Масштабируемость_реализации_алгоритма"><span class="tocnumber">2.4.2</span> <span class="toctext">Масштабируемость реализации алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Реализация_алгоритма"><span class="tocnumber">2.4.3</span> <span class="toctext">Реализация алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Численные_эксперименты"><span class="tocnumber">2.4.4</span> <span class="toctext">Численные эксперименты</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Выводы"><span class="tocnumber">2.4.5</span> <span class="toctext">Выводы</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<p>Математическое описание алгоритма и его последовательная версия приведены на портале AlgoWiki: <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0_(%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9)_QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_(%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%82%D0%BE%D1%87%D0%B5%D1%87%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82)" title="Метод Гивенса (вращений) QR-разложения квадратной матрицы (вещественный точечный вариант)">Метод Гивенса (вращений) QR-разложения квадратной матрицы (вещественный точечный вариант)</a>
+</p><p><br />
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Программная_реализация">Программная реализация</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_алгоритма">Масштабируемость алгоритма</span></h4>
+<p>Отметим, что по сути, после применения вращений к исходной матрице мы получаем матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R }[/math]</span> и для получения матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q }[/math]</span> необходимо выполнить обратные вращения над единичной матрицей.
+Однако на практике это не нужно, так как в большинстве случаев требуется умножать на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q^* }[/math]</span>, а для этого достаточно применить подсчитанные ранее вращения.
+Также этот подход дает меньшую численную ошибку и выполняется быстрее.
+</p><p>Вычислительным ядром исследуемого метода являются вращения строк исходной матрицы.
+Нами был выбран блочный подход к реализации метода, позволяющий теоретически достичь линейной сложности алгоритма.
+</p>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_реализации_алгоритма">Масштабируемость реализации алгоритма</span></h4>
+<p>Для удобства будем полагать, что всевозможные размеры и параметры таковы, что все распределения производятся нацело (например, степени 2).
+</p><p>Зададим размер блока <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> и размер подблока <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span>. 
+Пусть нам доступны <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> процессов по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ t }[/math]</span> нити в каждом.
+Разобьем матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> на блоки размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> и распределим блочные столбцы по процессам так: столбец с номером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> хранится на процессе с номером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j \mod p }[/math]</span>, чтобы распределение количества вращений было более равномерным и узлы меньше простаивали в ожидании пересылок.
+Также это способствует активному использованию кэш-памяти.
+Такое распределение легко произвести, если матрица задается как функция вычисления ее элемента, иначе необходимо провести некоторые пересылки (их мы не учитываем при подсчете времени работы алгоритма).
+На каждом процессе блоки по блочным строкам (а сами блоки внутри - по стодбцам), так они задействуются совместно на шагах алгоритма.
+</p><p>Далее будем по очереди обнулять поддиагонали диагональных блоков и блоки ниже диагональных.
+Процесс, на котором хранится блок (ведущий), сначала вычисляет необходимые вращения для данного блока (процедура DLARTG библиотеки LAPACK), а затем рассылает их по остальным процессам (процедурой MPI_Ibcast стандарта MPI).
+Во время неблокирующей пересылки ведущий процесс производит вращения на оставшиеся блоки в блочной строке и приступает к вычислению вращений для последующих блоков в столбце.
+</p><p>Как проводятся вращения на блоке, который сейчас не обнуляется?
+Каждый процесс (в том числе и ведущий), получив набор вращений, применяет их в той же блочной строке, что и процесс-отправитель.
+Каждый блок дополнительно разбивается на блочные подстолбцы ширины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> и данные подблоки статически распределяются по нитям на процессе (директива omp parallel for библиотеки OpenMP), которые и производят вращения (процедура DROT библиотеки BLAS).
+Этим дополнительным разделением мы задействуем дополнительный ресурс параллелизма и, что не менее важно, эффективно используем кэш-память высокого уровня.
+</p>
+<h4><span id=".D0.A0.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Реализация_алгоритма">Реализация алгоритма</span></h4>
+<p>Реализация алгоритма выполнена на языке C++11 с использованием стандартных библиотек языка, а также пакетов OpenMPI и OpenBLAS.
+Визуализация для результатов исследования параллельных свойств выполнена на языке Python3 с использованием библиотек numpy и matplotlib в среде Jupyter Notebook.
+Полный код программы находится в репозитории по <a rel="nofollow" class="external text" href="https://github.com/bulatral42/mpiQR">ссылке</a>, здесь приведем реализацию основной процедуры алгоритма.
+</p>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81_t(p%3D1,2).png" class="mw-file-description"><img src="/w/ru/images/thumb/3/3d/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81_t%28p%3D1%2C2%29.png/500px-%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81_t%28p%3D1%2C2%29.png" decoding="async" width="500" height="268" class="mw-file-element" srcset="/w/ru/images/3/3d/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81_t%28p%3D1%2C2%29.png 1.5x" /></a><figcaption>Рисунок 1. Разница во времени между 1 и 2 процессами.</figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-3%D0%94,%D0%A2%3D1.png" class="mw-file-description"><img src="/w/ru/images/d/db/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-3%D0%94%2C%D0%A2%3D1.png" decoding="async" width="552" height="520" class="mw-file-element" /></a><figcaption>Рисунок 2. График зависимости времени от числа процессов и размера матрицы для T=1 нити</figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-3%D0%94,%D0%A2%3D2.png" class="mw-file-description"><img src="/w/ru/images/9/9e/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-3%D0%94%2C%D0%A2%3D2.png" decoding="async" width="592" height="549" class="mw-file-element" /></a><figcaption>Рисунок 3. График зависимости времени от числа процессов и размера матрицы для T=2 нитей</figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-3%D0%94,%D0%A2%3D3.png" class="mw-file-description"><img src="/w/ru/images/a/ae/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-3%D0%94%2C%D0%A2%3D3.png" decoding="async" width="580" height="520" class="mw-file-element" /></a><figcaption>Рисунок 4. График зависимости времени от числа процессов и размера матрицы для T=3 нитей</figcaption></figure>
+<div class="mw-highlight mw-highlight-lang-c++ mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;BLAS.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LAPACK.h&quot;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">block_qrdec</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">subblock_size</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_Comm</span><span class="w"> </span><span class="n">comm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_COMM_WORLD</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t_start</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="n">t_end</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="n">mpi_qr_time</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n_proc</span><span class="p">,</span><span class="w"> </span><span class="n">proc_id</span><span class="p">,</span><span class="w"> </span><span class="n">n_thr</span><span class="p">;</span>
+<span class="w">    </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">comm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">proc_id</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">comm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n_proc</span><span class="p">);</span>
+<span class="cp">#pragma omp parallel</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">n_thr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_threads</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n_proc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">),</span><span class="w"> </span><span class="n">n_block_rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span><span class="w"> </span><span class="c1">// per proc</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">proc_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Start mpi-omp-QR, n_proc = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_proc</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, n_thr = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_thr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;N = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, k = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, m = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">subblock_size</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, nbc = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, nbr = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_block_rows</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// blocks are stored rowwise, every block inside is stored columnwise</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">n_block_rows</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">];</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">srand</span><span class="p">(</span><span class="n">proc_id</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n_block_rows</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//blocks[i] = i + proc_id * n_block_rows * n_block_cols * block_size * block_size;</span>
+<span class="w">        </span><span class="n">blocks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">rand</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">RAND_MAX</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Main algorithm start</span>
+<span class="w">    </span><span class="n">t_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">proc_rots_cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n_block_rows</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">proc_id</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n_proc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">((</span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_block_cols</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">proc_rots_cnt</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span>
+<span class="w">    </span><span class="n">proc_rots_cnt</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">my_rotations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">proc_rots_cnt</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">out_rotations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">cur_rots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_rotations</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Main cycle</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">b_col</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_proc</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">b_col</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">sender_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b_col</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">n_proc</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">local_b_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b_col</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_proc</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">main_block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blocks</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">b_col</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_b_col</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b_col</span><span class="p">;</span><span class="w"> </span><span class="n">b_row</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n_block_rows</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">b_row</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">cur_block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blocks</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">b_row</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_b_col</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">n_rots</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">triang_zero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b_row</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b_col</span><span class="p">;</span><span class="w"> </span><span class="c1">// Zerorize triangular part or full block</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">proc_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">sender_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Sender part</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">triang_zero</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+<span class="w">                        </span><span class="n">dlartg</span><span class="p">(</span><span class="n">main_block</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">cur_block</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">],</span>
+<span class="w">                               </span><span class="n">cur_rots</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_rots</span><span class="p">],</span><span class="w"> </span><span class="n">cur_rots</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_rots</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">drot</span><span class="p">(</span><span class="n">block_size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">main_block</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">cur_block</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">cur_rots</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_rots</span><span class="p">],</span><span class="w"> </span><span class="n">cur_rots</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_rots</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<span class="w">                        </span><span class="n">main_block</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">cur_block</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">                        </span><span class="o">++</span><span class="n">n_rots</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">triang_zero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">n_rots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">block_size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">n_rots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// Send/receive rotations</span>
+<span class="w">            </span><span class="n">MPI_Request</span><span class="w"> </span><span class="n">req_bcast</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">senrecv_rots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">proc_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">sender_id</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">cur_rots</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">out_rotations</span><span class="p">;</span>
+<span class="w">            </span><span class="n">MPI_Ibcast</span><span class="p">(</span><span class="n">senrecv_rots</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_rots</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">sender_id</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">req_bcast</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Perform rotations to other blocks in row</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">up_other_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">main_block</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">dn_other_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur_block</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">n_subblocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">block_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">subblock_size</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">n_block_cols</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b_col</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">proc_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">sender_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Current block has already been rotated</span>
+<span class="w">                </span><span class="n">up_other_blocks</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span>
+<span class="w">                </span><span class="n">dn_other_blocks</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span>
+<span class="w">                </span><span class="n">n_subblocks</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">subblock_size</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">MPI_Status</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="w">                </span><span class="n">MPI_Wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">req_bcast</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">status</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="cp">#pragma omp parallel for schedule(static)</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">subbl_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">subbl_id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n_subblocks</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">subbl_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">up_subblock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">up_other_blocks</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subblock_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subbl_id</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">dn_subblock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dn_other_blocks</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subblock_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subbl_id</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">up_off</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">dn_off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">triang_zero</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">up_off</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n_rots</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">drot</span><span class="p">(</span><span class="n">subblock_size</span><span class="p">,</span><span class="w"> </span><span class="n">up_subblock</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">up_off</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">dn_subblock</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dn_off</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">senrecv_rots</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">senrecv_rots</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<span class="w">                    </span><span class="o">++</span><span class="n">dn_off</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dn_off</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="o">++</span><span class="n">up_off</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">dn_off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">triang_zero</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">up_off</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">proc_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">sender_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Current block has already been rotated</span>
+<span class="w">                </span><span class="n">MPI_Status</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="w">                </span><span class="n">MPI_Wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">req_bcast</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">status</span><span class="p">);</span>
+<span class="w">                </span><span class="n">cur_rots</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_rots</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">MPI_Barrier</span><span class="p">(</span><span class="n">comm</span><span class="p">);</span>
+<span class="w">    </span><span class="n">t_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mpi_qr_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t_end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t_start</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">proc_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;MPI QR time = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mpi_qr_time</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; sec&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">my_rotations</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">out_rotations</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">blocks</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h4><span id=".D0.A7.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.8D.D0.BA.D1.81.D0.BF.D0.B5.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D1.82.D1.8B"></span><span class="mw-headline" id="Численные_эксперименты">Численные эксперименты</span></h4>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-N%3D4,T%3D1.png" class="mw-file-description"><img src="/w/ru/images/b/b9/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-N%3D4%2CT%3D1.png" decoding="async" width="628" height="375" class="mw-file-element" /></a><figcaption>Рисунок 5. График зависимости времени от числа процессов, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=4096, T=1 }[/math]</span></figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-N%3D5,T%3D1.png" class="mw-file-description"><img src="/w/ru/images/0/06/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-N%3D5%2CT%3D1.png" decoding="async" width="639" height="375" class="mw-file-element" /></a><figcaption>Рисунок 6. График зависимости времени от числа процессов, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=8192, T=1 }[/math]</span></figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-N%3D8192,T%3D1,2,3.png" class="mw-file-description"><img src="/w/ru/images/3/30/%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81-N%3D8192%2CT%3D1%2C2%2C3.png" decoding="async" width="649" height="375" class="mw-file-element" /></a><figcaption>Рисунок 7. График зависимости времени от количества процессов при разном числе нитей, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=8192 }[/math]</span></figcaption></figure>
+<p>Эксперименты по установлению параллельных свойств алгоритма проводились на кластере ИВМ РАН.
+Характеристики узлов кластера на момент написания раздела (полное описание по <a rel="nofollow" class="external text" href="https://cluster2.inm.ras.ru/info/nodes/">ссылке</a>):
+</p>
+<ul><li>Compute Node Arbyte Alkazar R2Q50 G5.</li>
+<li>40 ядер (два 20-ядерных процессора Intel Xeon Gold 6230@2.10ГГц).</li>
+<li>Оперативная память: 256/384 Гб.</li>
+<li>Дисковая память: 480 Гб SSD.</li>
+<li>Операционная система: SUSE Linux Enterprise Server 15 SP2 (x86\_64).</li></ul>
+<p>Были выбраны следующие параметры запусков. Некоторые запуски не проводились ввиду их слишком большой потенциальной длительности или слишком малого необходимого значения размера блока.
+</p><p>1. На предварительных запусках были установлены оптимальные параметры блочного разбиения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = 128 }[/math]</span>,  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m = 16 }[/math]</span>.
+</p><p>2. Размеры матриц выбирались в виде степеней 2: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N = 2^s, s \in \overline{8, 16} }[/math]</span>.
+</p><p>3. Число процессов выбиралось в виде степеней 2:<span style="opacity:.5" class="smj-container">[math]\displaystyle{ P = 2^l, l \in \overline{0, 6} }[/math]</span>, при условии <span style="opacity:.5" class="smj-container">[math]\displaystyle{ P \geq \dfrac{N}{k} }[/math]</span>.
+</p><p>4. Число нитей выбиралось из набора: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T \in \{1, 2, 4\} }[/math]</span>.
+</p><p>5. Для каждой конфигурации параметров проводилось 3 запуска, измеренное время работы усреднялось.
+</p><p><br />
+На Рисунке 1 показано, как ускорение уже на 2 процессах существенно больше чем в 2 раза по сравнению с последовательной программой.
+</p><p>На Рисунках 2, 3, 4 приведены графики зависимости времени от размеров матрицы и количества процессов (для удобства рассмотрения все величины прологарифмированы)
+</p><p>На Рисунках 5, 6 приведены графики зависимости времени работы программы от количества процессов при фиксированном размере матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \in \{4096, 81921\} }[/math]</span> и количество потоков <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T = 1 }[/math]</span>.
+Видим, что на малом числе процессов ускорение почти линейное, затем достигается некоторая граница и время начинает несколько расти из-за увеличения накладных расходов.
+Также это может быть связано с тем, что процессы располагаются на большем числе отдельных узлов и скорость передачи сообщений между ними меньше, чем внутри одного узла.
+</p><p>На Рисунке 7 приведены графики зависимости времени работы программы от количества процессов при фиксированном размере матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N = 8192 }[/math]</span> и различном количестве потоков <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T \in \{1, 2, 4\} }[/math]</span>.
+Можем заметить, что использование двух потоков дает практически двукратный выигрыш во времени по сравнению с одним, однако 4 потока работают уже дольше.
+Вероятно, это связано с накладными расходами на их синхронизацию и менее равномерным распределением задач.
+</p><p><br />
+</p>
+<h4><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B"></span><span class="mw-headline" id="Выводы">Выводы</span></h4>
+<p>В рамках практической работы мы реализовали параллельную версию алгоритма QR-разложения квадратной вещественной матрицы методом вращений Гивенса и изучили масштабируемость написанной программы.
+Из результатов проделанной работы можем сделать следующие выводы:
+</p>
+<ul><li>Реализованная нами программа выполняет поставленную задачу.</li>
+<li>Параллельная программа по сравнению с последовательной версией ускоряется в большее число раз, чем число процессов - это говорит о хороших параллельный свойствах алгоритма.</li>
+<li>На малом (от 2 до 8) количестве процессов имеет место почти линейное ускорение программы.</li>
+<li>При большом количестве процессов (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \geq 16 }[/math]</span>) или потоков (4) на исследованных размерах матриц программа заметно не ускоряется, так как накладные расходы и несбалансированность "перевешивают" ускорение.</li></ul>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+
+<!-- 
+NewPP limit report
+Cached time: 20260611092708
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.207 seconds
+Preprocessor visited node count: 374/1000000
+Post‐expand include size: 5182/2097152 bytes
+Template argument size: 1403/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 43626/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.981      1 Шаблон:Algorithm
+100.00%    4.981      1 -total
+ 63.32%    3.154      1 Шаблон:Level-a
+ 23.97%    1.194      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:2415-0!canonical and timestamp 20260611092708 and revision id 28739. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Bulatral/QR-разложение_плотной_вещественной_матрицы_методом_вращений_Гивенса&amp;oldid=28739">https://algowiki-project.org/w/ru/index.php?title=Участник:Bulatral/QR-разложение_плотной_вещественной_матрицы_методом_вращений_Гивенса&amp;oldid=28739</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ABulatral%2FQR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9+%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC+%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9+%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ABulatral%2FQR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9+%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC+%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9+%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Bulatral" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Bulatral"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Bulatral"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0&amp;oldid=28739" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Bulatral/QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Givens_method" title="Givens method — English" lang="en" hreflang="en" data-title="Givens method" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 7 декабря 2021 года в 16:06.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":355,"wgPageParseReport":{"limitreport":{"cputime":"0.051","walltime":"0.207","ppvisitednodes":{"value":374,"limit":1000000},"postexpandincludesize":{"value":5182,"limit":2097152},"templateargumentsize":{"value":1403,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":43626,"limit":5000000},"timingprofile":["100.00%    4.981      1 Шаблон:Algorithm","100.00%    4.981      1 -total"," 63.32%    3.154      1 Шаблон:Level-a"," 23.97%    1.194      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092708","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

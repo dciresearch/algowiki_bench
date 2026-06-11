@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Danyanya/Алгоритм Ланцоша для точной арифметики (без переортогонализации) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"55d03d0b68d600ef3f4dcb4a","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Danyanya/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)","wgTitle":"Danyanya/Алгоритм Ланцоша для точной арифметики (без переортогонализации)","wgCurRevisionId":21372,"wgRevisionId":21372,"wgArticleId":661,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Assignments/Done/Konshin","Assignments/Done","Assignments","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Danyanya/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)","wgRelevantArticleId":661,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Danyanya","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Danyanya_Алгоритм_Ланцоша_для_точной_арифметики_без_переортогонализации rootpage-Участник_Danyanya skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Danyanya/Алгоритм Ланцоша для точной арифметики (без переортогонализации)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya" title="Участник:Danyanya">Участник:Danyanya</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_confirmed.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-120px-Symbol_confirmed.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-250px-Symbol_confirmed.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа успешно выполнена<br />Преподавателю: <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9+%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8+%28%D0%B1%D0%B5%D0%B7+%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%29&amp;wpReason=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE">в основное пространство</a>, <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8%3A%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9+%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8+%28%D0%B1%D0%B5%D0%B7+%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%29&amp;wpReason=%D0%9D%D0%B0+%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83">в подстраницу</a></span></b><br />Данное задание было проверено и зачтено.<br />Проверено <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Konshin" title="Участник:Konshin">Konshin</a> и <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:ASA" title="Участник:ASA">ASA</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм Ланцоша для точной арифметики (без переортогонализации)
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(kn^2) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n(n + 1)}{2} }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ k(n + 1) }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k \log(n)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания:  <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya" title="Участник:Danyanya">Д.Р.Слюсарь</a> (1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 2.4, 2.7), <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:M.grigoriev" title="Участник:M.grigoriev">М.А.Григорьев</a> (1.2, 1.7, 1.8, 1.9, 2.4, 2.7, 3)
+</p><p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p><b> Алгоритм Ланцоша поиска собственных значений </b> был опубликован Корнелием Ланцошем в 1950 году <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>. Этот итерационный алгоритм применим только к эрмитовым матрицам <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. 
+Метод позволяет за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> итераций вычислять <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-ое приближение собственных значений и собственных векторов исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. 
+</p><p>В данной статье рассмотрен упрощенный вариант алгоритма Ланцоша, подразумевающий отсутствие влияния ошибок округления на вычислительный процесс. 
+</p><p>Данный алгоритм является неустойчивым, вследствие чего на практике применяется модифицированный <a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D1%81_%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9&amp;action=edit&amp;redlink=1" class="new" title="Алгоритм Ланцоша с полной переортогонализацией (страница не существует)"> алгоритм Ланцоша с полной переортогонализацией</a> предложенный в 1970 Ojalvo и Newman<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>На вход алгоритма подается эрмитова матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = A^\dagger }[/math]</span>  <i> (в вещественном случае матрица симметрична)</i> ,
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+A = \begin{pmatrix}
+ a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1\ n-1} &amp; a_{1\ n} \\
+ a_{12} &amp; a_{22} &amp; a_{23} &amp; \cdots &amp; a_{2\ n-1} &amp; a_{2\ n} \\
+ a_{13} &amp; a_{23} &amp; a_{33} &amp; \cdots &amp; a_{3\ n-1} &amp; a_{3\ n} \\
+ \vdots &amp; \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots \\
+ a_{1\ n-1} &amp; \cdots &amp; \cdots &amp; a_{n-2\ n-1} &amp; a_{n-1\ n-1} &amp; a_{n-1\ n} \\
+ a_{1\ n} &amp; \cdots &amp; \cdots &amp; a_{n-2\ n} &amp; a_{n-1\ n} &amp; a_{n\ n} \\
+\end{pmatrix}
+ }[/math]</span></dd></dl>
+<p>Алгоритм Ланцоша соединяет в себя метод Ланцоша построения крыловского подпространства с процедурой Релея-Ритца<a rel="nofollow" class="external autonumber" href="https://en.wikipedia.org/wiki/Rayleigh%E2%80%93Ritz_method">[1]</a>. Иными словами, из оргонормированных векторов Ланцоша <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup> на каждой итерации строится матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_k = [q_1, q_2, \dots, q_k] }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \times k }[/math]</span>. 
+В качестве приближенных собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> берутся числа Ритца, т.е. собственные значения симметричной трехдиагональной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k = Q^T_k A Q }[/math]</span>:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+T_k = \begin{pmatrix}
+\alpha_1 &amp; \beta_1 &amp; 0 &amp; \dots &amp; 0 \\ 
+\beta_1 &amp; \alpha_2 &amp; \beta_2 &amp; \dots &amp; 0 \\
+0 &amp; \beta_2 &amp; \ddots &amp; \ddots &amp; \vdots \\
+\vdots &amp; \vdots &amp; \ddots &amp; \ddots &amp; \beta_{k-1} \\
+0 &amp; \dots &amp; \dots &amp; \beta_{k-1} &amp; \alpha_k
+\end{pmatrix}
+ }[/math]</span>
+</p><p>На выходе алгоритма получается собственные векторы и вектор собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span>, с помощью которых и будет найдены искомые собственные векторы исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро на каждой итерации алгоритма Ланцоша состоит в вычислении очередного промежуточного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ z }[/math]</span> произведением исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> на вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_i }[/math]</span> с предыдущей итерации:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ z = Aq_i }[/math]</span></dd></dl>
+<p>При больших <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>, сопоставимых с <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, к вычислительному ядру можно отнести вычисление  собственных значений и собственных векторов трёхдиагональной матрицы. Однако на практике <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> много меньше <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Исходя из предложенной последовательной реализации метода, макрооперациями в алгоритме являются:
+</p>
+<ul><li>Процедура итеративного построения трехдиагональной симметричной матрицы, включающая:
+<ul><li>умножение матрицы на вектор (состоит из умножения вектора на число и сложения векторов);</li>
+<li>скалярное произведение векторов;</li>
+<li>линейная комбинация векторов (сложение/умножение на вещественные числа);</li>
+<li>вычисление нормы (скалярное произведение векторов и вычисление квадратного корня);</li></ul></li>
+<li>Вычисление собственных значений и собственных векторов полученной в ходе работы трехдиагональной симметричной матрицы.</li></ul>
+<p>При этом, первая макрооперация (построение трехдиагональной матрицы) выполняется строго последовательно. Единственное, что можно распараллелить - это умножение матрицы на вектор. Однако это операция достаточно легковесная, если оперировать, например, разреженной матрицей. 
+</p><p>Вычисление собственных значений полученной матрицы на практике выполняется с помощью QR-алгоритма и выходит за рамки описанного алгоритма.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p><b>Исходные данные</b>: симметричная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, случайный вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span>.
+</p><p><b>Вычисляемые данные</b>: собственные вектора матрицы  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span> являющиеся столбцами матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_k V }[/math]</span>,  и матрица собственных значений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Lambda }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V, \Lambda }[/math]</span> из спектрального разложения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k = V\Lambda V^T }[/math]</span>.
+</p><p>Алгоритм <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> на псевдокоде:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+q_1 = &amp; b/ \|b\|_2,\; \beta_0 = 0,\; q_0 = 0\\
+for \; &amp; i = 1 \; to \; k \\
+&amp; z = Aq_i\\
+&amp; \alpha_i = q^T_i z\\
+&amp; z = z - \alpha_i q_i - \beta_{i-1}q_{i-1}\\
+&amp; \beta_i = \|z\|_2\\
+&amp; If \; \beta_i == 0 \; then \\ 
+&amp; \; \; \; \; exit\\
+&amp; else \\
+&amp; \; \; \; \; q_{i+1} = z / \beta_i \\
+end \; &amp; for
+\end{align}
+ }[/math]</span>
+</p><p><i>После этого вычисляются собственные значения и собственные вектора симметричной трехдиагональной  матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_k }[/math]</span> наиболее удобным образом.</i>
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Последовательная сложность алгоритма рассчитана на основе приведенной выше реализации алгоритма. Исходя из псевдокода последовательно выполняются следующие операции:
+</p>
+<ul><li>Умножение квадратной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n * n }[/math]</span> на вектор длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>. Требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n * n }[/math]</span> умножений и сложений;</li>
+<li>Скалярное произведение векторов длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>. Требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> умножений и сложений;</li>
+<li>Сложение векторов длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>. Требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> сложений;</li>
+<li>Умножение вектора длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> на скаляр. Требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> умножений;</li>
+<li>Нахождение квадратичной нормы вектора длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>. Требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> умножений и сложений + извлечения квадратного корня;</li>
+<li>Нахождение собственных значений и векторов трехдиагональной симметричной матрицы размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{  k \times k  }[/math]</span>. Наиболее эффективный метод метода «Разделяй-и-властвуй»  в среднем требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ ~O(k^{2.3}) }[/math]</span> операций.</li></ul>
+<p>Суммарное число операций в алгоритме без учета вычисления собственных значений в трехдиагональной памяти:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{  kn^2 + n(4k + 1)  }[/math]</span> операций умножения;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{  k(n^2+3n-2) +  n-1 }[/math]</span> операций сложения/вычитания;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{  n(k + 1)  }[/math]</span> операций деления;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{  k + 1  }[/math]</span> операций вычислений квадратного корня.</li></ul>
+<p>Таким образом, в худшем случае, алгоритм Ланцоша имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{  O(kn^2)  }[/math]</span> и односится к квадратичным алгоритмам по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> при малых <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Информационный граф алгоритма можно разбить на две части:
+</p>
+<ul><li>Граф алгоритма с отображением входных и выходных данных.</li>
+<li>Граф линейного оператора.</li></ul>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Mgrigoriev2.png" class="mw-file-description"><img src="/w/ru/images/thumb/a/ac/Mgrigoriev2.png/600px-Mgrigoriev2.png" decoding="async" width="600" height="781" class="mw-file-element" srcset="/w/ru/images/a/ac/Mgrigoriev2.png 1.5x" /></a><figcaption>Рисунок 1. Информационный граф алгоритма.<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \|x\| }[/math]</span> — вычисление нормы, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ / }[/math]</span> — операция деления, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{F} }[/math]</span> — вычисление линейной комбинации векторов, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ * }[/math]</span>  — операция умножения,<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{Ax} }[/math]</span> — линейный оператор (Рисунок 2),<br /> ▽ - условие выхода <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{(\beta_i = 0)} }[/math]</span></figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Mgrigoriev3.png" class="mw-file-description"><img src="/w/ru/images/thumb/1/10/Mgrigoriev3.png/600px-Mgrigoriev3.png" decoding="async" width="600" height="402" class="mw-file-element" srcset="/w/ru/images/1/10/Mgrigoriev3.png 1.5x" /></a><figcaption>Рисунок 2. Информационный граф линейного оператора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{Ax} }[/math]</span>. <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ + }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ * }[/math]</span> - операции сложения и умножения.</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Mgrigoriev1.png" class="mw-file-description"><img src="/w/ru/images/thumb/d/d0/Mgrigoriev1.png/600px-Mgrigoriev1.png" decoding="async" width="600" height="781" class="mw-file-element" srcset="/w/ru/images/d/d0/Mgrigoriev1.png 1.5x" /></a><figcaption>Рисунок 3. Граф алгоритма с указанием входных и выходных данных.<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \|x\| }[/math]</span> — вычисление нормы, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ / }[/math]</span> — операция деления, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{F} }[/math]</span> — вычисление линейной комбинации векторов, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ * }[/math]</span>  — операция умножения,<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{Ax} }[/math]</span> — линейный оператор (Рисунок 2),<br /> ▽ - условие выхода <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{(\beta_i = 0)} }[/math]</span>,<br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{A, b, q_0 = 0, \beta_0 = 0} }[/math]</span> — входные данные, <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathsf{\alpha_i, \beta_i} }[/math]</span> — выходной результат.</figcaption></figure>
+<p>Из информационного графа видно, что паралеллизация алгоритма возможна при выполнении линенйного оператора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax }[/math]</span> на каждой итерации алгоритма. Затем необходима синхронизация между процессами.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Важно заметить, что итерации алгоритма выполняются строго последовательно, а распараллеливание возможно только внутри итераций.
+</p>
+<ul><li>Умножение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A^{n * n} }[/math]</span> на вектор длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> ярусов умножений и сложенийж
+<ul><li>При этом сложение элементов вектора длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> можно выполнить за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log(n) }[/math]</span>&#160;<a rel="nofollow" class="external autonumber" href="https://algowiki-project.org/ru/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D1%83%D0%BC%D0%BC%D1%8B_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0_%D1%81%D0%B4%D0%B2%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC">[2]</a>;</li></ul></li>
+<li>Остальные операции в рамках итерации выполняются последовательно (вычисление значений векторов может быть выполнено за 1 ярус):</li>
+<li>Ресурс параллелизма алгоритма вычисления собственных значений зависит от используемого алгоритма.</li></ul>
+<p>Исходя из вышеизложенного, алгоритм Ланцоша обладает <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k\log n) }[/math]</span>-ой сложностью по высоте ЯПФ и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>-ой по ширине ЯПФ.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><b>Входные данные:</b> симметричная вещественная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, случайный вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span>, число итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>.
+</p><p><b>Объём входных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n(n + 1) + 1  }[/math]</span>.
+</p><p><b>Выходные данные:</b> вектор собственных значений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Lambda }[/math]</span>, матрица собственных векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ E }[/math]</span>.
+</p><p><b>Объём выходных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k(n + 1) }[/math]</span>.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<ul><li>Сложность последовательного алгоритма <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(kn^2) }[/math]</span>;</li>
+<li>По классификации по высоте ЯПФ Алгоритм Ланцоша является алгоритмом со сложностью <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(k\log n) }[/math]</span>, при классификации по ширине ЯПФ его сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>;
+<ul><li>Таким образом, отношение последовательной сложности  к параллельной <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{kn^2}{k \log{n}} }[/math]</span>;</li></ul></li>
+<li>Вычислительная мощность алгоритма Ланцоша без переортогонализации из последовательной сложности алгоритма <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{k(2n^2+8n-1)+3n}{n^2+2k} }[/math]</span>. При <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> много меньше  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> вычислительная мощность ≈ <span style="opacity:.5" class="smj-container">[math]\displaystyle{  2k }[/math]</span>;</li>
+<li>Алгоритм Ланцоша без переортогонализации не является детерминированным из-за того, что возможно выполнение меньшего числа итераций алгоритма, из-за того, что все собственные значения уже вычислены;</li>
+<li>Также алгоритм Ланцоша быстро сходится при вычислении собственных значений матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, находящихся на границе ее спектра (в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_{j} }[/math]</span> в первую очередь появляются максимальные по модулю собственные значения);</li>
+<li>Из-за использования точной арифметики алгоритм Ланшоца может найти кратные собственные значения, которые на деле оными не являются;</li>
+<li>Нестабильность алгоритма (эффект <i>ложной сходимости</i>) присуще плавающей арифметике, из-за ошибок округления в которой на очередном этапе может быть построен линейно зависимый от исходных новый вектор, что повлечет невозможность дальнейшего приближения собственных значений.</li></ul>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<p>Для исследования масшабируемости алгоритма была написана реализация<a rel="nofollow" class="external autonumber" href="https://github.com/danyanya/ss16-task1">[3]</a> на языке C++ с использованием MPI. Реализация была протестирована на суперкомпьютере Ломоносов<a rel="nofollow" class="external autonumber" href="http://parallel.ru/cluster/">[4]</a>.
+</p><p>Были исследованы:
+</p>
+<ul><li>время выполнения программы в зависимости от размера входных данных (матрицы);</li>
+<li>время выполнения в зависимости от размера параллельных нод.</li></ul>
+<p>Дополнительно было измерено время работы исходя из оптимизационных флагов компилятора GCC <a rel="nofollow" class="external autonumber" href="https://gcc.gnu.org">[5]</a>. 
+</p><p>Параметры запуска алгоритма:
+</p>
+<ul><li>размер матрицы от 20000 до 175000 с шагом 2500;</li>
+<li>количество процессоров от 8 до 128 с шагом 8.</li></ul>
+<p>Программа запускалась на суперкомьютере "Ломоносов" со следующими характеристиками:
+</p>
+<ul><li>Компилятор GCC 5.2.1;</li>
+<li>Версия MPI 1.8.4;</li>
+<li>Сборка проводилась командой: <pre>mpic++ -std=c++0x -O2 &lt;CPP_FILE&gt; -lm -static-libstdc++</pre></li></ul>
+<p>Полученная эффективность реализации варьируется в пределах от 2% (на маленьких входных данных) до 45% (на больших входных данных и максимальном числе нодов).
+</p><p>На рисунке 4 представлена эффективность программы при отсутствии флага оптимизации O2. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Grigorev_lanczos_eff_no_02.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/9/90/Grigorev_lanczos_eff_no_02.png/600px-Grigorev_lanczos_eff_no_02.png" decoding="async" width="600" height="450" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/9/90/Grigorev_lanczos_eff_no_02.png 1.5x" /></a><figcaption>Рисунок 4. Эффективность параллельной реализации алгоритма Ланцоща на MPI.</figcaption></figure>
+<p>На рисунке 5 представлена эффективность алгоритма с оптимизацией компилятора GCC (-O2).
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Grigorev_lanczos_eff_o2.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/0/07/Grigorev_lanczos_eff_o2.png/600px-Grigorev_lanczos_eff_o2.png" decoding="async" width="600" height="450" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/0/07/Grigorev_lanczos_eff_o2.png 1.5x" /></a><figcaption>Рисунок 5. Эффективность параллельной реализации алгоритма Ланцоща на MPI с использованием оптимизации компилятора -O2.</figcaption></figure>
+<p><br />
+Как видно из графиков выше, средняя эффективность минимальна при малых входных данных (на размере матрицы в 10000). 
+В среднем данный показатель держится между 9% и 14%.
+</p><p>При этом, оптимизация компилятора MPIC++ позволяет получить выигрыш в эффективности более чем в 3 раза (45,5% против 14,7%). Однако, как можно заметить из графиков, при оптимизации алгоритм ведет себя более нестабильно, скорее всего из-за значительной траты времени на работу с памятью (более планые участки свидетельствует о том, что необходимые данные нашлись в кеше).
+</p>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<p>В настоящее время существует множество реализаций алгоритма Ланцоша итеративного поиска собственных значений, как входящих в официальные дистрибутивы для вычислений (<i>ARPACK</i>), так и неофициальных реализаций, выложенных на Github. Среди них:
+</p><p>1. The IETL Project <sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>2. MatLab <sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>3. ARPACK <sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>4. Julia Math <sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>
+</p><p><br />
+Также существуют официальные реализации на других языках (например R). Что касается встроенной возможности параллелизма - самыми стабильными в этом плане являются ARPACK, а также IETL.
+</p><p>Для проверки масшабируемости, алгоритм был реализован на языке C++ с применением MPI <a rel="nofollow" class="external autonumber" href="https://github.com/danyanya/ss16-task1">[6]</a>.
+</p>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Lanczos, C. "An iteration method for the solution of the eigenvalue problem of linear differential and integral operators", J. Res. Nat’l Bur. Std. 45, 255-282 (1950).</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Ojalvo, I.U. and Newman, M., "Vibration modes of large structures by an automatic matrix-reduction method", AIAA J., 8 (7), 1234–1239 (1970).</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://ru.wikipedia.org/wiki/Биортогонализация_Ланцоша">https://ru.wikipedia.org/wiki/Биортогонализация_Ланцоша</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Деммель Д. Вычислительная линейная алгебра</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.comp-phys.org/software/ietl/">http://www.comp-phys.org/software/ietl/</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://www.mathworks.com/matlabcentral/newsreader/view_thread/10554">https://www.mathworks.com/matlabcentral/newsreader/view_thread/10554</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.caam.rice.edu/software/ARPACK/">http://www.caam.rice.edu/software/ARPACK/</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://github.com/JuliaMath/IterativeSolvers.jl">https://github.com/JuliaMath/IterativeSolvers.jl</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092709
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.038 seconds
+Real time usage: 0.041 seconds
+Preprocessor visited node count: 896/1000000
+Post‐expand include size: 19283/2097152 bytes
+Template argument size: 6263/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 11298/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    9.552      1 -total
+ 48.25%    4.609      1 Шаблон:Algorithm
+ 30.46%    2.910      1 Шаблон:Level-a
+ 17.49%    1.671      1 Шаблон:Assignment
+ 12.53%    1.197      1 Шаблон:Infobox
+ 11.83%    1.130      1 Шаблон:Плашка
+  3.31%    0.316      1 Шаблон:ASymmetric
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:661-0!canonical and timestamp 20260611092709 and revision id 21372. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Danyanya/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)&amp;oldid=21372">https://algowiki-project.org/w/ru/index.php?title=Участник:Danyanya/Алгоритм_Ланцоша_для_точной_арифметики_(без_переортогонализации)&amp;oldid=21372</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done/Konshin" title="Категория:Assignments/Done/Konshin">Assignments/Done/Konshin</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done" title="Категория:Assignments/Done">Assignments/Done</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ADanyanya%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9+%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8+%28%D0%B1%D0%B5%D0%B7+%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ADanyanya%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9+%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8+%28%D0%B1%D0%B5%D0%B7+%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Danyanya" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Danyanya"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Danyanya"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;oldid=21372" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Danyanya/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9B%D0%B0%D0%BD%D1%86%D0%BE%D1%88%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B8_(%D0%B1%D0%B5%D0%B7_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 19 декабря 2016 года в 16:59.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":126,"wgPageParseReport":{"limitreport":{"cputime":"0.038","walltime":"0.041","ppvisitednodes":{"value":896,"limit":1000000},"postexpandincludesize":{"value":19283,"limit":2097152},"templateargumentsize":{"value":6263,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":11298,"limit":5000000},"timingprofile":["100.00%    9.552      1 -total"," 48.25%    4.609      1 Шаблон:Algorithm"," 30.46%    2.910      1 Шаблон:Level-a"," 17.49%    1.671      1 Шаблон:Assignment"," 12.53%    1.197      1 Шаблон:Infobox"," 11.83%    1.130      1 Шаблон:Плашка","  3.31%    0.316      1 Шаблон:ASymmetric"]},"cachereport":{"timestamp":"20260611092709","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Метод Холецкого (нахождение симметричного треугольного разложения) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"9835b71ecc31b87ba103f511","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Метод_Холецкого_(нахождение_симметричного_треугольного_разложения)","wgTitle":"Метод Холецкого (нахождение симметричного треугольного разложения)","wgCurRevisionId":3799,"wgRevisionId":3799,"wgArticleId":111,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Уровень метода","Законченные статьи","Разложения матриц"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Метод_Холецкого_(нахождение_симметричного_треугольного_разложения)","wgRelevantArticleId":111,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":3799,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.flaggedRevs.basic%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Метод_Холецкого_нахождение_симметричного_треугольного_разложения rootpage-Метод_Холецкого_нахождение_симметричного_треугольного_разложения skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-m" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень метода"><img alt="Уровень метода" src="https://algowiki-project.org/algowiki/pool/images/thumb/7/7e/M-butter-square-64x64.png/32px-M-butter-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/7/7e/M-butter-square-64x64.png/48px-M-butter-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/7/7e/M-butter-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Метод Холецкого (нахождение симметричного треугольного разложения)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Konshin" title="Участник:Konshin">И.Н.Коньшин</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Разложение_Холецкого_(метод_квадратного_корня),_базовый_точечный_вещественный_вариант_для_плотной_симметричной_положительно_определённой_матрицы"><span class="tocnumber">1</span> <span class="toctext">Разложение Холецкого (метод квадратного корня), базовый точечный вещественный вариант для плотной симметричной положительно определённой матрицы</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#[math]\displaystyle{_LL^T_}[/math]-разложение"><span class="tocnumber">1.1</span> <span class="toctext"><span>[math]\displaystyle{ LL^T }[/math]</span>-разложение</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#[math]\displaystyle{_LDL^T_}[/math]-разложение"><span class="tocnumber">1.2</span> <span class="toctext"><span>[math]\displaystyle{ LDL^T }[/math]</span>-разложение</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Разложение_Холецкого,_блочный_вещественный_вариант_для_плотной_симметричной_положительно_определённой_матрицы"><span class="tocnumber">2</span> <span class="toctext">Разложение Холецкого, блочный вещественный вариант для плотной симметричной положительно определённой матрицы</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Разложение_Холецкого,_точечный_вещественный_вариант_для_разреженной_симметричной_положительно_определённой_матрицы"><span class="tocnumber">3</span> <span class="toctext">Разложение Холецкого, точечный вещественный вариант для разреженной симметричной положительно определённой матрицы</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Основные_отличия_от_случая_плотной_матрицы"><span class="tocnumber">3.1</span> <span class="toctext">Основные отличия от случая плотной матрицы</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Переупорядочивания_для_уменьшения_количества_новых_ненулевых_элементов"><span class="tocnumber">3.2</span> <span class="toctext">Переупорядочивания для уменьшения количества новых ненулевых элементов</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Разложение_Холецкого,_блочный_вещественный_вариант_для_разреженной_симметричной_положительно_определённой_матрицы"><span class="tocnumber">4</span> <span class="toctext">Разложение Холецкого, блочный вещественный вариант для разреженной симметричной положительно определённой матрицы</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Разложение_Холецкого_для_симметричной_незнакоопределенной_(седловой)_матрицы"><span class="tocnumber">5</span> <span class="toctext">Разложение Холецкого для симметричной незнакоопределенной (седловой) матрицы</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Разложение_Холецкого_для_эрмитовой_матрицы"><span class="tocnumber">6</span> <span class="toctext">Разложение Холецкого для эрмитовой матрицы</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Точечный_вариант"><span class="tocnumber">6.1</span> <span class="toctext">Точечный вариант</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Блочный_вариант"><span class="tocnumber">6.2</span> <span class="toctext">Блочный вариант</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Использование_разложения_Холецкого_в_итерационных_методах"><span class="tocnumber">7</span> <span class="toctext">Использование разложения Холецкого в итерационных методах</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Ограничивание_заполнения_в_разложении_Холецкого"><span class="tocnumber">7.1</span> <span class="toctext">Ограничивание заполнения в разложении Холецкого</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Неполное_разложение_Холецкого_по_позициям_IC([math]\displaystyle{_k_}[/math])"><span class="tocnumber">7.2</span> <span class="toctext">Неполное разложение Холецкого по позициям IC(<span>[math]\displaystyle{ k }[/math]</span>)</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Приближенное_разложение_Холецкого_по_значениям_IC([math]\displaystyle{_\tau_}[/math])"><span class="tocnumber">7.3</span> <span class="toctext">Приближенное разложение Холецкого по значениям IC(<span>[math]\displaystyle{ \tau }[/math]</span>)</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Приближенное_разложение_Холецкого_второго_порядка_IC([math]\displaystyle{_\tau_1,\tau_2_}[/math])"><span class="tocnumber">7.4</span> <span class="toctext">Приближенное разложение Холецкого второго порядка IC(<span>[math]\displaystyle{ \tau_1,\tau_2 }[/math]</span>)</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Комбинация_разложений_Холецкого_IC([math]\displaystyle{_k,\tau_}[/math])_и_IC([math]\displaystyle{_\tau,m_}[/math])"><span class="tocnumber">7.5</span> <span class="toctext">Комбинация разложений Холецкого IC(<span>[math]\displaystyle{ k,\tau }[/math]</span>) и IC(<span>[math]\displaystyle{ \tau,m }[/math]</span>)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Использование_разложения_Холецкого_в_параллельных_итерационных_алгоритмах"><span class="tocnumber">8</span> <span class="toctext">Использование разложения Холецкого в параллельных итерационных алгоритмах</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Переупорядочивания_для_выделения_блочности"><span class="tocnumber">8.1</span> <span class="toctext">Переупорядочивания для выделения блочности</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Разложение_в_независимых_блоках"><span class="tocnumber">8.2</span> <span class="toctext">Разложение в независимых блоках</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Разложение_в_сепараторах"><span class="tocnumber">8.3</span> <span class="toctext">Разложение в сепараторах</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Иерархические_и_вложенные_алгоритмы"><span class="tocnumber">8.4</span> <span class="toctext">Иерархические и вложенные алгоритмы</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Блочный_метод_Якоби"><span class="tocnumber">8.5</span> <span class="toctext">Блочный метод Якоби</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Аддитивный_метод_Шварца"><span class="tocnumber">8.6</span> <span class="toctext">Аддитивный метод Шварца</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Неполное_обратное_треугольное_разложения"><span class="tocnumber">8.7</span> <span class="toctext">Неполное обратное треугольное разложения</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Решение_линейных_систем_с_треугольной_матрицей"><span class="tocnumber">9</span> <span class="toctext">Решение линейных систем с треугольной матрицей</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Решение_системы_с_плотной_нижнетреугольной_матрицей"><span class="tocnumber">9.1</span> <span class="toctext">Решение системы с плотной нижнетреугольной матрицей</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Решение_системы_с_плотной_верхнетреугольной_матрицей"><span class="tocnumber">9.2</span> <span class="toctext">Решение системы с плотной верхнетреугольной матрицей</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Решение_системы_с_разреженной_нижнетреугольной_матрицей"><span class="tocnumber">9.3</span> <span class="toctext">Решение системы с разреженной нижнетреугольной матрицей</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Решение_системы_с_комплексной_треугольной_матрицей"><span class="tocnumber">9.4</span> <span class="toctext">Решение системы с комплексной треугольной матрицей</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Решение_систем_с_блочноокаймленными_треугольными_матрицами"><span class="tocnumber">9.5</span> <span class="toctext">Решение систем с блочноокаймленными треугольными матрицами</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">10</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.28.D0.BC.D0.B5.D1.82.D0.BE.D0.B4_.D0.BA.D0.B2.D0.B0.D0.B4.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D1.80.D0.BD.D1.8F.29.2C_.D0.B1.D0.B0.D0.B7.D0.BE.D0.B2.D1.8B.D0.B9_.D1.82.D0.BE.D1.87.D0.B5.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B5.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BB.D0.BE.D1.82.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D0.B9_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Разложение_Холецкого_(метод_квадратного_корня),_базовый_точечный_вещественный_вариант_для_плотной_симметричной_положительно_определённой_матрицы">Разложение Холецкого (метод квадратного корня), базовый точечный вещественный вариант для плотной симметричной положительно определённой матрицы</span></h2>
+<h3><span id=".5Bmath.5D.5Cdisplaystyle.7B_LL.5ET_.7D.5B.2Fmath.5D-.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="[math]\displaystyle{_LL^T_}[/math]-разложение"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ LL^T }[/math]</span>-разложение</span></h3>
+<p>Разложение Холецкого — представление симметричной положительно определённой матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=A^T\gt 0 }[/math]</span> в виде произведения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = LL^T }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> — нижняя (<i>Lower</i>) треугольная матрица со строго положительными элементами на диагонали. Иногда разложение удобно записать в эквивалентной форме <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = U^TU }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U = L^T }[/math]</span> — верхняя (<i>Upper</i>) треугольная матрица. Для любой симметричной положительно определённой матрицы разложение Холецкого существует и единственно.
+</p><p>Элементы матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> можно вычислить, начиная с верхнего левого угла матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, по формулам:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+\ell_{ii} &amp; = \sqrt{a_{ii} - \sum_{k=1}^{i-1} \ell_{ik}^2}, \\
+\ell_{ij} &amp; = \frac{1}{\ell_{jj}} \left(a_{ij} - \sum_{k=1}^{j-1} \ell_{ik} \ell_{jk} \right), \quad j \lt  i.
+\end{align}
+ }[/math]</span></dd></dl>
+<p>Выражение под квадратным корнем всегда положительно, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> — вещественная симметричная положительно определённая матрица.
+</p><p>Вычисление происходит сверху вниз, слева направо, т.е. сначала вычисляется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L_{ij} }[/math]</span> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ j \lt  i }[/math]</span>), а уже затем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L_{ii} }[/math]</span>. Вычисления обычно проводятся в одной из следующих последовательностей.
+</p>
+<ul><li>Алгоритм Холецкого-Банашевича (<i>Cholesky–Banachiewicz algorithm</i>) или просто алгоритм Холецкого, когда вычисления начинаются с верхнего левого угла матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> и проводятся по строкам. Этот вариант разложения используется наиболее часто, особенно при использовании построчного формата хранения элементов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>.</li></ul>
+<ul><li>Краут-вариант алгоритма Холецкого (<i>Cholesky–Crout algorithm</i>), когда вычисления также начинаются с верхнего левого угла матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, но проводятся по столбцам. Этот вариант разложения используется несколько реже, применяется он при использовании столбцевого формата хранения элементов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, а также когда необходимо проводить коррекцию ведущих элементов при выполнении приближенного разложения.</li></ul>
+<p>Оба варианта разложения могут быть применены если требуется построить нижнетреугольный сомножитель <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> прямо поверх исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+</p><p>В разделе <a href="/ru/%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F)" title="Разложение Холецкого (метод квадратного корня)">Разложение Холецкого (метод квадратного корня)</a> подробно рассмотрен базовый точечный вещественный вариант для плотной симметричной положительно определённой матрицы.
+</p>
+<h3><span id=".5Bmath.5D.5Cdisplaystyle.7B_LDL.5ET_.7D.5B.2Fmath.5D-.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="[math]\displaystyle{_LDL^T_}[/math]-разложение"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ LDL^T }[/math]</span>-разложение</span></h3>
+<p>Иногда удобнее бывает рассматривать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ LDL^T }[/math]</span> вариант симметричного треугольного разложения, в котором матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> является нижней унитреугольной (т.е. имеет единицы на главной диагонали), а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span> - диагональная матрица с положительными элементами. В этом варианте разложения легко проследить связь как с ранее рассмотренным <span style="opacity:.5" class="smj-container">[math]\displaystyle{ LL^T }[/math]</span> вариантом:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = LDL^T = LD^{1/2}D^{1/2}L^T = (LD^{1/2})\,(LD^{1/2})^T = \tilde L \tilde L^T, }[/math]</span></dd></dl>
+<p>так и с несимметричным <span style="opacity:.5" class="smj-container">[math]\displaystyle{ LU }[/math]</span>-разложением:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = LDL^T = L(DL^T) = LU. }[/math]</span></dd></dl>
+<h2><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE.2C_.D0.B1.D0.BB.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B5.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BB.D0.BE.D1.82.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D0.B9_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Разложение_Холецкого,_блочный_вещественный_вариант_для_плотной_симметричной_положительно_определённой_матрицы">Разложение Холецкого, блочный вещественный вариант для плотной симметричной положительно определённой матрицы</span></h2>
+<p>Можно также рассмотреть блочный вариант разложения Холецкого. Предположим, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=MN }[/math]</span>, тогда исходную матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n\times n }[/math]</span> можно представить как блочную матрицу размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N\times N }[/math]</span> с блоками размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M\times M }[/math]</span>.
+Все формулы, используемые для получения точечного разложения Холецкого, для блочной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> останутся практически без изменений.
+Вместо явного обращения диагональных блоков, эффективнее хранить их в факторизованном виде <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D_{ii}=L_{ii}L^T_{ii} }[/math]</span>,
+а вместо операции деления использовать соответствующие операции решения для треугольных систем.
+Общее количество арифметических операций при этом останется практически неизменным, но зато существенно возрастет локальность вычислений.
+Размер блока <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> выбирают таким образом, чтобы все блоки, участвующие в операции исключения, помещались в кэш первого или второго уровня. В этом случае подкачки данных в память будут минимальными.
+</p><p>Аналогичный прием понадобится также и для эффективной реализации параллельной версии разложения Холецкого, что позволит минимизировать как общее количество межпроцессорных обменов, так и количество пересылаемой между процессорами информации.
+Полезным побочным эффектом применения блочной версии разложения Холецкого может стать повышение скалярной эффективности алгоритма за счет явного использования размера блока <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> во внутренних циклах (прием "разворачивание цикла" или "loop unrolling").
+</p>
+<h2><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE.2C_.D1.82.D0.BE.D1.87.D0.B5.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B5.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D0.B9_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Разложение_Холецкого,_точечный_вещественный_вариант_для_разреженной_симметричной_положительно_определённой_матрицы">Разложение Холецкого, точечный вещественный вариант для разреженной симметричной положительно определённой матрицы</span></h2>
+<p>Если исходная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> представлена в разреженном виде, то для экономии памяти, а также арифметических операций, необходимо учитывать ее разреженность.
+</p>
+<h3><span id=".D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D0.B5_.D0.BE.D1.82.D0.BB.D0.B8.D1.87.D0.B8.D1.8F_.D0.BE.D1.82_.D1.81.D0.BB.D1.83.D1.87.D0.B0.D1.8F_.D0.BF.D0.BB.D0.BE.D1.82.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Основные_отличия_от_случая_плотной_матрицы">Основные отличия от случая плотной матрицы</span></h3>
+<p>В этом разделе необходимо рассмотреть матрицы, характеризующиеся способом хранения ненулевых элементов, и имеющие следующие виды разреженности.
+</p>
+<ul><li><i>Лента</i> - матрица, ненулевые элементы которой сосредоточены внутри ленты шириной <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2d+1 }[/math]</span>, т.е. когда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij}=0 }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |i-j| \gt  d }[/math]</span>. В этом случае, при проведении разложения Холецкого новые ненулевые элементы могут образовываться только внутри этой же ленты (поскольку нет выбора ведущих элементов в силу положительной определенности матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>). Количество ненулевых элементов в исходной матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, а также в нижнетреугольном множителе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> будет около <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (d+1)n }[/math]</span>, а арифметические затраты составят приблизительно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ d^2n }[/math]</span>.</li></ul>
+<ul><li><i>Профиль</i> - в более общем случае, заполнение в каждой строке треугольного множителе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> будет определяться позицией первого ненулевого элемента. Сумма по всем строкам расстояний от первого ненулевого элемента строки до главной диагонали и составляет "профиль" матрицы и определяет верхнюю границу количества ненулевых элементов в нижнетреугольном множителе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>.</li></ul>
+<ul><li><i>Общая структура разреженности</i>. Верхней границей заполнения треугольного множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, конечно же, будет значение "профиля" матрицы, но учет особенностей структуры ненулевых элементов внутри профиля иногда может дать дополнительный эффект в повышении эффективности вычислений.</li></ul>
+<p>При рассмотрении общего случая разреженности необходимо выбрать формат хранения разреженных данных. Таковым может быть, например, формат построчного сжатия данных ("compressed sparse row" или CSR формат). В первом вещественном массиве, подряд (обычно в порядке возрастания номеров столбцов) хранятся ненулевые элементы матрицы, во втором, в том же порядке хранятся номера столбцов, в третьем, отдельно сохраняется начало каждой строки. Если общее количество ненулевых элементов в матрице равно nnz ("number of nonzeros"), то память для хранения разреженных данных такой матрицы в формате CSR при использовании двойной точности составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 3\,{\rm nnz}+n+1 }[/math]</span>. Оценку количества арифметических операций в общем случае невозможно, т.к. помимо количества ненулевых элементов в исходной матрице оно существенно зависит от структуры ее разреженности.
+</p><p>Для реализации разложения Холецкого в этом случае понадобится несколько операций с разреженными строками:
+</p>
+<ul><li><i>копирование</i> из одной разреженной строки в другую (или во временный "плотный" вектор, операция <i>распаковки</i> данных);</li></ul>
+<ul><li>выполнение <i>операции исключения</i> для одного из элементов строки;</li></ul>
+<ul><li><i>вставка</i> в строку нового ненулевого элемента ("fill-in");</li></ul>
+<ul><li><i>сжатие</i> данных с копированием из временного плотного вектора в сжатый разреженный (операция <i>упаковки</i> данных).</li></ul>
+<h3><span id=".D0.9F.D0.B5.D1.80.D0.B5.D1.83.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D1.83.D0.BC.D0.B5.D0.BD.D1.8C.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B0_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.BD.D0.B5.D0.BD.D1.83.D0.BB.D0.B5.D0.B2.D1.8B.D1.85_.D1.8D.D0.BB.D0.B5.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Переупорядочивания_для_уменьшения_количества_новых_ненулевых_элементов">Переупорядочивания для уменьшения количества новых ненулевых элементов</span></h3>
+<p>Структура треугольного множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, а также объем памяти им занимаемый зависят от упорядочивания строк и столбцов исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, в котором проводилось разложение. Существуют алгоритмы, минимизирующие заполнение матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>.
+</p>
+<ul><li>В первую очередь это алгоритм RCM (Reverse Cuthill–McKee), который предназначен для уменьшения профиля матрицы. Одновременно с уменьшением профиля происходит и уменьшение заполнения треугольного множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>. Это очень широко применяемый, быстрый, но не самый эффективный алгоритм.</li></ul>
+<ul><li>Алгоритм вложенных сечений (Nested Dissection, ND) - служит именно для минимизации заполнения множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>. В некоторых частных случаях доказана его асимптотическая оптимальность.</li></ul>
+<p>В общем случае, проблема поиска перестановки, минимизирующей заполнение множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, является NP-полной задачей.
+</p>
+<h2><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE.2C_.D0.B1.D0.BB.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B5.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D0.B9_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Разложение_Холецкого,_блочный_вещественный_вариант_для_разреженной_симметричной_положительно_определённой_матрицы">Разложение Холецкого, блочный вещественный вариант для разреженной симметричной положительно определённой матрицы</span></h2>
+<p>Иногда разреженную симметричную матрицу бывает удобно представить в блочном виде с блоками небольшого размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span>, равного, например, количеству неизвестных функций на узел при конечно-элементной или конечно-разностной аппроксимации уравнений в частных производных.
+В этом случае структура разреженности хранится для всей блочной структуры разреженности (что позволяет экономить память на хранении целочисленных массивов).
+Если общее количество ненулевых блоков размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M\times M }[/math]</span> в матрице равно nnz ("number of nonzeros"), то память для хранения разреженных данных такой мелкоблочной матрицы в формате CSR при использовании двойной точности составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (2M^2+1)\,{\rm nnz}+n/M+1 }[/math]</span>.
+</p><p>В некоторых случаях, размер блока <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> может выбираться из других соображений, например, для повышения эффективности работы процедур нижнего уровня за счет приема разворачивания циклов (<i>loop unrolling</i>).
+</p><p>Алгоритмы, необходимые при выполнении разложения Холецкого для матриц, рассмотренных в этом разделе, могут быть получены комбинацией уже рассмотренных идей 
+<a class="mw-selflink-fragment" href="#Разложение_Холецкого,_блочный_вещественный_вариант_для_плотной_симметричной_положительно_определённой_матрицы">блочности</a> и <a class="mw-selflink-fragment" href="#Разложение_Холецкого,_точечный_вещественный_вариант_для_разреженной_симметричной_положительно_определённой_матрицы">разреженности</a>.
+</p>
+<h2><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.BB.D1.8F_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D0.B9_.D0.BD.D0.B5.D0.B7.D0.BD.D0.B0.D0.BA.D0.BE.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.28.D1.81.D0.B5.D0.B4.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9.29_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Разложение_Холецкого_для_симметричной_незнакоопределенной_(седловой)_матрицы">Разложение Холецкого для симметричной незнакоопределенной (седловой) матрицы</span></h2>
+<p>Если симметричная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\mathcal A} }[/math]</span> представима в виде
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+{\mathcal A} =
+\begin{bmatrix}
+A &amp; B^T \\ 
+B &amp; -C 
+\end{bmatrix} ,
+ }[/math]</span></dd></dl>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> - симметричная положительно определенная (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=A^T\gt 0 }[/math]</span>) и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C }[/math]</span> - симметричная неотрицательно определенная (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ C=C^T\ge0 }[/math]</span>) матрицы, то, выполнив один шаг блочного исключения, ее можно преобразовать к виду
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{bmatrix}
+A &amp; 0 \\ 
+0 &amp; S 
+\end{bmatrix} ,
+ }[/math]</span></dd></dl>
+<p>где матрица дополнения по Шуру <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S=-(C+B^TA^{-1}B) }[/math]</span> является строго отрицательно определенной (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ S=S^T\lt 0 }[/math]</span>).
+Это означает, что матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\mathcal A} }[/math]</span> имеет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_A }[/math]</span> положительных и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_C }[/math]</span> отрицательных собственных значений, где через <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_A }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_C }[/math]</span> обозначены размерности матриц <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C }[/math]</span>, соответственно.
+</p><p>В этом случае существует симметричное треугольное разложение вида <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\mathcal A}={\mathcal L}D{\mathcal L}^T }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\mathcal L} }[/math]</span> является нижней унитреугольной, а диагональная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span> содержит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_A }[/math]</span> положительных и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n_C }[/math]</span> отрицательных элементов на главной диагонали, причем такое разложение может быть получено напрямую без выбора ведущего элемента даже если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C }[/math]</span> - нулевая матрица.
+</p><p>В общем случае разложения невырожденной незнакоопределенной системы необходимо применять выбор ведущего элемента с главной диагонали матрицы, что соответствует некоторой симметричной перестановке строк и столбцов исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\mathcal A} }[/math]</span>.
+</p>
+<h2><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.BB.D1.8F_.D1.8D.D1.80.D0.BC.D0.B8.D1.82.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Разложение_Холецкого_для_эрмитовой_матрицы">Разложение Холецкого для эрмитовой матрицы</span></h2>
+<p>Эрмитовой (или комплексно-самосопряженной) матрицей называют такую квадратную комплексную матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, для элементов которой выполняется соотношение
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij}=\overline{a_{ji}} }[/math]</span> (здесь, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ z=a+{\rm i\,}b\, }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\rm i}^2=-1 }[/math]</span>, то <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \overline z=a-{\rm i\,}b\, }[/math]</span>). В матричном виде это можно записать как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=\overline{A^T} }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = A^* }[/math]</span>.
+</p>
+<h3><span id=".D0.A2.D0.BE.D1.87.D0.B5.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82"></span><span class="mw-headline" id="Точечный_вариант">Точечный вариант</span></h3>
+<p>Как естественное обобщение точечного разложения Холецкого для симметричной положительно определеной матрицы может быть рассмотрено разложение Холецкого для эрмитовой положительно определеной матрицы. Все формулы для вычисления разложения остаются прежними, только теперь вместо операций над вещественными числами выполняются аналогичные комплексные операции:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+L_{ii} &amp; = \sqrt{ A_{ii} - \sum_{k=1}^{i-1} L_{ik}L_{ik}^* }, \\
+L_{ij} &amp; = \frac{1}{L_{jj}} \left( A_{ij} - \sum_{k=1}^{j-1} L_{ik} L_{jk}^* \right), \quad j \lt  i.
+\end{align}
+ }[/math]</span></dd></dl>
+<p>В отличие от
+<a class="mw-selflink-fragment" href="#Разложение_Холецкого_(метод_квадратного_корня),_базовый_точечный_вещественный_вариант_для_плотной_симметричной_положительно_определённой_матрицы">вещественного варианта</a>,
+при выполнении аналогичных комплексных операций потребуется считывать из памяти вдвое больше данных и производить над ними примерно вчетверо больше арифметических операций, что должно не только несколько улучшить локальность вычислений, но и повысить общую эффективность вычислений.
+</p>
+<h3><span id=".D0.91.D0.BB.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82"></span><span class="mw-headline" id="Блочный_вариант">Блочный вариант</span></h3>
+<p>Реализация блочного варианта разложения Холецкого для эрмитовых матриц аналогична рассмотренному выше
+<a class="mw-selflink-fragment" href="#Разложение_Холецкого,_блочный_вещественный_вариант_для_плотной_симметричной_положительно-определённой_матрицы">блочному варианту</a>
+для вещественных матриц.
+</p>
+<h2><span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B2_.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0.D1.85"></span><span class="mw-headline" id="Использование_разложения_Холецкого_в_итерационных_методах">Использование разложения Холецкого в итерационных методах</span></h2>
+<p>При выполнении разложения Холецкого в арифметике с фиксированной машинной точностью полученные треугольный фактор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> и само решение может оказаться недостаточно точным.
+Для получения более точного решения может применяться некоторый итерационный метод (например, метод сопряженных градиентов), с использованием полученного разложения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ LL^T }[/math]</span> в качестве предобусловливателя.
+</p><p>Основной причиной формирование неполного или неточного разложения в качестве предобусловливателя чаще всего бывает требование экономии памяти.
+</p>
+<h3><span id=".D0.9E.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B8_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE"></span><span class="mw-headline" id="Ограничивание_заполнения_в_разложении_Холецкого">Ограничивание заполнения в разложении Холецкого</span></h3>
+<p>При выполнении разложения Холецкого для разреженной матрицы, может образовываться такое большое количество новых ненулевых элементов, что оперативной памяти на хранение полного разложения окажется недостаточно.
+В этом случае можно построить неполное или приближенное разложение для применения его в дальнейшем в качестве предобусловливателя.
+В англоязычной литературе для обозначения таких разложения применяют единый термин Incomplete Cholesky factorization, или сокращенно IC-разложение.
+</p>
+<h3><span id=".D0.9D.D0.B5.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE_.D0.BF.D0.BE.D0.B7.D0.B8.D1.86.D0.B8.D1.8F.D0.BC_IC.28.5Bmath.5D.5Cdisplaystyle.7B_k_.7D.5B.2Fmath.5D.29"></span><span class="mw-headline" id="Неполное_разложение_Холецкого_по_позициям_IC([math]\displaystyle{_k_}[/math])">Неполное разложение Холецкого по позициям IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>)</span></h3>
+<p>Неполное разложение Холецкого можно получить используя заранее выбранные ограничения по структуре заполнения.
+Чаще всего получают разложение Холецкого на тех же позициях, в которых находятся ненулевые элементы исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Такое разложение обозначают IC(0) или просто IC0.
+</p><p>Если качества разложения IC0 оказывается недостаточно, то можно выбрать более широкую структуру треугольного множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>, например, разрешить образование одного уровня новых ненулевых элементов от исходной структуры матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Формально, это означает заполнение внутри структуры матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A^2 }[/math]</span>, а такое разложение обозначают IC(1).
+</p><p>Можно рассмотреть и более общий случай, с заполнением внутри структуры матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A^{k+1} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \geq 0 }[/math]</span>. Такое разложение обозначают IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>).
+</p><p>Обычно с ростом значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> точность неполного разложения IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>) возрастает, хотя это совсем не является обязательным даже для симметричных положительно определенных матриц, полное разложение для которых существует и находится однозначно.
+Из-за неполноты разложения на главной диагонали могут оказаться нулевые или даже отрицательные элементы.
+Чтобы завершить треугольное разложение в таких случаях применяют предварительный диагональный сдвиг исходной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A+\varepsilon I }[/math]</span> перед ее разложением. Здесь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \varepsilon\gt 0 }[/math]</span> - малый параметр, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I }[/math]</span> - диагональная матрица.
+Если слишком малый или не положительный диагональный элемент образуется в процессе разложения, то применяют его замену на некоторое заранее выбранное значение. Такую операцию называют диагональной коррекцией разложения.
+</p><p>Неполное разложение IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>) иногда называют также "разложение по позициям".
+</p>
+<h3><span id=".D0.9F.D1.80.D0.B8.D0.B1.D0.BB.D0.B8.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC_IC.28.5Bmath.5D.5Cdisplaystyle.7B_.5Ctau_.7D.5B.2Fmath.5D.29"></span><span class="mw-headline" id="Приближенное_разложение_Холецкого_по_значениям_IC([math]\displaystyle{_\tau_}[/math])">Приближенное разложение Холецкого по значениям IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span>)</span></h3>
+<p>Для контроля заполнения в треугольном множителе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> разложения Холецкого, кроме структурных ограничений, можно также применить ограничение разложения в зависимости от значения самих элементов разложения.
+Например, можно сохранять только элементы, большие по модулю чем некоторый малый параметр <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau\gt 0 }[/math]</span>.
+В этом случае разложение называют <i>приближенным</i> разложением Холецкого или разложением "по значению" и обозначают IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span>).
+Величину <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span> называют "порогом" разложения или "порогом" фильтрации.
+</p><p>Вполне правомерным является ожидание того, что в уменьшением <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span> точность полученного разложения будет возрастать, правда за счет роста количества ненулевых элементов в треугольном множителе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>.
+Недостатком же такого разложения является то, что, в общем случае, предсказать заполнение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> не возможно.
+</p><p>С точки зрения устойчивости разложения вариант приближенного разложения Холецкого является более предпочтительным, хотя применение предварительного диагонального сдвига, а также диагональной коррекции также допускается.
+Если же описанные приемы не помогаю получить разложения достаточной точности, то можно применить прием модификации диагонали Азиза-Дженингса, который при отбрасывании малого элемента разложения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \ell_{ij} }[/math]</span> состоит в добавлении модуля этого элемента к диагональным элементам разложения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \ell_{ii} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \ell_{jj} }[/math]</span>. Это прием гарантирует существование приближенного разложения для любой симметричной положительно определенной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Наиболее эффективно этот прием модификации главной диагонали можно организовать при использовании Ктаут-версии разложения Холецкого.
+</p>
+<h3><span id=".D0.9F.D1.80.D0.B8.D0.B1.D0.BB.D0.B8.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B2.D1.82.D0.BE.D1.80.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BA.D0.B0_IC.28.5Bmath.5D.5Cdisplaystyle.7B_.5Ctau_1.2C.5Ctau_2_.7D.5B.2Fmath.5D.29"></span><span class="mw-headline" id="Приближенное_разложение_Холецкого_второго_порядка_IC([math]\displaystyle{_\tau_1,\tau_2_}[/math])">Приближенное разложение Холецкого второго порядка IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau_1,\tau_2 }[/math]</span>)</span></h3>
+<p>Для повышения точности приближенного разложения можно применить "двухпороговую" версию приближенного разложения Холецкого. Основная идея такого разложения, называемого разложением Тисменецкого-Капорина, состоит в том чтобы вычисление разложения проводить в более высокой точности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau_2 }[/math]</span>, а сохранять в треугольном множителе только значения, которые по модулю не меньше <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau_1 }[/math]</span>. Обычно полагают <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau_1=\tau }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau_2=\tau^2 }[/math]</span>, в этом случае разложение называют разложением "второго порядка", т.к. элементы матрицы ошибок оказываются по модулю меньше чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau^2 }[/math]</span>.
+Для обозначения симметричного порогового разложения второго порядка используют обозначение IC2, которое не следует путать со структурным разложением IC(2) (т.е. разложением IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>), где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k=2 }[/math]</span>).
+</p><p>Такое разложение обычно используется вместе с приемом Азиза-Дженингса для модификации диагональных элементов, получая вариант "безотказного" разложения для любой симметричной положительно определенной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+Этот вариант разложения позволяет получать наиболее точные разложения (при одинаковом заполнении множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>), хотя для их вычисления приходится тратить больше времени на вычисление самого разложения.
+</p>
+<h3><span id=".D0.9A.D0.BE.D0.BC.D0.B1.D0.B8.D0.BD.D0.B0.D1.86.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_IC.28.5Bmath.5D.5Cdisplaystyle.7B_k.2C.5Ctau_.7D.5B.2Fmath.5D.29_.D0.B8_IC.28.5Bmath.5D.5Cdisplaystyle.7B_.5Ctau.2Cm_.7D.5B.2Fmath.5D.29"></span><span class="mw-headline" id="Комбинация_разложений_Холецкого_IC([math]\displaystyle{_k,\tau_}[/math])_и_IC([math]\displaystyle{_\tau,m_}[/math])">Комбинация разложений Холецкого IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k,\tau }[/math]</span>) и IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau,m }[/math]</span>)</span></h3>
+<p>Для экономии памяти при вычислении неполного или приближенного разложения Холецкого можно использовать следующие два варианта симметричных треугольных разложений.
+</p><p>Для контроля верхней границы заполнения треугольного множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> можно предложить использовать заполнение как и для разложения IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>), при некотором выбранном значении <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>. Для дальнейшей экономии памяти разложение в заданной структуре разреженности можно вести с использованием порога разложения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span>, как и при проведении разложения IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span>).
+Такую комбинацию можно назвать IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ k,\tau }[/math]</span>)-разложением.
+Применяться она может, например, при необходимости априорных структурных ограничений для минимизации обменов при использовании параллельной версии разложения для распределенной памяти.
+</p><p>Второй вариант структурно-порогового разложения можно описать следующим образом.
+При проведении обычного порогового IC(<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \tau }[/math]</span>) разложения, наложим дополнительное ограничение на элементы строк матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>: разрешим сохранение только не более чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> наибольших по модулю элементов рассматриваемой строки множителя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span>.
+При общей размерности задачи <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> в матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> будет не более чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nm }[/math]</span> элементов.
+Такой подход представляется разумным, например, для матриц полученных в результате дискретизации с достаточно регулярным шаблоном.
+Наиболее известен несимметричный вариант такого разложения, предложенного Саадом и называемого ILUT-разложением.
+</p>
+<h2><span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.A5.D0.BE.D0.BB.D0.B5.D1.86.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B2_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D1.85_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0.D1.85"></span><span class="mw-headline" id="Использование_разложения_Холецкого_в_параллельных_итерационных_алгоритмах">Использование разложения Холецкого в параллельных итерационных алгоритмах</span></h2>
+<p>Формулы разложения Холецкого по большей части имеют рекурсивный характер и выделение параллельных и независимых этапов вычислений является не очевидной и непростой задачей.
+Слишком прямолинейное ее решение может привести к значительному объему пересылаемых данных, что значительно снизит результат распараллеливания.
+Наибольший эффект может дать подход, основанный на предварительном переупорядочивании исходной матрицы.
+</p>
+<h3><span id=".D0.9F.D0.B5.D1.80.D0.B5.D1.83.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.8B.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B1.D0.BB.D0.BE.D1.87.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Переупорядочивания_для_выделения_блочности">Переупорядочивания для выделения блочности</span></h3>
+<p>Для того чтобы выделить независимые блоки вычислений, можно использовать симметричные перестановки строк и столбцов исходной матрицы, приводящие ее к блочно окаймленному виду.
+В этом случае основная часть работы будет сосредоточена в независимых блоках, которые могут обрабатываться параллельно и без обменов данными.
+</p><p>Наиболее простым, но не слишком эффективных способом упорядочивания является предварительное упорядочивание матрицы с помощью обратного алгоритма Катхилла-Макки (RCM, reverse Cuthill—McKee) для минимизации ширины профиля, а затем равномерное разбиение по блокам (процессорам) в новом упорядочивании. После присваивания номера процессора каждой вершине графа матрицы, в независимые блоки можно выделить те вершины графа, которые связаны только с вершинами, имеющими тот же номер процессора (т.е. являющимися внутренними вершинами). Остальные вершины можно объединить в последний блок окаймления, который будет обрабатываться отдельно. Все вычисления внутри блоков будут независимы и могут выполняться параллельно.
+Для повышения эффективности треугольной факторизации внутренние вершины каждого из блоком можно также упорядочить с помощью метода RCM.
+</p><p>Более эффективными с точки зрения минимизации ширины окаймления будут следущие методы:
+</p>
+<ul><li>Метод минимальных сепараторов, который заключается в последовательном нахождении имеющих минимальный размер разделителей (сепараторов), обеспечивающих расщепление оставшихся вершин на два независимых блока.</li></ul>
+<ul><li>Метод минимальной степени (Minimum Degree, MD). Прямое применение этого метода к матрицах большого размера затруднительно, поэтому используется <i>приближенный метод минимальной степени</i> (Approximate Minimum Degree, AMD).</li></ul>
+<ul><li>Метод вложенных сечений (Nested Dissection, ND). Это рекурсивный алгоритм, на каждом шаге разделяющий множество вершин на два независимых блока, представленые в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2\times2 }[/math]</span> блочно-окаймленном виде.</li></ul>
+<p>В качестве побочного положительного эффекта от такого упорядочивания, для некоторого вида матриц доказано, что полное разложение будет иметь почти минимально возможное количество ненулевых элементов.
+Нахождение оптимальной перестановки в общем случае является NP-полной задачей.
+</p><p>Существуют и другие алгоритмы упорядочивания матриц для наиболее оптимального их распределения по процессорам.
+Наиболее популярными являются последовательные пакеты METIS, JOSTLE, SCOTCH, CHACO, PARTY, а также параллельные коды PARMETIS, JOSTLE, PT-SCOTCH и ZOLTAN.
+Многие из них являются свободно распространяемыми.
+</p>
+<h3><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.BD.D0.B5.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B8.D0.BC.D1.8B.D1.85_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B0.D1.85"></span><span class="mw-headline" id="Разложение_в_независимых_блоках">Разложение в независимых блоках</span></h3>
+<p>Вычисления в независимых блоках полностью независимы и могут выполняться параллельно без обменов данными между процессорами.
+Единственным недостатком может быть лишь то, что для пороговых разложений количество арифметических операций на различных процессорах может различаться, что может привести к некоторой несбалансированности вычислений.
+</p>
+<h3><span id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_.D1.81.D0.B5.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BE.D1.80.D0.B0.D1.85"></span><span class="mw-headline" id="Разложение_в_сепараторах">Разложение в сепараторах</span></h3>
+<p>Последний блок, в котором собраны сепараторы всех блоков при небольшом количестве используемых процессоров может обрабатываться, например, на одном головном процессоре.
+Если же процессоров достаточно много, но обработку сепараторов также необходимо производить совместно.
+</p>
+<h3><span id=".D0.98.D0.B5.D1.80.D0.B0.D1.80.D1.85.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B8_.D0.B2.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D1.8B"></span><span class="mw-headline" id="Иерархические_и_вложенные_алгоритмы">Иерархические и вложенные алгоритмы</span></h3>
+<p>Для обработки сепараторов могут быть применены те же алгоритмы упорядочивания и выделения независимых блоков что и для исходной задачи.
+Этот же прием может быть применен и на следующем шаге, с получением иерархического или вложенного алгоритма.
+</p><p>В случае применения порогового разложения такие построения могут быть явно применены к построенному дополнению по Шуру.
+Для структурных факторизаций существуют приложения сразу строящие многоуровневые упорядочивания и обеспечивающие минимальность заполнения и обменов.
+</p>
+<h3><span id=".D0.91.D0.BB.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4_.D0.AF.D0.BA.D0.BE.D0.B1.D0.B8"></span><span class="mw-headline" id="Блочный_метод_Якоби">Блочный метод Якоби</span></h3>
+<p>Описанные выше подходы относились к типу "прямого" или "явного" разложения, когда при отбрасывании элементов разложения в расчет принимались только их абсолютные значения. Структурные свойства при этом являлись подчиненными и на отбрасывание элементов никак не влияли.
+</p><p>Альтернативным является подход, когда из-за соображений увеличения ресурса параллелизма некоторые элементы отбрасываются исключительно из структурных соображений. Например, можно сначала распределить строки матрицы по процессорам, а затем перед проведением разложения просто отбросить все элементы связывающие один процессор с другим.
+В этом случае разложение будет проходить полностью независимо в каждом из блоков.
+Внутри каждого блока может проводиться любой из структурных или пороговых вариантов разложения Холецкого.
+Построение такого предобусловливателя называют блочным методом Якоби без перекрытия блоков (Block Jacobi, BJ).
+Такое предобусловливание является наиболее простым, применение его наиболее параллельным (полностью без обменов данными), правда сходимость может оставлять желать лучшего, почти независимо от качества разложения внутри каждого из блоков.
+</p>
+<h3><span id=".D0.90.D0.B4.D0.B4.D0.B8.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4_.D0.A8.D0.B2.D0.B0.D1.80.D1.86.D0.B0"></span><span class="mw-headline" id="Аддитивный_метод_Шварца">Аддитивный метод Шварца</span></h3>
+<p>Разложение гораздо более высокого качества по сравнению с методом Якоби можно получить применяя аддитивный метод Шварца (Additive Schwarz, AS). Иногда этот метод называют также методом Якоби с перекрытиями. Суть его заключается в расширении структуры каждого из блоков матрицы за счет добавления нескольких слоев близлежащих строк матрицы. Треугольное разложение строится для расширенной матрицы, таким образом на каждом из процессоров происходит решение расширенной подзадачи с привлечением данных от других процессоров.
+После нахождения решения подзадачи на каждом из процессоров обычно происходит отбрасывание не локальных компонент решения. Такой вариант метода называют аддитивный метод Шварца с ограничениями (Restricted Additive Schwarz, RAS).
+</p><p>Сходимость аддитивного метода Шварца бывает гораздо выше чем сходимость метода Якоби, и обычно монотонно улучшается с ростом размера перекрытия. Несмотря на дополнительные вычисление и обмены, общее время решения на параллельном компьютере может быть существенно меньше.
+</p>
+<h3><span id=".D0.9D.D0.B5.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D0.B5_.D0.BE.D0.B1.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Неполное_обратное_треугольное_разложения">Неполное обратное треугольное разложения</span></h3>
+<p>Существует и другой вариант аддитивного разложения, который кроме несколько более быстрой сходимости опирается на построение перекрытий блоков только в одну сторону ("назад", т.е. в сторону меньших номеров строк).
+Название этого метода блочное неполного обратного разложения Холецкого, имеющее только английскую аббревиатуру BIIC (Block Incomplete Inverse Cholesky).
+Позднее, вместе с рассмотрением несимметричного варианта разложения (BIILU), этот метод стал называться методом неполного обратного треугольного разложения, или НОТ-разложения.
+</p><p>Комбинация этого метода с неполным симметричным треугольным разложением второго порядка IC2 внутри каждого из блоков имеет обозначение BIIC2.
+</p><p>Идея этого метода впервые была предложена И.Е.Капориным в виде последовательного алгоритма.
+В литературе встречается также название этого метода как метод Капорина-Коньшина, по имени авторов впервые представивших его параллельную реализацию и проанализировавших ее свойства.
+</p>
+<h2><span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.B8.D0.BD.D0.B5.D0.B9.D0.BD.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC_.D1.81_.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B5.D0.B9"></span><span class="mw-headline" id="Решение_линейных_систем_с_треугольной_матрицей">Решение линейных систем с треугольной матрицей</span></h2>
+<p>Разложение Холецкого может применяться для решения системы линейных уравнений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax = b }[/math]</span>, если матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> симметрична и положительно определена. 
+Выполнив разложение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = LL^T }[/math]</span>, решение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x }[/math]</span> получается последовательным решением двух треугольных систем уравнений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ly = b }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L^T x = y }[/math]</span>.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D0.BB.D0.BE.D1.82.D0.BD.D0.BE.D0.B9_.D0.BD.D0.B8.D0.B6.D0.BD.D0.B5.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B5.D0.B9"></span><span class="mw-headline" id="Решение_системы_с_плотной_нижнетреугольной_матрицей">Решение системы с плотной нижнетреугольной матрицей</span></h3>
+<p>Решение линейной системы с плотной нижнетреугольной матрицей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L y = b }[/math]</span> можно представить в виде "прямого" хода, т.е. цепочки вычислений, начиная с верхнего угла матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> по возрастанию номера строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+y_{1} &amp; = b_{1}, \\
+y_{i} &amp; = b_{i} - \sum_{j = 1}^{i-1} \ell_{ij} y_{j}, \quad i = 2,...,n.
+\end{align}
+ }[/math]</span></dd></dl>
+<p>В разделе
+<a href="/ru/%D0%9F%D1%80%D1%8F%D0%BC%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_(%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82)" title="Прямая подстановка (вещественный вариант)">Прямая_подстановка_(вещественный_вариант)</a>
+содержится подробное описание алгоритма и его анализ.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D0.BB.D0.BE.D1.82.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B5.D1.80.D1.85.D0.BD.D0.B5.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B5.D0.B9"></span><span class="mw-headline" id="Решение_системы_с_плотной_верхнетреугольной_матрицей">Решение системы с плотной верхнетреугольной матрицей</span></h3>
+<p>Решение линейной системы с плотной верхнетреугольной матрицей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U x = y }[/math]</span> (где, например, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U=L^T }[/math]</span>)
+можно представить в виде "обратного" хода, т.е. цепочки вычислений, начиная с нижнего угла матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span> при убываниии номера строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+x_{n} &amp; = y_{n}/u_{nn}, \\
+x_{i} &amp; = \left (y_{i} - \sum_{j = i+1}^{n} u_{ij} x_{j} \right ) / u_{ii}, \quad i = n - 1,...,1.
+\end{align}
+ }[/math]</span></dd></dl>
+<p>В разделе
+<a href="/ru/%D0%9E%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_(%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82)" title="Обратная подстановка (вещественный вариант)">Обратная_подстановка_(вещественный_вариант)</a>
+содержится подробное описание алгоритма и его анализ.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.81_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BD.D0.B8.D0.B6.D0.BD.D0.B5.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B5.D0.B9"></span><span class="mw-headline" id="Решение_системы_с_разреженной_нижнетреугольной_матрицей">Решение системы с разреженной нижнетреугольной матрицей</span></h3>
+<p>Решение линейных систем с разреженной нижне- или верхнетреугольной матрицей аналогично рассмотренным алгоритмам для плотных матриц, при этом подстановки ведутся исключительно для ненулевых элементов с учетом идеи работы с  
+<a class="mw-selflink-fragment" href="#Разложение_Холецкого,_точечный_вещественный_вариант_для_разреженной_симметричной_положительно_определённой_матрицы">разреженными</a>
+матрицами.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BB.D0.B5.D0.BA.D1.81.D0.BD.D0.BE.D0.B9_.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B5.D0.B9"></span><span class="mw-headline" id="Решение_системы_с_комплексной_треугольной_матрицей">Решение системы с комплексной треугольной матрицей</span></h3>
+<p>Решение линейных систем с комплексной нижне- или верхнетреугольной матрицей аналогично рассмотренным алгоритмам для вещественных матриц, при этом арифметические операции выполняются в комплексной арифметике, аналогично операциям раздела   
+<a class="mw-selflink-fragment" href="#Разложение_Холецкого_для_эрмитовой_матрицы">факторизации эрмитовых матриц</a>.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC_.D1.81_.D0.B1.D0.BB.D0.BE.D1.87.D0.BD.D0.BE.D0.BE.D0.BA.D0.B0.D0.B9.D0.BC.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D1.82.D1.80.D0.B5.D1.83.D0.B3.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B0.D0.BC.D0.B8"></span><span class="mw-headline" id="Решение_систем_с_блочноокаймленными_треугольными_матрицами">Решение систем с блочноокаймленными треугольными матрицами</span></h3>
+<p>Особенность решения линейных систем с блочноокаймленными треугольными матрицами в том что независимость вычислений в отдельных блоках дает возможность проведения параллельных вычислений.
+</p>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<ul><li>В <a rel="nofollow" class="external text" href="http://netlib.org/lapack/">LAPACK</a> используется функция <a rel="nofollow" class="external text" href="http://www.netlib.org/lapack/double/dpotrf.f">DPBTRF</a> (последовательная реализация для двойной точности).</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="http://www.netlib.org/scalapack/">ScaLAPACK</a> используется функция <a rel="nofollow" class="external text" href="http://www.netlib.org/scalapack/double/pdpbtrf.f">PDPBTRF</a> (параллельная реализация для двойной точности).</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/SAS_Institute">SAS</a> используется функция ROOT( matrix ), входящая в пакет SAS IML.</li></ul>
+<ul><li>В системах <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/MATLAB">MATLAB</a>, <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/GNU_Octave">Octave</a>, <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/R_(язык_программирования)">R</a> разложение выполняется командой U = chol(A).</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/Maple">Maple</a> и <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/NumPy">NumPy</a> существует процедура cholesky в модуле linalg.</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/Mathematica">Mathematica</a> используется процедура CholeskyDecomposition[A].</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/GSL">GSL</a> используется функция gsl_linalg_cholesky_decomp.</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="http://www.alglib.net">ALGLIB</a> имеются реализации как <a rel="nofollow" class="external text" href="http://www.alglib.net/matrixops/cholesky.php">LLT</a> так и <a rel="nofollow" class="external text" href="http://www.alglib.net/matrixops/symmetric/ldlt.php">LDLT</a> разложений для различных языков программирования: C#, C++, C++ (арифметика повышенной точности), FreePascal, Delphi, VB.NET, VBA, Python.</li></ul>
+<ul><li>В <a rel="nofollow" class="external text" href="http://www.bluebit.gr/matrix-calculator/">Online Matrix Calculator</a> непосредственно в web-интерфейсе можно выполнить разложение Холецкого, выбрав раздел <i>Cholesky Decomposition</i>.</li></ul></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Метод_Холецкого_(нахождение_симметричного_треугольного_разложения)&amp;oldid=3799">https://algowiki-project.org/w/ru/index.php?title=Метод_Холецкого_(нахождение_симметричного_треугольного_разложения)&amp;oldid=3799</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0" title="Категория:Уровень метода">Уровень метода</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Категория:Законченные статьи">Законченные статьи</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86" title="Категория:Разложения матриц">Разложения матриц</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE+%28%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE+%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE+%28%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE+%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)&amp;oldid=3799" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%BE%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Cholesky_method" title="Cholesky method — English" lang="en" hreflang="en" data-title="Cholesky method" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 8 июля 2016 года в 16:29.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":78,"wgPageParseReport":{"limitreport":{"cputime":"0.027","walltime":"0.028","ppvisitednodes":{"value":897,"limit":1000000},"postexpandincludesize":{"value":88,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":3,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":15704,"limit":5000000},"timingprofile":["100.00%    3.117      1 Шаблон:Level-m","100.00%    3.117      1 -total"]},"cachereport":{"timestamp":"20260520112118","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Noite/EM-алгоритм кластеризации — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"880aed74d0df9ec6e2443f5d","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Noite/EM-алгоритм_кластеризации","wgTitle":"Noite/EM-алгоритм кластеризации","wgCurRevisionId":18797,"wgRevisionId":18797,"wgArticleId":543,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Страницы с ошибками в подсветке синтаксиса","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Noite/EM-алгоритм_кластеризации","wgRelevantArticleId":543,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Noite","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Noite_EM-алгоритм_кластеризации rootpage-Участник_Noite skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Noite/EM-алгоритм кластеризации</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite" title="Участник:Noite">Участник:Noite</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">EM-алгоритм кластеризации
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(iter * N * M^2 * K) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N * M + 1 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(iter * M^2 * K) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(iter * N) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Автор описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite" title="Участник:Noite">Зинченко Д.А.</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Преимущества_и_недостатки"><span class="tocnumber">1.10.1</span> <span class="toctext">Преимущества и недостатки</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Влияние_структуры_матрицы_ковариации_на_форму_кластера"><span class="tocnumber">1.10.2</span> <span class="toctext">Влияние структуры матрицы ковариации на форму кластера</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Общие_свойства"><span class="tocnumber">1.10.3</span> <span class="toctext">Общие свойства</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Инициализация_параметров_распределений"><span class="tocnumber">2.1.1</span> <span class="toctext">Инициализация параметров распределений</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h1><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h1>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h2>
+<p>В задачах оптимизации EM-алгоритмом называют итеративную процедуру поиска численного значения экстремума какой-либо функции. В частности, в статистике этот алгоритм используется для оценки максимального правдоподобия. Впервые название EM-алгоритм было предложено в 1977 году<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>, однако его идеи были описаны и раньше<sup id="cite_ref-korolev_2-0" class="reference"><a href="#cite_note-korolev-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>EM-алгоритм применяется для решения задач двух типов <sup id="cite_ref-korolev_2-1" class="reference"><a href="#cite_note-korolev-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>:
+</p>
+<ol><li>Анализ неполных данных (данных с пропусками).</li>
+<li>Оценка максимального правдоподобия в случае, если функцию правдоподобия трудно исследовать аналитически. В этом случае введение набора скрытых переменных может существенно упростить задачу.</li></ol>
+<p>Задача кластеризации относится к задачам второго типа. В данной статье рассматривается следующая постановка задачи кластеризации:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Дано множество из N объектов, каждый из которых представляет собой точку в M-мерном метрическом пространстве. Каждому измерению пространства соответствует некоторое свойство объекта. Необходимо разбить это множество на K подмножеств (кластеров) так, чтобы, чтобы элементы каждого подмножества существенно отличались по свойствам от элементов других подмножеств.</pre></div>
+<p>Использование алгоритма EM подразумевает следующее <i>предположение об объектах</i>:
+</p><p>Пусть объекты, которые необходимо разбить на кластеры, появляются случайным образом и независимо друг от друга согласно вероятностному распределению, равному смеси (линейной комбинации) распределений кластеров. В данной статье в дальнейшем будет считаться, что распределение каждого кластера является многомерным нормальным распределением с произвольной матрицей ковариации - наиболее часто используемое предположение.
+</p><p>Тогда каждый объект принадлежит каждому кластеру, но с разной вероятностью. EM-алгоритм итеративно оценивает параметры распределений кластеров, максимизируя логарифмическую функцию максимального правдоподобия. После окончания работы алгоритма объект будет отнесен к кластеру, вероятность принадлежности которому максимальна. Вводимый набор скрытых переменных для каждого объекта - вероятности того, что объект принадлежит каждому из кластеров.
+</p><p>Итерация алгоритма состоит из двух последовательных шагов.
+</p>
+<ol><li>(Expectation) Вычисляются новые ожидаемые значения скрытых переменных.</li>
+<li>(Maximization) Решается задача максимизации правдоподобия: По текущим значениям скрытых переменных обновляются параметры распределений для кластеров: математическое ожидание, дисперсия и вероятность появления объектов из кластера.</li></ol>
+<h2><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h2>
+<p><i>Используемые обозначения:</i>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> - количество объектов, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> - количество кластеров, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> - количество параметров объекта
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \gamma_{n,k} }[/math]</span> - значения скрытых переменных
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{k} }[/math]</span> - количество элементов отнесенных к кластеру <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{1},...,x_N }[/math]</span> - объекты
+</p><p><i>Параметры распределений:</i>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_{1},...,w_{K} }[/math]</span> - вероятности появления объектов из кластеров (веса кластеров), <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sum_{k=1}^Kw_{k}=1 }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_{1},...,\mu_{K} }[/math]</span> - центры гауссиан кластеров
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma_{1},...,\Sigma_{K} }[/math]</span> - матрицы ковариации гауссиан кластеров, каждая матрица имеет размерность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span>x<span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span>
+</p><p><i>Смесь распределений:</i>
+</p>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{  P(x) = \sum_{j=1}^Kw_jp(x|\mu_{j}, \Sigma_{j}) }[/math]</span></center>
+<p>Цель алгоритма - вычислить параметры распределений, максимизирующих логарифм функции правдоподобия:
+</p>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \ln P(x|w,\mu,\Sigma)= \sum_{n=1}^N \ln \{ \sum_{k=1}^K w_{k}p(x_{n}|\mu_{k},\Sigma_{k})\} }[/math]</span>.</center>  
+<ul><li>В начале работы алгоритма задаются параметры начального приближения:</li></ul>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_{i} = 1/K, \mu_{i} = random(x_{j}), i=1..K, j=1..N }[/math]</span></center>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma_{j,j}^{k}=\frac{1}{NK}\sum_{i=1}^N(x_{i,j} - \mu_{k,j})^2, k=1..K, j=1..M }[/math]</span></center>
+<p><i>Поскольку от начального приближения может сильно зависеть результат работы алгоритма, вместо инициализации кластеров случайными центрами, равными весами и диагональными матрицами ковариации, как в приведенных формулах, часто применяют другие способы (подробнее - в <a href="#Особенности_реализации_последовательного_алгоритма"> особенностях реализации</a>)</i>
+</p>
+<ul><li>Далее итеративно выполняется следующая пара процедур:
+<ul><li>E-шаг: используя текущее значение параметров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_{1},...,w_{k};\mu_{1},...,\mu_{k};\Sigma^{1},...,\Sigma^{k} }[/math]</span>, вычисляем значение вектора скрытых переменных <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \gamma }[/math]</span>:<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \gamma_{n,k}=\frac{w_{k}p(x_{n}|\mu_{k},\Sigma^{k})}{\sum_{j=1}^K w_{j}p(x_{n}|\mu_{j},\Sigma^{j})},  }[/math]</span> знаменатель дроби - нормировочный коэффициент</center><center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ p(x|\mu,\Sigma)=\frac{1}{{(2\pi)}^{\frac{N}{2}}\sqrt{|\Sigma|}}exp\biggl\{-\frac{1}{2}{(x-\mu)}^T{\Sigma}^{-1}(x-\mu)\biggr\} }[/math]</span> - плотность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>-мерного нормального распределения</center></li>
+<li>М-шаг: переоценка параметров по текущим значениям скрытых переменных для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = 1..K }[/math]</span>:</li></ul></li></ul>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu^{new}_{k}=\frac{1}{N_{k}}\sum_{n=1}^N \gamma_{n,k}x_{n} }[/math]</span>,</center>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma_{new}^{k}=\frac{1}{N_{k}}\sum_{n=1}^N \gamma_{n,k} (x_{n}-\mu_{k}^{new})(x_{n}-\mu_{k}^{new})^{T} }[/math]</span>,</center>
+<center><span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_{k}^{new}=\frac{N_{k}}{N} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{k}=\sum_{n=1}^N \gamma_{n,k} }[/math]</span>.</center>
+<p>В EM алгоритме используется один из следующих критериев остановки:
+</p>
+<ul><li>Норма разности векторов скрытых переменных на текущей итерации не превышает заданную константу</li>
+<li>Прошествие заданного количества итераций</li>
+<li>Изменение логарифмического правдоподобия меньше заданной константы.</li></ul>
+<h2><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h2>
+<p>Вычислительное ядро алгоритма состоит из двух шагов, повторяющихся каждую итерацию:
+</p>
+<ul><li>Обновление скрытых переменных на основе текущих параметров распределений</li>
+<li>Обновление параметров кластеров: весов, центров и матриц ковариации</li></ul>
+<h2><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h2>
+<p>Как записано в <a href="#Вычислительное_ядро_алгоритма">описании вычислительного ядра алгоритма</a>, основную часть алгоритма составляют итеративно проводимые макрооперации: Expectation шаг - вычисление новых значений скрытых переменных, Maximization шаг - обновление параметров кластеров. Макроструктура алгоритма представлена на рисунке 1:
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_macro.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/5/5e/EM_macro.png/600px-EM_macro.png" decoding="async" width="600" height="126" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/5/5e/EM_macro.png 1.5x" /></a><figcaption>Рисунок 1: Макроструктура EM-алгоритма</figcaption></figure>
+<h2><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h2>
+<p>Примерная схема реализации EM алгоритма с предварительной обработкой матриц ковариации:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Инициализировать веса и центры кластеров;
+Инициализировать матрицы ковариации;
+
+// Основной цикл
+Пока условие остановки не выполнено
+    // E-шаг
+    В цикле для каждого кластера
+        Вычислить определитель матрицы ковариации Sigma;
+        Вычислить обратную матрицу матрице Sigma;
+    В цикле для каждого объекта
+        В цикле для каждого кластера
+            Вычислить и запомнить p(x | mu, Sigma) для текущего объекта и кластера;
+        Просуммировать вычисленные p(x | mu, Sigma);
+        В цикле для каждого кластера
+            Обновить скрытые переменные gamma;
+    // M-шаг
+    Обновить веса w;
+    Обновить центры кластеров mu;
+    Обновить матрицы ковариации Sigma;</pre></div>
+<h2><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h2>
+<p>Количество итераций алгоритма зависит от условия остановки, поэтому будем рассматривать сложность одной итерации.
+</p><p><b>Шаг E</b>
+</p><p>Сложность вычисления определителя произвольной матрицы ковариации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma }[/math]</span> методом Гаусса - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(M^3) }[/math]</span>;
+</p><p>Сложность вычисления матрицы, обратной произвольной матрице ковариации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma }[/math]</span> методом Гаусса - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(M^3) }[/math]</span>;
+</p><p>Сложность предварительного вычисления определителей и обратных матриц матрицам ковариации - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M^3) }[/math]</span>
+</p><p>С учетом заранее вычисленных определителей и обратных матриц сложность вычисления <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p(x | \mu,\Sigma) }[/math]</span> составит: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(M^2) }[/math]</span>;
+</p><p>Суммарно сложность шага E составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N * M^2 * K + K * M^3) }[/math]</span>
+</p><p><b>Шаг M</b>
+</p><p>Сложность обновления весов кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * N) }[/math]</span>;
+</p><p>Сложность обновления центров кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M * N) }[/math]</span>;
+</p><p>Сложность обновления одной матрицы ковариации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N * M) }[/math]</span>;
+</p><p>Сложность обновления всех матриц ковариации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M * N) }[/math]</span>;
+</p><p>Суммарно сложность шага M алгоритма - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M * N) }[/math]</span>;
+</p><p><br />
+</p><p>Таким образом, сложность одной итерации EM алгоритма для псевдокода, указанного в предыдущем разделе, составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M^2 * N + K * M^3 + K * M * N) }[/math]</span>. 
+</p><p>В предположении, что размерность объектов много меньше их количества <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M \lt \lt  N }[/math]</span> получим сложность итерации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M^2 * N) }[/math]</span>.
+</p><p>Нетрудно заметить, что вычисление определителя и обратной матрицы к произвольной матрице ковариации составляет большу́ю часть работы шага E и существенно влияет на его сложность. Поэтому эти вычисления проведены заранее - вынесены за основной цикл шага E<sup id="cite_ref-ParallelEMComparissonGraphLab_3-0" class="reference"><a href="#cite_note-ParallelEMComparissonGraphLab-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>. Помимо этого сложность этих вычислений можно сократить еще сильнее, если ввести ограничения структуру матрицы ковариации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma }[/math]</span>.
+</p><p>Наиболее часто используемым ограничением, позволяющим эффективно распараллеливать алгоритм<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>, является предположение, что матрица ковариации имеет диагональную форму. Тогда вычисление её определителя и обратной матрицы имеет сложнось <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(M) }[/math]</span>, а суммарная сложность шага E и сложность всей итерации составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K * M * N) }[/math]</span>.
+</p>
+<h2><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h2>
+<p>Макроструктура алгоритма представлена на рисунке 1 (см. <a href="#Макроструктура_алгоритма">раздел 1.4</a> статьи).
+</p><p>На рисунке 2 представлена схема вычислений E-шага алгоритма для одного объекта: для объекта <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{i} }[/math]</span> и параметров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_{j}, \mu_{j}, \Sigma_{j}, j=1..K }[/math]</span> по формулам <a href="#Математическое_описание_алгоритма">раздела 1.2</a> вычисляются ненормированные значения скрытых переменных <span style="opacity:.5" class="smj-container">[math]\displaystyle{ g_{j} }[/math]</span>, нормировочный коэффициент <i>normСoeff</i>, и получаются итоговые значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \gamma_{i,j} }[/math]</span>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_Expectation_step.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/e/e7/EM_Expectation_step.png/400px-EM_Expectation_step.png" decoding="async" width="400" height="467" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/e/e7/EM_Expectation_step.png/600px-EM_Expectation_step.png 1.5x, https://algowiki-project.org/algowiki/pool/images/e/e7/EM_Expectation_step.png 2x" /></a><figcaption>Рисунок 2: E-шаг EM алгоритма для одного объекта</figcaption></figure>
+<p>На рисунке 3 представлена схема вычислений E-шага алгоритма для всех объектов: для объекта <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{j} }[/math]</span> и параметров-векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w, \mu, \Sigma }[/math]</span> по формулам <a href="#Математическое_описание_алгоритма">раздела 1.2</a> вычисляются значения скрытых переменных. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ E_{i}, i=1..N }[/math]</span> - маркооперации, E-шаги для соответствующих объектов.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_Expectation_step_all.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/2/22/EM_Expectation_step_all.png/400px-EM_Expectation_step_all.png" decoding="async" width="400" height="184" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/2/22/EM_Expectation_step_all.png/600px-EM_Expectation_step_all.png 1.5x, https://algowiki-project.org/algowiki/pool/images/2/22/EM_Expectation_step_all.png 2x" /></a><figcaption>Рисунок 3: E-шаг EM алгоритма для всех объектов</figcaption></figure>
+<p>На рисунке 4 представлена схема вычислений M-шага алгоритма для одного кластера: для объектов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{i} }[/math]</span> и скрытых переменных <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \gamma_{i,j} }[/math]</span>, соответствующих степени принадлежности этих объектов кластеру <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>, согласно формулам шага M <a href="#Математическое_описание_алгоритма">раздела 1.2</a> вычисляется нормировочный коэффициент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{j} }[/math]</span> и параметры этого кластера: вес <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_{j}^{new} }[/math]</span>, матрица ковариации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Sigma_{j}^{new} }[/math]</span> и центр кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_{j}^{new} }[/math]</span>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_Maximization_step.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/2/2b/EM_Maximization_step.png/400px-EM_Maximization_step.png" decoding="async" width="400" height="461" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/2/2b/EM_Maximization_step.png 1.5x" /></a><figcaption>Рисунок 4: M-шаг EM алгоритма для одного кластера</figcaption></figure>
+<p>На рисунке 5 представлена схема вычислений M-шага алгоритма для всех кластеров. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M_{j}, j=1..K }[/math]</span> соответствует макрооперации - M-шагу для соответствующего кластера и скрытых переменных.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_Maximization_step_all.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/4/4c/EM_Maximization_step_all.png/400px-EM_Maximization_step_all.png" decoding="async" width="400" height="346" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/4/4c/EM_Maximization_step_all.png 1.5x" /></a><figcaption>Рисунок 5: M-шаг EM алгоритма для всех кластеров</figcaption></figure>
+<h2><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h2>
+<p>Из схем вычислений шагов E и M шагов алгоритма, приведенным в <a href="#Информационный_граф">предыдущем разделе</a>, видно, что если размерность матрицы ковариации небольшая (тогда вычисление определителя и обратной матрицы матрице ковариации не является трудоемкой операцией), обе макрооперации EM алгоритма можно распараллеливать как по кластерам, так и по объектам.
+</p><p>Как правило количество кластеров, на которые нужно разбить объекты, несравнимо меньше количества объектов, поэтому распараллеливание в большинстве существующих реализаций происходит по объектам: обработка объектов по возможности равномерно распределяются по кластерам. Теоретически (если считать передачу данных между процессорами мгновенной) при наличии неограниченного числа процессоров сложность алгоритма составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(M^2 * K) }[/math]</span>.
+</p>
+<h2><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h2>
+<p><b>Входные данные</b>:
+</p>
+<ul><li>Целое неотрицательное число <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> - количество кластеров;</li>
+<li>Значения координат объектов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{i} }[/math]</span> - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> объектов с <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> координатами каждый.</li></ul>
+<p><b>Объем входных данных</b>:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N * M }[/math]</span> вещественных чисел (если координаты объектов - вещественные числа), <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> целое неотрицательное число.</li></ul>
+<p><b>Выходные данные</b>:
+</p>
+<ul><li>Вектор длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> - для каждого объекта указан номер кластера, к которому он отнесен. Объект относится по результатам работы алгоритма тому кластеру, вероятность принадлежности которому (значение соответствующей скрытой переменной) максимальна.</li></ul>
+<p><b>Объем выходных данных</b>: 
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> целых неотрицательных чисел.</li></ul>
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h2>
+<h3><span id=".D0.9F.D1.80.D0.B5.D0.B8.D0.BC.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D1.82.D0.BA.D0.B8"></span><span class="mw-headline" id="Преимущества_и_недостатки">Преимущества и недостатки</span></h3>
+<p>EM-алгоритм обладает следующими преимуществами и недостатками<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>:
+</p><p><b>Преимущества:</b>
+</p>
+<ol><li>Слабо чувствителен к выбросам</li>
+<li>Прост в реализации</li>
+<li>Быстро сходится при удачном выборе начальных значений параметров.</li></ol>
+<p><b>Недостатки:</b>
+</p>
+<ol><li>Неустойчив к выбору начальных значений параметров - от них зависит как скорость сходимости, так и результат работы: алгоритм может сойтись к локальному экстремуму функции правдоподобия, который может быть существенно ниже глобального.</li>
+<li>Алгоритм не находит оптимальное количество кластеров. Количество кластеров, на которые нужно разбить множество объектов, является параметром алгоритма.</li>
+<li>При большой размерности пространства объектов выдвинутое предположение о модели их распределения может быть некорректным.</li></ol>
+<h3><span id=".D0.92.D0.BB.D0.B8.D1.8F.D0.BD.D0.B8.D0.B5_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D1.8B_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B_.D0.BA.D0.BE.D0.B2.D0.B0.D1.80.D0.B8.D0.B0.D1.86.D0.B8.D0.B8_.D0.BD.D0.B0_.D1.84.D0.BE.D1.80.D0.BC.D1.83_.D0.BA.D0.BB.D0.B0.D1.81.D1.82.D0.B5.D1.80.D0.B0"></span><span class="mw-headline" id="Влияние_структуры_матрицы_ковариации_на_форму_кластера">Влияние структуры матрицы ковариации на форму кластера</span></h3>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:DifferentCovariance.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/c/cc/DifferentCovariance.png" decoding="async" width="518" height="203" class="mw-file-element" /></a><figcaption>Рисунок 6: Влияние структуры матрицы ковариации на форму кластеров для двумерного случая. a) - матрицы ковариации являются диагональными, b) - матрицы ковариации произвольны. <sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup></figcaption></figure>
+<p>Рисунок 6 наглядно показывает, что при диагональной форме матриц ковариации полуоси эллипса (в общем случае - эллипсоида), соответствующего распределению объектов, отнесенных кластеру, параллельны осям координат объектов. В противном случае полуоси могут располагаться произвольным образом.
+</p>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B8.D0.B5_.D1.81.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0"></span><span class="mw-headline" id="Общие_свойства">Общие свойства</span></h3>
+<p><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Вычислительная_мощность" title="Глоссарий"><i>Вычислительная мощность</i></a> EM алгоритма равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M * K * it }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> - размерность объекта, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> - количество кластеров, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ it }[/math]</span> - количество итераций. 
+</p><p>EM-алгоритм является итерационным, и число итераций в общем случае не фиксировано: оно зависит от условий остановки, начальных приближений и расположения объектов. Поэтому этот алгоритм <i>недетерминированный</i>. По тем же причинам EM-алгоритм является <i>неустойчивым</i>.
+</p>
+<h1><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h1>
+<h2><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h2>
+<h3><span id=".D0.98.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.BE.D0.B2_.D1.80.D0.B0.D1.81.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Инициализация_параметров_распределений">Инициализация параметров распределений</span></h3>
+<p>Наиболее распространены 3 способа инициализации центров распределений для EM алгоритма:
+</p>
+<ol><li>центр распределения совпадает со случайно выбранным объектом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{i} }[/math]</span></li>
+<li>все наблюдения распределяются по кластерам случайным образом, а затем для каждого кластера пересчитывается цент соответствующего распределения</li>
+<li>центры кластеров получаются в результате работы алгоритма k-means. Использование такой инициализации оправдано тем, что k-means требует меньших вычислительных затрат и быстрее сходится<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup></li></ol>
+<h2><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h2>
+<h2><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h2>
+<h2><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h2>
+<p>Многие статьи<sup id="cite_ref-FREERIDE_8-0" class="reference"><a href="#cite_note-FREERIDE-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-CV_9-0" class="reference"><a href="#cite_note-CV-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-MULTITHREAD_10-0" class="reference"><a href="#cite_note-MULTITHREAD-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-CUDA_11-0" class="reference"><a href="#cite_note-CUDA-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup>, в которых представлены параллельные реализации EM алгоритма, описывают помимо использующихся программных и аппаратных решений результаты проведенных экспериментов с данными. В качестве примера в этом разделе будут рассмотрены результаты эксперементов, проведенных со связующим программным обеспечением (<i>middleware</i>) FREERIDE<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span class="cite-bracket">&#91;</span>12<span class="cite-bracket">&#93;</span></a></sup> (FRamework for Rapid Implementation of Datamining Engines), обеспечивающим возможность распараллеливания как для систем с общей памятью (в частности, симметричных мультипроцессорных систем), так и для систем с распределенной памятью.
+</p><p>Эксперименты проводились на кластере машин Pentium 700MHz связанных при помощи Myrinet<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span class="cite-bracket">&#91;</span>13<span class="cite-bracket">&#93;</span></a></sup> LANai 7.0 на трех наборах данных: 
+</p><p><b>а)</b> 3.3 * 10^6 объектов
+</p><p><b>b)</b> 6.2 * 10^6 объектов
+</p><p><b>c)</b> 12.5 * 10^6 объектов
+</p><p>Объекты представляют собой координаты точек 10-мерного пространства.
+</p><p>Количество машин в кластере варьировалось от 1 до 8, при этом на каждой машине запускалось до четырех параллельных потоков.
+</p><p>Результаты экспериментов представлены на рисунках 7-9<sup id="cite_ref-FREERIDE_8-1" class="reference"><a href="#cite_note-FREERIDE-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>:
+</p>
+<table align="center">
+
+<tbody><tr valign="top">
+<td><figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_FREERIDE_experiments_a.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/7/73/EM_FREERIDE_experiments_a.png/350px-EM_FREERIDE_experiments_a.png" decoding="async" width="350" height="298" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/7/73/EM_FREERIDE_experiments_a.png/525px-EM_FREERIDE_experiments_a.png 1.5x, https://algowiki-project.org/algowiki/pool/images/7/73/EM_FREERIDE_experiments_a.png 2x" /></a><figcaption>Рисунок 7: набор данных a)</figcaption></figure>
+</td>
+<td><figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_FREERIDE_experiments_b.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/6/6d/EM_FREERIDE_experiments_b.png/357px-EM_FREERIDE_experiments_b.png" decoding="async" width="357" height="298" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/6/6d/EM_FREERIDE_experiments_b.png/536px-EM_FREERIDE_experiments_b.png 1.5x, https://algowiki-project.org/algowiki/pool/images/6/6d/EM_FREERIDE_experiments_b.png 2x" /></a><figcaption>Рисунок 8: набор данных b)</figcaption></figure>
+</td>
+<td><figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:EM_FREERIDE_experiments_c.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/9/90/EM_FREERIDE_experiments_c.png/351px-EM_FREERIDE_experiments_c.png" decoding="async" width="351" height="298" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/9/90/EM_FREERIDE_experiments_c.png/527px-EM_FREERIDE_experiments_c.png 1.5x, https://algowiki-project.org/algowiki/pool/images/9/90/EM_FREERIDE_experiments_c.png 2x" /></a><figcaption>Рисунок 9: набор данных c)</figcaption></figure>
+</td></tr></tbody></table>
+<p>Несмотря на то, что используемые в данном исследовании машины, как и коммуникационная среда, сейчас не используются и считаются устаревшими, результат приведенных экспериментов наглядно показывает, что EM алгоритм хорошо параллелится, зависимость ускорения от числа узлов в кластере с небольшим количеством узлов близка к линейной, а также, что скорость работы алгоритма линейно зависит от числа объектов.
+</p><p><i><b>Данный раздел может быть дополнен</b></i>
+</p>
+<h2><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h2>
+<h2><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h2>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<p>Примеры библиотек, содержащих последовательную реализацию EM-алгоритма, или отдельных реализаций:
+</p>
+<ol><li><a rel="nofollow" class="external text" href="http://docs.opencv.org/2.4/modules/ml/doc/expectation_maximization.html">OpenCV(C++)</a> (<a rel="nofollow" class="external text" href="https://github.com/opencv/opencv/blob/master/modules/ml/src/em.cpp">github</a>)</li>
+<li><a rel="nofollow" class="external text" href="http://www.mathworks.com/help/stats/clustering-using-gaussian-mixture-models.html">Matlab</a></li>
+<li><a rel="nofollow" class="external text" href="http://scikit-learn.org/stable/modules/mixture.html">Scikit learn (Python)</a></li>
+<li><a rel="nofollow" class="external text" href="http://mlpack.org/index.html">MLPack(C++)</a></li></ol>
+<p>Примеры библиотек, содержащих параллельную реализацию EM-алгоритма, или отдельных реализаций:
+</p><p><i>Здесь приводятся как конкретные реализации, так и статьи, описывающие подходы к реализациям распараллеливания EM-алгоритма</i>
+</p>
+<ol><li><a rel="nofollow" class="external text" href="https://spark.apache.org/">Apache Spark</a></li>
+<li><a rel="nofollow" class="external text" href="http://accord-framework.net/">Accord.NET Framework (C#)</a></li>
+<li>Статья об использовании FREERIDE middleware для распараллеливания EM алгоритма <sup id="cite_ref-FREERIDE_8-2" class="reference"><a href="#cite_note-FREERIDE-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a rel="nofollow" class="external text" href="http://andrewharp.com/gmmcuda">реализация с использованием CUDA</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/Corv/CUDA-GMM-MPI">еще одна реализация с использованием CUDA</a></li>
+<li>статья об использовании параллельного EM алгоритма в задачах компьютерного зрения <sup id="cite_ref-CV_9-1" class="reference"><a href="#cite_note-CV-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup></li>
+<li>статья о распараллеливании EM алгоритма с использованием CUDA <sup id="cite_ref-CUDA_11-1" class="reference"><a href="#cite_note-CUDA-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup></li></ol>
+<h1><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">A. Dempster, N. Laird and D. Rubin. Maximum likelihood estimation from incomplete data. – Journal of the Royal Statistical Society, Series B, 1977, vol. 39, p. 1-38.</span>
+</li>
+<li id="cite_note-korolev-2"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-korolev_2-0">2,0</a></sup> <sup><a href="#cite_ref-korolev_2-1">2,1</a></sup></span> <span class="reference-text">В.Ю.Королёв. ЕМ-алгоритм, его модификации и их применение к задаче разделения смесей вероятностных распределений.</span>
+</li>
+<li id="cite_note-ParallelEMComparissonGraphLab-3"><span class="mw-cite-backlink"><a href="#cite_ref-ParallelEMComparissonGraphLab_3-0">↑</a></span> <span class="reference-text">Henggang Cui, Jinliang Wei, Wei Dai. Parallel Implementation of Expectation-Maximization for Fast Convergence - School of Computer Science, Carnegie Mellon University. <a rel="nofollow" class="external autonumber" href="https://users.ece.cmu.edu/~hengganc/archive/report/final.pdf">[1]</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Вячеслав Орешков. EМ — масштабируемый алгоритм кластеризации <a rel="nofollow" class="external autonumber" href="https://basegroup.ru/community/articles/em">[2]</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">EM алгоритм, его модификации и обобщения. machinelearning.ru <a rel="nofollow" class="external autonumber" href="http://www.machinelearning.ru/wiki/index.php?title=EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC">[3]</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Mathworks: Clustering Using Gaussian Mixture Models <a rel="nofollow" class="external autonumber" href="http://www.mathworks.com/help/stats/clustering-using-gaussian-mixture-models.html">[4]</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text">EM алгоритм (пример) machinelearning.ru <a rel="nofollow" class="external autonumber" href="http://www.machinelearning.ru/wiki/index.php?title=EM_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_(%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80">[5]</a>)</span>
+</li>
+<li id="cite_note-FREERIDE-8"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-FREERIDE_8-0">8,0</a></sup> <sup><a href="#cite_ref-FREERIDE_8-1">8,1</a></sup> <sup><a href="#cite_ref-FREERIDE_8-2">8,2</a></sup></span> <span class="reference-text">Leonid Glimcher, Gagan Agrawal. Parallelising EM Algorithm on a Cluster of SMPs <a rel="nofollow" class="external autonumber" href="http://web.cse.ohio-state.edu/~agrawal/allpapers/europar04.pdf">[6]</a></span>
+</li>
+<li id="cite_note-CV-9"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-CV_9-0">9,0</a></sup> <sup><a href="#cite_ref-CV_9-1">9,1</a></sup></span> <span class="reference-text">López-de-Teruel P. E., García J. M., Acacio; The Parallel EM Algorithm and its Applications in Computer Vision <a rel="nofollow" class="external autonumber" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.8470&amp;rep=rep1&amp;type=pdf">[7]</a></span>
+</li>
+<li id="cite_note-MULTITHREAD-10"><span class="mw-cite-backlink"><a href="#cite_ref-MULTITHREAD_10-0">↑</a></span> <span class="reference-text">Sharon X. Lee, Kaleb L. Leemaqz, Geoffrey J. McLachlan. A simple multithreaded implementation of the EM algorithm for mixture models <a rel="nofollow" class="external autonumber" href="https://arxiv.org/pdf/1606.02054.pdf">[8]</a></span>
+</li>
+<li id="cite_note-CUDA-11"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-CUDA_11-0">11,0</a></sup> <sup><a href="#cite_ref-CUDA_11-1">11,1</a></sup></span> <span class="reference-text">Araújo, G.F., H.T. Macedo, M.T. Chella, C.A.E. Montesco and M.V.O. Medeiros. PARALLEL IMPLEMENTATION OF EXPECTATION-MAXIMISATION ALGORITHM FOR THE TRAINING OF GAUSSIAN MIXTURE MODELS <a rel="nofollow" class="external autonumber" href="https://ri.ufs.br/bitstream/123456789/1764/1/ExpectationMaximisationAlgorithm.pdf">[9]</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite_ref-12">↑</a></span> <span class="reference-text">Leonid Glimchera, Ruoming Jinb, Gagan Agrawala. Middleware for data mining applications on clusters and grids <a rel="nofollow" class="external autonumber" href="http://www.cs.kent.edu/~jin/Papers/JPDC08.pdf">[10]</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite_ref-13">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://en.wikipedia.org/wiki/Myrinet">https://en.wikipedia.org/wiki/Myrinet</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092733
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.047 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 839/1000000
+Post‐expand include size: 5002/2097152 bytes
+Template argument size: 1223/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 18310/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.552      1 Шаблон:Algorithm
+100.00%    4.552      1 -total
+ 61.75%    2.811      1 Шаблон:Level-a
+ 25.40%    1.156      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:543-0!canonical and timestamp 20260611092733 and revision id 18797. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Noite/EM-алгоритм_кластеризации&amp;oldid=18797">https://algowiki-project.org/w/ru/index.php?title=Участник:Noite/EM-алгоритм_кластеризации&amp;oldid=18797</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B_%D1%81_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D0%BC%D0%B8_%D0%B2_%D0%BF%D0%BE%D0%B4%D1%81%D0%B2%D0%B5%D1%82%D0%BA%D0%B5_%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81%D0%B0&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы с ошибками в подсветке синтаксиса (страница не существует)">Страницы с ошибками в подсветке синтаксиса</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ANoite%2FEM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ANoite%2FEM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Noite" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Noite"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Noite"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8&amp;oldid=18797" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Noite/EM-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 21 ноября 2016 года в 16:16.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":140,"wgPageParseReport":{"limitreport":{"cputime":"0.047","walltime":"0.051","ppvisitednodes":{"value":839,"limit":1000000},"postexpandincludesize":{"value":5002,"limit":2097152},"templateargumentsize":{"value":1223,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":18310,"limit":5000000},"timingprofile":["100.00%    4.552      1 Шаблон:Algorithm","100.00%    4.552      1 -total"," 61.75%    2.811      1 Шаблон:Level-a"," 25.40%    1.156      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092733","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

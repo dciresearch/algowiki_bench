@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Rpu6/Алгоритм построения приближённого решения нерегулярно вырождающегося эллиптического дифференциального уравнения — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"beb18814b80f9138c0749351","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Rpu6/Алгоритм_построения_приближённого_решения_нерегулярно_вырождающегося_эллиптического_дифференциального_уравнения","wgTitle":"Rpu6/Алгоритм построения приближённого решения нерегулярно вырождающегося эллиптического дифференциального уравнения","wgCurRevisionId":24092,"wgRevisionId":24092,"wgArticleId":1373,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Rpu6/Алгоритм_построения_приближённого_решения_нерегулярно_вырождающегося_эллиптического_дифференциального_уравнения","wgRelevantArticleId":1373,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Rpu6","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Rpu6_Алгоритм_построения_приближённого_решения_нерегулярно_вырождающегося_эллиптического_дифференциального_уравнения rootpage-Участник_Rpu6 skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Rpu6/Алгоритм построения приближённого решения нерегулярно вырождающегося эллиптического дифференциального уравнения</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм построения приближённого решения нерегулярно вырождающегося эллиптического дифференциального уравнения
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(KN\mathrm{max}(K, N)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ KN + 2N }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ KN }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\mathrm{max}(K, N^2)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(KN) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Автор описания: <a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6&amp;action=edit&amp;redlink=1" class="new" title="Участник:Rpu6 (страница не существует)">Д. П. Емельянов</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h1><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h1>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h2>
+<p>Алгоритм позволяет построить приближения к точному решению эллиптического дифференциального уравнения с нерегулярным вырождением и аналитическими коэффициентами в прямоугольнике. Точные формулы решения уравнения и их строгое обоснование получены с использованием метода спектрального выделения особенностей<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>. Решение строится в виде ряда. Погрешность алгоритма заключается в замене рядов на конечные суммы.
+</p><p>Алгоритм решает следующую задачу:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{cases}
+	y^2u''_{yy}+u''_{xx}+c(y)u'_y-a(y)u=f(x,y),(x,y)\in(0,1)\times(0,b), \\
+	u(0,y)=u(1,y)=u(x,b)=0,|u(x,0)|\lt +\infty.
+\end{cases} }[/math]</span></dd></dl>
+<p>Функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a(y), c(y) }[/math]</span> полагаем аналитическими в круге <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |y|\lt R }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R\gt b }[/math]</span>. Кроме того, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c(y), a(y) \ge 0 }[/math]</span> в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ [0,b] }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c(0)=0 }[/math]</span>.
+</p>
+<h2><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h2>
+<p>1. Приблизим функцию <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f(x,y) }[/math]</span> конечными суммами ряда Фурье по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x }[/math]</span>:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ f(x,y)=\sum_{k=1}^{K}f_k(y)\sin \pi kx. }[/math]</span></dd>
+<dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_k(y)=2\int\limits_0^1f(x,y)\sin \pi kx\,dx. }[/math]</span></dd></dl>
+<p>Для интеграла следует использовать квадратурную формулу.
+</p><p>2. Приблизим функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_k(y),a(y),c(y) }[/math]</span> полиномами:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a(y)=\sum_{n=0}^{N}a_ny^n,
+c(y)=\sum_{n=1}^{N}c_ny^n,
+f_k(y)=\sum_{n=0}^{N}f_{kn}y^n. }[/math]</span></dd></dl>
+<p>Разложение можно проводить по аналогии с разложением в ряд Фурье, но с использованием полиномов Лежандра, Чебышёва, или той же тригонометрической системы функций. Можно использовать интерполяционные полиномы.
+</p><p>3. Введём в рассмотрение числа:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lambda_k=\pi^2k^2+a_0, k = \overline{1,K}, }[/math]</span></dd>
+<dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_k=\frac{1-c_1 + \sqrt{(c_1-1)^2+4\lambda_k}}{2}, k = \overline{1,K}. }[/math]</span></dd></dl>
+<p>4. Построим функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_k(y),\varphi_k(y) }[/math]</span>, они будут использованы при построении приближения к решению:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_k(y)=\sum_{n=0}^{N}\eta_{kn}y^n, \stackrel{\circ}{\varphi}_k(y)=\sum_{n=0}^{N}\varphi_{kn}y^n, }[/math]</span></dd>
+<dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \begin{matrix}
+\eta_{kn}=\frac{f_{kn}-\sum_{l=2}^{n+1}c_l(n+1-l)\eta_{k,n+1-l}+
+\sum_{l=1}^{n}a_l\eta_{k,n-l}}{n(n-1)+nc_1-\pi^2k^2-a_0},n = \overline{1,N},\\
+\varphi_{kn}=\frac{
+\sum_{l=1}^na_l\varphi_{k,n-l}-
+\sum_{l=2}^{n+1}(n-l+1+r_k)c_l\varphi_{k,n-l+1}
+}{n(n-1)+2nr_k+nc_1}
+,n= \overline{1,N},\\
+\eta_{k,0}=\frac{f_{k,0}}{-\pi^2k^2-a_0}, \varphi_{k,0}=1, \varphi_k(y)=-\frac{\eta_k(b)}{\stackrel{\circ}{\varphi}_k(b)}\stackrel{\circ}{\varphi}_k(y).
+\end{matrix} }[/math]</span></dd></dl>
+<p>5. Построим приближение к решению:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ u(x,y)=\sum_{k=1}^{K}\left(\left(\frac{y}{b}\right)^{r_k}\varphi_k(y)+\eta_k(y)\right)\sin \pi kx. }[/math]</span></dd></dl>
+<p>За счёт выбора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> можно добиться той или иной точности.
+</p>
+<h2><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h2>
+<p>Алгоритм решения задачи можно разделить на три крупные части примерно одинаковой вычислительной сложности:<br />
+1. Разложение заданной функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f(x,y) }[/math]</span> в ряд Фурье, разложение её коэффициентов Фурье в ряды Тейлора, разложение заданных функций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a(y), c(y) }[/math]</span> в ряды Тейлора.
+На этом этапе известные сеточные функции скалярно умножаются на тригонометрические функции или полиномы Лежандра. В первом случае коэффициент является скалярным произведением,
+во втором - линейной комбинацией соответствующих коэффициентов полиномов Лежандра, помноженных на отвечающие данному полиному скалярные произведения.<br />
+2. Построение коэффициентов ряда Тейлора для функций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_k(y), \varphi_k(y) }[/math]</span> с последующим построением самих функций.
+Используются формулы этапа 4 пункта 1.2.<br />
+3. По построенным функциям <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_k(y), \varphi_k(y) }[/math]</span> строится решение задачи <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u(x,y) }[/math]</span> (формула этапа 5 пункта 1.2).
+</p>
+<h2><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h2>
+<p>Макроструктура этого алгоритма фактически совпадает с его вычислительным ядром (см. пункт 1.3).
+</p>
+<h2><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h2>
+<p>Алгоритм принимает на вход сеточные функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f(x_i, y_j), a(y_j), c(y_j); x_i = \frac{i}{K}, y_j = \frac{j}{N}; i = \overline{0,K-1}, j=\overline{0,N-1} }[/math]</span>.
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+f_k(y_j) = \frac{2}{K}\sum_{l=1}^K f(x_l, y_j) sin (\pi kx_l), k=\overline{1,K},\\
+f_{kn} = \sum_{m=0}^{N-1} (\mathrm{coeff}_n L_m) \frac{2}{N} \sum_{l=0}^{N-1} f_k(y_l) L_m(y_l), n=\overline{0,N-1},\\
+a_{n} = \sum_{m=0}^{N-1} (\mathrm{coeff}_n L_m) \frac{2}{N} \sum_{l=0}^{N-1} a(y_l) L_m(y_l),\\
+c_{n} = \sum_{m=0}^{N-1} (\mathrm{coeff}_n L_m) \frac{2}{N} \sum_{l=0}^{N-1} c(y_l) L_m(y_l).
+ }[/math]</span></dd></dl>
+<p>Тут <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathrm{coeff}_n }[/math]</span> - коэффициент при n-й степени y в полиноме-аргументе (подразумевается, что алгоритм их знает), <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L_m }[/math]</span> - нормированный полином Лежандра степени m.<br />
+Формулы для вычислений на других шагах алгоритма изложены в пункте 1.2. Достаточно заметить, что при все функции вычисляются в узлах заданной сетки, суммирование можно вести, запоминая <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y^{n-1} }[/math]</span>
+с предыдущего шага, вычисляется лишь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y^{n-1}y }[/math]</span>.
+</p>
+<h2><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h2>
+<p>Будем оценивать количество операций умножения вещественных чисел. Произведём оценку отдельно для каждого шага алгоритма.<br />
+1. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (K + 1)KN }[/math]</span> умножение для вычисления всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_k(y_j) }[/math]</span> (N возникает в силу необходимости вычислять функцию в каждой точке сетки по y),
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ ((N + 1)N + 1)K }[/math]</span> операций для вычисления <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_{kn} }[/math]</span> (считаем, что значения гармоник и полиномов Лежандра известны заранее,
+учитываем равенство некоторых скалярных произведений при вычислении),
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2((N + 1)N + 1) }[/math]</span> операций для вычисления <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_n, c_n }[/math]</span>.
+2. Для вычисления n-го коэффициента требуется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 5 + 3(n-1) }[/math]</span> операций, для вычисления всех коэффициентов -
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sum_{n=1}^{N-1} (5 + 3(n-1))=5(N-1) + 3\frac{N-2}{2}(N-1)=(N-1)(5 + 1,5 (N-2)) }[/math]</span>, суммирование <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \stackrel{\circ}{\varphi}_k(b) }[/math]</span> требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2N }[/math]</span> операций,
+коррекция <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \varphi_k(y_j) }[/math]</span> требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N + 2 }[/math]</span> операции, построение самих функций - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N(2N)=2N^2 }[/math]</span> операций. Это всё нужно проделать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> раз.<br />
+3. Вычисление значения функции в узле сетки стоит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 3K }[/math]</span> операций умножения. Это нужно проделать в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ KN }[/math]</span> узлах.<br />
+Выделим главный член асимптотики по всем шагам: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K^2N + KN^2 + 3,5KN^2 + 3K^2N=O(KN\mathrm{max}(K,N)). }[/math]</span><br />
+Если положить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=N }[/math]</span>, то сложность алгоритма имеет порядок <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^3) }[/math]</span>.
+</p>
+<h2><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h2>
+<p>Приведём информационные графы для каждой части алгоритма отдельно (иначе граф чрезмерно громоздкий).<br />
+1. Построение коэффициентов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_{kn} }[/math]</span> по функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f(x,y) }[/math]</span> (тут и далее K = N = 3).<br />
+<span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:F-T-f.png" class="mw-file-description"><img src="/w/ru/images/thumb/a/af/F-T-f.png/500px-F-T-f.png" decoding="async" width="500" height="191" class="mw-file-element" srcset="/w/ru/images/thumb/a/af/F-T-f.png/750px-F-T-f.png 1.5x, /w/ru/images/thumb/a/af/F-T-f.png/1000px-F-T-f.png 2x" /></a></span><br />
+2. Построение коэффициентов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_n, c_n }[/math]</span> осуществляется по общей схеме.<br />
+<span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:T-g.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/9/9a/T-g.png/400px-T-g.png" decoding="async" width="400" height="268" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/9/9a/T-g.png/600px-T-g.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/9/9a/T-g.png/800px-T-g.png 2x" /></a></span><br />
+3. Построение коэффициентов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_{kn}, \varphi_{kn} }[/math]</span> при фиксированном k.<br />
+<span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:T-phi-eta.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/4/4a/T-phi-eta.png/500px-T-phi-eta.png" decoding="async" width="500" height="270" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/4/4a/T-phi-eta.png/750px-T-phi-eta.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/4/4a/T-phi-eta.png/1000px-T-phi-eta.png 2x" /></a></span><br />
+4. Построение самих функций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_k(y), \varphi_k(y) }[/math]</span>.<br />
+<span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:S-phi-eta.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/b/bc/S-phi-eta.png/400px-S-phi-eta.png" decoding="async" width="400" height="192" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/b/bc/S-phi-eta.png/600px-S-phi-eta.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/b/bc/S-phi-eta.png/800px-S-phi-eta.png 2x" /></a></span><br />
+5. Построение решения в некоторой точке <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (x,y) }[/math]</span>.<br />
+<span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:S-u.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/e/e9/S-u.png/500px-S-u.png" decoding="async" width="500" height="176" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/e/e9/S-u.png/750px-S-u.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/e/e9/S-u.png/1000px-S-u.png 2x" /></a></span><br />
+Макроструктуру всего алгоритма можно описать следующим графом:<br />
+<span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Regularization-General-Graph.png" class="mw-file-description"><img src="/w/ru/images/thumb/8/87/Regularization-General-Graph.png/600px-Regularization-General-Graph.png" decoding="async" width="600" height="379" class="mw-file-element" srcset="/w/ru/images/thumb/8/87/Regularization-General-Graph.png/900px-Regularization-General-Graph.png 1.5x, /w/ru/images/thumb/8/87/Regularization-General-Graph.png/1200px-Regularization-General-Graph.png 2x" /></a></span>
+</p>
+<h2><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h2>
+<p>Будем оценивать параллельную сложность алгоритма в терминах блоков из пункта 1.7.
+Предполагаем для простоты, что любые данные, помеченные промежуточными на общем графе, доступны с любой параллельной ветви
+(для обеспечения этого в программе потребуется синхронизация на промежуточных этапах с обменом информацией).
+Длинные операции суммирования считаем выполняемыми последовательно (без параллелизма). На практике это имеет смысл в силу малой сложности суммы.
+Распараллеливание только замедлит программу за счёт обмена данными.<br />
+Итак, в первом блоке операций каждый коэффициент Фурье в каждой точке может быть вычислен независимо от других. Числа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_{kn} }[/math]</span> также вычисляются независимо при различных K и N.
+В этом случае параллельная сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\mathrm{max}(K,N)) }[/math]</span>.
+Допустив суммирование сдваиванием, получим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log_2 \mathrm{max}(K,N)) }[/math]</span>. Параллелизм по K и N - массовый, в случае суммирования сдваиванием имеем дополнительно скошенный параллелизм.<br />
+Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_n, c_n }[/math]</span> не зависит от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_{kn} }[/math]</span>, его можно выполнить параллельно (конечный параллелизм). Сами же вычисления за счёт массового параллелизма по N упрощаются
+до параллельной сложности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span>.<br />
+Третий блок, как видно из общего графа, допускает массовый параллелизм по K. Однако, внутренние вычисления, как видно из третьего графа, весьма запутанные и не допускают координатного параллелизма
+(достаточно заметить в формулах, что каждый следующий n+1-й коэффициент требует знания всех предыдущих для вычисления). В этом случае параллельная сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span>.
+С использованием скошенного параллелизма можно потенциально сократить параллельную сложность до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span>, если все коэффициенты будут считаться параллельно.
+Но в этом случае после вычисления каждого следующего коэффициента, необходимо передать его в параллельные ветви, вычисляющие другие (со старшими номерами).
+Это на практике потребует существенных временных расходов на передачу данных и синхронизацию.<br />
+Вычисление же <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \eta_k(y), \stackrel{\circ}{\varphi}_k(y) }[/math]</span> независимо в каждой точке y и при каждом индексе k. Массовый параллелизм. Параллельная сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span>.
+Коррекция <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \stackrel{\circ}{\varphi}_k(y) }[/math]</span> при этом имеет параллельную сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(1) }[/math]</span>.<br />
+И, наконец, вычисление решение можно вести независимо в каждой точке (массовый параллелизм). Параллельная сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(K) }[/math]</span>, в случае суммирования сдваиванием - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log_2 K) }[/math]</span>.<br />
+Итоговая параллельная сложность алгоритма: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\mathrm{max}(K, N^2)) }[/math]</span>. Использование суммирования сдваиванием и указанного подхода в третьем блоке позволяют уменьшить параллельную сложность до
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\mathrm{max}(\log_2 K, N)) }[/math]</span>.
+</p>
+<h2><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h2>
+<p>На вход алгоритм получает заданные на сетке функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f(x,y), a(y), c(y) }[/math]</span> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ (K+2)N }[/math]</span> вещественных чисел).
+На выходе у алгоритма заданное на сетке решение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u(x,y) }[/math]</span> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ KN }[/math]</span> вещественных чисел). Используется сетка, объявленная в пункте 1.5.
+</p>
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h2>
+<h1><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h1>
+<h2><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h2>
+<h2><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h2>
+<h2><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h2>
+<h2><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h2>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Regularization-Graphic-K%3DP.PNG" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/5/5a/Regularization-Graphic-K%3DP.PNG/300px-Regularization-Graphic-K%3DP.PNG" decoding="async" width="300" height="148" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/5/5a/Regularization-Graphic-K%3DP.PNG/450px-Regularization-Graphic-K%3DP.PNG 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/5/5a/Regularization-Graphic-K%3DP.PNG/600px-Regularization-Graphic-K%3DP.PNG 2x" /></a><figcaption>1. График времени работы для слабой масштабируемости</figcaption></figure>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Regularization-Graphic-K%3Dconst,T.PNG" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/3/3e/Regularization-Graphic-K%3Dconst%2CT.PNG/300px-Regularization-Graphic-K%3Dconst%2CT.PNG" decoding="async" width="300" height="152" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/3/3e/Regularization-Graphic-K%3Dconst%2CT.PNG/450px-Regularization-Graphic-K%3Dconst%2CT.PNG 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/3/3e/Regularization-Graphic-K%3Dconst%2CT.PNG/600px-Regularization-Graphic-K%3Dconst%2CT.PNG 2x" /></a><figcaption>2. График времени работы для сильной масштабируемости</figcaption></figure>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Regularization-Graphic-K%3Dconst,E.PNG" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/8/8f/Regularization-Graphic-K%3Dconst%2CE.PNG/300px-Regularization-Graphic-K%3Dconst%2CE.PNG" decoding="async" width="300" height="143" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/8/8f/Regularization-Graphic-K%3Dconst%2CE.PNG/450px-Regularization-Graphic-K%3Dconst%2CE.PNG 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/8/8f/Regularization-Graphic-K%3Dconst%2CE.PNG/600px-Regularization-Graphic-K%3Dconst%2CE.PNG 2x" /></a><figcaption>3. График эффективности распараллеливания для сильной масштабируемости</figcaption></figure>
+<p>Будем рассматривать масштабируемость реализации алгоритма при некоторых ограничениях. Опираясь на пункт 1.8, заметим, что на шагах алгоритма 1 и 3 характер параллелизма по N имеет тот же характер, что и по K.
+Кроме того, на шаге 2, как было замечено, без использования затратных в организации методов распараллеливания, параллельная сложность по N равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span> и не может быть уменьшена.
+Руководствуясь этими аргументами, положим во всех текстах <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=const=2048 }[/math]</span> и исследуем ресурс параллелизма по K.<br />
+Все результаты запусков были получены на суперкомпьютере «Ломоносов»<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup> (ссылка на технические характеристики в литературе).
+Отметим следующие свойства, которые должны следовать из свойств алгоритма:<br />
+1. При P &lt; K (P - количество процессоров) имеет место сильная масштабируемость. Действительно, не изменяя K, мы можем увеличить количество процессоров P (P &lt; K).
+В этом случае производительность должна пропорционально сократиться (см. пункт 1.8).<br />
+2. При P = K имеет место слабая масштабируемость, ибо при P &gt; K не удастся равномерно загрузить все узлы работой и некоторые узлы будут бездействовать, однако,
+в случае повышения K, вы вновь сможем увеличить количество процессоров так, что время работы программы на этапах 1 и 2 останется неизменным,
+а на этапе 3 увеличится пропорционально первой степени K, но не второй.<br />
+3. Алгоритм требует в некоторые моменты времени производить синхронизацию и обмены данными по принципу «все со всеми». Это вызовет существенную эксплуатацию среды коммуникации, что приведёт к ухудшению
+эффективности распараллеливания при большом числе процессоров.<br />
+Обозначенные факты подтверждаются результатами запусков.
+На первом графике видно, что при равномерном увеличении P и K время работы программы остаётся примерно неизменным на этапах 1 и 2 и линейно растёт на этапе 3.
+Но, при P &gt; 128 ситуация резко ухудшается и время работы начинает возрастать (при увеличении количества процессоров с 256 до 1024 время работы на первом этапе возросло в 6 раз, до этого почти не менялось).
+Это объясняется возросшими накладными расходами на обеспечение межпроцессорного взаимодействия.
+Второй график демонстрирует зависимость времени выполнения от количества процессоров. График характерен для сильной масштабируемости: при P &lt; 256 время убывает по P как гипербола.
+Этот же факт нашёл отражение в графике эффективности распараллеливания: при тех же P эффективность распараллеливания в целом не опускается ниже 0,65, в среднем держится на уровне 0,8.
+Резкое падение эффективности реализации третьего шага в начале обусловлено появлением обмена данными при переходе от 1 процессора к двум. На долю третьего этапа выпадает существенная доля обмена данными.
+При P &gt; 256 эффективность начинает быстро убывать, но стабилизируется на уровне 0,15. Выигрыш по времени по прежнему есть, но уже не такой существенный.
+При исследовании сильной масштабируемости параметр K был зафиксирован равным 1024.
+</p>
+<h2><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h2>
+<h2><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h2>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<p>Данный алгоритм основан на методе С. А. Ломова построения точных решений. Не известно о существовании его реализаций.
+В целом, дифференциальные уравнения с вырождениями представляют весьма мало изученную область математики.
+</p>
+<h1><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h1>
+<p>&lt;references \&gt;
+</p>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Ломов С. А., Ломов И. С. Основы математической теории пограничного слоя. М.: Издательство Московского университета, 2011. – 456 с.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BC%D0%BE%D0%BD%D0%BE%D1%81%D0%BE%D0%B2_(%D1%81%D1%83%D0%BF%D0%B5%D1%80%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80)">https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BC%D0%BE%D0%BD%D0%BE%D1%81%D0%BE%D0%B2_(%D1%81%D1%83%D0%BF%D0%B5%D1%80%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80)</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://users.parallel.ru/wiki/pages/22-config">http://users.parallel.ru/wiki/pages/22-config</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092738
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.031 seconds
+Real time usage: 0.037 seconds
+Preprocessor visited node count: 669/1000000
+Post‐expand include size: 5506/2097152 bytes
+Template argument size: 1727/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 9984/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.662      1 Шаблон:Algorithm
+100.00%    4.662      1 -total
+ 62.03%    2.892      1 Шаблон:Level-a
+ 24.76%    1.154      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:1373-0!canonical and timestamp 20260611092738 and revision id 24092. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Rpu6/Алгоритм_построения_приближённого_решения_нерегулярно_вырождающегося_эллиптического_дифференциального_уравнения&amp;oldid=24092">https://algowiki-project.org/w/ru/index.php?title=Участник:Rpu6/Алгоритм_построения_приближённого_решения_нерегулярно_вырождающегося_эллиптического_дифференциального_уравнения&amp;oldid=24092</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категория</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ARpu6%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE+%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F+%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ARpu6%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE+%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F+%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/ru/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" rel="discussion" title="Обсуждение основной страницы [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Rpu6" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Rpu6"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Rpu6"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F&amp;oldid=24092" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Rpu6/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE_%D0%B2%D1%8B%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%D1%81%D1%8F_%D1%8D%D0%BB%D0%BB%D0%B8%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 21 ноября 2017 года в 01:24.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":142,"wgPageParseReport":{"limitreport":{"cputime":"0.031","walltime":"0.037","ppvisitednodes":{"value":669,"limit":1000000},"postexpandincludesize":{"value":5506,"limit":2097152},"templateargumentsize":{"value":1727,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":9984,"limit":5000000},"timingprofile":["100.00%    4.662      1 Шаблон:Algorithm","100.00%    4.662      1 -total"," 62.03%    2.892      1 Шаблон:Level-a"," 24.76%    1.154      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092738","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

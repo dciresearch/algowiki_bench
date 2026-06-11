@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:ЕкатеринаКозырева/Алгоритм динамической иерархической кластеризации CHAMELEON — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"fe05e4098f50c8a52514fd6e","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:ЕкатеринаКозырева/Алгоритм_динамической_иерархической_кластеризации_CHAMELEON","wgTitle":"ЕкатеринаКозырева/Алгоритм динамической иерархической кластеризации CHAMELEON","wgCurRevisionId":21466,"wgRevisionId":21466,"wgArticleId":678,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Assignments/Done/Kronberg","Assignments/Done","Assignments","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:ЕкатеринаКозырева/Алгоритм_динамической_иерархической_кластеризации_CHAMELEON","wgRelevantArticleId":678,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"ЕкатеринаКозырева","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_ЕкатеринаКозырева_Алгоритм_динамической_иерархической_кластеризации_CHAMELEON rootpage-Участник_ЕкатеринаКозырева skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">ЕкатеринаКозырева/Алгоритм динамической иерархической кластеризации CHAMELEON</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0" title="Участник:ЕкатеринаКозырева">Участник:ЕкатеринаКозырева</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_confirmed.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-120px-Symbol_confirmed.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-250px-Symbol_confirmed.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа успешно выполнена<br />Преподавателю: <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8+CHAMELEON&amp;wpReason=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE">в основное пространство</a>, <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8%3A%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8+CHAMELEON&amp;wpReason=%D0%9D%D0%B0+%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83">в подстраницу</a></span></b><br />Данное задание было проверено и зачтено.<br />Проверено <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Kronberg" title="Участник:Kronberg">Kronberg</a> и <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Algoman" title="Участник:Algoman">Algoman</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм динамической иерархической кластеризации CHAMELEON
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(nm + n log n + m^2 log m) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n - 1)}{2} }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n+ n log(n) + m^2 log (m) + m log(m)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Автор описания <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0" title="Участник:ЕкатеринаКозырева">Е.А.Козырева</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритмов"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритмов</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h1><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2"></span><span class="mw-headline" id="Свойства_и_структура_алгоритмов">Свойства и структура алгоритмов</span></h1>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h2>
+<p>Алгоритм CHAMELEON был предложен в 1999 году тремя учеными из университета Миннесоты – George Karypis, Eui-Hong (Sam) Han и Vipin Kumar<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>Предназначен для решения задач кластеризации. Кластеризация (или кластерный анализ) — это задача разбиения множества объектов на группы, называемые кластерами. Внутри каждой группы должны оказаться «похожие» объекты, а объекты разных группы должны быть как можно более отличны.
+</p><p>CHAMELEON - это агломеративный иерархический алгоритм кластеризации, ключевой особенностью которого является то, что он учитывает и взаимную связность, и сходство при определении наиболее похожей пары подкластеров, основываясь на динамической модели. Это означает, что в процессе кластеризации два кластера объединяются, только если их относительная взаимная связность и относительное взаимное сходство являются высокими по отношению к внутренней взаимосвязанности кластеров и близости элементов внутри кластеров. Кроме того, CHAMELEON использует подход для моделирования степени взаимосвязанности и близости между каждой парой кластеров, который учитывает внутренние характеристики самих кластеров. Таким образом, он может автоматически адаптироваться к внутренним характеристикам объединяемых кластеров.
+</p><p>CHAMELEON находит кластеры в наборе данных с помощью трехфазного алгоритма. На первой фазе происходит построение графа, путём добавления рёбер по принципу k ближайших соседей. На второй фазе CHAMELEON группирует полученные элементы в множество относительно небольших подграфов. Во время третьей фазы применяется агломеративный иерархический алгоритм кластеризации, с помощью которого находятся естесственные кластеры путем многократного объединения подграфов, полученных на прошлом этапе.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Chameleon.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/f/f5/Chameleon.png/1000px-Chameleon.png" decoding="async" width="1000" height="243" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/f/f5/Chameleon.png 1.5x" /></a><figcaption>Рисунок 1. Общая структура алгоритма CHAMELEON</figcaption></figure>
+<h2><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h2>
+<p><i>Исходные данные</i>: 
+</p>
+<ul><li>Множество из n точек <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V= {v_{ij}} }[/math]</span> в метрическом пространстве, которое задано симметрической матрицей расстояний <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n\times n }[/math]</span>.</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> - количество ближайших соседей для вершин, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \in N, k \leq n }[/math]</span>.</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ l }[/math]</span> - наименьшее число вершин, которое может содержать наибольший подграф на 2-м этапе, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l \in N, l \leq n }[/math]</span>.</li></ul>
+<p><i>Обозначения</i>:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ G = (V, E) }[/math]</span> - граф, полученный путём соединения каждой точки с её <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> ближайшими соседями.</li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ K= \{K_{i}\} }[/math]</span> - разбиение множества <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V }[/math]</span> на набор попарно непересекающихся связных подмножеств, полученное в результате выполнения второй фазы алгоритма.</li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ G_{2} = (K, E_{2}) }[/math]</span> - взвешенный граф, вершинами которого являются получившиеся подграфы, а ребрами - количество ребер исходного графа, соединяющих соответствующие подграфы.</li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ C = \{C_{i}\} }[/math]</span> - итоговое разбиение множества вершин графа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G_{2} }[/math]</span> на набор кластеров.</li></ul>
+<p><i>Вспомогательные понятия</i>
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ EC_{(C_{i},C_{j})} }[/math]</span> - абсолютная взаимная связность пары кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i}, C{j} }[/math]</span>. Определяется как сумма весов ребер, соединяющих вершины, принадлежащие <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C{i} }[/math]</span> c вершинами из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C{j} }[/math]</span>. Внутренняя связность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ EC_{(C_{i},C_{i})} }[/math]</span> вычисляется как сумма ребер, входящих в разделитель, разбивающий <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C{i} }[/math]</span> на два равных подграфа.</li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})} = \frac{|EC_{(C_{i},C_{j})}|}{(|EC_{C_{i}}|+|EC_{C_{j}}|)/2} }[/math]</span> - относительная взаимная связность пары кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i}, C{j} }[/math]</span></li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_{EC_{(C_{i},C_{j})}} }[/math]</span> - абсолютное взаимное сходство пары кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i}, C{j} }[/math]</span>. Подсчитывается как среднее сходство между соединенными вершинами, принадлежащими <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C{i} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C{j} }[/math]</span> соответственно. Соединения обусловлены разбиением общего графа, полученного на первом этапе алгоритма.</li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{  RC_{(C_{i},C_{j})}= \frac{S_{EC_{(C_{i},C_{j})}}}{\frac{|C_{i}|}{|C_{i}+C_{j}|}*S_{EC_{(C_{i})}}+\frac{|C_{i}|}{|C_{i}+C_{j}|}*S_{EC_{(C_{j})}}} }[/math]</span> - относительное взаимное сходство пары кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i}, C{j} }[/math]</span>. Определяется как абсолютное сходство между этой парой кластеров, нормализованное с учетом их внутреннего сходства<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.</li></ul>
+<p><br />
+</p><p><b>Первый этап</b>
+</p><p>На первом этапе, согласно графо-ориентированному подходу, происходит построение графа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G = (V, E) }[/math]</span> на матрице сходства объектов по принципу k ближайших соседей. Две вершины такого графа соединяет ребро, если объект, соответствующий любой из этих вершин попадает в число k наиболее близких объектов для объекта, соответствующего другой вершине из данной пары.
+</p>
+<figure typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_chameleon_2.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/9/95/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_chameleon_2.png" decoding="async" width="590" height="171" class="mw-file-element" /></a><figcaption>Рисунок 2. Объекты в пространстве - слева, граф по принципу 1-го ближайшего соседа - по центру, граф по принципу 3-х ближайших соседей - справа </figcaption></figure>
+<p><b>Второй этап</b>
+</p><p>Алгоритм разделяет полученный граф на множество сравнительно малых подграфов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K= \{K_{i}\} }[/math]</span>. Разделение происходит последовательно. На каждом шаге выбирается подграф, содержащий наибольшее число вершин. Этот граф разделяется на два подграфа так, что разделитель ребер графа минимален и каждый из получаемых подграфов содержит не менее 25&#160;% вершин исходного графа. Процесс разделения останавливается, когда наибольший подграф содержит меньше некоторого заданного числа вершин. Обычно величина этого параметра задается равной значению от 1 до 5&#160;% от числа объектов. Полученное множество связных графов считается множеством начальных кластеров, на котором требуется провести последовательное иерархическое объединение.
+</p><p><b>Третий этап</b>
+</p><p>Третий этап заключается в итеративном преобразовании множества подграфов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K= \{K_{i}\} }[/math]</span> в множество кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C = \{C_{i}\} }[/math]</span>. Алгоритм осуществляет агломеративную иерархическую кластеризацию на основании показателей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ EC_{(C_{i},C_{j})} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_{EC_{(C_{i},C_{j})}} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})}  }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{  RC_{(C_{i},C_{j})} }[/math]</span>. Существует две стратегии анализа показателей сходства. Первая подразумевает наличие некоторых пороговых значений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_{RI} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_{RC} }[/math]</span>. В соответствии с этой стратегией, алгоритм для каждого кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i} }[/math]</span> проверяет, отвечают ли смежные (наиболее близкие) ему кластеры условиям:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})} \geqslant T_{RI} }[/math]</span></li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ RC_{(C_{i},C_{j})} \geqslant T_{RC} }[/math]</span></li></ul>
+<p>Если более одного смежного кластера отвечает этим условиям, то алгоритм выбирает для объединения наиболее связный кластер (граф), то есть такой кластер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{j} }[/math]</span>, с которым у кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i} }[/math]</span> получается наибольшая абсолютная взаимная связность. По завершению прохода по всем кластерам, созданные таким образом пары объединяются. Параметры <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_{RI} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T_{RC} }[/math]</span> могут использоваться для изменения характеристик получаемых кластеров.
+</p><p>Вторая стратегия заключается в использовании специальной функции, объединяющей понятия относительной взаимной связности и относительного взаимного сходства. На каждом шаге выбираются те кластеры для объединения, которые максимизируют эту функцию:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})}*RC_{(C_{i},C_{j})}^\alpha }[/math]</span>,
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha }[/math]</span> выбирается пользователем. Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha \gt  1  }[/math]</span>, то алгоритм придает большее значение относительному взаимному сходству, а если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha \lt   1  }[/math]</span>, то большее значение имеет относительная взаимная связность.
+</p><p><br />
+<i>Вычисляемые данные</i>:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ U = (u_1, u_2, ..., u_n) }[/math]</span> - n-мерный вектор, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_i \in N_{[C]} }[/math]</span> - порядковый номер кластера, к которому принадлежит вершина i исходного множества V.
+</p>
+<h2><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h2>
+<p>Алгоритм имеет три вычислительных ядра, по одному на каждый этап.
+</p><p>На первом этапе вычислительным ядром является процесс нахождения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> ближайших соседей для каждой вершины, который заключается в анализе матрицы расстояний.
+</p><p>На втором этапе вычислительным ядром является процесс поиска подходящего разбиения очередного подграфа на два графа с минимизацией разделителя ребер графа.
+</p><p>На третьем этапе вычислительным ядром является расчет величин <span style="opacity:.5" class="smj-container">[math]\displaystyle{ EC_{(C_{i},C_{j})} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_{EC_{(C_{i},C_{j})}} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})}  }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{  RC_{(C_{i},C_{j})} }[/math]</span> для каждой пары смежных кластеров.
+</p>
+<h2><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h2>
+<p>Как уже рассказывалось ранее, алгоритм включает в себя три основных этапа, каждый из которых, по сути, является отдельным алгоритмом. Этапы выполняются последовательно относительно друг друга. 
+</p><p>Макрооперация на первом этапе - процедура нахождения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> ближайших соседей, на втором - процедура разбиения наибольшего подграфа на два графа, на третьем - процедура вычисления показателей сходства, на основе которых принимается решение о слиянии подграфов в кластер.
+</p>
+<h2><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h2>
+<p><b>Первый этап</b>
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="c1">//количество вершин</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="c1">//количество соседей</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="c1">//матрица расстояний</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="c1">//массив вершин-соседей</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">E</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="c1">//матрица ребер графа &lt;math&gt;G_{2} = (K, E_{2})&lt;/math&gt;</span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">n</span><span class="mi">-1</span><span class="w"> </span><span class="k">do</span>
+<span class="w">     </span><span class="p">{</span>
+<span class="w">       </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="c1">//заполняем массив вершин-соседей вставляя новые вершины, если они ближе, чем самая далекая из массива. </span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">       </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="c1">//для каждой вершины соседа заполняем соответствующую ячейку из матрицы E[n][n] единицей</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">     </span><span class="p">}</span>
+</pre></div> 
+<p><b>Второй этап</b>
+</p>
+<pre>1. Все связные подграфы в отсортированном порядке помещаются в список;
+2. Берем наибольший элемент списка, вычисляем количество его вершин. Если число вершин &gt; l, то идем в пункт 3. Иначе в пункт 5;
+3. Разбиваем подграф на два подграфа таким образом, чтобы разделитель ребер графа был минимален и каждый из получаемых подграфов содержал не менее 25&#160;% вершин исходного графа;
+4. Добавляем полученные элементы в список подграфов таким образом, чтобы список оставался отсортированным. Идем в пункт 2;
+5. Нашли искомое множество подграфов math&gt;K = \{K_{i}\}&lt;/math&gt;;
+6. Создаем и заполняем матрицу матрицу расстояний для графа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G_{2} = (K, E_{2}) }[/math]</span>. Получаем искомый набор рёбер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ E_{2} }[/math]</span>.
+</pre>
+<p><br />
+<b>Третий этап</b>
+</p>
+<pre>1. Заводим два массива: а) массив кластеров C, полученных на предыдущем этапе, б) массив объединений кластеров F, которые мы будем получать на этом этапе;
+2. Берем следующий кластер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i} }[/math]</span> (на первом шаге - первый). Если все кластеры просмотрены, идем в пункт 6;
+3. Берем следующий кластер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{j}, i\lt \gt j }[/math]</span>. Если все кластеры просмотрены, то идем в пункт 2;
+4. Проверяем смежность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{i} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{j} }[/math]</span>. Если не смежны, то возвращаемся в пункт 3. Если смежны, идем в пункт 5;
+5. Рассчитываем показатели <span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{  RC_{(C_{i},C_{j})} }[/math]</span>. Проверяем, удовлетворяют ли найденные значения условиям:
+*<span style="opacity:.5" class="smj-container">[math]\displaystyle{ RI_{(C_{i},C_{j})} \geqslant T_{RI} }[/math]</span>
+*<span style="opacity:.5" class="smj-container">[math]\displaystyle{ RC_{(C_{i},C_{j})} \geqslant T_{RC} }[/math]</span>
+Если нет, то идем в пункт 3. Иначе если смежность пары кластеров выше, чем у предыдущих найденных, то <span style="opacity:.5" class="smj-container">[math]\displaystyle{ F_{i}=j }[/math]</span>. Идем в пункт 3;
+6. Если в списке F есть хотя бы одна пара кластеров для слияния, то выполняем слияние, обновляем массив кластеров и массив объединений кластеров. Идем в пункт 2.
+</pre>
+<h2><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h2>
+<p>1) Для построения графа на основе метода k ближайших соседей для n вершин требуется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n log(n)) }[/math]</span> операций <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>; для наборов данных большой размерности эта величина составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span> операций <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>;
+</p><p>2) Для выделения множества сравнительно малых связных подграфов требуется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nm }[/math]</span> операций, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> - количество подграфов, полученных на втором этапе алгоритма;
+</p><p>3) Формирование набора кластеров, на основе множества подграфов, полученных на предыдущем этапе, требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m^2log(m) }[/math]</span> операций.
+</p><p>Итого, для n вершин получаем последовательную сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n log(n)+nm+m^2log(m)) }[/math]</span>.
+</p>
+<h2><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h2>
+<p><span class="mw-default-size" typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A1%D0%9A.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/d/d6/%D0%A1%D0%9A.png" decoding="async" width="770" height="1081" class="mw-file-element" /></a></span>
+</p>
+<h2><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h2>
+<p>Первый этап работы алгоритма можно распределить между <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> процессами. На вход каждому процессу подается своя вершина, далее происходит процедура поиска <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> ближайших соседей. Параллельная сложность составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>.
+</p><p>Второй и третий этапы можно распараллелить частично.
+</p><p>Второй этап распараллеливается путем подачи на вход свободному процессу очередного подграфа для разделения. Число итераций оценивается в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n log(n)) }[/math]</span>.
+</p><p>Третий этап делится на расчет показателей схожести и соединение подграфов в кластеры. Процесс расчета показателей можно распараллелить, подавая каждому процессу на вход пару подграфов. Сложность этого процесса оценивается как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m log(m) }[/math]</span>. Соединение подграфов в кластеры выполняется последовательно, сложность процесса составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m^2 log(m) }[/math]</span>
+</p><p>Таким образом получаем общую параллельную сложность алгоритма: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n+ n log(n) + m^2 log (m) + m log(m)) }[/math]</span>
+</p>
+<h2><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h2>
+<p><b>Входные данные</b>
+</p><p>1. Симметрическая матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> расстояний между элементами данных размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n\times n }[/math]</span> с нулями на главной диагонали  (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ii}= 0, i = 1, \ldots, N }[/math]</span>).
+</p><p>2. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> - количество ближайших соседей для вершин (рекомендуемое значение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> от 5 до 20 в зависимости от количества анализируемых объектов).
+</p><p>3. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l }[/math]</span> - наименьшее число вершин, которое может содержать наибольший подкластер на 2-м этапе . Величина этого параметра варьируется от 1 до 5&#160;% от общего числа объектов.
+</p><p><b>Объём входных данных</b>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n (n - 1)}{2} }[/math]</span> (в силу симметричности и нулевой главной диагонали достаточно хранить только  над/поддиагональные элементы).
+</p><p><b>Выходные данные</b>
+</p><p>Вектор из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_{1}, u_{2}, \ldots, u_{N} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_{i} }[/math]</span> - целое число, соответствующее кластеру <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>-го объекта.
+</p><p><b>Объём выходных данных</b>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>
+</p>
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h2>
+<p>Соотношение последовательной и параллельной сложности на первом этапе является <i>линейным</i> для больших наборов данных и логарифмическим для n вершин. На втором этапе сложно оценить это соотношение - оно сильно зависит от параметров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l }[/math]</span>. На третьем этапе соотношение равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(1) }[/math]</span>;
+</p><p>Оценка <i>вычислительной мощности</i> выглядит следующим образом:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(1) }[/math]</span>                  для 1-го этапа;
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\frac{nm}{n^2+m^2}) }[/math]</span>   для 2-го этапа;
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\frac{m^2log(m)}{m^2+n}) }[/math]</span> для 3-го этапа;
+</p><p>Алгоритм является <i>недетерминированным</i>. Хотя 1-й этап детерминирован, на 2-ом этапе могут быть найдены различные разбиения на подграфы, что повлияет и на итоговый результат работы алгоритма.
+</p>
+<h1><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h1>
+<h2><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h2>
+<h2><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h2>
+<h2><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h2>
+<h2><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h2>
+<p>Исследовалась масштабируемость параллельной реализации алгоритма для 4 и 8 потоков.<sup id="cite_ref-tr_5-0" class="reference"><a href="#cite_note-tr-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>Результаты отображены в виде графика. Можно отметить, что с увеличением объема входных данных растут ускорение и эффективность работы алгоритма. Однако эффективность снижается при увеличении числа потоков.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.jpg" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/8/80/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.jpg/1000px-%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.jpg" decoding="async" width="1000" height="477" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/8/80/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.jpg/1500px-%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.jpg 1.5x, https://algowiki-project.org/algowiki/pool/images/8/80/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.jpg 2x" /></a><figcaption></figcaption></figure>
+<h2><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h2>
+<h2><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h2>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<p>Последовательная реализация алгоритма доступна по ссылке <sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>CHAMELEON можно реализовать с использованием графовых библиотек METIS <sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>, hMETIS <sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup> и RANN <sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>Существует исследование, связанное с реализацией CHAMELEON посредством технологии OpenMP, оно было рассмотрено в пункте 2.4.
+</p><p>Параллельных реализаций алгоритма CHAMELEON не найдено.
+</p>
+<h1><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">George Karypis, Eui-Hong (Sam) Han и Vipin Kumar, «Chameleon: Hierarchical Clustering Using Dynamic Modeling», 1999.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://studopedia.ru/7_41934_algoritm-dinamicheskoy-ierarhicheskoy-klasterizatsii-CHAMELEON.html">http://studopedia.ru/7_41934_algoritm-dinamicheskoy-ierarhicheskoy-klasterizatsii-CHAMELEON.html</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">J.H. Friedman, J.L. Bentley, and R.A. Finkel. An algorithm for ﬁnding best matches in logarithmic expected time. ACM Transactions on Mathematical Software, 3:209–226, 1977.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">S. Berchtold, C. Bohm, D. Keim, and H.-P. Kriegel. Cost model for nearest neighbor search in high dimensional data space. In Proc. of Symposium on Principles of Database Systems, Tucson, Arizona, 1997.</span>
+</li>
+<li id="cite_note-tr-5"><span class="mw-cite-backlink"><a href="#cite_ref-tr_5-0">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://research.ijcaonline.org/volume79/number8/pxc3891600.pdf">http://research.ijcaonline.org/volume79/number8/pxc3891600.pdf</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://read.pudn.com/downloads36/sourcecode/math/115779/chameleon/chameleon.c__.htm">http://read.pudn.com/downloads36/sourcecode/math/115779/chameleon/chameleon.c__.htm</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://glaros.dtc.umn.edu/gkhome/metis/metis/overview">http://glaros.dtc.umn.edu/gkhome/metis/metis/overview</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://glaros.dtc.umn.edu/gkhome/metis/hmetis/overview">http://glaros.dtc.umn.edu/gkhome/metis/hmetis/overview</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://cran.r-project.org/web/packages/RANN/index.html">https://cran.r-project.org/web/packages/RANN/index.html</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092535
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.041 seconds
+Real time usage: 0.195 seconds
+Preprocessor visited node count: 938/1000000
+Post‐expand include size: 18913/2097152 bytes
+Template argument size: 6174/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 14881/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.239      1 -total
+ 72.59%    4.529      1 Шаблон:Algorithm
+ 46.37%    2.893      1 Шаблон:Level-a
+ 26.73%    1.668      1 Шаблон:Assignment
+ 17.90%    1.117      1 Шаблон:Плашка
+ 17.76%    1.108      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:678-0!canonical and timestamp 20260611092535 and revision id 21466. Rendering was triggered because: diff-page
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:ЕкатеринаКозырева/Алгоритм_динамической_иерархической_кластеризации_CHAMELEON&amp;oldid=21466">https://algowiki-project.org/w/ru/index.php?title=Участник:ЕкатеринаКозырева/Алгоритм_динамической_иерархической_кластеризации_CHAMELEON&amp;oldid=21466</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done/Kronberg" title="Категория:Assignments/Done/Kronberg">Assignments/Done/Kronberg</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done" title="Категория:Assignments/Done">Assignments/Done</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3A%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8+CHAMELEON" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3A%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8+CHAMELEON" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;oldid=21466" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D0%9A%D0%BE%D0%B7%D1%8B%D1%80%D0%B5%D0%B2%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_CHAMELEON&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 20 декабря 2016 года в 16:11.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":89,"wgPageParseReport":{"limitreport":{"cputime":"0.041","walltime":"0.195","ppvisitednodes":{"value":938,"limit":1000000},"postexpandincludesize":{"value":18913,"limit":2097152},"templateargumentsize":{"value":6174,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":14881,"limit":5000000},"timingprofile":["100.00%    6.239      1 -total"," 72.59%    4.529      1 Шаблон:Algorithm"," 46.37%    2.893      1 Шаблон:Level-a"," 26.73%    1.668      1 Шаблон:Assignment"," 17.90%    1.117      1 Шаблон:Плашка"," 17.76%    1.108      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092535","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

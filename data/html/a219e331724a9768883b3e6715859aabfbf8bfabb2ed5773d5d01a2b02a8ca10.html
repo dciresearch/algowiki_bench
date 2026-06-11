@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Single-qubit transform of a state vector — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"2749c15e4810f4a177368e4d","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Single-qubit_transform_of_a_state_vector","wgTitle":"Single-qubit transform of a state vector","wgCurRevisionId":3541,"wgRevisionId":3541,"wgArticleId":433,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Single-qubit_transform_of_a_state_vector","wgRelevantArticleId":433,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":3541,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%7Cext.pygments%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Single-qubit_transform_of_a_state_vector rootpage-Single-qubit_transform_of_a_state_vector skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Single-qubit transform of a state vector</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Однокубитное преобразование <br /> вектора-состояния
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 3 \cdot 2^n }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n+4 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^{n+1} }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Chernyavskiy" title="Участник:Chernyavskiy">А.Ю.Чернявский</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:VadimVV" title="Участник:VadimVV">Вад.В.Воеводин</a> (<a href="#Описание_локальности_данных_и_вычислений">раздел 2.2</a>)
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Локальность_реализации_алгоритма"><span class="tocnumber">2.2.1</span> <span class="toctext">Локальность реализации алгоритма</span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="#Структура_обращений_в_память_и_качественная_оценка_локальности"><span class="tocnumber">2.2.1.1</span> <span class="toctext">Структура обращений в память и качественная оценка локальности</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="#Количественная_оценка_локальности"><span class="tocnumber">2.2.1.2</span> <span class="toctext">Количественная оценка локальности</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#Масштабируемость_алгоритма"><span class="tocnumber">2.4.1</span> <span class="toctext">Масштабируемость алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Масштабируемость_реализации_алгоритма"><span class="tocnumber">2.4.2</span> <span class="toctext">Масштабируемость реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p><i>Алгоритм производит моделирование действия однокубитного квантового вентиля на вектор-состояние.</i>
+<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>
+<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>
+<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>
+<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>
+Данный алгоритм обычно является подпрограммой и многократно применяется к различным кубитам одного состояния (например при моделировании квантовых алгоритмов или анализе квантовой запутанности). Особенностью алгоритма, как и большинства алгоритмов квантовой инфоорматики, является экспоненциальный рост объема данных в зависимости от основного параметра - числа кубитов, что приводит к необходимости суперкомпьютерной реализации для решения важных практических задач.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p><b>Исходные данные:</b> 
+</p><p>Целочисленные параметры <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n -  }[/math]</span> число кубитов (необязательно) и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k - }[/math]</span> номер кубита, над которым производится преобразование.
+</p><p>Комплексная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U = \begin{pmatrix}
+u_{00} &amp; u_{01}\\ 
+u_{10} &amp; u_{11}
+\end{pmatrix} }[/math]</span> однокубитного преобразования  размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 \times 2. }[/math]</span> 
+</p><p>Комплексный вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n, }[/math]</span> задающий начальное состояние многокубитной системы.
+</p><p><br />
+<b>Вычисляемые данные:</b> комплексный вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w }[/math]</span> размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n, }[/math]</span> соответствующий состоянию после преобразования.
+</p><p><br />
+<b>Формулы метода:</b>
+</p><p>Состояние после действия преобразования <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span> на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k- }[/math]</span>й кубит имеет вид <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v_{out} = I_{2^{k-1}}\otimes U \otimes I_{2^{n-k}}, }[/math]</span> где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I_{j} -  }[/math]</span> единичная матрица размерности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j, }[/math]</span> а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \otimes -  }[/math]</span> тензорное произведение (произведение Кронекера).
+</p><p>Однако, элементы итогового вектора можно записать и в прямом виде, что более удобно для вычислений: 
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+w_{i_1i_2\ldots i_k \ldots i_n} = \sum\limits_{j_k=0}^1 u_{i_k j} v_{i_1i_2\ldots j_k \ldots i_n} = u_{i_k 0} v_{i_1i_2\ldots 0_k \ldots i_n} + u_{i_k 1} v_{i_1i_2\ldots 1_k \ldots i_n}
+ }[/math]</span></dd></dl>
+<p>Индекс-кортеж <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i_1i_2\ldots i_n }[/math]</span> представляет собой двоичную запись индекса элемента в массиве.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро алгоритма представляет собой независимое вычисление всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span> элементов вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w. }[/math]</span> Вычисление каждого элемента требует две операции умножения и одну операцию сложения. Кроме того необходимо вычислять индексы типа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i_1i_2\ldots 0_k \ldots i_n, }[/math]</span> а также значение бита <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i_k, }[/math]</span> что требует побитовых операций.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Как записано и в <a href="#Вычислительное_ядро_алгоритма">описании ядра алгоритма</a>, основную часть метода составляют независимые вычсиления элементов выходного вектора.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p>Для индекса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n-1 }[/math]</span>
+</p>
+<ol><li>Вычислить элемент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i_k }[/math]</span> двоичного представления индекса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i. }[/math]</span></li>
+<li>Вычислить индексы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> имеющие двоичные представления <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i_1i_2\ldots \overline{i_k} \ldots i_n, }[/math]</span> где крышка означает обращение бита.</li>
+<li>Вычислить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w_i = u_{i_k i_k}\cdot v_{i} + u_{i_k \overline{i_k}}\cdot v_j. }[/math]</span></li></ol>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Алгоритм требует:
+</p>
+<ol><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^{n+1} }[/math]</span> операций умножения комплексных чисел;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span> операций сложения комплексных чисел;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span> операций получения значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-го бита числа;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span> операций изменения значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-го бита числа.</li></ol>
+<p>Отметим, что данный алгоритм обычно применяется много раз подряд, в связи с чем вычисления, связанные с побитовыми операциями (3-4), могут однократно проводиться в начале алгоритма. Кроме того, от них можно избавиться, пользуясь сложением и логическим умножением с числом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^k, }[/math]</span> которое сохраняется для всего алгоритма.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Представим рисунки графов алгоритма для случая <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=3, k=1 }[/math]</span> (рис.1) и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=3, k=2 }[/math]</span> (рис.2). На графах не представлены матрицы преобразования <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U, }[/math]</span> в связи с тем, что их размер при больших <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> много меньше, нежели размеры входного и выходного векторов. На Рис.3 изображена основная операция, представляемая на Рис.1 и Рис.2 оранжевым цветом. 
+</p><p>Отображение графа со входными и выходными данных, а также "свёрнутой" тройной операцией удобно для понимания локальности обращений к памяти.
+Отметим, что структура графа (а именно обращение к входным данным) сильно зависит от параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k. }[/math]</span>
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:OneQubitVectorTransform1.png" class="mw-file-description"><img src="/w/ru/images/thumb/1/1b/OneQubitVectorTransform1.png/800px-OneQubitVectorTransform1.png" decoding="async" width="800" height="450" class="mw-file-element" srcset="/w/ru/images/1/1b/OneQubitVectorTransform1.png 1.5x" /></a><figcaption>Рисунок 1. Граф алгоритма для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=3, k=1 }[/math]</span> без отображения матрицы преобразования <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U. }[/math]</span> </figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:OneQubitVectorTransform.png" class="mw-file-description"><img src="/w/ru/images/thumb/b/b3/OneQubitVectorTransform.png/800px-OneQubitVectorTransform.png" decoding="async" width="800" height="450" class="mw-file-element" srcset="/w/ru/images/b/b3/OneQubitVectorTransform.png 1.5x" /></a><figcaption>Рисунок 2. Граф алгоритма для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=3, k=2 }[/math]</span> без отображения матрицы преобразования <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U. }[/math]</span> </figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Q_operation.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/2/26/Q_operation.png" decoding="async" width="279" height="217" class="mw-file-element" /></a><figcaption>Рисунок 3. Граф основной операции.</figcaption></figure>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Как видно из информационного графа, прямой алгоритм моделирования однокубитного преобразования обладает высочайшей степенью параллелизма. Все операции вычисления элементов нового вектора-состояния могут быть произведены параллельно. Для вычисления одного элемента необходимо выполнить две операции умножения и одну операцию сложения, операции умножения, в свою очередь, также могут быть выполнены параллельно.
+Таким образом, необходимо выполнение двух ярусов: одного, состоящего из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^{n+1} }[/math]</span> умножений и другого, состоящего из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span> сложений.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><b>Входные данные:</b>
+</p>
+<ul><li>Комплексный вектор состояния <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span> длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n. }[/math]</span> Обычно нормирован на единицу.</li>
+<li>Унитарная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span> порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2 }[/math]</span>.</li>
+<li>Номер кубита <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q }[/math]</span>.</li></ul>
+<p><b>Выходные данные:</b>
+</p>
+<ul><li>Комплексный вектор состояния <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w }[/math]</span> длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span>.</li></ul>
+<p><b>Объем входных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n+4 }[/math]</span> комплексных чисел и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> целочисленный параметр.
+</p><p><b>Объем выходных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^n }[/math]</span> комплексных чисел.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>Соотношение последовательной и параллельной сложности является <i>экспоненциальным</i> (эксмпонента переходит в константу).
+</p><p>Вычислительная мощность алгоритма, как отношение числа операций к суммарному объему входных и выходных данных – <i>константа</i>.
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>На языке C функцию однокубитного преобразования можно записать следующим образом:
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">OneQubitEvolution</span><span class="p">(</span><span class="n">complexd</span><span class="w"> </span><span class="o">*</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">complexd</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">complexd</span><span class="w"> </span><span class="n">U</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nqubits</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="c1">//n - число кубитов</span>
+<span class="w">        </span><span class="c1">//q - номер кубита для преобразования</span>
+
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nqubits</span><span class="o">-</span><span class="n">q</span><span class="p">;</span>
+<span class="w">	</span><span class="c1">//Все биты нулевые, кроме соответствующего позиции преобразуемого кубита  </span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">pow2q</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">shift</span><span class="p">);</span>
+
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">nqubits</span><span class="p">;</span>
+<span class="w">	</span><span class="k">for</span><span class="w">	</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="c1">//Обнуления меняющегося бита</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">i0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="n">pow2q</span><span class="p">;</span>
+<span class="w">		</span>
+<span class="w">		</span><span class="c1">//Установка меняющегося бита</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">pow2q</span><span class="p">;</span>
+<span class="w">		</span>
+<span class="w">		</span><span class="c1">//Получение значения меняющегося бита</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">iq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">pow2q</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">shift</span><span class="p">;</span>
+
+<span class="w">		</span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">U</span><span class="p">[</span><span class="n">iq</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">in</span><span class="p">[</span><span class="n">i0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">U</span><span class="p">[</span><span class="n">iq</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="n">in</span><span class="p">[</span><span class="n">i1</span><span class="p">];</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Отметим, что существенная часть вычислений и логики кода приходится на битовые операции, однако, этого можно избежать: однокубитное преобразование в большинстве случаев является лишь подпрограммой и применяется к разным кубитам большое число раз. В свою очередь, вычисляемые при помощи битовых операций индексы i0, i1 и iq зависят лишь от параметров количества кубитов n и номера кубита q. Число кубитов обычно фиксировано, соответственно, можно вычислить эти индексы заранее для всех q от 1 до n. Для хранения потребуется лишь массив целочисленных переменных линейного размера 3n в то время, как обрабатываемые данные имеют экспоненциальный размер. Очевидно, что такая оптимизация критически необходима при реализации алгоритма на вычислительных устройствах или языках программирования с отсутствием быстрых битовых операций (примером может служить среда Matlab).
+</p>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<p>К сожалению, в противовес идеальной возможности параллелизации алгоритма, практические реализации обладают очень плохой локальностью.
+</p><p>Из математического описания и информационных графов для разных параметров q можно заметить, что при однократном применении однокубитного преобразования легко получить идеальную локальность обращения к данным простой перестановкой кубитов. Так, переместив кубит q на последнее место, мы получим взаимодействие лишь соседних по памяти элементов, причем в идеальном последовательном доступе. 
+</p><p>Однако, преобразование одного кубита в прикладных задачах является лишь подпрограммой и применяется многократно с различными параметрами q. Как видно из математического описания и Рис. 1-2, это полностью исключает возможность добиться локальности обращений к данным. 
+</p>
+<h4><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Локальность_реализации_алгоритма">Локальность реализации алгоритма</span></h4>
+<h5><span id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D1.8C_.D0.B8_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Структура_обращений_в_память_и_качественная_оценка_локальности">Структура обращений в память и качественная оценка локальности</span></h5>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qubit_1.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/a/a6/Qubit_1.png/700px-Qubit_1.png" decoding="async" width="700" height="564" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/a/a6/Qubit_1.png/1050px-Qubit_1.png 1.5x, https://algowiki-project.org/algowiki/pool/images/a/a6/Qubit_1.png 2x" /></a><figcaption>Рисунок 1. Однокубитное преобразование вектора-состояния. Общий профиль обращений в память</figcaption></figure>
+<p>На рис. 1 представлен профиль обращений в память для вычисления однокубитного преобразования вектора-состояния. Данный профиль состоит из обращений к трем массивам, фрагменты для отдельных массивов выделены на рис. 1 зеленым цветом. Из общего профиля можно увидеть, что обращения редко используются повторно, по крайней мере в случае фрагментов 2 и 3. При этом обращения к близко расположенным друг к другу данным выполняются рядом. Рассмотрим выделенные фрагменты поближе.
+</p><p>Отдельно фрагмент 1 представлен на рис. 2. Видно, что данный массив состоит всего из 4-х элементов, к которым постоянно выполняются обращения. Такой фрагмент обладает очень высокой локальностью, поскольку постоянно используются ранее запрошенные данные.
+</p><p>Далее, рассмотрим фрагмент 2 (рис. 3). Здесь все еще проще – выполняется обычный последовательный перебор всех элементов массива. Такой фрагмент обладает высокой пространственной локальностью, однако очень низкой временной (данные не используются повторно).
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qubit_2.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/f/fd/Qubit_2.png/500px-Qubit_2.png" decoding="async" width="500" height="165" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/f/fd/Qubit_2.png/750px-Qubit_2.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/f/fd/Qubit_2.png/1000px-Qubit_2.png 2x" /></a><figcaption>Рисунок 2. Фрагмент 1 (профиль обращений к первому массиву)</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qubit_3.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/9/90/Qubit_3.png/500px-Qubit_3.png" decoding="async" width="500" height="426" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/9/90/Qubit_3.png 1.5x" /></a><figcaption>Рисунок 3. Фрагмент 2 (профиль обращений ко второму массиву)</figcaption></figure>
+<p>Наиболее интересным представляется фрагмент 3. Его небольшой фрагмент, выделенный на рис. 1 желтым, представлен на рис. 4. Однако при ближайшем рассмотрении оказывается, что данный фрагмент тоже просто устроен, хотя и немного сложнее предыдущих.
+</p><p>В данном случае также виден в центре последовательный перебор всех элементов массива, параллельно с которым выполняются обращения либо к элементам с большим или меньшим виртуальным адресом. Отметим, однако, что эта разница между виртуальными адресами, судя по всему, больше 64 байт (длины строки), что может служить причиной возникновения большого числа кэш-промахов.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qubit_4.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/2/24/Qubit_4.png/500px-Qubit_4.png" decoding="async" width="500" height="359" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/2/24/Qubit_4.png 1.5x" /></a><figcaption>Рисунок 4. Небольшая часть фрагмента 3, выделенная на рис. 1 желтым</figcaption></figure>
+<p>В общем можно сказать, что общий профиль обращений в память обладает достаточно высокой пространственной локальностью, поскольку большинство обращений образуют последовательные переборы элементов массивов, однако временная локальность низка – данные практически не используются повторно.
+</p>
+<h5><span id=".D0.9A.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Количественная_оценка_локальности">Количественная оценка локальности</span></h5>
+<p>Основной фрагмент реализации, на основе которого были получены количественные оценки, приведен <a rel="nofollow" class="external text" href="http://git.parallel.ru/shvets.pavel.srcc/locality/blob/master/benchmarks/qubit_evolution/qubit_evolution.h">здесь</a> (функция Kernel). Условия запуска описаны <a rel="nofollow" class="external text" href="http://git.parallel.ru/shvets.pavel.srcc/locality/blob/master/README.md">здесь</a>.
+</p><p>Первая оценка выполняется на основе характеристики daps, которая оценивает число выполненных обращений (чтений и записей) в память в секунду. Данная характеристика является аналогом оценки flops применительно к работе с памятью и является в большей степени оценкой производительности взаимодействия с памятью, чем оценкой локальности. Однако она служит хорошим источником информации, в том числе для сравнения с результатами по следующей характеристике cvg.
+</p><p>На рисунке 5 приведены значения daps для реализаций распространенных алгоритмов, отсортированные по возрастанию (чем больше daps, тем в общем случае выше производительность). Можно увидеть, что производительность работы с памятью для этой программы высока – значение daps примерно на уровне теста Linpack. Видимо, низкая временная локальность в данном случае компенсируется высокой пространственной локальностью. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qubit_daps.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/3/37/Qubit_daps.png/700px-Qubit_daps.png" decoding="async" width="700" height="268" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/3/37/Qubit_daps.png/1050px-Qubit_daps.png 1.5x, https://algowiki-project.org/algowiki/pool/images/3/37/Qubit_daps.png 2x" /></a><figcaption>Рисунок 5. Сравнение значений оценки daps</figcaption></figure>
+<p>Вторая характеристика – cvg – предназначена для получения более машинно-независимой оценки локальности. Она определяет, насколько часто в программе необходимо подтягивать данные в кэш-память. Соответственно, чем меньше значение cvg, тем реже это нужно делать, тем лучше локальность. 
+</p><p>На рисунке 6 приведены значения cvg для того же набора реализаций, отсортированные по убыванию (чем меньше cvg, тем в общем случае выше локальность). Можно увидеть, что, в отличие от daps, cvg оценивает локальность данной программы как достаточно низкую. В частности, значение cvg для Linpack заметно меньше, в то время как значения daps практически совпадали.
+</p><p>Одна из возможных причин этого – влияние арифметических операций. Может получиться, что данные из памяти не будут запрашиваться, пока арифметические операции не будут выполнены; это приводит к простою подсистемы памяти. Соответственно, если в одной программе таких операций нет, а в другой - есть, то daps в первом случае будет выше. При этом cvg не поменяется, поскольку эта оценка не зависит от времени выполнения. 
+</p><p>В данном случае арифметических операций практически нет (в отличие от некоторых других программ), поэтому daps может показывать более высокие результаты, в то время как cvg показывает достаточно низкую оценку.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qubit_cvg.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/f/fa/Qubit_cvg.png/700px-Qubit_cvg.png" decoding="async" width="700" height="317" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/f/fa/Qubit_cvg.png/1050px-Qubit_cvg.png 1.5x, https://algowiki-project.org/algowiki/pool/images/f/fa/Qubit_cvg.png 2x" /></a><figcaption>Рисунок 6. Сравнение значений оценки cvg</figcaption></figure>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Основной способ параллельной реализации очевиден - необходимо распараллеливание основного цикла (параллельное вычисление различных компонент выходного вектора-состояния) и, желательно, операций умножения. На машинах с общей памятью такой вариант распараллеливания приводит к ускорению, близкому к максимально-возможному. 
+Однако, данный способ сталкивается с проблемами локальности данных. Анализируя математическая описание и информационные графы алгоритма легко видеть, что при использовании большого числа узлов с собственной памятью количество необходимых пересылок между узлами становится сопоставимым с количеством вычислений, что приводит к существенной потере эффективности. Возможны разные пути частичного решения этой проблемы, например, кэширование или использование парадигмы программирования SHMEM, однако, столь сильная нелокальность использования данных всё равно не позволяет добиться хорошей эффективности.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_алгоритма">Масштабируемость алгоритма</span></h4>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_реализации_алгоритма">Масштабируемость реализации алгоритма</span></h4>
+<p>В связи с констатной высотой ярусно-параллельной формы алгоритм имеет отличную масштабируемость на машинах с общей памятью. При реализации на машинах с разделяемой памятью быстро возникают проблемы, связанные с локальностью.
+</p><p>Проведём исследование масштабируемости параллельной реализации алгоритма согласно <a href="/ru/Scalability_methodology" title="Scalability methodology">методике</a>. Исследование проводилось на суперкомпьютере "Ломоносов"<sup id="cite_ref-Lom_5-0" class="reference"><a href="#cite_note-Lom-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup> <a rel="nofollow" class="external text" href="http://parallel.ru/cluster">Суперкомпьютерного комплекса Московского университета</a>.
+Набор и границы значений изменяемых <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Параметры_запуска" title="Глоссарий">параметров запуска</a> реализации алгоритма: 
+</p>
+<ul><li>число процессоров [4&#160;: 512] со значениями степени двойки;</li>
+<li>число кубитов [16;32] с шагом 2.</li></ul>
+<p>В результате проведённых экспериментов был получен следующий диапазон <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Эффективность_реализации" title="Глоссарий">эффективности реализации</a> алгоритма:
+</p>
+<ul><li>минимальная эффективность реализации 0.000003%;</li>
+<li>максимальная эффективность реализации 0.008%.</li></ul>
+<p>На следующих рисунках приведены графики <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Производительность" title="Глоссарий">производительности</a> и эффективности выбранной реализации алгоритма в зависимости от изменяемых параметров запуска.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_perf.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/5/5c/Qbit_perf.png" decoding="async" width="672" height="517" class="mw-file-element" /></a><figcaption>Рисунок 7. Параллельная реализация алгоритма. Изменение производительности в зависимости от числа процессоров и числа кубитов.</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_eff.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/3/30/Qbit_eff.png" decoding="async" width="672" height="517" class="mw-file-element" /></a><figcaption>Рисунок 8. Параллельная реализация алгоритма. Изменение эффективности в зависимости от числа процессоров и числа кубитов.</figcaption></figure>
+<p>По результатам исследования можно сделать вывод о том, что эффективность алгоритма не является высокой, однако достаточно быстро возрастает с ростом размера задачи. Сложность задачи возрастает экспоненциально и потому имеет смысл решать задачу максимального размера, влезающую в оперативную память, чтобы увеличить общую эффективность вычислений.
+</p><p>Исследованная <a rel="nofollow" class="external text" href="http://git.algowiki-project.org/Teplov/Scalability/blob/master/qbit/main.cpp">параллельная реализация алгоритма</a>
+</p>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<p>Для проведения экспериментов использовалась реализация алгоритма однокубитного преобразования, в реализации, доступной <a rel="nofollow" class="external text" href="http://git.algowiki-project.org/Teplov/Scalability/blob/master/qbit/main.cpp">здесь</a>.  Все результаты получены на суперкомпьютере "ГрафИТ!". Использовались процессоры Intel Xeon X5570 с пиковой производительностью в 94 Гфлопс, а также компилятор Gnu 4.4.7. 
+На рисунках показана эффективность реализации алгоритма встречной прогонки.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_CPU_User.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/3/3f/Qbit_CPU_User.png/700px-Qbit_CPU_User.png" decoding="async" width="700" height="203" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/3/3f/Qbit_CPU_User.png/1050px-Qbit_CPU_User.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/3/3f/Qbit_CPU_User.png/1400px-Qbit_CPU_User.png 2x" /></a><figcaption>Рисунок 9. График загрузки CPU при выполнении алгоритма однокубитного преобразования</figcaption></figure>
+<p>На графике загрузки процессора видно, что почти все время работы программы уровень загрузки составляет около 50% в среднем. Это указывает на высокую нагрузку выполнения алгоритма при котором на 8-ми ядерном процессоре работают 8 процессов, без использования технологии HyperTreading. Это означает, что использование всех физических ядер близко к 100%
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_Flops.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/1/15/Qbit_Flops.png/700px-Qbit_Flops.png" decoding="async" width="700" height="204" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/15/Qbit_Flops.png/1050px-Qbit_Flops.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/1/15/Qbit_Flops.png/1400px-Qbit_Flops.png 2x" /></a><figcaption>Рисунок 10. График операций с плавающей точкой в секунду при выполнении алгоритма однокубитного преобразования</figcaption></figure>
+<p>На Рисунке 11 показан график количества операций с плавающей точкой в секунду. На графике видна общая достаточно высокая производительность вычислений, достигающая в пике 300 млн операций в секунду и около 70 млн операций в секунду в среднем по всем узлам. Это может указывать на некоторый дисбаланс в вычислениях, при общем сравнительно высоком уровне производительности.
+</p>
+ <figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_L1.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/2/25/Qbit_L1.png/700px-Qbit_L1.png" decoding="async" width="700" height="206" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/2/25/Qbit_L1.png/1050px-Qbit_L1.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/2/25/Qbit_L1.png/1400px-Qbit_L1.png 2x" /></a><figcaption>Рисунок 11. График кэш-промахов L1 в секунду при работе алгоритма однокубитного преобразования</figcaption></figure>
+<p>На графике кэш-промахов первого уровня видно, что число промахов достаточно высокое и находится на уровне 4 млн/сек для отдельных процессов и 1 млн/сек в среднем по всем процессам. Это указывает на достаточно высокую интенсивность вычислений и хорошую локальность данных, учитывая высокие показатели операций с плавающей точкой и на дисбаланс вычислений между процессами.
+</p>
+ <figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_L3.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/7/74/Qbit_L3.png/700px-Qbit_L3.png" decoding="async" width="700" height="206" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/7/74/Qbit_L3.png/1050px-Qbit_L3.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/7/74/Qbit_L3.png/1400px-Qbit_L3.png 2x" /></a><figcaption>Рисунок 12. График кэш-промахов L3 в секунду при работе алгоритма однокубитного преобразования</figcaption></figure>
+<p>На графике кэш-промахов третьего уровня видно, что число промахов все еще достаточно высокое для параллельного приложения и находится на уровне 1 млн/сек в пике и около 250 тыс/сек в среднем по всем узлам. Отношение промахов L1/L3 около 4, что является средним показателем по таким задачам. Это также указывает на достаточно плохую локальность вычислений. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_Mem_Load.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/d/d1/Qbit_Mem_Load.png/700px-Qbit_Mem_Load.png" decoding="async" width="700" height="204" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/d/d1/Qbit_Mem_Load.png/1050px-Qbit_Mem_Load.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/d/d1/Qbit_Mem_Load.png/1400px-Qbit_Mem_Load.png 2x" /></a><figcaption>Рисунок 13. График количества чтений из оперативной памяти при работе алгоритма однокубитного преобразования</figcaption></figure>
+<p>На графике чтений из памяти на наблюдается достаточно невысокая активность чтения из памяти процессами. Так как активно работает сразу большое число процессов, то и активность чтения различная между максимальным и средним значением указывает на дизбалас вычислений в прграмме. Активность немного ниже типичной для приложений такого класса.
+</p>
+ <figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_Mem_Store.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/0/0c/Qbit_Mem_Store.png/700px-Qbit_Mem_Store.png" decoding="async" width="700" height="206" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/0/0c/Qbit_Mem_Store.png/1050px-Qbit_Mem_Store.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/0/0c/Qbit_Mem_Store.png/1400px-Qbit_Mem_Store.png 2x" /></a><figcaption>Рисунок 14. График количества записей в оперативную память при работе алгоритма однокубитного преобразования</figcaption></figure>
+<p>Активность записи в память достаточно низкая, это вполне ожидаемо для такого алгоритма, и так же указывает на достаточно высокую локальность вычислений.
+</p>
+ <figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qbit_Load_Avg.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/0/02/Qbit_Load_Avg.png/700px-Qbit_Load_Avg.png" decoding="async" width="700" height="206" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/0/02/Qbit_Load_Avg.png/1050px-Qbit_Load_Avg.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/0/02/Qbit_Load_Avg.png/1400px-Qbit_Load_Avg.png 2x" /></a><figcaption>Рисунок 15. График числа процессов, ожидающих вхождения в стадию счета (Loadavg), при работе алгоритма однокубитного преобразования</figcaption></figure>
+<p>На графике числа процессов, ожидающих вхождения в стадию счета (Loadavg), видно, что на протяжении всей работы программы значение этого параметра постоянно и приблизительно равняется 3. Это свидетельствует о стабильной работе программы с работающим малым числом ядер на каждом вычислительном узле. Это подтверждает предположение о разбалансированности вычислений, потому как часть процессов не проводит активных вычислений. 
+В целом, по данным системного мониторинга работы программы можно сделать вывод о том, что программа работала не очень эффективно, но с высоким дисбалансом нагрузки. Приложение имеет достаточно высокий ресурс для оптимизаций в ключе более рационального распределения нагрузки на вычислители.
+</p>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<p>Исходя из высочайшей возможности параллелизации и при этом наличия существенной нелокальности обращения к данным, эффективная и хорошо масштабируемая параллельная реализация алгоритма однокубитного квантового преобразования легко достижима на машинах с общей памятью. Реализация же на машинах с разделяемой памятью имеет низкую эффективность и требует специальных подходов для уменьшения времени работы. Можно отметить, что данная задача является хорошим плацдармом для разработки методов решения задач с интенсивным использованием данных и низкой локальностью.
+</p>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://sqi.cs.msu.su/store/storage/jpvtv20_algebraic_tools.pdf">Кронберг Д. А., Ожигов Ю. И., Чернявский А. Ю. Алгебраический аппарат квантовой информатики.</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://sqi.cs.msu.su/files/book_v01.pdf">Корж О. В., Чернявский А. Ю. Практикум по суперкомпьютерным технологиям и квантовым вычислениям 3 курс.</a> </span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Preskill J. Lecture notes for physics 229: Quantum information and computation //California Institute of Technology. – 1998.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Нильсен М., Чанг И. Квантовые вычисления и квантовая информация. – М&#160;: Мир, 2006.</span>
+</li>
+<li id="cite_note-Lom-5"><span class="mw-cite-backlink"><a href="#cite_ref-Lom_5-0">↑</a></span> <span class="reference-text">Воеводин Вл., Жуматий С., Соболев С., Антонов А., Брызгалов П., Никитенко Д., Стефанов К., Воеводин Вад. Практика суперкомпьютера «Ломоносов» // Открытые системы, 2012, N 7, С. 36-39.</span>
+</li>
+</ol></div></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Single-qubit_transform_of_a_state_vector&amp;oldid=3541">https://algowiki-project.org/w/ru/index.php?title=Single-qubit_transform_of_a_state_vector&amp;oldid=3541</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=Single-qubit+transform+of+a+state+vector" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=Single-qubit+transform+of+a+state+vector" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/Single-qubit_transform_of_a_state_vector" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:Single-qubit_transform_of_a_state_vector&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/Single-qubit_transform_of_a_state_vector"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=Single-qubit_transform_of_a_state_vector&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=Single-qubit_transform_of_a_state_vector&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/Single-qubit_transform_of_a_state_vector" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/Single-qubit_transform_of_a_state_vector" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=Single-qubit_transform_of_a_state_vector&amp;oldid=3541" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=Single-qubit_transform_of_a_state_vector&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 15 июня 2016 года в 19:37.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":305,"wgPageParseReport":{"limitreport":{"cputime":"0.056","walltime":"0.209","ppvisitednodes":{"value":618,"limit":1000000},"postexpandincludesize":{"value":5146,"limit":2097152},"templateargumentsize":{"value":1367,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":13617,"limit":5000000},"timingprofile":["100.00%    5.588      1 Шаблон:Algorithm","100.00%    5.588      1 -total"," 56.03%    3.131      1 Шаблон:Level-a"," 26.85%    1.500      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092742","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

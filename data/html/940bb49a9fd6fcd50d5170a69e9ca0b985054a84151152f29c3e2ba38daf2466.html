@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Макарова Алёна/Итерационный метод решения системы линейных алгебраических уравнений GMRES (обобщенный метод минимальных невязок) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"aa5dda1f00204642fd46b6c3","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Макарова_Алёна/Итерационный_метод_решения_системы_линейных_алгебраических_уравнений_GMRES_(обобщенный_метод_минимальных_невязок)","wgTitle":"Макарова Алёна/Итерационный метод решения системы линейных алгебраических уравнений GMRES (обобщенный метод минимальных невязок)","wgCurRevisionId":21322,"wgRevisionId":21322,"wgArticleId":766,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Макарова_Алёна/Итерационный_метод_решения_системы_линейных_алгебраических_уравнений_GMRES_(обобщенный_метод_минимальных_невязок)","wgRelevantArticleId":766,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Макарова Алёна","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","mediawiki.page.gallery.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.pygments%7Cmediawiki.page.gallery.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Макарова_Алёна_Итерационный_метод_решения_системы_линейных_алгебраических_уравнений_GMRES_обобщенный_метод_минимальных_невязок rootpage-Участник_Макарова_Алёна skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Макарова Алёна/Итерационный метод решения системы линейных алгебраических уравнений GMRES (обобщенный метод минимальных невязок)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Обобщенный метод минимальных невязок
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(nm^2) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n(n + 1) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритмов"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритмов</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Геометрическая_реализация"><span class="tocnumber">1.2.1</span> <span class="toctext">Геометрическая реализация</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Алгебраическая_реализация"><span class="tocnumber">1.2.2</span> <span class="toctext">Алгебраическая реализация</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Сходимость_метода"><span class="tocnumber">1.2.3</span> <span class="toctext">Сходимость метода</span></a>
+<ul>
+<li class="toclevel-4 tocsection-7"><a href="#Сходимость_для_положительно_определенной_матрицы"><span class="tocnumber">1.2.3.1</span> <span class="toctext">Сходимость для положительно определенной матрицы</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="#Сходимость_для_симметричной_матрицы"><span class="tocnumber">1.2.3.2</span> <span class="toctext">Сходимость для симметричной матрицы</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#Локальность_реализации_алгоритма"><span class="tocnumber">2.2.1</span> <span class="toctext">Локальность реализации алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Структура_обращений_в_память_и_качественная_оценка_локальности"><span class="tocnumber">2.2.2</span> <span class="toctext">Структура обращений в память и качественная оценка локальности</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#Количественная_оценка_локальности"><span class="tocnumber">2.2.3</span> <span class="toctext">Количественная оценка локальности</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-24"><a href="#Распределение_данных"><span class="tocnumber">2.3.1</span> <span class="toctext">Распределение данных</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#Выполнение_параллельных_операций"><span class="tocnumber">2.3.2</span> <span class="toctext">Выполнение параллельных операций</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Объединение_результатов_расчетов"><span class="tocnumber">2.3.3</span> <span class="toctext">Объединение результатов расчетов</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#Масштабируемость_алгоритма"><span class="tocnumber">2.4.1</span> <span class="toctext">Масштабируемость алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Масштабируемость_реализации_алгоритма"><span class="tocnumber">2.4.2</span> <span class="toctext">Масштабируемость реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2"></span><span class="mw-headline" id="Свойства_и_структура_алгоритмов">Свойства и структура алгоритмов</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p>Метод минимальных невязок представляет собой итерационный метод для численного решения несимметричной системы линейных уравнений. Метод приближает решение вектором в подпространстве Крылова с минимальной невязкой. Чтобы найти этот вектор используется итерация Арнольди.
+</p><p>Впервые метод минимальных невязок был описан в книге Марчука и Кузнецова "Итерационные методы и квадратичные функционалы" <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup> и представлял собой геометрическую реализацию метода минимальных невязок.
+</p><p>Алгебраическая реализация метода минимальных невязок была предложена Саадом и Шульцем в 1986 году <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>. С их подачи за методом закрепилась аббревиатура GMRES (обобщенный метод минимальных невязок).
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>Для решения системы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax = b }[/math]</span> с невырожденной матрицей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, выбирается начальное приближение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_0 }[/math]</span>, затем решается редуцированная система <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Au = r_0 }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_0 = b - Ax_0, x = x_0 + u }[/math]</span>. Подпространства Крылова строятся для редуцированной системы (в предположении, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_0 \neq 0 }[/math]</span>).
+</p><p>Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i = x_0 + y }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{  y \in \mathcal{K}_i  }[/math]</span>. Невязка имеет вид <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_i = r_0 - Ay }[/math]</span>, а её длина минимальна, в силу теоремы Пифагора, в том и только том случае, когда 
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{  
+
+r_i \perp A\mathcal{K}_i 
+
+ }[/math]</span>.</dd></dl>
+<p>Таким образом, для реализации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>-го шага требуется опустить перпендикуляр из вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_0 }[/math]</span> на подпространство <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A\mathcal{K}_i }[/math]</span>. Проще всего это сделать, если в данном подпространстве уже найден ортогональный базис. <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h4><span id=".D0.93.D0.B5.D0.BE.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Геометрическая_реализация">Геометрическая реализация</span></h4>
+<p><i>Геометрическая реализация</i> метода минимальных невязок заключается в построении последовательности векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1, q_2,... }[/math]</span> таким образом, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1, q_2,.., q_i }[/math]</span> дают базис в подпространстве Крылова <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{K}_i }[/math]</span> и при этом вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p_1 = Aq_1, ..., p_i = Aq_i }[/math]</span> образуют ортогональный базис в подпространстве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A\mathcal{K}_i }[/math]</span>. Вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_{i+1} \notin \mathcal{K}_i }[/math]</span> должен обладать следующими свойствами:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+q_{i+1} \in \mathcal{K}_{i+1}, p_{i+1} = Aq_{i+1} \perp A\mathcal{K}_i
+
+ }[/math]</span>.</dd></dl>
+<p>Его можно получить с помощью процесса ортогонализации, применённого к вектору <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p = Aq }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q = Aq_i }[/math]</span>. В геометрической реализации необходимо хранить две системы векторов: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1, ..., q_i }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p_1, ..., p_i }[/math]</span>.
+</p>
+<h4><span id=".D0.90.D0.BB.D0.B3.D0.B5.D0.B1.D1.80.D0.B0.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Алгебраическая_реализация">Алгебраическая реализация</span></h4>
+<p><i>Алгебраическая реализация</i> метода минимальных невязок использует лишь одну систему векторов, образующих ортогональные базисы в подпространствах <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{K}_i }[/math]</span>.
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1 = r_0/||r_0||_2 }[/math]</span>. Чтобы получить ортонормированный базис  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1, ..., q_{i+1} }[/math]</span> в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{K}_{i+1} = \mathcal{K}_{i+1}(r_0, A) }[/math]</span>, проводим ортогонализацию вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Aq_i }[/math]</span> к векторам <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1, ..., q_i }[/math]</span>. Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_i \equiv [q_1, ..., q_i] \in \mathbb{C}^{n*i} }[/math]</span>, то получим
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+AQ_i = Q_{i+1}\hat{H_i}, \hat{H_i}= \begin{bmatrix} H_i \\ 0 ... 0 &amp; h_{i+1 i} \end{bmatrix},
+
+ }[/math]</span></dd></dl>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ H_i }[/math]</span> - верхняя хессенбергова матрица порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>.
+</p><p>Далее рассмотрим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ QR }[/math]</span>-разложение прямоугольной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{H_i} }[/math]</span>:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+\hat{H_i} = U_iR_i, R_i \in \mathbb{C}^{i*i}
+
+ }[/math]</span>.</dd></dl>
+<p>Тогда минимум невязки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ ||r_0 - AQ_iy||_2 }[/math]</span> по всем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y }[/math]</span> будет достигаться в том случае, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y = y_i }[/math]</span> удовлетворяет уравнению
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+R_iy_i = z_i \equiv ||r_0||_2U^T_ie_1, e_1 = \begin{bmatrix} 1 0 ... 0 \end{bmatrix}^T,
+
+ }[/math]</span>.</dd></dl>
+<p>Матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R_i }[/math]</span> невырожденная, следовательно,
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+x_i = x_0 + Q_iy_i = x_0 + Q_iR_i^{-1}z_i
+
+ }[/math]</span>.</dd></dl>
+<h4><span id=".D0.A1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0"></span><span class="mw-headline" id="Сходимость_метода">Сходимость метода</span></h4>
+<p>Метод минимизации невязок на подпространствах Крылова за конечное число итераций приводит к точному решению и по этой причине является прямым методом. Но чаще его рассматривают как итерационный метод - с типичными для итерационных методов оценками сходимости. Идея заключается в том, что спустя некоторое небольшое (относительно размера матрицы - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span>) количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, полученное приближение уже является хорошей оценкой ответа.
+</p><p>Но об этом не верно говорить в общем. Согласно теореме (Greenbaum, Pták and Strakoš)<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>, для каждой монотонной последовательности <span style="opacity:.5" class="smj-container">[math]\displaystyle{  a_1,..., a_{m-1}, a_m = 0  }[/math]</span>, найдётся матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> такая что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ ||r_n|| = a_n }[/math]</span> для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_n }[/math]</span> невязка, определенная ранее.
+</p><p>На практике для матрицы порядка  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> число шагов может оказаться равным <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span>, а норма невязки может оставаться равной норме начальной невязки на всех шагах, кроме последнего. 
+</p><p><b>Пример</b>
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+\begin{bmatrix} 0 1 &amp; ... \\ 0 0 1 &amp; ... \\...\\... &amp; 01 \\1 &amp; ... \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\...\\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\...\\ 0 \\ 1 \end{bmatrix}
+
+ }[/math]</span></dd></dl>
+<p>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{  x_0 = 0  }[/math]</span>, то <span style="opacity:.5" class="smj-container">[math]\displaystyle{  r_0 = b }[/math]</span>. Подпространства Крылова получаются такие:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+\mathcal{K}_i = span \{ e_n, e_{n-1}, ..., e_{n-i+1}\}, 1 \le i \le n 
+
+ }[/math]</span></dd></dl>
+<p>Точное решение системы имеет вид <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x = e_1 }[/math]</span>, а на итерациях получаются следующие векторы:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+
+x_0 = x_1 = ... = x_{n-1} = 0, x_n = e_1
+
+ }[/math]</span>.</dd></dl>
+<p>Для получения оценок требуются дополнительные предположения относительно матрицы коэффициентов.
+</p>
+<h5><span id=".D0.A1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Сходимость_для_положительно_определенной_матрицы">Сходимость для положительно определенной матрицы</span></h5>
+<p>Если матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> положительно определена, то
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{  
+\|r_n\| \leq \left( 1-\frac{\lambda_{\mathrm{min}}^2(1/2(A^T + A))}{ \lambda_{\mathrm{max}}(A^T A)} \right)^{n/2} \|r_0\|, 
+ }[/math]</span>,</dd></dl>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lambda_{\mathrm{min}}(M) }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lambda_{\mathrm{max}}(M) }[/math]</span> обозначают наибольшее и наименьшее собственное значение матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span>, соответственно. <sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>
+</p>
+<h5><span id=".D0.A1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.BB.D1.8F_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Сходимость_для_симметричной_матрицы">Сходимость для симметричной матрицы</span></h5>
+<p>Если матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> является симметричной и положительно определена, тогда
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{  
+
+\|r_n\| \leq \left( \frac{\kappa_2(A)^2-1}{\kappa_2(A)^2} \right)^{n/2} \|r_0\|
+
+ }[/math]</span>,</dd></dl>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \kappa_2(A) }[/math]</span> число обусловленности матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> в Евклидовой норме.
+</p><p>Если не требовать положительной определённости
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{  
+\|r_n\| \le \inf_{p \in P_n} \|p(A)\| \le \kappa_2(V) \inf_{p \in P_n} \max_{\lambda \in \sigma(A)} |p(\lambda)| \|r_0\|, \, 
+ }[/math]</span></dd></dl>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ P_n }[/math]</span> обозначает множество полиномов степени не выше <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p(0) = 1 }[/math]</span>, матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V }[/math]</span> появляется из спектрального разложения матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sigma(A) }[/math]</span> - спектр матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Грубо говоря, это означает, что быстрая сходимость имеет место, когда собственные значения матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> невелики и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> не сильно отклоняется от нормальной матрицы.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>Все эти неравенства связаны с невязкой вместо фактической ошибки, т.е. расстоянием между текущей итерацией и точным решением.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Самой трудоёмкой процедурой в методе является <span style="opacity:.5" class="smj-container">[math]\displaystyle{ QR }[/math]</span>-разложение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{H_i} }[/math]</span>. В общем случае требуется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{O}(i^3) }[/math]</span> арифметических операций, однако то, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{H_i} }[/math]</span> является хессенберговой матрицей, позволяет сократить требуемый объём до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{O}(i^2) }[/math]</span> действий.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Алгоритм начинается с выбора начального приближения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_0 }[/math]</span>.
+Далее для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1,2 .. }[/math]</span>
+</p>
+<dl><dd>1. Вычисляем матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{H_i} }[/math]</span>.</dd>
+<dd>2. Находим её <span style="opacity:.5" class="smj-container">[math]\displaystyle{ QR }[/math]</span>-разложение: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{H_i} = U_iR_i }[/math]</span>.</dd>
+<dd>3. Решаем систему <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R_iy_i = U^T_ie_1 }[/math]</span>.</dd>
+<dd>4. Находим приближение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i = x_0 + Q_iy_i }[/math]</span>.</dd></dl>
+<p>Алгоритм завершается, когда норма вектора невязки становится достаточно малой. При большом числе итераций вычислительные затраты и требуемая для хранения векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p_i }[/math]</span> память могу оказаться чрезмерно большими. В таких случаях применяют алгоритм с перезапусками (restart): задают максимальную допустимую размерность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> пространств Крылова <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{K}_i }[/math]</span>, и если точность не достигнута, берут полученное приближение в качестве нового начального приближения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^0_{new} = x_K }[/math]</span>.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<ul><li>Инициализация начальных значений</li></ul>
+<p>1. Выбрать начальное приближение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_0 }[/math]</span> и точность решения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \epsilon }[/math]</span>.
+</p><p>2. Для <span style="opacity:.5" class="smj-container">[math]\displaystyle{  k = 1, 2, ..  }[/math]</span>
+</p>
+<ul><li>Вычисление невязки</li></ul>
+<p>3. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_0 = b - Ax_0 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta = ||r_0|| }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1 = r_0/\beta }[/math]</span>.
+</p><p>4. Цикл по <span style="opacity:.5" class="smj-container">[math]\displaystyle{  j = 1, 2, .. k  }[/math]</span>.
+</p>
+<ul><li>Ортогонализация Арнольди</li></ul>
+<p>5. Для каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{  i = 1, 2, .. j  }[/math]</span> вычислим:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ h_{ij} = (Aq_j, q_i) }[/math]</span>.</dd></dl>
+<p>6. Построим вектор: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ z_{j+1} = Aq_j - \sum_{i = 1}^j h_{ij}q_i }[/math]</span>.
+</p><p>7. Вычислим его норму <span style="opacity:.5" class="smj-container">[math]\displaystyle{ h_{j+1,j} = ||z_{j+1}||_2 }[/math]</span>.
+</p><p>8. Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ h_{j+1,j} }[/math]</span> = 0, то останавливаемся.
+</p><p>9. Построим очередной вектор базиса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_{j+1} = z_{j+1}/h_{j+1,j} }[/math]</span>.
+</p><p>10. Конец цикла по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>.
+</p><p>11. Процесс требует хранения всех предыдущих элементов базиса:<span style="opacity:.5" class="smj-container">[math]\displaystyle{ q_1, .. q_k }[/math]</span>. Будем хранить их в виде матриц <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_k }[/math]</span>.
+</p>
+<ul><li>Задача наименьших квадратов</li></ul>
+<p>12. Чтобы вычислить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_k = x_0 + Q_ky_k }[/math]</span>, решаем задачу: <span style="opacity:.5" class="smj-container">[math]\displaystyle{  y_k = argmin ||r_0 - AP_ky_k||_2 }[/math]</span>.
+</p>
+<ul><li>Проверка достижения требуемой точности приближения</li></ul>
+<p>13. Если  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ ||b - Ax_k|| \lt  \epsilon }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_k = x_0 + Q_ky_k }[/math]</span> перейти к п.15
+</p><p>14. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_0 = x_k }[/math]</span>, перейти к п.2
+</p>
+<ul><li>Конец</li></ul>
+<p>15. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^* = x_k }[/math]</span>
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Будем предполагать, что матрица решаемой СЛАУ является разреженной. Количество внедиагональных ненулевых элементов в которой равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> .
+</p><p>Тогда при <span style="opacity:.5" class="smj-container">[math]\displaystyle{  m \lt \lt  n  }[/math]</span> можно говорить, что один GMRES-цикл имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{O}(nm^2) }[/math]</span>.
+</p><p>Требования по памяти с учетом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 \lt  m \lt \lt  n }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \lt \lt  n }[/math]</span> составляют <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{O}(mn) }[/math]</span>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Основным ресурсом параллелизма будут являться умножение матрицы на вектор<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup> и вычисление скалярных произведений<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup>. Представим информационные графы для данных алгоритмов:
+</p>
+<center>
+<div class="thumb">
+<div class="thumbinner" style="width:729px">
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 635px">
+			<div class="thumb" style="width: 630px; height: 630px;"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Matvec.png" class="mw-file-description" title="Рисунок 1. Граф последовательного умножения плотной матрицы на вектор с отображением входных и выходных данных"><img alt="Рисунок 1. Граф последовательного умножения плотной матрицы на вектор с отображением входных и выходных данных" src="https://algowiki-project.org/algowiki/pool/images/thumb/6/69/Matvec.png/557px-Matvec.png" decoding="async" width="557" height="600" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/6/69/Matvec.png 1.5x" /></a></span></div>
+			<div class="gallerytext">Рисунок 1. Граф последовательного умножения плотной матрицы на вектор с отображением входных и выходных данных</div>
+		</li>
+		<li class="gallerybox" style="width: 635px">
+			<div class="thumb" style="width: 630px; height: 630px;"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Dot.png" class="mw-file-description" title="Рисунок 2. Последовательно-параллельное вычисление скалярного произведения"><img alt="Рисунок 2. Последовательно-параллельное вычисление скалярного произведения" src="https://algowiki-project.org/algowiki/pool/images/thumb/2/2a/Dot.png/570px-Dot.png" decoding="async" width="570" height="600" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/2/2a/Dot.png/855px-Dot.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/2/2a/Dot.png/1141px-Dot.png 2x" /></a></span></div>
+			<div class="gallerytext">Рисунок 2. Последовательно-параллельное вычисление скалярного произведения </div>
+		</li>
+</ul>
+<div class="thumbcaption" style="text-align:center">
+</div>
+</div>
+</div>
+</center>
+<p>Граф алгоритма умножения плотной матрицы на вектор состоит из одной группы вершин, расположенной в целочисленных узлах двумерной области, соответствующая ей операция  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a+bc }[/math]</span>. 
+</p><p>Описанный граф  выполнен для случая <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m = 4 , n = 5 }[/math]</span>.  Изображена подача только входных данных из вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x }[/math]</span>, подача элементов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, идущая во все вершины, на рисунке не представлена.
+</p><p>Для алгоритма нахождения скалярного произведения двух векторов граф состоит из двух групп вершин, им соответсвуют операции  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a*b }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{  c+d }[/math]</span>. Данный граф изображен для случая <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n = 24 }[/math]</span>.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>В вычислительной схеме присутствуют два интенсивных в вычислительном плане этапа:
+</p>
+<dl><dd>1. Умножение матрицы СЛАУ на вектор (для нахождения невязок).</dd></dl>
+<p>Для нахождения матрично-векторных произведений, при вычислении невязок, матрица должна быть подвергнута декомпозиции на строчные блоки.
+</p>
+<dl><dd>2. Нахождение скалярных произведений векторов (при построении ортонормального базиса подпространства Крылова).</dd></dl>
+<p>Для наиболее эффективного вычисления скалярных проихведений и линейных комбинаций векоров базиса каждый из векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p_i }[/math]</span> должен быть разбит на блоки равного размера по числу процессоров.
+</p><p>Кроме того, на хранение векторов базиса приходится бОльшая часть затрат памяти.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><b>Входные данные: </b>
+Обязательные параметры:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> - квадратная матрица <i>(n x n)</i>.</dd>
+<dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> - вектор правой части <i>(n x 1)</i>.</dd></dl>
+<p>Вариативно:
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_0 }[/math]</span> - начальное приближение (может не передаваться и быть всегда нулевым).</dd>
+<dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \epsilon }[/math]</span> - погрешность (может не передаваться и быть заданным по умолчанию, обычно равна 1e-6).</dd>
+<dd>Максимальное число итераций.</dd></dl>
+<p><b>Выходные данные:</b>
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ x^* }[/math]</span> - решение системы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Ax = b }[/math]</span>
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<dl><dd>1. Рассматриваемый алгоритм предназначен для решения невырожденных линейных систем большой размерности. При этом симметрия и положительная определенность матрицы не предполагается.</dd></dl>
+<dl><dd>2. Для систем с разряженной матрицей алгоритм требует гораздо меньшей вычислительной мощности. (Сложность цикла с разреженной матрицей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{O}(nm^2) }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{  m \lt \lt  n  }[/math]</span> против <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathcal{O}(n^3) }[/math]</span> в общем случае).</dd></dl>
+<dl><dd>3. Особенностью метода является то, что с целью экономии памяти выбирается некоторая размерность Крылова <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span>, и после того как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> базисных векторов построены, решение уточняется.</dd></dl>
+<dl><dd>4. Одной из важных практических особенностей метода является  то, что на первых итерациях метод сходится гораздо быстрее, чем асимптотически.</dd></dl>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>Реализация GMRES с преобуславливанием на python, доступная в пакете scipy (scipy.sparse.linal)<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gmres</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">restart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">restrt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Use Generalized Minimal RESidual iteration to solve A x = b.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    A&#160;: {sparse matrix, dense matrix, LinearOperator}</span>
+<span class="sd">        The real or complex N-by-N matrix of the linear system.</span>
+<span class="sd">    b&#160;: {array, matrix}</span>
+<span class="sd">        Right hand side of the linear system. Has shape (N,) or (N,1).</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    x&#160;: {array, matrix}</span>
+<span class="sd">        The converged solution.</span>
+<span class="sd">    info&#160;: int</span>
+<span class="sd">        Provides convergence information:</span>
+<span class="sd">          * 0 &#160;: successful exit</span>
+<span class="sd">          * &gt;0&#160;: convergence to tolerance not achieved, number of iterations</span>
+<span class="sd">          * &lt;0&#160;: illegal input or breakdown</span>
+<span class="sd">    Other parameters</span>
+<span class="sd">    ----------------</span>
+<span class="sd">    x0&#160;: {array, matrix}</span>
+<span class="sd">        Starting guess for the solution (a vector of zeros by default).</span>
+<span class="sd">    tol&#160;: float</span>
+<span class="sd">        Tolerance to achieve. The algorithm terminates when either the relative</span>
+<span class="sd">        or the absolute residual is below `tol`.</span>
+<span class="sd">    restart&#160;: int, optional</span>
+<span class="sd">        Number of iterations between restarts. Larger values increase</span>
+<span class="sd">        iteration cost, but may be necessary for convergence.</span>
+<span class="sd">        Default is 20.</span>
+<span class="sd">    maxiter&#160;: int, optional</span>
+<span class="sd">        Maximum number of iterations (restart cycles).  Iteration will stop</span>
+<span class="sd">        after maxiter steps even if the specified tolerance has not been</span>
+<span class="sd">        achieved.</span>
+<span class="sd">    xtype&#160;: {&#39;f&#39;,&#39;d&#39;,&#39;F&#39;,&#39;D&#39;}</span>
+<span class="sd">        This parameter is DEPRECATED --- avoid using it.</span>
+<span class="sd">        The type of the result.  If None, then it will be determined from</span>
+<span class="sd">        A.dtype.char and b.  If A does not have a typecode method then it</span>
+<span class="sd">        will compute A.matvec(x0) to get a typecode.   To save the extra</span>
+<span class="sd">        computation when A does not have a typecode attribute use xtype=0</span>
+<span class="sd">        for the same type as b or use xtype=&#39;f&#39;,&#39;d&#39;,&#39;F&#39;,or &#39;D&#39;.</span>
+<span class="sd">        This parameter has been superseded by LinearOperator.</span>
+<span class="sd">    M&#160;: {sparse matrix, dense matrix, LinearOperator}</span>
+<span class="sd">        Inverse of the preconditioner of A.  M should approximate the</span>
+<span class="sd">        inverse of A and be easy to solve for (see Notes).  Effective</span>
+<span class="sd">        preconditioning dramatically improves the rate of convergence,</span>
+<span class="sd">        which implies that fewer iterations are needed to reach a given</span>
+<span class="sd">        error tolerance.  By default, no preconditioner is used.</span>
+<span class="sd">    callback&#160;: function</span>
+<span class="sd">        User-supplied function to call after each iteration.  It is called</span>
+<span class="sd">        as callback(rk), where rk is the current residual vector.</span>
+<span class="sd">    restrt&#160;: int, optional</span>
+<span class="sd">        DEPRECATED - use `restart` instead.</span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    LinearOperator</span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    A preconditioner, P, is chosen such that P is close to A but easy to solve</span>
+<span class="sd">    for. The preconditioner parameter required by this routine is</span>
+<span class="sd">    ``M = P^-1``. The inverse should preferably not be calculated</span>
+<span class="sd">    explicitly.  Rather, use the following template to produce M::</span>
+<span class="sd">      # Construct a linear operator that computes P^-1 * x.</span>
+<span class="sd">      import scipy.sparse.linalg as spla</span>
+<span class="sd">      M_x = lambda x: spla.spsolve(P, x)</span>
+<span class="sd">      M = spla.LinearOperator((n, n), M_x)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Change &#39;restrt&#39; keyword to &#39;restart&#39;</span>
+    <span class="k">if</span> <span class="n">restrt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">restrt</span> <span class="o">=</span> <span class="n">restart</span>
+    <span class="k">elif</span> <span class="n">restart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot specify both restart and restrt keywords. &quot;</span>
+                         <span class="s2">&quot;Preferably use &#39;restart&#39; only.&quot;</span><span class="p">)</span>
+
+    <span class="n">A</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">postprocess</span> <span class="o">=</span> <span class="n">make_system</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">xtype</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">maxiter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">maxiter</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">10</span>
+
+    <span class="k">if</span> <span class="n">restrt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">restrt</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">restrt</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">restrt</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="n">matvec</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">matvec</span>
+    <span class="n">psolve</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">matvec</span>
+    <span class="n">ltr</span> <span class="o">=</span> <span class="n">_type_conv</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">char</span><span class="p">]</span>
+    <span class="n">revcom</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_iterative</span><span class="p">,</span> <span class="n">ltr</span> <span class="o">+</span> <span class="s1">&#39;gmresrevcom&#39;</span><span class="p">)</span>
+    <span class="n">stoptest</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_iterative</span><span class="p">,</span> <span class="n">ltr</span> <span class="o">+</span> <span class="s1">&#39;stoptest2&#39;</span><span class="p">)</span>
+
+    <span class="n">resid</span> <span class="o">=</span> <span class="n">tol</span>
+    <span class="n">ndx1</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ndx2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">work</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="o">+</span><span class="n">restrt</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">work2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">restrt</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">restrt</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">ijob</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ftflag</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">bnrm2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="n">iter_</span> <span class="o">=</span> <span class="n">maxiter</span>
+    <span class="n">old_ijob</span> <span class="o">=</span> <span class="n">ijob</span>
+    <span class="n">first_pass</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">resid_ready</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">iter_num</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">olditer</span> <span class="o">=</span> <span class="n">iter_</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">iter_</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">ndx1</span><span class="p">,</span> <span class="n">ndx2</span><span class="p">,</span> <span class="n">sclr1</span><span class="p">,</span> <span class="n">sclr2</span><span class="p">,</span> <span class="n">ijob</span> <span class="o">=</span> \
+           <span class="n">revcom</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">restrt</span><span class="p">,</span> <span class="n">work</span><span class="p">,</span> <span class="n">work2</span><span class="p">,</span> <span class="n">iter_</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">ndx1</span><span class="p">,</span> <span class="n">ndx2</span><span class="p">,</span> <span class="n">ijob</span><span class="p">)</span>
+        <span class="c1"># if callback is not None and iter_ &gt; olditer:</span>
+        <span class="c1">#    callback(x)</span>
+        <span class="n">slice1</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">ndx1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ndx1</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">slice2</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">ndx2</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ndx2</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ijob</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># gmres success, update last residual</span>
+            <span class="k">if</span> <span class="n">resid_ready</span> <span class="ow">and</span> <span class="n">callback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">callback</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span>
+                <span class="n">resid_ready</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">ijob</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">work</span><span class="p">[</span><span class="n">slice2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">sclr2</span>
+            <span class="n">work</span><span class="p">[</span><span class="n">slice2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sclr1</span><span class="o">*</span><span class="n">matvec</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">ijob</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="n">work</span><span class="p">[</span><span class="n">slice1</span><span class="p">]</span> <span class="o">=</span> <span class="n">psolve</span><span class="p">(</span><span class="n">work</span><span class="p">[</span><span class="n">slice2</span><span class="p">])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">first_pass</span> <span class="ow">and</span> <span class="n">old_ijob</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">resid_ready</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="n">first_pass</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">ijob</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span>
+            <span class="n">work</span><span class="p">[</span><span class="n">slice2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">sclr2</span>
+            <span class="n">work</span><span class="p">[</span><span class="n">slice2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sclr1</span><span class="o">*</span><span class="n">matvec</span><span class="p">(</span><span class="n">work</span><span class="p">[</span><span class="n">slice1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">resid_ready</span> <span class="ow">and</span> <span class="n">callback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">callback</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span>
+                <span class="n">resid_ready</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">iter_num</span> <span class="o">=</span> <span class="n">iter_num</span><span class="o">+</span><span class="mi">1</span>
+
+        <span class="k">elif</span> <span class="p">(</span><span class="n">ijob</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">ftflag</span><span class="p">:</span>
+                <span class="n">info</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                <span class="n">ftflag</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">bnrm2</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">stoptest</span><span class="p">(</span><span class="n">work</span><span class="p">[</span><span class="n">slice1</span><span class="p">],</span> <span class="n">b</span><span class="p">,</span> <span class="n">bnrm2</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
+
+        <span class="n">old_ijob</span> <span class="o">=</span> <span class="n">ijob</span>
+        <span class="n">ijob</span> <span class="o">=</span> <span class="mi">2</span>
+
+        <span class="k">if</span> <span class="n">iter_num</span> <span class="o">&gt;</span> <span class="n">maxiter</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">if</span> <span class="n">info</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">resid</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="c1"># info isn&#39;t set appropriately otherwise</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">maxiter</span>
+
+    <span class="k">return</span> <span class="n">postprocess</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">info</span>
+</pre></div>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h4><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Локальность_реализации_алгоритма">Локальность реализации алгоритма</span></h4>
+<h4><span id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D1.8C_.D0.B8_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Структура_обращений_в_память_и_качественная_оценка_локальности">Структура обращений в память и качественная оценка локальности</span></h4>
+<h4><span id=".D0.9A.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Количественная_оценка_локальности">Количественная оценка локальности</span></h4>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Возможный способ реализации приведен в работе Буренкова С.А.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup>. А также рассмотрены особенности параллельной реализации алгоритма.
+</p>
+<h4><span id=".D0.A0.D0.B0.D1.81.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85"></span><span class="mw-headline" id="Распределение_данных">Распределение данных</span></h4>
+<p>При выполнении параллельного алгоритма решения систем линейных алгебраических уравнений необходимо распределить входные данные наиболее рациональным способом. Матрица коэффициентов разбивается на непрерывные горизонтальные полосы. Распределение вектора правой части и начального приближения выполнено по принципу дублирования, т.е. все элементы векторов скопированы на все процессоры. Для рассматриваемой задачи решения СЛАУ такой подход распределения допустим, т.к. векторы содержат столько же элементов, сколько и одна строка или один столбец матрицы коэффициентов. Если процессор хранит строку матрицы и одиночные элементы векторов правой части и начального приближения, то общее число сохраняемых элементов имеет порядок  . Если же процессор хранит строку матрицы и все элементы векторов, то общее число сохраняемых элементов также порядка  . Таким образом, при дублировании и при разделении векторов требования к объему памяти из одного класса сложности.
+</p>
+<h4><span id=".D0.92.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.B9"></span><span class="mw-headline" id="Выполнение_параллельных_операций">Выполнение параллельных операций</span></h4>
+<p>Рассмотрим операции, которые выполняются неоднократно в процессе выполнения алгоритма: умножение матрицы на вектор, произведение векторов, расчет нормы вектора, линейной комбинации векторов. Эти подзадачи можно разделить на 2 группы: операции между матрицей и вектором (например, умножение матрицы на вектор) и операции между двумя векторами (например, скалярное умножение, взвешенная сумма векторов и пр.). Подзадачи умножения константы на вектор и определение нормы вектора будем относить ко второй группе, так как их трудоемкость одного порядка. 
+</p><p>Особенности выполнения операций между матрицей и вектором определены способом распределения входных данных. На рис. 2 схематично изображен процесс параллельного умножения матрицы на вектор на трех процессорах. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Matr_x_v.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/4/4d/Matr_x_v.png" decoding="async" width="293" height="311" class="mw-file-element" /></a><figcaption>Рисунок 2. Схема параллельного выполнения операции между матрицей и вектором</figcaption></figure>
+<p>Заштрихованные участки соответствуют данным, расположенным в памяти процессора исполнителя. Каждый исполнитель получает свою часть результата выполнения операции.
+</p><p>По схожему принципу организовано параллельное выполнение операций между двумя векторами. Несмотря на то, что каждому процессу доступна полная информация о векторах, вычисления производятся лишь над участком, соответствующим процессу-исполнителю. На рис. 3 изображен пример параллельного выполнения операций между двумя векторами.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:V_x_v.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/2/2b/V_x_v.png" decoding="async" width="210" height="302" class="mw-file-element" /></a><figcaption>Рисунок 3. Схема параллельного выполнения операции между двумя векторами</figcaption></figure>
+<p>Таким образом, параллельное выполнение любой из выделенных подзадач привело к распределению вычислительной нагрузки между всеми исполнителями.
+</p>
+<h4><span id=".D0.9E.D0.B1.D1.8A.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D0.BE.D0.B2_.D1.80.D0.B0.D1.81.D1.87.D0.B5.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Объединение_результатов_расчетов">Объединение результатов расчетов</span></h4>
+<p>Результатом выполнения рассматриваемых операций является, чаще всего, вектор, части которого расположены на участвовавших в вычислениях процессорах. Для объединения результатов расчета и получения полного вектора на каждом процессоре вычислительной системы необходимо выполнить операцию сбора данных. В качестве обменных взаимодействий в модели с распределённой памятью могут выступать операции массовых коммуникационных обменов. С их помощью каждый процессор передаст свой вычисленный элемент вектора всем остальным процессорам (см. рис. 4).
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Collect.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/8/84/Collect.png" decoding="async" width="299" height="238" class="mw-file-element" /></a><figcaption>Рисунок 4. Принцип сбора результатов вычислений</figcaption></figure>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_алгоритма">Масштабируемость алгоритма</span></h4>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_реализации_алгоритма">Масштабируемость реализации алгоритма</span></h4>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<p>Алгоритм GMRES достаточно популярен и его реализацию можно найти во многих пакетах прикладных программ.
+</p><p><br />
+<b>Пример: MATLAB</b>
+</p>
+<div class="mw-highlight mw-highlight-lang-matlab mw-content-ltr" dir="ltr"><pre><span></span><span class="w">   </span>
+
+<span class="n">Итерационный</span><span class="w"> </span><span class="s">метод</span><span class="w"> </span><span class="s">минимизации</span><span class="w"> </span><span class="s">обобщенной</span><span class="w"> </span><span class="s">невязки</span><span class="w"> </span><span class="s">реализован</span><span class="w"> </span><span class="s">в</span><span class="w"> </span><span class="s">системе</span><span class="w"> </span><span class="s">MATLAB.</span><span class="w"> </span><span class="s">Для</span><span class="w"> </span><span class="s">этого</span><span class="w"> </span><span class="s">используется</span><span class="w"> </span><span class="s">функция</span><span class="w"> </span><span class="s">gmres:</span>
+
+<span class="nb">gmres</span><span class="w"> </span><span class="p">(</span>А<span class="p">,</span><span class="w"> </span>В<span class="p">.</span><span class="w"> </span><span class="n">restart</span><span class="p">)</span><span class="w"> </span>—<span class="w"> </span>возвращает<span class="w"> </span>решение<span class="w"> </span><span class="n">X</span><span class="w"> </span>СЛУ<span class="w"> </span>А<span class="o">*</span>Х<span class="p">=</span>В<span class="p">.</span><span class="w"> </span>А<span class="w"> </span>—квадратная<span class="w"> </span>матрица<span class="p">.</span><span class="w"> </span>Функция<span class="w"> </span><span class="nb">gmres</span><span class="w"> </span>начинает<span class="w"> </span>итерации<span class="w"> </span>от<span class="w"> </span>начальной<span class="w"> </span>оценки<span class="p">,</span><span class="w"> </span>представляющей<span class="w"> </span>собой<span class="w"> </span>вектор<span class="w"> </span>размера<span class="w"> </span>и<span class="p">,</span><span class="w"> </span>состоящий<span class="w"> </span>из<span class="w"> </span>нулей<span class="p">.</span><span class="w"> </span>Итерации<span class="w"> </span>производятся<span class="w"> </span>либо<span class="w"> </span>до<span class="w"> </span>сходимости<span class="w"> </span>к<span class="w"> </span>решению<span class="p">,</span><span class="w"> </span>либо<span class="w"> </span>до<span class="w"> </span>появления<span class="w"> </span>ошибки<span class="p">,</span><span class="w"> </span>либо<span class="w"> </span>до<span class="w"> </span>достижения<span class="w"> </span>максимального<span class="w"> </span>числа<span class="w"> </span>итераций<span class="p">.</span><span class="w"> </span>Сходимость<span class="w"> </span>достигается<span class="p">,</span><span class="w"> </span>когда<span class="w"> </span>относительный<span class="w"> </span>остаток<span class="w"> </span><span class="nb">norm</span><span class="p">(</span><span class="n">B</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="nb">norm</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="w"> </span>меньше<span class="w"> </span>или<span class="w"> </span>равен<span class="w"> </span>заданной<span class="w"> </span>погрешности<span class="w"> </span><span class="p">(</span>по<span class="w"> </span>умолчанию<span class="w"> </span>1е<span class="o">-</span><span class="mi">6</span><span class="p">).</span><span class="w"> </span>Максимальное<span class="w"> </span>число<span class="w"> </span>итераций<span class="w"> </span>—<span class="w"> </span>минимум<span class="w"> </span>из<span class="w"> </span><span class="n">n</span><span class="p">:</span><span class="n">restart</span><span class="w"> </span>и<span class="w"> </span><span class="mf">10.</span><span class="w"> </span>Функция<span class="w"> </span><span class="nb">gmres</span><span class="w"> </span><span class="p">(</span><span class="k">...</span><span class="c">) имеет и ряд других форм записи, аналогичных описанным для функции bieg(...).  </span>
+
+»<span class="w"> </span><span class="nb">gmres</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">B</span><span class="p">)</span>
+
+<span class="n">GMRES</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">converged</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">Iteration</span><span class="w"> </span><span class="mi">1</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">relative</span><span class="w"> </span><span class="n">residual</span><span class="w"> </span><span class="n">le</span><span class="o">-</span><span class="mi">016</span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="mf">1.0000</span>
+
+<span class="mf">2.0000</span>
+
+<span class="mf">3.0000</span>
+
+<span class="mf">4.0000</span>
+</pre></div>
+<p>Список пакетов, в которых присутствует реализация метода минимизации обобщенной невязки:
+</p>
+<dl><dd>1.<b>ATLAS</b> (Automatically Tuned Linear Algebra Software) – оптимизированная библиотека, включающая реализацию процедур BLAS и часть функциональности LAPACK;</dd>
+<dd>2.<b>AZTEC</b> – библиотека параллельных подпрограмм для решения больших систем линейных алгебраических уравнений с разреженными матрицами;</dd>
+<dd>3.<b>BLAS</b> (Basic Linear Algebra Subprograms) – библиотека высококачественных процедур, «строительными блоками» для которых являются вектора, матрицы или их части. Уровень 1 BLAS используется для выполнения операций вектор-вектор, уровень 2 :BLAS – для выполнения матрично-векторных операций, наконец, уровень 3 BLAS – для выполнения матрично-матричных операций. Поскольку программы BLAS являются эффективными, переносимыми и легко доступными, они используются как базовые компоненты для развития высококачественного программного обеспечения для задач линейной алгебры. Так были созданы широко известные пакеты LINPACK, EISPACK, которые затем были перекрыты пакетом LAPACK, получившим большое распространение. Перечисленные пакеты разработаны на языке Fortran;</dd>
+<dd>4.<b>BLACS</b> (Basic Linear Algebra Communication Subprograms) – набор базовых коммуникационных процедур линейной алгебры, созданных для линейной алгебры. Вычислительная модель состоит из одномерной или двумерной решетки процессов, где каждый процесссодержит часть матрицы или вектора. BLACS используется как коммуникационный слой проекта ScaLAPACK, который переносит библиотеку LAPACK на машины с распределенной памятью;</dd>
+<dd>5.<b>BlockSolve95</b> – параллельная библиотека для решения разреженных систем линейных уравнений;</dd>
+<dd>6.<b>BPKIT2</b> – пакет блочных способов предобусловливания, ориентированных на разреженные матрицы;</dd>
+<dd>7.<b>CAPSS</b> – пакет для параллельного решения разреженных линейных систем;</dd>
+<dd>8.<b>CXML</b> (The Compaq Extended Math Library) – расширенная математическая библиотека, включающая в себя часть функциональности BLAS, LAPACK, Direct Sparse Solvers и Iterative-solvers;</dd>
+<dd>9.<b>Direct Sparse Solvers</b> – пакет программ для решения разреженных систем прямыми методами;</dd>
+<dd>10.<b>EISPACK</b> (Eigensystem Package) – пакет программ решения алгебраической проблемы собственных значений;</dd>
+<dd>11.<b>Expokit</b> – пакет программ для решения не больших СЛАУ с плотной матрицей и больших разреженных систем;</dd>
+<dd>12.<b>ILUPACK</b> – библиотке, содержащая способы предобусловливания, ориентированная на разреженные СЛАУ. Пакет включает реализацию процедур BLAS, SPARSEKIT. Реализована на языке С и Fortran;</dd>
+<dd>13.<b>IML++</b> (Iterative Methods Library) – библиотека итерационных методов решения разреженных СЛАУ, позволяющая использовать несколько простых способов предобусловливания. Пакет включает часть BLAS и MV;</dd>
+<dd>14.<b>Intel MKL</b> (Intel Math Kernel Library) включает несколько стандартных библиотек для высокопроизводительных системах (BLAS, LAPACK и FFTPACK – подпрограммы быстрого преобразования Фурье);</dd>
+<dd>15.<b>IOMDRV</b> – пакет подпрограмм для решения симметричных и несимметричных линейных систем методами крыловских подпространств;</dd>
+<dd>16.<b>Iterative-solvers</b> – пакет подпрограмм решения разреженных систем итерационными методами;</dd>
+<dd>17.<b>ITL</b> (Iterative Template Library) – библиотека программ итерационных методов и способов предобусловливания, являющаяся составной частью MTL.</dd>
+<dd>18.<b>ITPACK</b> (Iterative Package) – пакет программ для решения разреженных систем итерационными методами;</dd>
+<dd>19.<b>ITSOL</b> (The New Sparskit Preconditionning Module) – пакет, содержащий способы предобусловливания, ориентированные на разреженные матрицы. Является составной частью пакета SPARSKIT;</dd>
+<dd>20.<b>JAMA/C++</b> – библиотека для решения СЛАУ прямыми методами;</dd>
+<dd>21.<b>LAPACK</b> (Linear Algebra Package) – набор реализаций «продвинутых» методов линейной алгебры. LAPACK содержит процедуры для решения систем линейных уравнений, задач нахождения собственных значений и факторизации матриц. Обрабатываются заполненные и ленточные матрицы, но не разреженные матрицы общего вида. Во всех случаях можно обрабатывать действительные и комплексные матрицы с одиночной и удвоенной точностью. Процедуры LAPACK построены таким образом, чтобы как можно больше вычислений выполнялось с помощью обращений к BLAS с использованием всех его трех уровней. Вследствие крупнозернистости операций уровня 3 BLAS, их использование обеспечивает высокую эффективность на многих высокопроизводительных компьютерах, в частности, если производителем создана специализированная реализация. ScaLAPACK является успешным результатом переноса пакета LAPACK на системы с передачей сообщений. Но в таких системах необходимы процедуры, обеспечивающие обмен данными между взаимодействующими процессами. Для этого в ScaLAPACK используется библиотека BLACS;</dd>
+<dd>22.<b>Laspack</b> – пакет программ для решения разреженных систем итерационными методами;</dd>
+<dd>23.<b>LGSOLV</b> – библиотека для решения СЛАУ прямыми методами;</dd>
+<dd>24.<b>LINPACK</b> (Linear Package) – пакет программ решения систем линейных алгебраических уравнений и линейной задачи наименьших квадратов прямыми методами;</dd>
+<dd>25.<b>LinPar</b> – пакет предназначенный для решения плохообусловленных СЛАУ, включая прямоугольные. Если для решения задачи необходимо предобусловливание СЛАУ, то оно выполняется отдельно и методы применяются к уже предобусловленной системе. Соответственно, по окончании процесса решения найденный вектор должен быть пересчитан согласно выполненному предобусловливанию. В схемы методов эти процедуры не включаются;</dd>
+<dd>26.<b>MET</b> (Matrix Expression Templates) – реализованная на языке C++ программа для инженеров и научных работников;</dd>
+<dd>27.<b>MINOS</b> – пакет подпрограмм решения больших разреженных задач линейного и нелинейного программирования;</dd>
+<dd>28.<b>MTL</b> (The Matrix Template Library) – реализованная на языке C++ библиотека базовых операций линейной алгебры, позволяющая решать СЛАУ с разреженными матрицами итерационными методами с предобусловлмванием, за счет включенного пакета ITL;</dd>
+<dd>29.<b>MV++</b> – небольшая библиотека, содержащая базовые операции линейной алгебры. Данный пакет часто является составной частью более крупных и высокопроизводительных библиотек;</dd>
+<dd>30.<b>ParPre</b> – пакет параллельных версий способов предобусловливания, ориентированных на разреженные матрицы, являющийся составной частью PETs;</dd>
+<dd>31.<b>Parallel Algorithms Project</b> – пакет параллельных версий итерационных методов Крыловского типа для решения разреженных систем;</dd>
+<dd>32.<b>PASVA</b> – пакет подпрограмм решения разреженных систем с блочно-двухдиагональной структурой;</dd>
+<dd>33.<b>PBLAS</b> – Параллельные версии базовых процедур линейной алгебры (BLAS)&#160;;</dd>
+<dd>34.<b>PCGPAK</b> (Preconditioned Conjugate Gradient PAcKage) – пакет программ для решения симметричных и несимметричных разреженных линейных систем методом сопряженных градиентов;</dd>
+<dd>35.<b>PIM</b> (The Parallel Iterative Methods) – набор процедур на Фортран-77, реализующих параллельные версии различных итеративных методов решения разреженных систем линейных уравнений;</dd>
+<dd>36.<b>PSparselib</b> (A Portable Library of Parallel Sparse Iterative Solvers) – библиотека параллельных итерационных методов для разреженных линейных систем;</dd>
+<dd>37.<b>PSPASES</b> (Parallel Sparse Symmetric Direct Solver) – библиотека параллельных версий прямых методов для решения симметричных линейных систем;</dd>
+<dd>38.<b>RALAPACK</b> – пакет подпрограмм для различных операций с разреженными матрицами;</dd>
+<dd>39.<b>ScaLAPACK</b> (Scalable LAPACK) – параллельная версия LAPACK. Широкий набор подпрограмм для решения стандартных задач линейной алгебры;</dd>
+<dd>40.<b>SIRSM</b> – пакет подпрограмм для решения разреженных несимметричных линейных систем;</dd>
+<dd>41.<b>Software Iterative Methods: GMRESR and BiCGstab(ell)</b> – пакет прогамм решения больших разреженных систем с несимметричной матрицей;</dd>
+<dd>42.<b>SPAI</b> (Sparse Approximate Inverse Preconditioner) – пакет способов предобусловливания, ориентированных на разреженные матрицы;</dd>
+<dd>43.<b>SPARKS</b> – пакет подпрограмм для решения разреженных линейных систем в полунеявных методах Рунге-Кутта численного интегрирования систем обыкновенных дифференциальных уравнений;</dd>
+<dd>44.<b>SparseLib++</b> – библиотка, реализованная на языке C++, позволяющая решать разреженные СЛАУ итерационными методами с предобусловливанием. Включает часть процедур BLAS и IML;</dd>
+<dd>45.<b>SPARSKIT</b> – мощный пакет для решения разреженных СЛАУ итерационными методами с предобусловливанием. Библиотека реализованна на языке Fortran;</dd>
+<dd>46.<b>SPARSPAK</b> (Sparsee Iinear Equations Package) – пакет программ решения разреженных систем линейных алгебраических уравнений с симметричными положительно определенными матрицами;</dd>
+<dd>47.<b>SPLIB</b> – библиотека, позволяющая решать СЛАУ с разреженной матрицей итерационными методами с предобусловливанием, реализованная на языке Fortran;</dd>
+<dd>48.<b>SPLP</b> (Sparse Linear Programming Subprogram) – пакет программ решения задач линейного программирования;</dd>
+<dd>49.<b>SPOOLES</b> – библиотека для решения СЛАУ с разреженной матрицей прямыми методами;</dd>
+<dd>50.<b>SSLES</b> – пакет подпрограмм для решения разреженных несимметричных линейных систем;</dd>
+<dd>51.<b>TCHLIB</b> – пакет подпрограмм для решения симметричных и несимметричных линейных систем методом Чебышева;</dd>
+<dd>52.<b>TNT</b> (Template Numerical Toolkit) – библиотека базовых операций линейной алгебры, ориентированная на разреженные матрицы. Библиотека разработана на языке Fortran;</dd>
+<dd>53.<b>WSMP</b> (Watson Sparse Matrix Package) – пакет программ решения разреженных систем линейных алгебраических уравнений;</dd>
+<dd>54.<b>XMP</b> – пакет подпрограмм для решения задач линейного программирования;</dd>
+<dd>55.<b>YI2M</b> – комплекс программ решения разреженных систем;</dd></dl>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"> Г.И. Марчук, Ю.А. Кузнецов, Итерационные методы и квадратичные функционалы, Методы вычислительной математики, Новосибирск, 1975, с. 4-143.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Y.Saad, M.H. Schultz, GMRES: A generalized minimal residual algorithm for solving nonsymmetric linear systems, SIAM J. Scientific and Stat. Comp. 7: 856-869 (1986). </span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"> Тыртышников Е. Е. Методы численного анализа — М., Академия, 2007.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://gerard.meurant.pagesperso-orange.fr/gaps_2011.pdf">http://gerard.meurant.pagesperso-orange.fr/gaps_2011.pdf</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Eisenstat, Elman &amp; Schultz, Thm 3.3. NB all results for GCR also hold for GMRES, cf. Saad &amp; Schultz</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Trefethen &amp; Bau, Thm 35.2</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"> М.Ю. Баландин, Э.П.Шурина, Некоторые оценки эффективности параллельных алгоритмов решения СЛАУ на подпространствах Крылова, Вычислительные технологии, 1998, Т.3</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://algowiki-project.org/ru/Умножение_плотной_неособенной_матрицы_на_вектор_(последовательный_вещественный_вариант)">https://algowiki-project.org/ru/Умножение_плотной_неособенной_матрицы_на_вектор_(последовательный_вещественный_вариант)</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://algowiki-project.org/ru/Скалярное_произведение_векторов,_вещественная_версия,_последовательно-параллельный_вариант">https://algowiki-project.org/ru/Скалярное_произведение_векторов,_вещественная_версия,_последовательно-параллельный_вариант</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text"> <a rel="nofollow" class="external free" href="https://github.com/scipy/scipy/blob/v0.14.0/scipy/sparse/linalg/isolve/iterative.py">https://github.com/scipy/scipy/blob/v0.14.0/scipy/sparse/linalg/isolve/iterative.py</a>.</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text"> С.А. Буренков, Организация и исследование эффективных вычислений для решения задач аэроакустики на кластерных архитектурах, Москва, 2014.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092823
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.065 seconds
+Real time usage: 0.470 seconds
+Preprocessor visited node count: 1092/1000000
+Post‐expand include size: 3346/2097152 bytes
+Template argument size: 832/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 2/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 43318/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.511      1 Шаблон:Algorithm
+100.00%    4.511      1 -total
+ 63.05%    2.844      1 Шаблон:Level-a
+ 23.12%    1.043      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:766-0!canonical and timestamp 20260611092823 and revision id 21322. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Макарова_Алёна/Итерационный_метод_решения_системы_линейных_алгебраических_уравнений_GMRES_(обобщенный_метод_минимальных_невязок)&amp;oldid=21322">https://algowiki-project.org/w/ru/index.php?title=Участник:Макарова_Алёна/Итерационный_метод_решения_системы_линейных_алгебраических_уравнений_GMRES_(обобщенный_метод_минимальных_невязок)&amp;oldid=21322</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3A%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0+%D0%90%D0%BB%D1%91%D0%BD%D0%B0%2F%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85+%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85+%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9+GMRES+%28%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3A%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0+%D0%90%D0%BB%D1%91%D0%BD%D0%B0%2F%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85+%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85+%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9+GMRES+%28%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)&amp;oldid=21322" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B0_%D0%90%D0%BB%D1%91%D0%BD%D0%B0/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_GMRES_(%D0%BE%D0%B1%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B2%D1%8F%D0%B7%D0%BE%D0%BA)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 19 декабря 2016 года в 08:57.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":597,"wgPageParseReport":{"limitreport":{"cputime":"0.065","walltime":"0.470","ppvisitednodes":{"value":1092,"limit":1000000},"postexpandincludesize":{"value":3346,"limit":2097152},"templateargumentsize":{"value":832,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":2,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":43318,"limit":5000000},"timingprofile":["100.00%    4.511      1 Шаблон:Algorithm","100.00%    4.511      1 -total"," 63.05%    2.844      1 Шаблон:Level-a"," 23.12%    1.043      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092823","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

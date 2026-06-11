@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:IanaV/Алгоритм k means — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"bad48801e5ea82e2af8763db","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:IanaV/Алгоритм_k_means","wgTitle":"IanaV/Алгоритм k means","wgCurRevisionId":21378,"wgRevisionId":21378,"wgArticleId":580,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Assignments/Done/Konshin","Assignments/Done","Assignments","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:IanaV/Алгоритм_k_means","wgRelevantArticleId":580,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"IanaV","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_IanaV_Алгоритм_k_means rootpage-Участник_IanaV skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">IanaV/Алгоритм k means</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV" title="Участник:IanaV">Участник:IanaV</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_confirmed.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-120px-Symbol_confirmed.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-250px-Symbol_confirmed.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа успешно выполнена<br />Преподавателю: <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+k+means&amp;wpReason=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE">в основное пространство</a>, <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8%3A%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+k+means&amp;wpReason=%D0%9D%D0%B0+%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83">в подстраницу</a></span></b><br />Данное задание было проверено и зачтено.<br />Проверено <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Konshin" title="Участник:Konshin">Konshin</a> и <a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Zhum&amp;action=edit&amp;redlink=1" class="new" title="Участник:Zhum (страница не существует)">Zhum</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм k средних (k means)
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(iknd) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{  nd  }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{  n  }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Авторы страницы: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV" title="Участник:IanaV">Валуйская Я.А.</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:GlotovES" title="Участник:GlotovES">Глотов Е.С.</a>
+</p><p>Вклад в основную часть работы (сбор и анализ данных) у авторов одинаков, четких разграничений по пунктам статьи сделать невозможно. Итоговое оформление статьи выполнила Валуйская Я.А.
+</p><p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Локальность_реализации_алгоритма"><span class="tocnumber">2.2.1</span> <span class="toctext">Локальность реализации алгоритма</span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="#Структура_обращений_в_память_и_качественная_оценка_локальности"><span class="tocnumber">2.2.1.1</span> <span class="toctext">Структура обращений в память и качественная оценка локальности</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="#Количественная_оценка_локальности"><span class="tocnumber">2.2.1.2</span> <span class="toctext">Количественная оценка локальности</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p>Алгоритм <i>k-means</i> (<i>k средних</i>) - один из наиболее популярных алгоритмов кластеризации. Наиболее простой, но в то же время достаточно неточный метод кластеризации в классической реализации.</p>
+<p>Алгоритм был разработан в 1956 году математиком Гуго Штейнгаузом <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>, и почти одновременно его изобрел Стюарт Ллойд <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>. Особую популярность алгоритм снискал после работы Джеймса Маккуина <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup></p>
+<p>Алгоритм кластеризации <i>k-means</i> решает задачу распределения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> наблюдений (элементов векторного пространства) на заранее известное число кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span>. Действие алгоритма таково, что он стремится минимизировать среднеквадратичное отклонение на точках каждого кластера.</p>
+<p>Алгоритм k-means является итерационным алгоритмом кластеризации. На каждой итерации происходит пересчет центра масс для каждого кластера, полученного на предыдущем шаге, затем исходные векторы заново распределяются по кластерам в соответствии с тем, какой из новых центров оказался ближе по выбранной метрике. Алгоритм завершается, когда на какой-то итерации не происходит изменения кластеров.</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p><i>Исходные данные:</i> 
+</p>
+<ul><li>множество наблюдений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X = \{x_1, x_2, ..., x_n\} }[/math]</span>, где каждое наблюдение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in R^d, i = 1, ..., n }[/math]</span>;</li>
+<li>количество кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \in N, k \leq n }[/math]</span></li></ul>
+<p><i>Обозначения:</i>
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ S = \{S_1, S_2, ..., S_k \}  }[/math]</span> - множество кластеров, которые удовлетворяют следующим условиям:
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_i \bigcap S_j = \emptyset, i \neq j }[/math]</span>;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ X = {\bigcup \limits _{i = 1}^k S_i}  }[/math]</span>.</li></ul></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i \in R^d, i = 1, ..., k }[/math]</span> - центр масс кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_i }[/math]</span></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ d(u, v) }[/math]</span> - расстояние между векторами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u \in R^m, v \in R^m }[/math]</span></li></ul>
+<p><i>Выходные данные:</i>
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ L = (l_1, l_2, ..., l_n) }[/math]</span> - набор меток, где метка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_i \in N_{[1, k]} }[/math]</span> - является порядковым номером кластера, к которому принадлежит вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i }[/math]</span>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{  x_i \in S_{l_i} }[/math]</span></li></ul>
+<p><br /><i>Цель алгоритма k-means</i> - распределить наблюдения из входного множества <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X }[/math]</span> по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> кластерам <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S = \{S_1, S_2, ..., S_k \}  }[/math]</span> таким образом, чтобы сумма квадратов расстояний от каждой точки кластера до его центра масс по всем кластерам была минимальной: 
+</p>
+<p align="center"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \arg\min_{S} \sum_{i=1}^{k} \sum_{x \in S_i} (d(x, \mu_i))^2  }[/math]</span>,</p>
+<p><br />
+<i>Алгоритм состоит из следующих шагов:</i>
+</p>
+<ol><li><i>Инициализация центров масс</i> <br />На данном шаге задаются начальные значения центров масс <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \mu_1^1, ..., \mu_k^1 }[/math]</span>. Существует несколько способов их выбора. Они будут рассмотрены ниже.</li>
+<li><i>t-ый шаг итерации:</i>
+<ul><li><i>Распределение векторов по кластерам</i> <br />На данном шаге каждый вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in X }[/math]</span> распределяется в свой кластер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_j^t }[/math]</span> так, что: <br /><span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_i^t = \arg \min_{j} (d(x_i, \mu_j^t))^2 , j = 1, ..., k; i = 1, ..., n }[/math]</span></li>
+<li><i>Пересчет центров масс кластеров</i> <br />На данном шаге происходит пересчет центров масс кластеров, полученных на предыдущем этапе: <br /><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i^{t+1} = \frac{1}{|S_i^t|} \sum_{x \in S_i^t} x }[/math]</span>; <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, ..., k }[/math]</span></li></ul></li>
+<li><i>Критерий останова</i> <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i^t = \mu_i^{t+1}, }[/math]</span> для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, ..., k }[/math]</span></li></ol>
+<p><br />
+<i>Способы инициализации начальных данных:</i>
+</p>
+<ol><li>Метод Forgy <br /> Случайным образом выбираются <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> векторов из множества наблюдений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X }[/math]</span>. Эти вектора используются в качестве центров масс кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_1, ..., \mu_k }[/math]</span></li>
+<li>Метод случайного разбиения (Random Partition) <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> <br /> Каждый вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i, i = 1, .., n }[/math]</span> случайным образом распределяется в кластер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_j, j = 1, .., k }[/math]</span>, затем для каждого кластера вычисляется его центр масс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j }[/math]</span>.</li></ol>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительном ядром алгоритма является шаг 2, состоящий из следующих этапов:
+</p>
+<ol><li>распределение векторов по кластерам;</li>
+<li>пересчет центров масс кластеров.</li></ol>
+<p><i>Распределение векторов по кластерам</i> заключается в следующем: для каждого вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in X, i = 1, ..., n }[/math]</span> необходимо посчитать расстояние между этим вектором и центром масс кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j^t, j = 1, ..., k }[/math]</span>. Следовательно, на каждой итерации необходимо выполнить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nk }[/math]</span> операций вычисления расстояния между векторами. 
+</p><p><i>Пересчет центров масс кластеров</i> заключается в следующем: для каждого кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_i^t \in S, i = 1, ..., k }[/math]</span> необходимо пересчитать кластер по формуле, приведенной в пункте выше. Следовательно, на каждой итерации необходимо выполнить <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> операций пересчета центров масс кластеров.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<ol><li>Макрооперация <i>"Расстояние между векторами"</i> <br /> В данном алгоритме используется Евклидова метрика:  <br /><span style="opacity:.5" class="smj-container">[math]\displaystyle{ v \in R^m }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u \in R^m: d(v, u) = \sqrt{\sum_{j=1}^{m} (v_j - u_j)^2}  }[/math]</span>;</li>
+<li>Макрооперация <i>"Пересчет центра масс кластера"</i> <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i^{t+1} = \frac{1}{|S_i^t|} \sum_{x \in S_i^t} x }[/math]</span></li></ol>
+<p>Таким образом, алгоритм в терминах макроопераций выглядит следующим образом:</p>
+<ol><li><i>Инициализация центров масс</i> <p>Метод Forgy: центры масс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j^1, j = 1, ..., k }[/math]</span> выбираются случайным образом.</p> <p>Метод случайного разбиения: вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in X }[/math]</span> случайным образом распределяются по кластерам. Для каждого кластера выполняется макрооперация "Пересчет центра масс кластера" для нахождения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j^1 }[/math]</span>.</p></li>
+<li><i>t-ый шаг итерации:</i>
+<ul><li><i>Распределение векторов по кластерам</i> <br />На данном шаге для каждого вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in X }[/math]</span> k раз выполняется макрооперация "Расстояние между векторами" для нахождения расстояния между <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j^t, j = 1, ..., k }[/math]</span>. Затем для каждого вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i }[/math]</span> находится минимальное расстояние.</li>
+<li><i>Пересчет центров масс кластеров</i> <br />На данном шаге для каждого кластера выполняется макрооперация "Пересчет центра масс" для нахождения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j^{t+1} }[/math]</span>.</li></ul></li>
+<li><i>Критерий останова</i> <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i^t = \mu_i^{t+1}, }[/math]</span> для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, ..., k }[/math]</span></li></ol>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p><i>Псевдокод алгоритма</i>:
+</p>
+<pre><b>Входные данные</b> &#160;: Множество векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X }[/math]</span>, количество кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>
+<b>Выходные данные</b>&#160;: Набор меток <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L }[/math]</span> принадлежности к кластеру
+1  Инициализация центров масс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i^1, i = 1, ..., k }[/math]</span>;
+2  t&#160;:= 1;
+3  Для каждого вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in X, i = 1, ..., n: }[/math]</span> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_i^t = \arg \min_{j} (d(x_i,\mu_j^t))^2 , j = 1, ..., k }[/math]</span>;
+4  Для каждого кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_i^t, i = 1, ..., k }[/math]</span> выполняется макрооперация <i>"Пересчет центра масс"</i>;
+5  <b>if</b> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \exists i = 1, ..., k: \mu_i^t \neq \mu_i^{t+1} }[/math]</span>) {
+6      t&#160;:= t + 1;
+7      <b>goto</b> 3;
+8  } <b>else</b> {
+9      <b>stop</b>;
+10 };
+</pre>
+<p>Существующие способы оптимизации алгоритма <sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup> <sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup> <sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Подсчитаем количество операций для каждого шага алгоритма.
+</p>
+<ol><li>Инициализация:
+<ul><li>Метод Forgy: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm init} = 0 }[/math]</span></li>
+<li>Метод случайного разбиения:
+<ul><li>Количество операций деления: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{/}_{\rm init} = kd }[/math]</span>;</li>
+<li>Количество операций сложения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{+}_{\rm init} = d(n - k) }[/math]</span>.</li></ul></li></ul></li>
+<li>Распределение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in R^d }[/math]</span> по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> кластерам на одной итерации:
+<ul><li>Количество операций умножения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{*}_{\rm distr} = knd }[/math]</span>;</li>
+<li>Количество операций сложения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{+}_{\rm distr} = kn(d - 1) }[/math]</span>;</li>
+<li>Количество операций вычитания: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{-}_{\rm distr} = knd }[/math]</span>;</li>
+<li>Количество операций взятия минимума: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{\rm min}_{\rm distr} = n(k - 1) }[/math]</span>.</li></ul></li>
+<li>Пересчет центра масс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i \in R^d }[/math]</span> для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> кластеров на одной итерации:
+<ul><li>Количество операций деления: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{/}_{\rm update} = kd }[/math]</span>;</li>
+<li>Количество операций сложения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{+}_{\rm update} = d(n - k) }[/math]</span>.</li></ul></li></ol>
+<p>Следовательно, в случае если алгоритм сошелся за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> итераций, получаем:
+</p>
+<ul><li>Операций сложения/вычитания: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{+,-}_{\rm k-means} = N^{+}_{\rm init} + i \cdot (N^{+}_{\rm distr} + N^{-}_{\rm distr} + N^{+}_{\rm update}) = d(n - k) + i \cdot (kn(d-1)+knd+d(n-k)) \thicksim O(iknd) }[/math]</span></li>
+<li>Операций умножения/деления: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{*,/}_{\rm k-means} = N^{/}_{\rm init} + i \cdot (N^{*}_{\rm distr} + N^{/}_{\rm update}) = kd + i \cdot (knd+kd) \thicksim O(iknd) }[/math]</span></li></ul><p>
+Таким образом, <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Последовательная_сложность" title="Глоссарий"><i>последовательная сложность</i></a> алгоритма k-means для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ d }[/math]</span>-мерных векторов и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> кластеров за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> итераций, требуемых для сходимости алгоритма:  </p><p align="center"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(iknd) }[/math]</span></p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Рассмотрим информационный граф алгоритма k-means.
+На <i>рисунке 1</i> представлена общая схема алгоритма k-means, согласно разделу <a href="#Схема_реализации_последовательного_алгоритма">"Схема реализации последовательного алгоритма"</a>. 
+Вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm Init }[/math]</span> - этап инициализации.
+Вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm Distribute }[/math]</span> - этап распределения векторов по кластерам.
+Вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm Update }[/math]</span> - этап пересчета центров масс кластеров.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:K-means-all.PNG" class="mw-file-description"><img src="/w/ru/images/e/e8/K-means-all.PNG" decoding="async" width="708" height="116" class="mw-file-element" /></a><figcaption>Рисунок 1. Общая схема алгоритма k-means</figcaption></figure>
+<p><br />
+На <i>рисунке 2</i> представлен информационный граф этапа распределения векторов по кластерам. На вход данному этапу подают множество векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_1, x_2, ..., x_n }[/math]</span> из входных данных и множество центров масс кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu^t_1, ..., \mu^t_k }[/math]</span>, полученных с шага инициализации или с предыдущей итерации. Для каждой пары векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i, \mu^t_j, i = 1, ..., n; j = 1,..., k }[/math]</span> считается расстояние между ними (вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm dist }[/math]</span>). Информационный граф вычисления расстояния между двумя векторами рассмотрен ниже (<i>рисунок 3</i>). Затем выполняется операция нахождения минимума (вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm min }[/math]</span>), в результате которой каждому вектору <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i, i = 1, ..., n }[/math]</span> приписывается метка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l^t_i }[/math]</span>, равная порядковому номеру кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S^t_j, j = 1 ..., k }[/math]</span>, которому принадлежит данный вектор: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in S^t_j }[/math]</span>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:K-means-distribute.PNG" class="mw-file-description"><img src="/w/ru/images/thumb/1/1c/K-means-distribute.PNG/800px-K-means-distribute.PNG" decoding="async" width="800" height="415" class="mw-file-element" srcset="/w/ru/images/1/1c/K-means-distribute.PNG 1.5x" /></a><figcaption>Рисунок 2. Схема этапа распределения векторов по кластерам</figcaption></figure>
+<p><br />
+На <i>рисунке 3</i> представлен информационный граф вычисления расстояния между двумя векторами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i = (x_{i1}, ..., x_{id}), i = 1, ..., n }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu^t_j = (\mu^t_{j1}, ..., \mu^t_{jd}) , j = 1, ..., k }[/math]</span>. Выполняется операция поэлементного вычитания двух векторов (вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ - }[/math]</span>), затем возведение в квадрат (вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm sqr }[/math]</span>), затем суммирование полученных результатов (вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ + }[/math]</span>). На выходе получаем квадрат расстояния между векторами.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:K-means-distance.PNG" class="mw-file-description"><img src="/w/ru/images/2/27/K-means-distance.PNG" decoding="async" width="621" height="316" class="mw-file-element" /></a><figcaption>Рисунок 3. Схема вычисления расстояния между двумя векторами</figcaption></figure>
+<p><br />
+На <i>рисунке 4</i> представлен информационный граф этапа пересчета центров масс кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu^t_1, \mu^t_2,..., \mu^t_k }[/math]</span>. Для каждого кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S^t_j, j = 1, ..., k }[/math]</span> выполняется операция суммирования (вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm sum_j }[/math]</span>) векторов, которые принадлежат данному кластеру. Кроме того, для каждого кластера выполняется операция определения количества элементов в нем (вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rm size_j }[/math]</span>). Затем выполняется операция деления (вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ / }[/math]</span>). На выходе получаем новые центры масс кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu^{t+1}_1, \mu^{t+1}_2,..., \mu^{t+1}_k }[/math]</span>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:K-means-update.PNG" class="mw-file-description"><img src="/w/ru/images/thumb/7/77/K-means-update.PNG/800px-K-means-update.PNG" decoding="async" width="800" height="414" class="mw-file-element" srcset="/w/ru/images/7/77/K-means-update.PNG 1.5x" /></a><figcaption>Рисунок 4. Схема этапа пересчета центров масс кластеров</figcaption></figure>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Вычислительное ядро алгоритма имеет большие возможности для параллелизма:
+</p>
+<ul><li>Распределение векторов по кластерам: вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i, x_j, i \neq j; i, j = 1, ..., n }[/math]</span> могут быть распределены по кластерам независимо друг от друга;</li>
+<li>Пересчет центров масс кластеров: центры масс кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_i, \mu_j, i \neq j; i, j = 1, ..., k }[/math]</span> могут быть пересчитаны независимо друг от друга.</li></ul>
+<p>Однако, этап пересчета центров масс кластеров зависит от этапа распределения векторов по кластерам, так что эти этапы должны выполняться строго последовательно. Таким образом, параллельная сложность алгоритма может быть вычислена следующим образом: <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm k-means} = i \cdot (N_{\rm distr} + N_{\rm update}) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> - количество итераций, необходимых для сходимости алгоритма, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm distr} }[/math]</span> - параллельная сложность этапа распределения векторов по кластерам, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm update} }[/math]</span> - параллельная сложность этапа пересчета центров масс кластеров.
+</p><p><br />
+Рассчитаем параллельную сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm distr} }[/math]</span> этапа <i>распределения векторов по кластерам</i> в предположении наличия неограниченного числа процессоров для одной итерации. Для каждой пары векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (x_i, \mu_j), i = 1,...,n; j = 1, ..., k }[/math]</span> операция вычисления расстояния выполняется независимо.
+</p>
+<ul><li>При выполнении операция вычисления расстояния операции вычитания и умножения выполняются независимо друг от друга, поэтому требуется только одно вычитание и одно умножение. Число операций сложения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^{+}_{\rm distr} = O(\log(d)) }[/math]</span> согласно <a href="/ru/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B0%D1%81%D1%82%D0%BD%D1%8B%D1%85_%D1%81%D1%83%D0%BC%D0%BC_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0_%D1%81%D0%B4%D0%B2%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC" title="Нахождение частных сумм элементов массива сдваиванием"> алгоритму нахождения частичной суммы элементов массива путем сдваивания</a>;</li>
+<li>Для нахождения минимума среди <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> элементов требуется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log(k)) }[/math]</span> операций сравнения.</li></ul>
+<p>Таким образом, получаем, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm distr} = O(\log(kd)) }[/math]</span>
+</p><p><br />
+Рассчитаем параллельную сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm update} }[/math]</span> этапа <i>пересчета центров масс кластеров</i> в предположении наличия неограниченного числа процессоров для одной итерации. Нахождение центра масс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mu_j, j = 1, ..., k }[/math]</span> кластера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_j }[/math]</span> может выполняться независимо от нахождения центров масс других кластеров. Таким образом, получаем, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm update} \leq O(\log(n)) }[/math]</span> в худшем случае, когда почти все векторы находятся в одном кластере. 
+</p><p><br />
+Итоговая параллельная сложность алгоритма: <br /> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{\rm k-means} \leq i \cdot (\log(kd) + \log(n)) \thicksim O(i \cdot \log(knd)); i }[/math]</span> - количество итераций, необходимых для сходимости.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><i>Входные данные</i>:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> векторов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i \in R^d, i = 1, ..., n }[/math]</span>;</li>
+<li>число кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \in N_{[1,n]} }[/math]</span>.</li></ul>
+<p><i>Объем входных данных</i>:
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ nd }[/math]</span> действительных чисел, 1 целое положительное число
+</p><p><i>Выходные данные</i>:
+</p>
+<ul><li>вектор меток <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L \in N^n }[/math]</span>.</li></ul>
+<p><i>Объем выходных данных</i>:
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> целых неотрицательных чисел.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<dl><dt>Достоинства</dt>
+<dd></dd></dl>
+<ol><li>Алгоритм прозрачный и понятный, за счет чего очень прост в реализации;</li>
+<li>Алгоритм имеет высокую скорость работы в случае выбора оптимальных начальных значений центров масс кластеров.</li></ol>
+<dl><dt>Недостатки</dt>
+<dd></dd></dl>
+<ol><li>Число кластеров является входным аргументом алгоритма. Таким образом, некорректный выбор данного параметра может привести к плохим результатам работы алгоритма, поэтому зачастую проводят несколько прогонов алгоритма с разными значениями <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>, чтобы подобрать оптимальный;</li>
+<li>Алгоритм может сойтись к локальному минимуму (достижение глобального минимума не гарантируется);</li>
+<li>Результат сильно зависит от выбора начальных значений центров масс кластеров. Существует улучшенная версия алгоритма - <b>k-means++ </b><sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>, которая предлагает свой способ нахождения начальных оптимальных значений центров масс кластеров;</li>
+<li>Чувствительность к выбросам и шумам, так как они учитываются при вычислении центров масс кластеров.</li></ol>
+<dl><dt><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Устойчивость" title="Глоссарий"><i>Устойчивость</i></a></dt>
+<dd>Алгоритм является устойчивым к погрешностям во входных данных, так как при вычислении центров кластеров расстояния между объектами усредняются, что приводит к уменьшению ошибки. Алгоритм также является устойчивым к погрешностям, допускаемых при вычислениях, так как операция сложения на каждой новой итерации выполняется над входными данными.</dd></dl>
+<dl><dt>Сбалансированность</dt>
+<dd><p>Множество входных векторов можно равномерно разделить между параллельными вычислителями. Центры всех кластеров можно распространить на все вычислители (так как их заведомо меньше, чем число входных векторов). В таком случае на каждой итерации определение для каждого объекта ближайшего кластера представляет собой вычисление расстояния от каждого входного вектора, находящегося на вычислителе, до каждого кластера, и является сбалансированной операцией. После данного этапа происходит пересчёт центров кластеров. Данная операция является несбалансированной в случаях, когда число  объектов в одном из кластеров значительно больше числа объектов в других кластерах, из-за чего один кластер занимает большое число вычислителей, а остальные занимают по одному или несколько вычислителей. В таком случае для данного кластера потребуется вычислить центр <a href="/ru/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B0%D1%81%D1%82%D0%BD%D1%8B%D1%85_%D1%81%D1%83%D0%BC%D0%BC_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0_%D1%81%D0%B4%D0%B2%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC" title="Нахождение частных сумм элементов массива сдваиванием"> алгоритмом нахождения частичной суммы элементов массива путем сдваивания</a>. Данная операция представляет несбалансированность порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log (kn)) }[/math]</span>. После данного шага происходит сбалансированная операция рассылки центров кластеров на все вычислители.</p><p>В идеальном случае параллелизации алгоритм не является сбалансированным, однако в реальных задачах, когда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \gt \gt  p }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> - количество вычислителей, эта несбалансированность сглаживается наличием объектов из каждого кластера на каждом вычислителе</p></dd></dl>
+<dl><dt>Соотношение последовательной и параллельной сложности</dt>
+<dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ {O(iknd) \over O(i \cdot \log(knd))} \thicksim O \bigg( {knd \over \log(knd)} \bigg) }[/math]</span></dd></dl>
+<dl><dt><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Вычислительная_мощность" title="Глоссарий"><i>Вычислительная мощность</i></a></dt>
+<dd><p>Последовательный алгоритм: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {O(iknd) \over nd+n+1} \thicksim {O(ikd) \over d+1} \thicksim O(ik) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> - число входных векторов, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ d }[/math]</span> - размерность векторов, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> - число кластеров, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> - число итераций, требуемое для сходимости</p><p>Параллельный алгоритм: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(i \cdot \log(knd)) \over nd+n+1 }[/math]</span></p></dd></dl>
+<dl><dt><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Детерминированность" title="Глоссарий"><i>Детерминированность</i></a></dt>
+<dd>Алгоритм является недетерминированным, так как результат зависит от выбора исходных центров кластеров, а их оптимальный выбор неизвестен.</dd></dl>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h4><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Локальность_реализации_алгоритма">Локальность реализации алгоритма</span></h4>
+<h5><span id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D1.8C_.D0.B8_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Структура_обращений_в_память_и_качественная_оценка_локальности">Структура обращений в память и качественная оценка локальности</span></h5>
+<h5><span id=".D0.9A.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Количественная_оценка_локальности">Количественная оценка локальности</span></h5>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<p>Исследование проводилось на суперкомпьютере "Ломоносов" <a rel="nofollow" class="external text" href="http://parallel.ru/cluster">Суперкомпьютерного комплекса Московского Государственного Университета имени М.В. Ломоносова</a>
+</p>
+<p>Набор данных для тестирования состоял из 946000 векторов размерности 2 (координаты на сфере)</p>
+<p>Набор и границы значений изменяемых параметров запуска реализации алгоритма:</p>
+<ul><li>число процессов (виртуальных ядер) [8&#160;: 512];</li>
+<li>число кластеров [128&#160;: 384].</li></ul>
+<p>В результате проведённых экспериментов был получен следующий диапазон эффективности реализации алгоритма:
+</p>
+<ul><li>минимальная эффективность реализации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2,47% }[/math]</span> достигается при делении исходных данных на 128 кластеров с использованием 512 процессов;</li>
+<li>максимальная эффективность реализации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 7,13% }[/math]</span> достигается при делении исходных данных на 352 кластера с использованием 8 процессов.</li></ul>
+<p>На рисунках 5 и 6 соответственно представлены графики зависимости производительности и эффективности параллельной реализации k means от числа кластеров  и числа процессов.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Kmeans_performance.jpg" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/4/4f/Kmeans_performance.jpg/720px-Kmeans_performance.jpg" decoding="async" width="720" height="405" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/4/4f/Kmeans_performance.jpg/1080px-Kmeans_performance.jpg 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/4/4f/Kmeans_performance.jpg/1440px-Kmeans_performance.jpg 2x" /></a><figcaption>Рисунок 5. График зависимости производительности параллельной реализации алгоритма от числа кластеров и числа процессов. </figcaption></figure>
+<p>По рис. 5 можно отметить практически полное отсутствие роста производительности с увеличением числа процессов от 256 до 512 при минимальном размере задачи. Это связано с быстрым ростом накладных расходов по отношению к крайне низкому объёму вычислений. При росте размера задачи данный эффект пропадает, и при одновременном пропорциональном увеличении числа кластеров и числа процессов рост производительности становится близким к линейному. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Kmeans_efficiency.jpg" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/5/54/Kmeans_efficiency.jpg/720px-Kmeans_efficiency.jpg" decoding="async" width="720" height="405" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/5/54/Kmeans_efficiency.jpg/1080px-Kmeans_efficiency.jpg 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/5/54/Kmeans_efficiency.jpg/1440px-Kmeans_efficiency.jpg 2x" /></a><figcaption>Рисунок 6. График зависимости эффективности параллельной реализации алгоритма от числа кластеров и числа процессов. </figcaption></figure>
+<p>Исследовалась <a rel="nofollow" class="external text" href="https://github.com/like-a-bauss/kmeans">параллельная реализация алгоритма k means на MPI</a>. 
+</p>
+<p>Были получены следующие оценки масштабируемости реализации алгоритма k means:</p>
+<ul><li><i>По числу процессов:</i> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ -0.02209 }[/math]</span>. Следовательно, с ростом числа процессов эффективность уменьшается. На рис. 6 можно наблюдать плавное и равномерное снижение производительности по мере увеличения числа процессов при неизменном числе кластеров, что свидетельствует об относительно невысоком росте накладных расходов на передачу данных между процессами и преобладании объёма вычислений над объёмом пересылок данных по сети.</li>
+<li><i>По размеру задачи:</i> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0.01252 }[/math]</span>. Следовательно, с ростом размера задачи (числа кластеров) эффективность увеличивается. При этом объём пересылок данных по сети пропорционален <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (n + k) \cdot p }[/math]</span> (где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> - число кластеров, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> - число входных векторов, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> - число процессов) таким образом, поскольку <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \lt \lt  n }[/math]</span>, рост накладных расходов с ростом числа кластеров при неизменном числе процессов и входных векторов представляет собой незначительную величину.</li>
+<li><i>Общая оценка:</i> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ -0.00081 }[/math]</span>. Таким образом, с ростом и размера задачи, и числа процессов эффективность уменьшается. Это связано с тем, что отношение объёма вычислений к объёму передаваемых данных изменяется пропорционально <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {kn \over (n + k) \cdot p} \thicksim {k \over p} }[/math]</span>, что представляет собой невысокий коэффициент, но при этом позволяет параллельной реализации не деградировать до нулевой эффективности при значительном увеличении числа процессов.</li></ul>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<p>Существуют следующие Open Source реализации алгоритма:
+</p>
+<ul><li><a rel="nofollow" class="external text" href="http://elki.dbs.ifi.lmu.de/">ELKI</a> - содержит реализацию алгоритма k-means на языке Java (в том числе реализацию улучшенного алгоритма k-means++)</li>
+<li><a rel="nofollow" class="external text" href="http://www.cs.waikato.ac.nz/~ml/weka/">Weka</a> - содержит реализацию k-means на языке Java</li>
+<li><a rel="nofollow" class="external text" href="http://mahout.apache.org/">Apache Mahout</a> - содержит реализацию k-means в парадигме MapReduce</li>
+<li><a rel="nofollow" class="external text" href="https://spark.apache.org/">Spark Mllib</a> - содержит распределенную реализацию k-means</li>
+<li><a rel="nofollow" class="external text" href="http://accord-framework.net/">Accord.NET</a> - содержит реализацию k-means на C# (в том числе реализацию улучшенного алгоритма k-means++)</li>
+<li><a rel="nofollow" class="external text" href="https://github.com/mlpack/mlpack">MLPACK</a> - содержит реализацию k-means на языке C++</li>
+<li><a rel="nofollow" class="external text" href="http://opencv.org/">OpenCV</a> - содержит реализацию k-means на C++. А также есть обертки для языков Python и Java</li>
+<li><a rel="nofollow" class="external text" href="https://www.scipy.org/">SciPy</a> - содержит реализацию k-means на языке Python</li>
+<li><a rel="nofollow" class="external text" href="http://scikit-learn.org/">Scikit-learn</a> - содержит реализацию k-means на языке Python</li>
+<li><a rel="nofollow" class="external text" href="http://julialang.org/">Julia</a> - содержит реализацию алгоритма k-means на языке Julia</li>
+<li><a rel="nofollow" class="external text" href="https://www.gnu.org/software/octave/">Octave</a> - содержит реализацию k-means на языке Octave</li>
+<li><a rel="nofollow" class="external text" href="https://www.r-project.org/">R</a> - содержит реализацию k-means на языке R</li>
+<li><a rel="nofollow" class="external text" href="http://torch.ch/">Torch</a> - содержит реализацию k-means на языке Lua</li></ul>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.laurent-duval.eu/Documents/Steinhaus_H_1956_j-bull-acad-polon-sci_division_cmp-k-means.pdf">Steinhaus H. (1956). Sur la division des corps materiels en parties. Bull. Acad. Polon. Sci., C1. III vol IV: 801—804.</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www-evasion.imag.fr/people/Franck.Hetroy/Teaching/ProjetsImage/2007/Bib/lloyd-1982.pdf">Lloyd S. (1957). Least square quantization in PCM’s. Bell Telephone Laboratories Paper. Опубликовано позже в IEEE Transactions on Information Theory 28 (1982): 129-137.</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://pdfs.semanticscholar.org/a718/b85520bea702533ca9a5954c33576fd162b0.pdf">MacQueen J. (1967). Some methods for classification and analysis of multivariate observations. In Proc. 5th Berkeley Symp. on Math. Statistics and Probability, pages 281—297.</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://people.csail.mit.edu/tieu/notebook/kmeans/15_p600-hamerly.pdf">Hamerly, G.; Elkan, C. (2002). "Alternatives to the k-means algorithm that find better clusterings". Proceedings of the eleventh international conference on Information and knowledge management (CIKM).</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45643-0_13">Phillips S. J. Acceleration of k-means and related clustering algorithms //Workshop on Algorithm Engineering and Experimentation. – Springer Berlin Heidelberg, 2002. – С. 166-177.</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.187.3017&amp;rep=rep1&amp;type=pdf">Hamerly G. Making k-means Even Faster //SDM. – 2010. – С. 130-140.</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://cseweb.ucsd.edu/~elkan/kmeansicml03.pdf">Elkan C. Using the triangle inequality to accelerate k-means //ICML. – 2003. – Т. 3. – С. 147-153.</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf">Arthur, D.; Vassilvitskii, S. (2007). "k-means++: the advantages of careful seeding". Proceedings of the eighteenth annual ACM-SIAM symposium on Discrete algorithms. Society for Industrial and Applied Mathematics Philadelphia, PA, USA. pp. 1027–1035.</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092722
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.044 seconds
+Real time usage: 0.046 seconds
+Preprocessor visited node count: 1171/1000000
+Post‐expand include size: 10587/2097152 bytes
+Template argument size: 3246/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 16986/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.823      1 -total
+ 53.90%    3.678      2 Шаблон:Level-a
+ 33.73%    2.301      1 Шаблон:Algorithm
+ 23.16%    1.580      1 Шаблон:Assignment
+ 15.34%    1.047      1 Шаблон:Плашка
+ 13.95%    0.952      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:580-0!canonical and timestamp 20260611092722 and revision id 21378. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:IanaV/Алгоритм_k_means&amp;oldid=21378">https://algowiki-project.org/w/ru/index.php?title=Участник:IanaV/Алгоритм_k_means&amp;oldid=21378</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done/Konshin" title="Категория:Assignments/Done/Konshin">Assignments/Done/Konshin</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done" title="Категория:Assignments/Done">Assignments/Done</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AIanaV%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+k+means" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AIanaV%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+k+means" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/IanaV" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/IanaV"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/IanaV"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;oldid=21378" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:IanaV/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_k_means&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 19 декабря 2016 года в 17:16.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":141,"wgPageParseReport":{"limitreport":{"cputime":"0.044","walltime":"0.046","ppvisitednodes":{"value":1171,"limit":1000000},"postexpandincludesize":{"value":10587,"limit":2097152},"templateargumentsize":{"value":3246,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":16986,"limit":5000000},"timingprofile":["100.00%    6.823      1 -total"," 53.90%    3.678      2 Шаблон:Level-a"," 33.73%    2.301      1 Шаблон:Algorithm"," 23.16%    1.580      1 Шаблон:Assignment"," 15.34%    1.047      1 Шаблон:Плашка"," 13.95%    0.952      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092722","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

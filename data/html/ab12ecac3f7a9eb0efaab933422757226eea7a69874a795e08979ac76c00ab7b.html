@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Двоичный поиск — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"463eaf414851c848ce05199a","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Двоичный_поиск","wgTitle":"Двоичный поиск","wgCurRevisionId":29169,"wgRevisionId":29169,"wgArticleId":440,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма","Статьи в работе","Алгоритмы поиска","Алгоритмы с низким уровнем параллелизма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Двоичный_поиск","wgRelevantArticleId":440,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":29169,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%7Cext.pygments%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Двоичный_поиск rootpage-Двоичный_поиск skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Двоичный поиск</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Бинарный поиск
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log_2 n }[/math]</span> (в худшем и среднем случаях)
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;">упорядоченный массив длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, число <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;">индекc элемента
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log_2 n }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;">1
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:AntonChupin" title="Участник:AntonChupin">А. В. Чупин</a>.
+</p><p>Синонимы названия метода: <b>двоичный поиск</b>, <b>бинарный поиск</b>, <b>метод деления пополам</b>, <b>метод половинного деления</b>, <b>дихотомия</b>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#Частые_ошибки_при_реализации"><span class="tocnumber">2.1.1</span> <span class="toctext">Частые ошибки при реализации</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.2</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Результаты_прогонов"><span class="tocnumber">2.3</span> <span class="toctext">Результаты прогонов</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.4</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#См._также"><span class="tocnumber">3</span> <span class="toctext">См. также</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Литература"><span class="tocnumber">4</span> <span class="toctext">Литература</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Ссылки"><span class="tocnumber">5</span> <span class="toctext">Ссылки</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p><b>Метод двоичного поиска</b> используется в качестве быстрого варианта поиска в заранее отсортированном массиве. Получил распространение благодаря как наименьшей из возможных высоте алгоритма, так и из-за ряда своих вычислительных характеристик, а также (в среде нечисленных алгоритмов) из-за своей рекурсивности, то есть лёгкости записи.
+</p><p>Основная идея заключается в дроблении массива на половины и дальнейшем рекурсивном поиске в одной из них.
+</p>
+<figure class="mw-default-size mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Binary_search_into_array_-_example.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Binary_search_into_array_-_example.svg/langru-330px-Binary_search_into_array_-_example.svg.png" decoding="async" width="300" height="192" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Binary_search_into_array_-_example.svg/langru-500px-Binary_search_into_array_-_example.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Binary_search_into_array_-_example.svg/langru-960px-Binary_search_into_array_-_example.svg.png 2x" /></a><figcaption>Рисунок 1. Поиск элемента 4 в массиве</figcaption></figure>
+<p>Первое упоминание метода было сделано на лекциях школы Мура Джоном Мокли в 1946 году.<sup id="cite_ref-knuth_1-0" class="reference"><a href="#cite_note-knuth-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup> Первое время все реализации работали только для массивов длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^k-1 }[/math]</span>, пока в 1960 году Деррек Генри Лемер не опубликовал первый алгоритм, работающий на массивах произвольной длины.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup> В 1962 году Германн Боттенбрух представил реализацию метода на Алгол-60, в которой сравнение было помещено в конец, увеличивая количество итераций алгоритма на один, но уменьшая число сравнений до одного на итерацию.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>. In 1986, Bernard Chazelle and Leonidas J. Guibas introduced fractional cascading, a technique used to speed up binary searches in multiple arrays.[18][40][41]
+</p><p>Альтернативой служит <a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0&amp;action=edit&amp;redlink=1" class="new" title="Метод линейного поиска (страница не существует)">метод линейного поиска</a> (то есть полного перебора), имеющий, соответственно, линейную вычислительную сложность (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>), однако работающий на произвольно упорядоченных массивах. Если сравнивать возможности применения обоих методов, то линейный поиск выгоднее применять 1) для поиска в коротких массивах; 2) когда требуется провести поиск небольшое число раз; 3) в потоковом случае. В отличие от него, бинарный поиск требует предобработку (<a href="/w/ru/index.php?title=%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0&amp;action=edit&amp;redlink=1" class="new" title="Сортировка (страница не существует)">сортировку</a>, сложность которой не менее <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n \log_2 n) }[/math]</span>) и особенно полезен, если массив большой и поиск проводится неоднократное (точнее, более, чем порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log_2 n) }[/math]</span>) число раз.
+</p><p>Метод позволяет различные обобщения и видоизменения:
+</p>
+<ul><li><a href="/w/ru/index.php?title=%D0%9E%D0%B4%D0%BD%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="Однородный двоичный поиск (страница не существует)">Однородный двоичный поиск</a>, был представлен А. К. Чандрой в 1971 году Дональду Кнуту, который опубликовал его в своей монографии<sup id="cite_ref-knuth_1-1" class="reference"><a href="#cite_note-knuth-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>.</li>
+<li><a href="/w/ru/index.php?title=%D0%A2%D1%80%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="Троичный поиск (страница не существует)">Троичный поиск</a>, когда отрезок делится на три части. Применяется для поиска положения экстремума функции.</li>
+<li><a href="/w/ru/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D0%BE%D0%BB%D0%B8%D1%80%D1%83%D1%8E%D1%89%D0%B8%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="Интерполирующий поиск (страница не существует)">Интерполирующий поиск</a>, делящий область поиска не пополам, а предсказывающий позицию искомого элемента на основе разницы значений. Работает быстрее, если элементы распределены достаточно равномерно — в среднем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log \log n) }[/math]</span>. В худшем случае, работает за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>).</li>
+<li><a href="/w/ru/index.php?title=%D0%94%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9_%D1%81%D0%BF%D1%83%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="Дробный спуск (страница не существует)">Дробный спуск</a> (<a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/английский_язык">англ.</a>&#160;<i><span lang="en">fractional cascading</span></i>), предложенный в 1986 году Бернаром Шазеллем и Леонидасом Дж. Гуйбасом, как техника ускорения бинарного поиска в многомерных массивах.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>.</li></ul>
+<p>Вариации также могут касаться формата и сути вывода результата в отдельных случаях (см. <a href="#Особенности_реализации_последовательного_алгоритма">варианты возврата при ненахождении</a>).
+</p><p>Очень близко к метод бинарного поиска по массиву стоит непрерывный аналог — <a href="http://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%B8%D1%81%D0%B5%D0%BA%D1%86%D0%B8%D0%B8" class="extiw" title="ru-wikipedia:Метод бисекции">метод бисекции</a> (<a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE%D0%BF%D0%BE%D0%BB%D0%B0%D0%BC&amp;action=edit&amp;redlink=1" class="new" title="Метод деления пополам (страница не существует)">метод деления пополам</a>) нахождения корня непрерывной функции на заданном отрезке. Самое большое отличие заключается в вычислении значения функции вместо нахождения элемента массива по его индексу, а также использование действительных чисел в качестве аргумента в отличие от целых чисел для индексации элементов массива.
+</p><p>По своему определению, алгоритм может быть записан в одной из двух основных форм — рекурсивной и итеративной. Поскольку вычислительное ядро в них одинаковое, но в рекурсивном есть дополнительная нагрузка по вызову функций и хранению их стека, в данной статье рассматривается только итеративная версия.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p><b>Исходные данные</b>: одномерный массив <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> чисел <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i, i=0..n-1 }[/math]</span>, упорядоченный по возрастанию (точнее — неубыванию) или убыванию (точнее — невозрастанию), а также число <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, которое нужно найти в этом массиве.
+</p><p><b>Вычисляемые данные</b>: индекс (номер позиции) элемента, равного искомому (или ответ, что такого элемента нет).
+</p><p><b>Формулы метода</b>: элементы на каждом этапе алгоритма рассматриваются в виде непрерывного отрезка массива. В каждой из пар находится сумма составляющих её элементов. На следующем этапе на пары разбиваются уже эти суммы (и те элементы, которые не вошли в уже вычисленные суммы), и т. д.
+Единственное вычисление, которое производится на каждой итерации метода — вычисление среднего арифметического левого и правого индексов: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m_k=\frac{l_k+r_k}{2} }[/math]</span>.
+Здесь и далее за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_k, r_k, m_k }[/math]</span> обозначаются индексы левого конца, правого конца и середины рассматриваемого отрезка массива на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>-ой итерации. Сначала поиск производится по всему массиву, поэтому <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_0 = 0, r_0 = n-1 }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро метода бинарного поиска состоит из операций сравнения и получения середины отрезка, которые рекуррентно выполняются для массивов всё меньшего размера. Количество <i>сложений</i>, <i>умножений</i> и <i>сравнений</i> прямо пропорционально количеству итераций, а оно не больше <span style="opacity:.5" class="smj-container">[math]\displaystyle{ [ \log_2 n] }[/math]</span>.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>По определению алгоритм состоит из рекурсивных вызовов самого себя для меньших массивов. Стандартные макрооперации не используются.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<ol><li>Инициализируем концы отрезка концами всего массива: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_0 = 0, r_0 = n-1 }[/math]</span>.</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_k\gt r_k }[/math]</span>, то поиск завершается как неуспешный (см. <a href="#return_value">о возвращаемом значении</a>). Иначе находим позицию середины отрезка массива как целую часть от полусуммы позиций его концов: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m_k=\left[\frac{l_k+r_k}{2}\right] }[/math]</span>.</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{m_k}\lt A }[/math]</span>, то устанавливаем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_k&#160;:= m_k+1 }[/math]</span> и идём к шагу 2.</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{m_k}\gt A }[/math]</span>, то устанавливаем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r_k&#160;:= m_k-1 }[/math]</span> и идём к шагу 2.</li>
+<li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{m_k}=A }[/math]</span>, то поиск закончен и значение найдено, возвращаем номер позиции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m_k }[/math]</span>.</li></ol>
+<p>В рекурсивном варианте определяется функция, принимающая в числе прочих параметров индексы концов отрезка массива, на котором идёт текущий поиск, а операция «идём к шагу 2» означает вызов той же функции поиска с другими индексами концов отрезка.
+</p><p>В итеративном варианте пп. 2-5 обёрнуты в бесконечный цикл, выход из которого возможен либо в п. 2 (как неуспешный), либо в п. 5, когда значение найдено.
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> в худшем случае<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup> (когда элемент не найден, или находится на последнем шагу) легко оценить, если количество элементов в массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=2^m-1 }[/math]</span>. После первого повторения цикла, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> не был найден, размер области поиска становится равным <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{n-1}{2} }[/math]</span>, то есть опять является числом того же вида — степень двойки минус единица. После <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> повторений, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> всё ещё не найден, в области поиска останется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2^{m-i-1} }[/math]</span> элементов. Значит, после <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m-1 }[/math]</span> повторения останется один элемент. После этого цикл повторится ещё один раз и работа будет закончена. Таким образом, общее число повторений цикла равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K = m = \log_2 (n + 1) }[/math]</span>.
+Нетрудно показать, что в общем случае (когда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> произвольное) число повторений будет равно ближайшему целому сверху к числу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log_2 (n + 1) }[/math]</span>, то есть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=\lceil\log_2 (n + 1)\rceil }[/math]</span>.
+</p><p>В среднем случае сложность можно оценить, используя ту же схему рассмотрения, но находя среднее число итераций по всем элементам массива. Для вида <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n=2^m-1 }[/math]</span>&#160;: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=\frac{1}{n}\sum_{i=0}^{\log_2 (n+1)
+-1} i\, 2^i=[\log_2 (n+1)] +\frac{2}{n}-2 }[/math]</span>, в общем виде отличается от формулы не более, чем на 0,5. В лучшем же случае (когда элемент сразу найден) — <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=1 }[/math]</span>.
+</p><p>Таким образом, алгоритм обладает логарифмической временной сложностью по данным и даже последовательная реализация достаточно быстра и, в принципе, не нуждается в распараллеливании.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Граф алгоритма является параметризованным (зависит от размера массива) и недетерминированным (в смысле, что порядок вычислений зависит от начальных данных).
+</p><p>На рисунке ниже изображён граф алгоритма для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K = 9 }[/math]</span>. Как видно, граф чисто последовательный. Ввод и вывод обозначен только для начального коэффициента и значения многочлена. Op — операция «сравнить значение массива на позиции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m_k }[/math]</span> с искомым элементом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и обновить значение пары <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (l_k, r_k) }[/math]</span>».
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Basic_sequental_algorithm_graph.png" class="mw-file-description"><img src="/w/ru/images/thumb/7/79/Basic_sequental_algorithm_graph.png/800px-Basic_sequental_algorithm_graph.png" decoding="async" width="800" height="80" class="mw-file-element" srcset="/w/ru/images/thumb/7/79/Basic_sequental_algorithm_graph.png/1200px-Basic_sequental_algorithm_graph.png 1.5x, /w/ru/images/7/79/Basic_sequental_algorithm_graph.png 2x" /></a><figcaption>Рисунок 2. Операции в алгоритме бинарного поиска: последовательная версия</figcaption></figure>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Сам по себе алгоритм не может быть распараллелен, так как его информационный граф имеет линейный вид. Его <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Ярусно-параллельная_форма_графа_алгоритма" title="Глоссарий">ярусно-параллельная форма (ЯПФ)</a> — единственна и совпадает с последовательным алгоритмом. Таким образом, в получившемся алгоритме высота параллельной формы будет порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=\log_2 n }[/math]</span>, содержа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> операций умножения плюс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> операций сложения плюс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> операций сравнения. В таком виде алгоритм должен быть отнесён к алгоритмам логарифмической сложности по высоте параллельной формы. Ширина параллельной формы равна 1, что даёт нам постоянную сложность по ширине параллельной формы.
+</p><p>Однако существует очевидная <a href="/w/ru/index.php?title=P-%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="P-арный поиск (страница не существует)">модификация алгоритма</a>, которая позволяет использовать любое наперёд заданное число процессоров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> — деление не на 2 части, а на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p+1 }[/math]</span> часть. При этом вычисления всех новых узлов, а также сравнение значений в них с <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> можно проводить независимо, а значит параллельно. В этом случае, высота ЯПФ будет порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=\log_{p+1} n }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p>Входные данные: массив <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i }[/math]</span>). Число <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+</p><p>Дополнительные ограничения: массив упорядочен.
+</p><p>Объём входных данных: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.
+</p><p>Выходные данные: индекс элемента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> в массиве, если он есть.
+</p><p>Объём выходных данных: один скаляр.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>Соотношение последовательной и параллельной сложности алгоритма: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{\log_2 n}{\log_{p+1} n}=\log_2 (p+1) }[/math]</span>.
+</p><p><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Вычислительная_мощность" title="Глоссарий"><i>Вычислительная мощность</i></a> алгоритма порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{\log_2 n}{n} }[/math]</span>.
+</p><p>Алгоритм абсолютно <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Устойчивость" title="Глоссарий"><i>устойчив</i></a>, так как действия производятся только над целыми числами, и поэтому погрешность всегда равна 0.
+</p><p>Алгоритм <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Детерминированность" title="Глоссарий"><i>недетерминирован</i></a> в смысле структуры вычислительного процесса, так как число итераций, а значит и число операций, зависят от входных данных, в частности от искомого значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Однако он детерминирован в смысле, что выдаёт всегда одинаковый результат при одинаковых входных данных.
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<p>Возможная простейшая реализация алгоритма на языке C:
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">binary_find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">A</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+<span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span><span class="w"> </span><span class="c1">// значение не найдено</span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Здесь ряд индексов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_k, m_k, r_k }[/math]</span> из <a href="#Схема_реализации_последовательного_алгоритма">математической схемы алгоритма</a> превращён в одну переменную, поскольку требуются только последние значения этих рядов.
+</p>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>Обычно в качестве ответа выводят −1, если число не найдено.
+</p><p>Другие возможные варианты в данной ситуации (выбор зависит от того, как и где будет использоваться метод поиска как базовая единица)<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>:
+</p>
+<ol><li>«магическое число» — то, которое заведомо не получится в качестве результата, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> найдено. В частности, можно возвращать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ -(l_k+1) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> — последняя итерация перед нарушением условия <span style="opacity:.5" class="smj-container">[math]\displaystyle{ l_k \lt  r_k }[/math]</span>, передавая таким образом информации о месте, где могло бы находиться <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Эту информацию можно использовать, в частности, для дальнейшей вставки нового объекта на нужное место в массиве, чтобы оставить его упорядоченным.</li>
+<li>специальная константа. Её наличие определяется языком программирования. Например, это может быть null в C# (тогда потребуется использовать тип «int?» в качестве типа результата вместо простого «int»), или … в Python’е</li>
+<li>кинуть исключение. Это используется, когда элемент должен был найтись, и дальнейшая работа невозможна, если его не нашлось.</li></ol>
+<h4><span id=".D0.A7.D0.B0.D1.81.D1.82.D1.8B.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B8_.D0.BF.D1.80.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Частые_ошибки_при_реализации">Частые ошибки при реализации</span></h4>
+<p>Несмотря на то, что код достаточно прост, в нём есть несколько ловушек, на которые нужно обратить внимание<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup>:
+</p>
+<ul><li>Что будет, если <code>first</code> и <code>last</code> по отдельности умещаются в свой тип, а <code>first+last</code> — нет?<sup id="cite_ref-joshua_10-0" class="reference"><a href="#cite_note-joshua-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup> Если теоретически возможны массивы столь большого размера, приходится идти на ухищрения:
+<ul><li>Использовать код <code>first + (last - first) / 2</code>, который точно не приведёт к переполнениям (то и другое — неотрицательные целые числа).
+<ul><li>Если <code>first</code> и <code>last</code> — указатели или <a href="http://ru.wikipedia.org/wiki/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80" class="extiw" title="ru-wikipedia:Итератор">итераторы</a>, такой код единственно правильный. Преобразование в <code>uintptr_t</code> и дальнейший расчёт в этом типе нарушает абстракцию, и нет гарантии, что результат останется корректным указателем. Разумеется, чтобы сохранялась сложность алгоритма, нужны быстрые операции «итератор+число → итератор», «итератор−итератор → число».</li></ul></li>
+<li>Если <code>first</code> и <code>last</code> — типы со знаком, провести расчёт в беззнаковом типе: <code>((unsigned)first + (unsigned)last) / 2</code>. В <a href="/w/ru/index.php?title=Java&amp;action=edit&amp;redlink=1" class="new" title="Java (страница не существует)">Java</a> соответственно: <code>(first + last) &gt;&gt;&gt; 1</code>.</li>
+<li>Написать расчёт на ассемблере, с использованием <a href="http://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B0%D0%B3_%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B0" class="extiw" title="ru-wikipedia:Флаг переноса">флага переноса</a>. Что-то наподобие <code>add eax, b; rcr eax, 1</code>. А вот <a href="http://ru.wikipedia.org/wiki/%D0%94%D0%BB%D0%B8%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0" class="extiw" title="ru-wikipedia:Длинная арифметика">длинные типы</a> использовать нецелесообразно, <code>first + (last - first) / 2</code> быстрее.</li></ul></li>
+<li>В двоичном поиске часты <a href="http://ru.wikipedia.org/wiki/%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0_%D0%BD%D0%B0_%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D1%83" class="extiw" title="ru-wikipedia:Ошибка на единицу">ошибки на единицу</a>. Поэтому важно протестировать такие случаи: пустой массив (<code>n=0</code>), ищем отсутствующее значение (слишком большое, слишком маленькое и где-то в середине), ищем первый и последний элемент. Не выходит ли алгоритм за границы массива? Не зацикливается ли?</li>
+<li>Иногда требуется, чтобы, если <code>x</code> в цепочке существует в нескольких экземплярах, находило не любой, а обязательно первый (как вариант: последний; либо вообще не <code>x</code>, а следующий за ним элемент).<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup></li></ul>
+<p>Учёный Йон Бентли утверждает, что 90&#160;% студентов, разрабатывая двоичный поиск, забывают учесть какое-либо из этих требований. И даже в код, написанный самим Йоном и ходивший из книги в книгу, вкралась ошибка: код не стоек к переполнениям<sup id="cite_ref-joshua_10-1" class="reference"><a href="#cite_note-joshua-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Можно придумать модификацию алгоритма — <a href="/w/ru/index.php?title=P-%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="P-арный поиск (страница не существует)">p-арный поиск</a>, которая позволит использовать любое наперёд заданное число процессоров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p }[/math]</span> — для этого надо делить область поиска не на 2 части, а на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p+1 }[/math]</span> часть. При этом вычисления всех новых узлов, а также сравнение значений в них с <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> можно проводить независимо, а значит параллельно. В этом случае, высота ЯПФ будет порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K=\log_{p+1} n }[/math]</span>.
+</p><p>Однако при этом потребуется предусмотреть обмен результатами сравнения своей точки деления на каждом процессоре для определения искомого интервала для следующей итерации. Это потребует минимум одной коллективной операции обмена, что ставит под сомнение эффективность распараллеливания.
+</p>
+<h3><span id=".D0.A0.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B_.D0.BF.D1.80.D0.BE.D0.B3.D0.BE.D0.BD.D0.BE.D0.B2"></span><span class="mw-headline" id="Результаты_прогонов">Результаты прогонов</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<p>Использовать алгоритм в любой реализации для архитектур с разделённой памятью смысла не имеет — из-за нелокального доступа к исходным данным и малого количества вычислительных операций даже в параллельной модификации выигрыш будет съедаться коммуникациями.
+</p><p>Применение систем с общей памятью с помощью OpenMP теоретически имеет смысл, однако для получения хоть какого-то ускорения требуется выполнение нескольких условий:
+</p>
+<ol><li>Помещение всего массива исходных данных в общую память.</li>
+<li>Статическое создание нитей один раз в начале работы программы.</li>
+<li>Выигрыш будет получен только в результате многократного поиска в этом массиве (по общему правилу: число операций внутри параллельной секции должно быть не меньше 1000, чтобы получить ускорение от параллельного вычисления. Это соответствует, например, ~30 поискам в массиве из миллиарда элементов).</li></ol>
+<h2><span id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="См._также">См. также</span></h2>
+<ul><li><a href="/w/ru/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BF%D0%BE%D0%BB%D0%BE%D0%B2%D0%B8%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F&amp;action=edit&amp;redlink=1" class="new" title="Метод половинного деления (страница не существует)">Метод половинного деления</a></li>
+<li><a href="/w/ru/index.php?title=%D0%A2%D1%80%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="Троичный поиск (страница не существует)">Троичный поиск</a></li>
+<li><a href="/w/ru/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D0%BE%D0%BB%D0%B8%D1%80%D1%83%D1%8E%D1%89%D0%B8%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" class="new" title="Интерполирующий поиск (страница не существует)">Интерполирующий поиск</a></li></ul>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-knuth-1"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-knuth_1-0">1,0</a></sup> <sup><a href="#cite_ref-knuth_1-1">1,1</a></sup></span> <span class="reference-text">Дональд Кнут . Искусство программирования, том 3. Сортировка и поиск = The Art of Computer Programming, vol.3. Sorting and Searching. — 2-е изд. — М.: «Вильямс», 2007. — С. 824. — ISBN 0-201-89685-0.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Lehmer, Derrick (1960). Teaching combinatorial tricks to a computer. Proceedings of Symposia in Applied Mathematics 10. pp. 180—181. doi:10.1090/psapm/010.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Bottenbruch, Hermann (1962). «Structure and Use of ALGOL 60». Journal of the ACM 9 (2): 161—211. Procedure is described at p. 214 (§ 43), titled «Program for Binary Search».</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Chazelle, Bernard; Liu, Ding (2001). Lower bounds for intersection searching and fractional cascading in higher dimension. 33rd ACM Symposium on Theory of Computing. pp. 322—329. doi:10.1145/380752.380818.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Chazelle, Bernard; Guibas, Leonidas J. (1986). «Fractional cascading: I. A data structuring technique» (PDF). Algorithmica 1 (1): 133—162. doi:10.1007/BF01840440.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Chazelle, Bernard; Guibas, Leonidas J. (1986), «Fractional cascading: II. Applications» (PDF), Algorithmica 1 (1): 163—191, doi:10.1007/BF01840441</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://a-urusov2011.narod.ru/index/0-8">Асимптотические оценки</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://habrahabr.ru/post/146228/">Я не могу написать бинарный поиск</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://habrahabr.ru/post/91605/">Только 10&#160;% программистов способны написать двоичный поиск</a></span>
+</li>
+<li id="cite_note-joshua-10"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-joshua_10-0">10,0</a></sup> <sup><a href="#cite_ref-joshua_10-1">10,1</a></sup></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://googleresearch.blogspot.ru/2006/06/extra-extra-read-all-about-it-nearly.html">Extra, Extra — Read All About It: Nearly All Binary Searches and Mergesorts are Broken</a> // Joshua Bloch, Google Research; перевод — <a rel="nofollow" class="external text" href="http://habrahabr.ru/post/203398/">Почти во всех реализациях двоичного поиска и сортировки слиянием есть ошибка</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text">В <a href="http://ru.wikipedia.org/wiki/C%2B%2B" class="extiw" title="ru-wikipedia:C++">C++</a> <code>std::lower_bound</code> находит первое вхождение <code>x</code>, а <code>std::upper_bound</code> — элемент, следующий за <code>x</code>.</span>
+</li>
+</ol></div>
+<ul><li>Ананий В. Левитин. Глава 4. Метод декомпозиции: Бинарный поиск // Алгоритмы: введение в разработку и анализ = Introduction to The Design and Analysis of Algorithms. — М.: «Вильямс», 2006. — С. 180—183. — ISBN 5-8459-0987-2.</li>
+<li>Амосов А. А., Дубинский Ю. А., Копченова Н. П. Вычислительные методы для инженеров. — М.: Мир, 1998.</li>
+<li>Бахвалов Н. С., Жидков Н. П., Кобельков Г. Г. Численные методы. — 8-е изд. — М.: Лаборатория Базовых Знаний, 2000.</li>
+<li>Вирт Н. Алгоритмы + структуры данных = программы. — М.: «Мир», 1985. — С. 28.</li>
+<li>Волков Е. А. Численные методы. — М.: Физматлит, 2003.</li>
+<li>Гилл Ф., Мюррей У., Райт М. Практическая оптимизация. Пер. с англ. — М.: Мир, 1985.</li>
+<li>Кормен, Т., Лейзерсон, Ч., Ривест, Р., Штайн, К. Алгоритмы: построение и анализ = Introduction to Algorithms / Под ред. И. В. Красикова. — 2-е изд. — М.: Вильямс, 2005. — 1296 с. — ISBN 5-8459-0857-4.</li>
+<li>Корн Г., Корн Т. Справочник по математике для научных работников и инженеров. — М.: Наука, 1970. — С. 575—576.</li>
+<li>Коршунов Ю. М., Коршунов Ю. М. Математические основы кибернетики. — Энергоатомиздат, 1972.</li>
+<li>Максимов Ю. А., Филлиповская Е. А. Алгоритмы решения задач нелинейного программирования. — М.: МИФИ, 1982.</li>
+<li>Роберт Седжвик. Фундаментальные алгоритмы на C. Анализ/Структуры данных/Сортировка/Поиск = Algorithms in C. Fundamentals/Data Structures/Sorting/Searching. — СПб.: ДиаСофтЮП, 2003. — С. 672. — ISBN 5-93772-081-4.</li></ul>
+<h2><span id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"></span><span class="mw-headline" id="Ссылки">Ссылки</span></h2>
+<ul><li><a href="http://ru.wikipedia.org/wiki/%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" class="extiw" title="ru-wikipedia:Двоичный поиск">Метод двоичного поиска</a> в Википедии.</li>
+<li><a rel="nofollow" class="external text" href="http://algolist.manual.ru/search/bin_search.php">Алгоритм</a> в библиотеке алгоритмов Algolist.</li>
+<li><a rel="nofollow" class="external text" href="https://ru.wikibooks.org/wiki/Реализации_алгоритмов/Двоичный_поиск">Реализации алгоритма</a> в Викиучебнике.</li></ul></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Двоичный_поиск&amp;oldid=29169">https://algowiki-project.org/w/ru/index.php?title=Двоичный_поиск&amp;oldid=29169</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%B2_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5" title="Категория:Статьи в работе">Статьи в работе</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0" title="Категория:Алгоритмы поиска">Алгоритмы поиска</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D1%81_%D0%BD%D0%B8%D0%B7%D0%BA%D0%B8%D0%BC_%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%BC_%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D0%B8%D0%B7%D0%BC%D0%B0" title="Категория:Алгоритмы с низким уровнем параллелизма">Алгоритмы с низким уровнем параллелизма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9+%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9+%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;oldid=29169" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Binary_search:_Finding_the_position_of_a_target_value_within_a_sorted_array" title="Binary search: Finding the position of a target value within a sorted array — English" lang="en" hreflang="en" data-title="Binary search: Finding the position of a target value within a sorted array" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 18 июля 2022 года в 16:45.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1667,"wgPageParseReport":{"limitreport":{"cputime":"0.090","walltime":"1.566","ppvisitednodes":{"value":763,"limit":1000000},"postexpandincludesize":{"value":5476,"limit":2097152},"templateargumentsize":{"value":1658,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":16874,"limit":5000000},"timingprofile":["100.00%   10.761      1 -total"," 54.81%    5.898      1 Шаблон:Algorithm"," 30.23%    3.253      1 Шаблон:Level-a"," 14.63%    1.574      1 Шаблон:Infobox"," 11.68%    1.257      1 Шаблон:Lang-en","  5.60%    0.603      1 Шаблон:Lang"]},"cachereport":{"timestamp":"20260611092812","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Уравнение Пуассона, решение дискретным преобразованием Фурье — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"d83d1f1153f3162b6043fe9c","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Уравнение_Пуассона,_решение_дискретным_преобразованием_Фурье","wgTitle":"Уравнение Пуассона, решение дискретным преобразованием Фурье","wgCurRevisionId":29726,"wgRevisionId":29726,"wgArticleId":249,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма","Законченные статьи"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Уравнение_Пуассона,_решение_дискретным_преобразованием_Фурье","wgRelevantArticleId":249,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":29726,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%7Cext.pygments%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Уравнение_Пуассона_решение_дискретным_преобразованием_Фурье rootpage-Уравнение_Пуассона_решение_дискретным_преобразованием_Фурье skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Уравнение Пуассона, решение дискретным преобразованием Фурье</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Уравнение Пуассона, решение дискретным преобразованием Фурье
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3(6\text{log}_2 N+1) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3 }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6N(\text{log}_2N)+1 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^2 }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE" title="Участник:Виктор Степаненко">В.М.Степаненко</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Evgeny_Mortikov" title="Участник:Evgeny Mortikov">Е.В.Мортиков</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.2</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Результаты_прогонов"><span class="tocnumber">2.3</span> <span class="toctext">Результаты прогонов</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.4</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p>Уравнение Пуассона для многомерного пространства имеет вид:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\sum_{i=1}^{N}\frac{\partial^2 \phi}{\partial x_i^2}=f,~\mathbf{x}\in D,
+ }[/math]</span>
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D \in \mathbb{R}^N }[/math]</span> - область определения решения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \phi(\mathbf{x}) }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathbf{x}=(x_1,...,x_N)^T }[/math]</span> - вектор независимых переменных. Уравнение Пуассона дополняется граничными условиями:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+B(\phi)=F, \mathbf{x} \in \Gamma(D),
+ }[/math]</span>
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Gamma(D) }[/math]</span> - граница области <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span>, a <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B(\phi) }[/math]</span> - оператор, определяющий граничные условия. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B(\phi)=\phi }[/math]</span> соответствует граничным условиям Дирихле, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B(\phi)=\partial\phi/\partial n }[/math]</span> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathbf{n} }[/math]</span> - внешняя нормаль к границе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Gamma(D) }[/math]</span>) - условиям Неймана. Иногда задают также смешанное граничное условие: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B(\phi)=C\phi+\partial\phi/\partial n }[/math]</span> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ C }[/math]</span> - константа). Встречаются также так называемые "периодические граничные условия", при которых задача ставится для бесконечной области, но предполагается периодичность решения по подмножеству переменных из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathbf{x} }[/math]</span>.
+</p><p>Уравнение Пуассона возникает во многих задачах математической физики, например, в электростатике (в этом случае <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \phi }[/math]</span> - потенциал электрической силы) и гидродинамике (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \phi }[/math]</span> - давление жидкости или газа); при этом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N=2,3 }[/math]</span> для плоской и трехмерной задач, соответственно.
+</p><p>Решение уравнения Пуассона для произвольной правой части и неоднородных граничных условий в аналитическом виде неизвестно, поэтому в большинстве приложений оно находится численно. Наиболее распространенная дискретизация этого уравнения имеет вид
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\sum_{i=1}^{N}\frac{\phi_{k_1,...,k_i+1,...,k_N}-2\phi_{k_1,...,k_i,...,k_N}+\phi_{k_1,...,k_i-1,...,k_N}}{\Delta x_i^2}=f_{k_1,...,k_N},~(k_1,...,k_N) \in D_N. 
+ }[/math]</span>
+</p><p>Здесь вторые производные заменены конечно-разностной аппроксимацией второго порядка точности (образуя т.н. схему "крест" для плоской задачи), а решение ищется на дискретном множестве точек <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>-мерного пространства, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D_N }[/math]</span>. Конечными разностями аппроксимируются при этом  также граничные условия.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>В настоящей статье мы рассмотрим конечно-разностную схему для наиболее часто встречающейся задачи решения уравнения Пуассона в трехмерном пространстве:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\frac{\phi_{i+1,j,k}-2\phi_{i,j,k}+\phi_{i-1,j,k}}{ \Delta x^2}\,+\,
+\frac{\phi_{i,j+1,k}-2\phi_{i,j,k}+\phi_{i,j-1,k}}{ \Delta y^2}\,+\,
+\frac{\phi_{i,j,k+1}-2\phi_{i,j,k}+\phi_{i,j,k-1}}{ \Delta z^2} = f_{i,j,k},~(i,j,k) \in D_h,
+ }[/math]</span>
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D_h=\{0:N_x-1\}\times\{0:N_y-1\}\times\{0:N_z-1\}  }[/math]</span> - параллелепипед в сеточной области. В качестве граничных условий для простоты примем так называемые троякопериодические граничные условия
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\begin{align}
+\phi_{0,j,k} &amp;= \phi_{N_x,j,k},\\
+\phi_{i,0,k} &amp;= \phi_{i,N_y,k},\\
+\phi_{i,j,0} &amp;= \phi_{i,j,N_z}.
+\end{align}
+ }[/math]</span>
+</p><p>Периодические граничные условия удовлетворяются "автоматически", если представить решение в виде стандартного дискретного обратного преобразования Фурье:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\phi_{i,j,k}=\frac{1}{N_x N_y N_z}\sum_{l=0}^{N_x-1}\sum_{m=0}^{N_y-1}\sum_{n=0}^{N_z-1}\Phi_{l,m,n}e^{2\pi \overline{i} 
+\left(\frac{il}{N_x}+\frac{jm}{N_y}+\frac{kn}{N_z}\right)}.
+ }[/math]</span>
+</p><p>Здесь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \overline{i}=\sqrt{-1} }[/math]</span>. Аналогичное разложение применяется также к правой части уравнения, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_{i,j,k} }[/math]</span>. Решение дискретного уравнения Пуассона преобразованием Фурье удобно тем, что базисные функции разложения Фурье являются собственными функциями дискретного оператора Лапласа. А именно, подставляя разложение Фурье неизвестной функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \phi_{i,j,k} }[/math]</span> и правой части в исходное уравнение, получаем:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\Phi_{l,m,n}=-\frac{F_{l,m,n}}{4\left[\sin^2\left(\frac{\pi l}{N_x}\right) + \sin^2\left(\frac{\pi m}{N_y}\right) + \sin^2\left(\frac{\pi n}{N_z}\right) \right]},
+ }[/math]</span>
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ F_{l,m,n} }[/math]</span> - преобразование Фурье правой части. Отсюда очевиден алгоритм решения уравнения: сначала правая часть уравнения разлагается в ряд Фурье, затем по приведенной выше формуле вычисляются коэффициенты Фурье решения и, наконец, решение восстанавливается обратным преобразованием Фурье.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительным ядром алгоритма является одномерное преобразование Фурье. В самом деле, обратное дискретное преобразование Фурье может быть записано как
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+\phi_{i,j,k}=\frac{1}{N_x} \sum_{l=0}^{N_x-1} \left[ e^{2\pi \overline{i}\left(\frac{il}{N_x}\right)} 
+\frac{1}{N_y} \sum_{m=0}^{N_y-1} \left[ e^{2\pi \overline{i}\left(\frac{jm}{N_y}\right)}
+\frac{1}{N_z} \sum_{n=0}^{N_z-1} \Phi_{l,m,n}e^{2\pi \overline{i} \left(\frac{kn}{N_z}\right)}\right]\right],
+ }[/math]</span>
+</p><p>откуда видно, что трехмерное преобразование Фурье сводится в последовательности трех одномерных. Для вычисления одномерного преобразования широко используется эффективный алгоритм быстрого преобразования Фурье (БПФ, FFT, Fast Fourier Transform)<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Из приведенного выше ясно, что основной макрооперацией алгоритма решения уравнения Пуассона является одномерное быстрое преобразование Фурье. В дальнейшем будем обозначать ее <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{FFT}_i,~i=x,y,z }[/math]</span> по каждому из трех направлений, соответственно, а обратное преобразование Фурье - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{IFFT}_i,~i=x,y,z }[/math]</span>.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p>Введем для краткости следующие обозначения сеточных функций:
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \phi_h=\{\phi_{i,j,k},~(i,j,k) \in D_h\},~F_h=\{F_{l,m,n},~l=0,...,N_x-1,~m=0,...,N_y-1,~n=0,...,N_z-1\} }[/math]</span> и аналогично <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_h }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Phi_h }[/math]</span>.
+Тогда алгоритм запишется следующим образом:
+</p>
+<ol><li>Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{FFT}_x(f_h) }[/math]</span></li>
+<li>Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{FFT}_y(\text{FFT}_x(f_h)) }[/math]</span></li>
+<li>Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{FFT}_z(\text{FFT}_y(\text{FFT}_x(f_h)))=F_h }[/math]</span></li>
+<li>Расчет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Phi_h }[/math]</span> по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ F_h }[/math]</span></li>
+<li>Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{IFFT}_x(\Phi_h) }[/math]</span></li>
+<li>Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{IFFT}_y(\text{IFFT}_x(\Phi_h)) }[/math]</span></li>
+<li>Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \text{IFFT}_z(\text{IFFT}_y(\text{IFFT}_x(\Phi_h)))=\phi_h }[/math]</span></li></ol>
+<p>Примечательно, что весь описанный алгоритм реализуется с помощью одного трехмерного массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_x \times N_y \times N_z }[/math]</span>, поскольку результат каждого одномерного преобразования Фурье можно записать во входной массив и затем использовать его на входе для следующего преобразования, а операция (4) - это поэлементное изменение массива.
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Рассмотрим случай куба, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_x=N_y=N_z=N=2^k }[/math]</span>. Тогда сложность одномерного БПФ по каждому из направлений составляет (по порядку) <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N(\text{log}_2 N) }[/math]</span> операций. Поскольку одномерное БПФ на каждом из этапов алгоритма, кроме четвертого, осуществляется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^2 }[/math]</span> раз, а количество операций на этапе 4 составляет (снова по порядку) <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3 }[/math]</span>, то общее количество арифметических действий составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3(6\text{log}_2 N+1) }[/math]</span>.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Представим информационный граф алгоритма для этапов 1-4, поскольку этапы 5-7 реализуются аналогично этапам 1-3.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Pois3d_graph.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/1/11/Pois3d_graph.png/600px-Pois3d_graph.png" decoding="async" width="600" height="582" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/11/Pois3d_graph.png/900px-Pois3d_graph.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/1/11/Pois3d_graph.png/1200px-Pois3d_graph.png 2x" /></a><figcaption>Зеленые прямоугольники обозначают одномерные сечения входного трехмерного массива. Красным кругом обозначена операция одномерного БПФ, например <span style="opacity:.5" class="smj-container">[math]\displaystyle{ FFT_{x11} }[/math]</span> означает БПФ вдоль оси x при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j=1,~k=1 }[/math]</span>. Желтыми кругами представлены поэлементные преобразования массива для получения коэффициентов Фурье решения (этап 4 алгоритма), например <span style="opacity:.5" class="smj-container">[math]\displaystyle{ L_{2N,1,...,N} }[/math]</span> означает преобразование элементов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i=2,~j=N,~k=1,...,N }[/math]</span>. Для удобства целочисленные индексы нумеруются числами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1,...,N }[/math]</span> вместо <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0,...,N-1 }[/math]</span></figcaption></figure>
+<p>Информационная зависимость между ярусами графа заключается в том, что одномерное БПФ зависит от результата произведенного ранее БПФ по перпендикулярному направлению (т.е. с предыдущего яруса), только если обрабатываемые этими БПФ одномерные сечения массива пересекаются. Следовательно, каждое из БПФ по второй координате, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ FFT_{i,y,k},~i=1,...,N }[/math]</span>, зависит от результатов каждого из БПФ по первой координате <span style="opacity:.5" class="smj-container">[math]\displaystyle{ FFT_{x,j,k},~j=1,...,N }[/math]</span>, и только от них, если эти преобразования производятся в одной плоскости <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k=K }[/math]</span>. Соответственно, каждое БПФ по третьей координате <span style="opacity:.5" class="smj-container">[math]\displaystyle{ FFT_{i,j,z},~j=1,...,N }[/math]</span>, зависит от каждого БПФ по второй координате <span style="opacity:.5" class="smj-container">[math]\displaystyle{ FFT_{i,y,k},~k=1,...,N }[/math]</span>, в одной плоскости <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i=I }[/math]</span>.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>В описанном выше алгоритме можно выделить, по меньшей мере, два уровня параллелизма. Во-первых, вычисление каждого одномерного БПФ может быть распределено между вычислительными ядрами. И, во-вторых, на каждом этапе алгоритма (ярусе графа) одномерные БПФ независимы друг от друга и также могут быть выполнены паралельно (координатный параллелизм). Для сопоставления параллельной (при координатном распараллеливании) и последовательной сложности алгоритма определим в качестве основных операций одномерное БПФ и поэлементный перерасчет массива (этап 4 алгоритма). Тогда последовательный алгоритм будет состоять из последовательно выполняемых <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6N^2 }[/math]</span> одномерных БПФ и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3 }[/math]</span> операций над отдельными элементами массива, параллельный же алгоритм будет выполнен за 6 шагов одномерного БПФ и 1 операцию поэлементного преобразования. Если же выразить введенные макрооперации через элементарные арифметические операции, то получим, что сложность последовательного алгоритма - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6N^3(\text{log}_2N)+N^3 }[/math]</span>, а сложность параллельного - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6N(\text{log}_2N)+1 }[/math]</span>. Тогда при больших <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> отношение последовательной сложности к параллельной становится равным <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \propto N^2(6\text{log}_2N \text{ln}2+\text{ln}2+5) }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p>В качестве входных данных выступает трехмерный массив <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times N \times N }[/math]</span> правой части уравнения. Выходной массив - трехмерный массив решения той же размерности.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>Как было показано выше, при неограниченном количестве вычислительных устройств и больших объемах входных данных вычислительная сложность параллельного алгоритма убывает быстрее, чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^2 }[/math]</span>.
+</p><p>Поскольку объем входных данных составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^3 }[/math]</span>, вычислительная мощность последовательного алгоритма становится равной <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 6\text{log}_2N+1 }[/math]</span>, а параллельного алгоритма - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (6N\text{log}_2N+1)/N^3 \propto N^{-2} }[/math]</span> (при больших <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>).
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>Приведем пример реализации алгоритма на языке Фортран-90 с применением библиотеки  <a rel="nofollow" class="external text" href="http://www.fftw.org/">FFTW</a>. 
+В этом случае трехмерное прямое преобразование Фурье правой части уравнения реализуется как последовательность трех одномерных (этапы 1-3 в п.1.5). 
+Полученные коэффициенты Фурье делятся на собственное число оператора Лапласа (этап 4 в п.1.5) (см. комментарии в коде):
+</p>
+<div class="mw-highlight mw-highlight-lang-fortran mw-content-ltr" dir="ltr"><pre><span></span><span class="w">         </span><span class="c">! x - transform</span>
+<span class="w">         </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k1</span>
+<span class="w">           </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j1</span>
+<span class="w">             </span><span class="n">workfor_x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cmplx</span><span class="p">(</span><span class="n">f_r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">f_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+<span class="w">             </span><span class="k">call </span><span class="n">FFTW_EXECUTE_DFT</span><span class="p">(</span><span class="n">planfor_x</span><span class="p">,</span><span class="n">workfor_x</span><span class="p">,</span><span class="n">workfor_x</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="n">workfor_x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="nb">aimag</span><span class="p">(</span><span class="n">workfor_x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">         enddo</span>
+<span class="w">         </span><span class="c">! y - transform</span>
+<span class="w">         </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k1</span>
+<span class="w">           </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i1</span>
+<span class="w">             </span><span class="n">workfor_y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cmplx</span><span class="p">(</span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+<span class="w">             </span><span class="k">call </span><span class="n">FFTW_EXECUTE_DFT</span><span class="p">(</span><span class="n">planfor_y</span><span class="p">,</span><span class="n">workfor_y</span><span class="p">,</span><span class="n">workfor_y</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="n">workfor_y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="nb">aimag</span><span class="p">(</span><span class="n">workfor_y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">         enddo</span>
+<span class="w">         </span><span class="c">! z - transform and dividing by eigenvalue</span>
+<span class="w">         </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j1</span>
+<span class="w">           </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i1</span>
+<span class="w">             </span><span class="n">workfor_z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cmplx</span><span class="p">(</span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">),</span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">))</span>
+<span class="w">             </span><span class="k">call </span><span class="n">FFTW_EXECUTE_DFT</span><span class="p">(</span><span class="n">planfor_z</span><span class="p">,</span><span class="n">workfor_z</span><span class="p">,</span><span class="n">workfor_z</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="n">workfor_z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="nb">aimag</span><span class="p">(</span><span class="n">workfor_z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">             </span><span class="c">! Dividing by eigenvalue of Laplace operator</span>
+<span class="w">             </span><span class="n">sinx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i1</span><span class="p">)</span><span class="err">^</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">             </span><span class="n">siny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">((</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">j1</span><span class="p">)</span><span class="err">^</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">             </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k1</span>
+<span class="w">               </span><span class="n">sinz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">((</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">k1</span><span class="p">)</span><span class="err">^</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">               </span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sinx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">siny</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sinz</span><span class="p">)</span>
+<span class="w">               </span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sinx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">siny</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sinz</span><span class="p">)</span>
+<span class="w">             </span><span class="k">enddo</span>
+<span class="k">           enddo</span>
+<span class="k">         enddo</span>
+</pre></div>
+<p>Как только коэффициенты Фурье решения найдены, аналогично производится обратное преобразование Фурье:
+</p>
+<div class="mw-highlight mw-highlight-lang-fortran mw-content-ltr" dir="ltr"><pre><span></span><span class="w">         </span><span class="c">! inverse x - transform</span>
+<span class="w">         </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k1</span>
+<span class="w">           </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j1</span>
+<span class="w">             </span><span class="n">workback_x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cmplx</span><span class="p">(</span><span class="n">f_r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">f_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+<span class="w">             </span><span class="k">call </span><span class="n">FFTW_EXECUTE_DFT</span><span class="p">(</span><span class="n">planback_x</span><span class="p">,</span><span class="n">workback_x</span><span class="p">,</span><span class="n">workback_x</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="n">workback_x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">i1</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="nb">aimag</span><span class="p">(</span><span class="n">workback_x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">i1</span><span class="p">)</span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">         enddo</span>
+<span class="w">         </span><span class="c">! inverse y - transform</span>
+<span class="w">         </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k1</span>
+<span class="w">           </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i1</span>
+<span class="w">             </span><span class="n">workback_y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cmplx</span><span class="p">(</span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+<span class="w">             </span><span class="k">call </span><span class="n">FFTW_EXECUTE_DFT</span><span class="p">(</span><span class="n">planback_y</span><span class="p">,</span><span class="n">workback_y</span><span class="p">,</span><span class="n">workback_y</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="n">workback_y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">j1</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="nb">aimag</span><span class="p">(</span><span class="n">workback_y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">j1</span><span class="p">)</span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">         enddo</span>
+<span class="w">         </span><span class="c">! inverse z - transform</span>
+<span class="w">         </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j1</span>
+<span class="w">           </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i1</span>
+<span class="w">             </span><span class="n">workback_z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cmplx</span><span class="p">(</span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">),</span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">))</span>
+<span class="w">             </span><span class="k">call </span><span class="n">FFTW_EXECUTE_DFT</span><span class="p">(</span><span class="n">planback_z</span><span class="p">,</span><span class="n">workback_z</span><span class="p">,</span><span class="n">workback_z</span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="n">workback_z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">             </span><span class="n">f_i</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="nb">aimag</span><span class="p">(</span><span class="n">workback_z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">k1</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">         enddo</span>
+</pre></div>
+<p>Как видим, вложенность циклов соответствует порядку расположения элементов массивов в языке Фортран - по столбцам - это позволяет существенно сократить время обращения к памяти.
+Многократно используются одни и те же вспомогательные массивы, что при небольших размерах сетки должно обеспечить быстроту работы с кэш-памятью. 
+Однако, данная реализация не является оптимальной. Так, вместо многократного вызова подпрограммы FFTW_EXECUTE_DFT в циклах, можно было бы обращаться к одной подпрограмме, выполняющей
+заданное множество одномерных БПФ.
+</p><p>Из приведенных выше листингов программы становится очевиден также и ресурс параллелизма алгоритма: каждое одномерное преобразование Фурье выполняется независимо. Самым простым способом использования этого обстоятельства будет вставка соответствующих директив OpenMP перед внутренними циклами - в случае использования многоядерной архтитектуры компьютера на общей памяти. В случае же параллельного выполнения на кластерах с распределенной памятью, необходимо будет позаботиться о распределении входного массива (правой части уравнения) между процессорами, а также "транспозиции" массивов при переходе от БПФ по одному из направлений к БПФ по следующему направлению.
+</p><p>Заметим также, что в приведенной выше реализации для расчета одномерного БПФ производится вызов процедуры библиотеки FFTW, обрабатывающей массив комплексных чисел. В то же время, существует вариант БПФ для преобразования действительных массивов, ускоряющий БПФ в два раза (более подробно см. на <a rel="nofollow" class="external text" href="http://www.fftw.org/fftw3_doc/One_002dDimensional-DFTs-of-Real-Data.html#One_002dDimensional-DFTs-of-Real-Data">сайте проекта FFTW</a>).
+</p><p>Важным обстоятельством является то, что большинство вариантов БПФ, включая алгоритм Кули-Тьюки, в арифметике с плавающей запятой имеют очень низкую погрешность.  Верхняя граница относительной ошибки для алгоритма Кули-Тьюки составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\epsilon \log N) }[/math]</span> (для сравнения - относительная ошибка преобразования Фурье непосредственно по формуле дискретного преобразования Фурье - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\epsilon  N^{3/2}) }[/math]</span>) <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>. Поэтому для ускорения алгоритма можно использовать одинарную точность представления переменных без существенного увеличения ошибки.
+</p>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Как было показано выше, существует, по меньшей мере, два уровня параллелизма в описываемом алгоритме. Во-первых, это параллельная реализация одномерных БПФ и, во-вторых, координатный параллелизм - параллельное исполнение независимых одномерных БПФ <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>. Эти два уровня могут быть скомбинированы, например, путем распределения разных БПФ между MPI-процессами, а каждого отдельного БПФ - между нитями на общей памяти (POSIX, OpenMP, и т.д.). Ниже мы приведем детали базового алгоритма распараллеливания с использованием координатного параллелизма, рассмотрим его недостатки и перечислим возможные способы повышения его масштабируемости.
+</p><p>Координатный параллелизм в контексте данной задачи реализуется в результате разбиения трехмерной области на подобласти, в каждой из которых можно независимо от расчетов в других подобластях, выполнить одномерные БПФ. К настоящему времени предложены две реализации такого подхода: одномерное разбиение области (slab decomposition) и двумерное разбиение (pencil decomposition) <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>. При одномерном разбиении требуется меньшее количество MPI-пересылок, однако, максимальное количество процессоров/ядер ограничено максимальным по трем измерениям размером области. Поэтому с точки зрения массивного параллелизма двумерная декомпозиция предпочтительнее, и ниже мы остановимся на этом подходе.
+</p><p>При MPI-реализации необходимо принять во внимание накладные расходы, вызванные пересылками данных между процессорами. Для реализации обсуждаемого алгоритма необходимо осуществлять т.н. транспонирования массивов, при которых на каждом из трех этапов преобразования Фурье (этапы 1-3 и 5-7 в п.1.5) обеспечивается нахождение элементов массива вдоль соответствующих направлений в памяти соответствующих процессоров:
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Transp.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/8/86/Transp.png/800px-Transp.png" decoding="async" width="800" height="222" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/8/86/Transp.png/1200px-Transp.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/8/86/Transp.png/1600px-Transp.png 2x" /></a><figcaption>Транспонирование трехмерного массива при параллельной реализации трехмерного БПФ</figcaption></figure>
+<p>Рассмотрим соотношение вычислений и пересылок данных при MPI-реализации. Вычислительная сложность алгоритма при покоординатном распараллеливании, при запуске на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M }[/math]</span> MPI-процессах составляет  <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \left(6N^3(\log_2 N) + N^3\right)/M }[/math]</span>, т.е., в лучшем случае, <span style="opacity:.5" class="smj-container">[math]\displaystyle{  6N(\log_2 N) + N }[/math]</span> (на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N^2 }[/math]</span> процессах). При этом, суммарное количество отсылаемых и получаемых MPI-пакетов составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 8N_{px}+4N_{py} }[/math]</span>, а суммарное количество отсылаемых и получаемых элементов массива на каждом процессе - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 12N^3/(N_{px}N_{py}) }[/math]</span> (здесь - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{px},~N_{py} }[/math]</span> - количества процессов в двумерной MPI-декомпозиции области по осям <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y }[/math]</span>, соответственно - см. рис. выше). Учитывая, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ M=N_{px}N_{py} }[/math]</span>, получаем, что отношение количества пересылаемых элементов массива к количеству арифметических операций составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha=12/(6\log_2 N + 1) }[/math]</span>. Таким образом, отношение объема пересылаемых элементов к количеству операций не зависит от количества MPI-процессов и уменьшается с ростом размера задачи. При больших <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>, однако, эта зависимость становится слабой, т.е. "насыщается". В то же время, при фиксированном размере задачи, рост количества используемых процессов, не изменяя параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha }[/math]</span>, вызывает рост числа пакетов (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ \propto \sqrt{M} }[/math]</span>, в силу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N_{px} \propto N_{py} \propto \sqrt{M} }[/math]</span> и формул, приведенных выше). В силу латентности сети, это приводит к росту времени пересылки единицы данных и, следовательно, замедлению ускорения алгоритма. 
+</p><p>Приведенный здесь анализ может служить только для ориентировочных оценок, поскольку он не дает времен вычислений и MPI-обменов. Более детальные расчеты для случаев одномерной и двумерной декомпозиции области обширно представлены в литературе <sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>В профилируемом в следующих разделах программном коде параллельной реализации алгоритма вызовы одномерных БПФ по трем направлениям, показанные в листинге п.2.1, перемежаются вызовами специальных процедур, осуществляющих транспонирование массива. Отдельно транспонируются действительная и мнимая части массива (что уже не оптимально - лучше пересылать комплексные числа) с помощью коммуникаций "точка-точка". При этом используются асинхронные пересылки с помощью MPI_ISEND и MPI_IRECV.
+</p>
+<h3><span id=".D0.A0.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B_.D0.BF.D1.80.D0.BE.D0.B3.D0.BE.D0.BD.D0.BE.D0.B2"></span><span class="mw-headline" id="Результаты_прогонов">Результаты прогонов</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Марчук Г.И. Методы вычислительной математики, М., 1977, 456с.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"> Gentleman, W. M.; Sande, G. (1966). "Fast Fourier transforms—for fun and profit". Proc. AFIPS 29: 563–578. doi:10.1145/1464291.1464352 </span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Anshu Dubey and Daniele Tessera. Redistribution strategies for portable parallel FFT: a case study. Concurrency and Computation: Practice and Experience, 13(3):209–220, 2001.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Orlando Ayala, Lian-Ping Wang, Parallel implementation and scalability analysis of 3D Fast Fourier Transform using 2D domain decomposition, Parallel Computing, Volume 39, Issue 1, January 2013, Pages 58-77, ISSN 0167-8191, <a rel="nofollow" class="external free" href="http://dx.doi.org/10.1016/j.parco.2012.12.002">http://dx.doi.org/10.1016/j.parco.2012.12.002</a>.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Orlando Ayala, Lian-Ping Wang, Parallel implementation and scalability analysis of 3D Fast Fourier Transform using 2D domain decomposition, Parallel Computing, Volume 39, Issue 1, January 2013, Pages 58-77, ISSN 0167-8191, <a rel="nofollow" class="external free" href="http://dx.doi.org/10.1016/j.parco.2012.12.002">http://dx.doi.org/10.1016/j.parco.2012.12.002</a>.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">P. Dmitruk, L.-P. Wang, W.H. Matthaeus, R. Zhang, D. Seckel, Scalable parallel FFT for spectral simulations on a Beowulf cluster, Parallel Comput. 27
+(2001) 1921–1936.</span>
+</li>
+</ol></div></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Уравнение_Пуассона,_решение_дискретным_преобразованием_Фурье&amp;oldid=29726">https://algowiki-project.org/w/ru/index.php?title=Уравнение_Пуассона,_решение_дискретным_преобразованием_Фурье&amp;oldid=29726</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Категория:Законченные статьи">Законченные статьи</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0%2C+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC+%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC+%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0%2C+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC+%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC+%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;oldid=29726" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9F%D1%83%D0%B0%D1%81%D1%81%D0%BE%D0%BD%D0%B0,_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%A4%D1%83%D1%80%D1%8C%D0%B5&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Poisson_equation,_solving_with_DFT" title="Poisson equation, solving with DFT — English" lang="en" hreflang="en" data-title="Poisson equation, solving with DFT" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 21 февраля 2025 года в 14:20.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":99,"wgPageParseReport":{"limitreport":{"cputime":"0.050","walltime":"0.341","ppvisitednodes":{"value":770,"limit":1000000},"postexpandincludesize":{"value":5300,"limit":2097152},"templateargumentsize":{"value":1427,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":2,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":37642,"limit":5000000},"timingprofile":["100.00%    7.464      1 -total"," 63.90%    4.769      2 Шаблон:Level-a"," 46.90%    3.501      1 Шаблон:Algorithm"," 21.78%    1.626      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260520112126","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

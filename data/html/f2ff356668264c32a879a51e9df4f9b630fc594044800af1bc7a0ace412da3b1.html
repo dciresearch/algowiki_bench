@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:SenderovichNikita/Алгоритм кластеризации, основанный на построении каркаса — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"66035c29327e66bc2933c6b0","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:SenderovichNikita/Алгоритм_кластеризации,_основанный_на_построении_каркаса","wgTitle":"SenderovichNikita/Алгоритм кластеризации, основанный на построении каркаса","wgCurRevisionId":19014,"wgRevisionId":19014,"wgArticleId":601,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Assignments/Formal","Assignments","Уровень алгоритма","Начатые статьи"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:SenderovichNikita/Алгоритм_кластеризации,_основанный_на_построении_каркаса","wgRelevantArticleId":601,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"SenderovichNikita","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_SenderovichNikita_Алгоритм_кластеризации_основанный_на_построении_каркаса rootpage-Участник_SenderovichNikita skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">SenderovichNikita/Алгоритм кластеризации, основанный на построении каркаса</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita" title="Участник:SenderovichNikita">Участник:SenderovichNikita</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_wait.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Symbol_wait.svg/langru-120px-Symbol_wait.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Symbol_wait.svg/langru-250px-Symbol_wait.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа прошла предварительную проверку<br /><i>Дата последней правки страницы:</i> </span></b>23.11.2016<b></b><br />Данная работа соответствует формальным критериям.<br />Проверено <a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Zhum&amp;action=edit&amp;redlink=1" class="new" title="Участник:Zhum (страница не существует)">Zhum</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">MST-Кластеризация
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2\log N) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log^2 N) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Автор статьи: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita" title="Участник:SenderovichNikita">Сендерович Никита Леонидович</a>
+</p><p>Данный документ содержит описание алгоритма кластеризации, основанного на построении <a href="/ru/%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0_(MST)" title="Построение минимального остовного дерева (MST)">минимального остовного дерева</a> (каркаса, остова, кратчайшего незамкнутого пути, минимального покрывающего дерева, англ. Minimum Spanning Tree (MST)) - эвристического графового алгоритма построения разбиения множества объектов на такие непересекающиеся подмножества объектов, что объекты, принадлежащие одному подмножеству, схожи по заданной метрике в большей степени, чем объекты, принадлежащие разным группам.
+</p><p>Как и все алгоритмы кластеризации, данный алгоритм может быть применён для решения задач кластерного анализа, выделения типовых и нетипичных объектов в рассматриваемой выборке объектов. Его достоинствами по сравнению с другими аналогичными алгоритмами машинного обучения являются наглядность, идейная простота, возможность контролировать число кластеров. Главным недостатком является ограниченная применимость: алгоритм лучше всего подходит для выделения кластеров типа сгущений или лент, наличие разреженного фона или узких перемычек между кластерами может приводить к неадекватному с точки зрения аналитика результату<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>. Другим недостатком является высокая вычислительная сложность: на выборках более 100 тыс. объектов без применения параллельных вычислений применить алгоритм невозможно. Рассмотрению соответствующих параллельных алгоритмов и посвящена данная статья.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Обзор_алгоритмов_поиска_минимального_остова"><span class="tocnumber">1.2.1</span> <span class="toctext">Обзор алгоритмов поиска минимального остова</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Анализ_ресурса_параллелизма_алгоритмов_поиска_минимального_остова"><span class="tocnumber">1.2.2</span> <span class="toctext">Анализ ресурса параллелизма алгоритмов поиска минимального остова</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Локальность_реализации_алгоритма"><span class="tocnumber">2.2.1</span> <span class="toctext">Локальность реализации алгоритма</span></a>
+<ul>
+<li class="toclevel-4 tocsection-18"><a href="#Структура_обращений_в_память_и_качественная_оценка_локальности"><span class="tocnumber">2.2.1.1</span> <span class="toctext">Структура обращений в память и качественная оценка локальности</span></a></li>
+<li class="toclevel-4 tocsection-19"><a href="#Количественная_оценка_локальности"><span class="tocnumber">2.2.1.2</span> <span class="toctext">Количественная оценка локальности</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Масштабируемость_алгоритма"><span class="tocnumber">2.4.1</span> <span class="toctext">Масштабируемость алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Масштабируемость_реализации_алгоритма"><span class="tocnumber">2.4.2</span> <span class="toctext">Масштабируемость реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p>Рассматривается выборка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X = \{x_i\}, i = 1, 2, \ldots, N }[/math]</span>, состоящая из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> объектов с заданной симметричной неотрицательной функцией расстояния <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rho }[/math]</span>. Данную выборку можно рассматривать как связный неориентированный взвешенный граф <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G }[/math]</span>, множество вершин которого совпадает со множеством объектов выборки, веса рёбер соответствуют значениям функции расстояния между соответствующими вершинами.
+</p><p>
+Также должно быть задано искомое число кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span>. </p><figure typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:MSTClusteringFull.png" class="mw-file-description"><img src="/w/ru/images/thumb/2/22/MSTClusteringFull.png/700px-MSTClusteringFull.png" decoding="async" width="700" height="165" class="mw-file-element" srcset="/w/ru/images/2/22/MSTClusteringFull.png 1.5x" /></a><figcaption>Рис.1. Ключевая идея алгоритма кластеризации на основе построения остовного дерева, разбиение на 3 кластера</figcaption></figure>
+<p>Идея рассматриваемого алгоритма кластеризации очень проста:
+</p>
+<ul><li>с помощью какого-либо алгоритма на определённом выше графе строится <a href="/ru/%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0_(MST)" title="Построение минимального остовного дерева (MST)"> минимальное остовное дерево</a></li>
+<li>из полученного дерева выбрасывается <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K - 1 }[/math]</span> ребро с наибольшими весами, что приводит к появлению в остовном дереве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> компонент связности, каждая из которых объявляется кластером</li></ul>
+<p>Иллюстрация работы алгоритма приведена на рис. 1. В данном случае рассматриваются 13 объектов на евклидовой плоскости, построено остовное дерево, после чего из него выброшены 2 наиболее длинных ребра и получены три кластера.
+</p><p>Существуют различные модификации описанного алгоритма, связанные с другим алгоритмом конструирования исходного графа или условием выбрасывания рёбер из построенного остовного дерева. Например, число <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> может быть полезно определить не изначально, а подобрать, рассматривая отсортированную по убыванию последовательность весов рёбер в остовном дереве: если имеется резкое уменьшение весов, то можно удалить все рёбра до него. Формализацией такого подхода является алгоритм ZEMST<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>. Однако в дальнейшем ограничимся анализом определённого выше простейшего варианта.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>Пусть задан связный неориентированный граф на множестве объектов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G = (X, E) }[/math]</span> с неотрицательными весами рёбер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rho(e) = \rho(x_i, x_j) \geqslant 0 }[/math]</span>. 
+</p><p>Наиболее частый используемый на практике сценарий следующий:
+</p>
+<ul><li>каждый объект описывается <span style="opacity:.5" class="smj-container">[math]\displaystyle{ d }[/math]</span>-мерным вектором в пространстве</li>
+<li>используется функция расстояния <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \ell_p }[/math]</span></li></ul>
+<p>Например, случай, когда в качестве метрики выбирается евклидова метрика <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \ell_2 }[/math]</span> в литературе называется EMST - Euclidean Minimum Spanning Tree.
+</p><p>Хотя в некоторых задачах возможна ситуация, когда данный граф не является полным (по каким-то причинам определены не все расстояния между вершинами), но в описанных типовых случаях граф является полным, содержит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{N(N - 1)}{2} = O(N^2) }[/math]</span> рёбер.
+</p>
+<h4><span id=".D0.9E.D0.B1.D0.B7.D0.BE.D1.80_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA.D0.B0_.D0.BC.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE.D1.81.D1.82.D0.BE.D0.B2.D0.B0"></span><span class="mw-headline" id="Обзор_алгоритмов_поиска_минимального_остова">Обзор алгоритмов поиска минимального остова</span></h4>
+<p>Для поиска минимального остовного дерева на практике используется следующие три похожих друг на друга алгоритма и их комбинации: <a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9F%D1%80%D0%B8%D0%BC%D0%B0" title="Алгоритм Прима">Алгоритм Прима</a><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>, <a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D1%80%D1%83%D1%81%D0%BA%D0%B0%D0%BB%D0%B0" title="Алгоритм Крускала">Алгоритм Крускала</a><sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> и <a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%91%D0%BE%D1%80%D1%83%D0%B2%D0%BA%D0%B8" title="Алгоритм Борувки">Алгоритм Борувки</a><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>Кратко опишем принцип работы каждого из этих трёх широко используемых алгоритмов поиска минимального остова в предположении работы с полным графом. Все они основаны на стратегии жадного добавления рёбер в остов. Все они предполагают, что изначально множество рёбер в искомом остовном дереве пусто и отличаются тактикой добавления рёбер. 
+</p><p><b>В алгоритме Прима</b> рассматривается текущее остовное дерево <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>. Изначально <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> состоит из одной вершины, выбранной произвольно. Далее на каждом шаге отыскивается минимальное ребро, ровно один из концов которого принадлежит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>, оно добавляется в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> вместе со вторым своим концом. Алгоритм завершается через <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N - 1 }[/math]</span> шаг - ровно столько рёбер в дереве на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> вершинах. Последовательная реализация, при которой минимальное ребро на каждом шаге ищется полным перебором рёбер, исходящих из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>, имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^3) }[/math]</span> на полном графе. Алгоритм можно ускорить, если поддерживать двоичное дерево поиска по рёбрам, ровно один из концов которых принадлежит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>. Тогда при добавлении очередной вершины в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> необходимо добавить в двоичное дерево не более чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N - 1 }[/math]</span> новое ребро за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N \log N) }[/math]</span>, а выбор минимума осуществляется за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log N) }[/math]</span>. Поскольку шаг добавления вершины повторяется <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> раз, итоговая сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2 \log N) }[/math]</span>.
+</p><p><b>В алгоритме Крускала</b> остов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> изначально пуст, и в остов на каждом шаге добавляется вместе со своими концами минимальное ребро, имеющееся в графе, не нарушающее свойства ацикличности уже выбранного на предыдущих шагах леса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>. Через <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N - 1 }[/math]</span> шаг лес <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> гарантированно станет связным деревом. Если искать минимум полным перебором по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span> рёбрам полного графа, сложность получится <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^3) }[/math]</span>. Если же предварительно отсортировать все рёбра по весу за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2 \log N^2) = O(N^2 \log N) }[/math]</span>, то дальше все рёбра искомого остова можно будет добавить в процессе одного прохода по этому массиву рёбер в порядке возрастания весов - для каждого ребра проверяем, не нарушает ли оно свойство ацикличности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> и добавляем его в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>, если не нарушает. Для того чтобы быстро проверять свойство принадлежности обоих концов ребра одной из компонент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>, используется эффективная структура данных - система непересекающихся множеств<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>. Сложность одной такой проверки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\alpha(N)) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha(N) }[/math]</span> - обратная функция Аккермана, значение которой не превосходит 4 для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \leqslant 10^{500} }[/math]</span>. Итоговая сложность такого алгоритма равна сложности сортировки и также составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2 \log N) }[/math]</span>.
+</p><p><b>В алгориме Борувки</b>, как и в алгоритме Крускала, поддерживается лес <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>. Изначально лес состоит из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> изолированных вершин графа. На каждом шаге путём перебора всех рёбер графа для каждого дерева в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> ищется минимальное ребро, ровно один конец которого принадлежит этому дереву. После этого все найденные рёбра добавляются в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>. Поскольку после каждой итерации число деревьев в лесе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>, исходно равное <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span>, уменьшается не менее чем в 2 раза, таких шагов будет произведено не более <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log N }[/math]</span>, поэтому итоговая сложность алгоритма составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2\log N) }[/math]</span>.
+</p>
+<h4><span id=".D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.B0_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA.D0.B0_.D0.BC.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE.D1.81.D1.82.D0.BE.D0.B2.D0.B0"></span><span class="mw-headline" id="Анализ_ресурса_параллелизма_алгоритмов_поиска_минимального_остова">Анализ ресурса параллелизма алгоритмов поиска минимального остова</span></h4>
+<p>Итак, каждый из данных алгоритмов имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2\log N) }[/math]</span>, однако с точки зрения параллельной реализации они различаются. Эффективные реализации алгоритмов Прима и Крускала используют структуры данных, рассчитанные на последовательный характер алгоритма. Так, двоичное дерево поиска, содержащее все рёбра, исходящие из построенного на данный момент остова <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>, трудно приспособить к распределённым архитектурам. А при работе с полным графом с большим числом вершин хранить его становится практически невозможно. В алгоритме Крускала можно распараллелить этап сортировки рёбер, но на последнем шаге алгоритма необходимо последовательно просмотреть отсортированный массив <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span> рёбер, поддерживая СНМ, что сводит на нет параллелизм. Таким образом, для этих двух алгоритмов необходима существенная переработка для получения эффективного параллельного решения <sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>На этом фоне выгодно выделяется исторически первый алгоритм Борувки. Он был разработан чешским учёным Отакаром Борувкой в 1926 году для решения задачи построения оптимальной электрической сети в Моравии. Он эффективнее всего использует тат факт, что остовные деревья сперва можно найти для отдельных частей графа, после чего объединить полученные деревья. Далее будем рассматривать именно этот метод для построения минимального остовного дерева в алгоритме кластеризации.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро всех алгоритмов поиска каркаса - нахождение минимального из рёбер, не приводящего к возникновению ацикличности графа. Именно для оптимизации этой операции используются эффективные структуры данных и алгоритмы. В дальнейшем будет показано, что для выбранного алгоритма Борувки на этом этапе возможна эффективная параллельная реализация. В случае использования этого алгоритма для поиска минимального остовного дерева вычисление ядра состоит в нахождении для каждого дерева из уже имеющегося остовного леса минимального исходящего из него ребра, т.е. минимального ребра, исходящего из вершин данного дерева вовне.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Основными элементами алгоритма, которые дальше будут использоваться, являются следующие процедуры:
+</p>
+<ul><li>вычисление расстояния <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \rho(x_i, x_j) }[/math]</span> между объектами (вершинами полного графа)</li>
+<li>функции для работы с графом - инициализация добавление, удаление ребра</li>
+<li>обход в глубину для выделения компонент связности графа: обход леса производится за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span> с помощью функции <i>обновить_компоненты</i>, которая возвращает массив <i>компонента</i>, содержащий номер компоненты связности для каждой вершины</li>
+<li>процедура сравнения рёбер: рёбра сравниваются по весу, а при равенстве весов - по идентификатору ребра. Это важная составная часть алгоритма Борувки, поскольку иначе на этапе добавления рёбер могут возникнуть циклы. Простейшим примером является граф из трёх вершин, все попарные расстояния между которыми равны 1: если по ходу работы для первой окажется ближайшей вторая, для второй третья, а для третьей первая, то в граф будет добавлен цикл.</li>
+<li>сортировка массива рёбер по их весу</li></ul>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p>Определим с помощью псевдокода ряд функций, необходимых для построения искомого результата.
+</p><p>Алгоритм Борувки поиска минимального остовного дерева в полном графе
+</p>
+<div class="mw-highlight mw-highlight-lang-text mw-content-ltr mw-highlight-lines" dir="ltr"><pre><span></span><span class="linenos" data-line="1"></span>Вход: Выборка объектов X размера N
+<span class="linenos" data-line="2"></span>Выход: рёбра минимального остовного дерева T
+<span class="linenos" data-line="3"></span>Алгоритм:
+<span class="linenos" data-line="4"></span>  T&#160;:= пустое множество рёбер
+<span class="linenos" data-line="5"></span>  компонента&#160;:= обновить_компоненты(T)
+<span class="linenos" data-line="6"></span>  есть_разные_компоненты&#160;:= 1
+<span class="linenos" data-line="7"></span>  Пока (есть_разные_компоненты равно 1):
+<span class="linenos" data-line="8"></span>    есть_разные_компоненты = 0
+<span class="linenos" data-line="9"></span>    инициализировать массив D кратчайших рёбер, исходящих из компонент, бесконечно длинными рёбрами
+<span class="linenos" data-line="10"></span>    цикл по всем парам вершин (x, y) из X:
+<span class="linenos" data-line="11"></span>      если компонента(x) не равно компонента(y):
+<span class="linenos" data-line="12"></span>        есть разные компоненты&#160;:= 1
+<span class="linenos" data-line="13"></span>        d&#160;:= расстояние(x, y)
+<span class="linenos" data-line="14"></span>        если (ребро (x, y) &lt; ребро D(компонента(x))):
+<span class="linenos" data-line="15"></span>            D(компонента(x))&#160;:= (x, y)
+<span class="linenos" data-line="16"></span>        если (ребро (x, y) &lt; ребро D(компонента(y))):
+<span class="linenos" data-line="17"></span>            D(компонента(y))&#160;:= (x, y)
+<span class="linenos" data-line="18"></span>    цикл по рёбрам E из D:
+<span class="linenos" data-line="19"></span>       добавить E в множество T
+<span class="linenos" data-line="20"></span>    компонента&#160;:= обновить_компоненты(T)
+<span class="linenos" data-line="21"></span>  вернуть Т
+</pre></div>
+<p>Итоговый алгоритм кластеризации:
+</p>
+<div class="mw-highlight mw-highlight-lang-text mw-content-ltr mw-highlight-lines" dir="ltr"><pre><span></span><span class="linenos" data-line="1"></span>Вход: Выборка объектов X, число кластеров K
+<span class="linenos" data-line="2"></span>Выход: метки кластеров для каждого объекта из X
+<span class="linenos" data-line="3"></span>Алгоритм:
+<span class="linenos" data-line="4"></span>   T&#160;:= рёбра минимального остовного дерева для набора объектов X
+<span class="linenos" data-line="5"></span>   E&#160;:= отсортировать рёбра T по убыванию
+<span class="linenos" data-line="6"></span>   цикл по первым K рёбрам в E:
+<span class="linenos" data-line="7"></span>      удалить ребро из T
+<span class="linenos" data-line="8"></span>   компонента&#160;:= обновить_компоненты(T)
+<span class="linenos" data-line="9"></span>   вернуть компонента
+</pre></div>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>В разделе "Обзор алгоритмов поиска минимального остова" уже было показано, что алгоритм Борувки поиска остова имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2 \log N) }[/math]</span>: поскольку на каждом шаге число компонент уменьшается не менее чем в 2 раза, цикл <i>while</i> выполнится не более <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \log N }[/math]</span> раз. Внутри цикла находятся: 
+</p>
+<ul><li>инициализация массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span> кратчайших рёбер, исходящих из компонент связности, бесконечностями - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span></li>
+<li>перебор по всем рёбрам полного графа и обновление содержимого ячеек массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span> - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span></li>
+<li>добавление найденных рёбер из массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span> в граф <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span></li>
+<li>обновление компонент связности в графе <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span> - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span></li></ul>
+<p>После поиска остова рёбра остовного дерева сортируются за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N \log N) }[/math]</span> операций, за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span> производится выбрасывание рёбер, за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span> определяются финальные метки кластеров.
+</p><p>Итоговая сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2 \log N) }[/math]</span> операций. В ходе работы основными являются операции сравнения и обращения в память. Обратим внимание, что "узким местом" алгоритма является перебор по всем рёбрам для нахождения минимальных рёбер, исходящих из каждой компоненты связности остовного леса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Приведём информационный граф, оставив за скобками детали реализации последних шагов алгоритма - сортировки и выбрасывания рёбер:
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:InformationGraph.png" class="mw-file-description"><img src="/w/ru/images/thumb/3/34/InformationGraph.png/700px-InformationGraph.png" decoding="async" width="700" height="577" class="mw-file-element" srcset="/w/ru/images/3/34/InformationGraph.png 1.5x" /></a><figcaption>Рис.2. Информационная структура алгоритма кластеризации, основанного на поиске минимального остовного дерева</figcaption></figure>
+<p>Кратко опишем шаги схемы. Для вычисления массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span> необходимо обработать некоторые из перебираемых рёбер (конкретные связи зависят от структуры текущего остовного дерева <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>), поэтому на этом этапе присутствует нерегулярность по данным; кроме того необходима инициализация массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span>. Поскольку на шаге 2 для каждой компоненты необходимо выбирать минимум из набора рёбер, размер которого не ограничен константой, данная операция взятия минимума имеет, вообще говоря, параллельную сложность не менее чем <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log N) }[/math]</span>. Операции обновления структуры остовного графа независимы, могут быть распараллелены и склеены в шаг 3. Алгоритмы сортировки и поиска компонент связности теоретически имеют высоту ярусно-параллельной формы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log N) }[/math]</span>. Независимо могут быть выполнены и последние этапы алгоритма, связанные с выбрасыванием рёбер и получением финального ответа, хотя на практике это не так уж важно. Таким образом, поскольку последовательно делается <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log N) }[/math]</span> итераций цикла, на каждой из которых высота ярусно параллельной формы имеет порядок <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log N) }[/math]</span>, итоговая высота ярусно-параллельной формы (и, соответственно, параллельная сложность алгоритма) - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log^2 N) }[/math]</span>. Ширина ярусно-параллельной формы алгоритма - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span>.
+</p><p>Здесь необходимо отметить, что описанный алгоритм для поиска остовного дерева теоретически не является наиболее оптимальным: в статье <sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup> приводится алгоритм для графа <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G = (V, E) }[/math]</span>, имеющий оптимальную параллельную сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log N) }[/math]</span>. Однако, будучи оптимальным в теории, данный алгоритм не практичен - он исходит из числа процессоров порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(V + E) }[/math]</span> (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span> в нашем случае полного графа).
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Как показал анализ сложности узким местом является нахождение минимальных рёбер, исходящих из каждой компоненты связности остовного леса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>. Информационный граф говорит о том, что этот этап можно эффективно распаралелить, так как выбор минимального исходящего ребра для каждой компоненты связности остовного дерева и даже для каждой вершины может исполняться независимо. Процедуры инициализации массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D }[/math]</span>, добавления найденных рёбер в граф могут быть произведены независимо по элементам. Параллельно может быть проведена и сортировка, и выбрасывание рёбер в конце, хотя это не так принципиально в реальности. Но это позволяет оценить высоту ярусно-параллельной формы и теоретическую параллельную сложность алгоритма.
+</p><p>Операции на ключевом этапе алгоритма достаточно сбалансированы - в полном графе для каждой из вершин необходимо просмотреть всех её соседей, поэтому в случае равномерного по вершинам графа распределения работ, эффективность параллельной реализации будет высокой. В целом, имеет место массовый параллелизм на итерациях вычисления ближайших вершин для текущего набора компонент связности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ T }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p>Входными данными алгоритма является описание выборки из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> объектов. В типовом случае каждый из них описывается <span style="opacity:.5" class="smj-container">[math]\displaystyle{ d }[/math]</span> координатами, однако может описываться каким-то иным способом, позволяющим находить расстояния между объектами. Также на вход передаётся число искомых кластеров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span>.
+</p><p>Выходом является массив из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> целых чисел от 1 до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K }[/math]</span> - номера кластеров, найденных алгоритмом кластеризации.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>Известно, что минимальное остовное дерево определено однозначно, если в графе все рёбра различны. Очень важно ввести операцию сравнения рёбер и добиться, чтобы все рёбра были различны. Пример, когда алгоритм Борувки зацикливается из-за этого, приведён выше. 
+</p><p>Распараллеливание описанного алгоритма может принести значительный выигрыш - без него алгоритм фактически невозможно запустить на данных с числом объектов более 100 тысяч. Теоретические возможности распараллеливания на самом сложном этапе - вычислении минимального остовного дерева - были подробно обсуждены выше. Однако на практике может возникнуть ряд трудностей, связанных с эффективным обменом информацией между процессами. Так, всем параллельно работающим процессам необходимо быстро отвечать на вопрос о расположении вершин графа в одной компоненте связности - решения этой проблемы можно добиться, если синхронизировать информацию о найденных оптимальных рёбрах в конце каждой итерации.
+</p><p>Кроме того, важно помнить, что в условиях полного графа каждому узлу необходима и информация обо всех кластеризуемых объектах - чтобы можно было вычислять расстояния между вершинами, не храня все <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N^2) }[/math]</span> расстояний.
+</p><p><br />
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h3>
+<h4><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Локальность_реализации_алгоритма">Локальность реализации алгоритма</span></h4>
+<h5><span id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D1.8C_.D0.B8_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Структура_обращений_в_память_и_качественная_оценка_локальности">Структура обращений в память и качественная оценка локальности</span></h5>
+<h5><span id=".D0.9A.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D1.86.D0.B5.D0.BD.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Количественная_оценка_локальности">Количественная оценка локальности</span></h5>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h3>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_алгоритма">Масштабируемость алгоритма</span></h4>
+<h4><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Масштабируемость_реализации_алгоритма">Масштабируемость реализации алгоритма</span></h4>
+<p>С помощью технологии OpenMP был реализован параллельный алгоритм построения остовного дерева, основанный на алгоритме Борувки. Был распараллелен основной bottleneck алгоритма - поиск минимального ребра, исходящего из кластеров. В качестве данных для экспериментов использовались сгенерированные случайным образом точки на плоскости.
+</p><p>Эксперимент производился на 16-процессорной машине под управлением операционной системы Linux, характеристики процессора: 2,6GHz Intel E3-12xx (Sandy Bridge), 8 instruction per cycle. Опираясь на эти характеристики, получаем, что пиковая теоретическая производительность одного процессора составляет 20,8 Gflops, а вычислительной системы в целом составляет 332,8 GFlops.
+</p><p>Вычислительная сложность каждой задачи оценивалась сверху по формуле: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 7N^2\log N }[/math]</span>, где константу 7 определяет число операций с плавающей точкой, необходимое для вычисления квадрата расстояния между двумя точками на плоскости (для выбора минимального ребра в алгоритме Борувки достаточно знать квадрат его длины).
+</p><p>Перебирались следующие параметры запуска, от которых самым существенным образом зависит время работы программы:
+</p>
+<ul><li>число процессоров: от 2 до 16 с шагом 2</li>
+<li>число кластеризуемых объектов (точек): от 50 тысяч до 150 тысяч с шагом 10 тысяч</li></ul>
+<p>Для получения наиболее устойчивых результатов каждый эксперимент производился 5 раз, после чего время работы усреднялось по запускам.
+</p><p>Ссылка на код реализованного алгоритма и лог эксперимента: <a rel="nofollow" class="external free" href="https://drive.google.com/open?id=0B4KJzu2I13loaldSbF9XUnJXQ00">https://drive.google.com/open?id=0B4KJzu2I13loaldSbF9XUnJXQ00</a>
+</p><p>Приведём графики времени работы, производительности и эффективности в зависимости от параметров, демонстрирующие свойства параллельной реализации:
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Times_plot.png" class="mw-file-description"><img src="/w/ru/images/thumb/9/98/Times_plot.png/500px-Times_plot.png" decoding="async" width="500" height="500" class="mw-file-element" srcset="/w/ru/images/9/98/Times_plot.png 1.5x" /></a><figcaption>Рис.3. График времени работы программы в зависимости от числа процессов и размера задачи</figcaption></figure>
+<p>Видим, что использование параллелизма позволяет существенно сократить временные затраты, однако в связи с необходимостью синхронизации процессов при переходе к очередной итерации алгоритма эффект параллелизма падает с увеличением числа процессоров. К примеру, на самой большой рассматриваемой задаче (150 тыс. точек) по сравнению с использованием 2 процессоров при использовании 4 процессоров время работы снижается примерно в 1.95 раз (с 469 до 240 секунд), а при использовании всех 16 процессоров - только в 6.8 раз вместо идеальных 8 (с 469 до 69 секунд).
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Perf_plot.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/6/69/Perf_plot.png/500px-Perf_plot.png" decoding="async" width="500" height="336" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/6/69/Perf_plot.png/750px-Perf_plot.png 1.5x, https://algowiki-project.org/algowiki/pool/images/6/69/Perf_plot.png 2x" /></a><figcaption>Рис.4. График производительности программы в зависимости от числа процессов и размера задачи</figcaption></figure>
+<p>Производительность по числу процессоров напоминает линейную функцию, но при переходе от числа процессоров 14 к 16 видим существенное изменение наклона, которое говорит о том, что этот переход даёт несколько меньший выигрыш по времени по сравнению с предыдущими.
+</p><p>Вывод о понижении эффективности параллелизма с увеличением числа процессоров подтверждает и следующий график:
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Eff_plot.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/f/fc/Eff_plot.png/500px-Eff_plot.png" decoding="async" width="500" height="336" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/f/fc/Eff_plot.png/750px-Eff_plot.png 1.5x, https://algowiki-project.org/algowiki/pool/images/f/fc/Eff_plot.png 2x" /></a><figcaption>Рис.5. График эффективности программы в зависимости от числа процессов и размера задачи</figcaption></figure>
+<p>Отметим, что в зависимости от количества точек (данных) графики производительности и эффективности ведут себя неустойчиво - это связано с нерегулярностью в алгоритме решения задачи, существенной зависимостью количества вычислений от структуры получающихся по ходу работы кластеров.
+</p><p>Масштабируемость программы описывается следующими вычисленными согласно предложенной методике ключевыми показателями:
+</p>
+<ul><li>минимальная эффективность - 7,32%, максимальная эффективность - 11,75%. Как видим, в архитектуре с общей памятью удалось достичь весьма высоких показателей эффективности</li>
+<li>оценка масштабируемости по числу процессов: -0.00041 - данная цифра говорит о том, что при повышении числа процессов эффективность медленно падает. Это вызвано ростом накладных расходов на синхронизацию результатов, независимо полученных полученных процессорами.</li>
+<li>оценка масштабируемости по размеру задачи: 0.00002 - данная оценка имеет весьма большую дисперсию из-за наблюдаемых перепадов эффективности при изменении размерности задачи, однако в среднем с ростом задачи эффективность очень медленно растёт. Это подтверждает естественное соображение о том, что для больших задач использование параллелизма прирносит наибольшую пользу.</li>
+<li>оценка масштабируемости по двум направлениям: -0.00002 - при увеличении одновременно вычислительной сложности и числа процессоров имеем очень медленное убывание эффективности.</li></ul>
+<h3><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h3><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h3>
+<p>Как правило, в библиотеках реализуют не собственно алгоритм кластеризации с использованием остовного дерева, а только алгоритм остовного дерева, предоставляя пользователю возможность самостоятельно реализовать функции построения графа и обработки результатов работы алгоритма. 
+</p><p>Параллельная реализация алгоритма MST:
+</p>
+<ul><li>C++, MPI: <a rel="nofollow" class="external text" href="http://www.boost.org/libs/graph_parallel/doc/html/index.html">Parallel Boost Graph Library</a>; функции <code><a rel="nofollow" class="external text" href="http://www.boost.org/libs/graph_parallel/doc/html/dehne_gotz_min_spanning_tree.html#dense-boruvka-minimum-spanning-tree">dense_boruvka_minimum_spanning_tree</a></code>, <code><a rel="nofollow" class="external text" href="http://www.boost.org/libs/graph_parallel/doc/html/dehne_gotz_min_spanning_tree.html#boruvka-then-merge">boruvka_then_merge</a></code>, <code><a rel="nofollow" class="external text" href="http://www.boost.org/libs/graph_parallel/doc/html/dehne_gotz_min_spanning_tree.html#boruvka-mixed-merge">boruvka_mixed_merge</a></code> сочетают <a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%91%D0%BE%D1%80%D1%83%D0%B2%D0%BA%D0%B8" title="Алгоритм Борувки">алгоритм Борувки</a> и <a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D1%80%D1%83%D1%81%D0%BA%D0%B0%D0%BB%D0%B0" title="Алгоритм Крускала">алгоритм Крускала</a>.</li></ul>
+<p>Последовательные реализации доступны во многих библиотеках:
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://networkx.github.io/documentation/networkx-1.9/_modules/networkx/algorithms/mst.html">NetworkX MST</a> - реализация в библиотеке для работы с графами на Python</li>
+<li><a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/1_38_0/libs/graph/doc/prim_minimum_spanning_tree.html">Алгоритм Прима</a>, <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/1_62_0/libs/graph/doc/kruskal_min_spanning_tree.html">Алгоритм Крускала</a> - C++ реализация в boost</li>
+<li><a rel="nofollow" class="external text" href="http://jgrapht.org/javadoc/org/jgrapht/alg/PrimMinimumSpanningTree.html">Алгоритм Прима</a>, <a rel="nofollow" class="external text" href="http://jgrapht.org/javadoc/org/jgrapht/alg/KruskalMinimumSpanningTree.html">Алгоритм Крускала</a> - Java реализация в JGraphT</li></ul>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.ccas.ru/voron/download/Clustering.pdf">Воронцов К.В. "Лекции по алгоритмам кластеризации и многомерного шкалирования"</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www4.ncsu.edu/~zjorgen/ictai06.pdf">Minimum Spanning Tree Based Clustering Algorithms</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Prim, R C. “Shortest Connection Networks and Some Generalizations.” Bell System Technical Journal 36, no. 6 (November 1957): 1389–1401. doi:10.1002/j.1538-7305.1957.tb01515.x.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Kruskal, Joseph B. “On the Shortest Spanning Subtree of a Graph and the Traveling Salesman Problem.” Proceedings of the American Mathematical Society 7, no. 1 (January 1956): 48–50. doi:10.1090/S0002-9939-1956-0078686-7.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Borůvka, Otakar. “O Jistém Problému Minimálním.” Práce Moravské Přírodovědecké Společnosti III, no. 3 (1926): 37–58.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://e-maxx.ru/algo/dsu">Система непересекающихся множеств</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.cslab.ntua.gr/~knikas/files/papers/mtaap12kruskal.pdf">An approach to parallelize Kruskal's algorithm using Helper Threads</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://i.cs.hku.hk/~twlam/papers/mst-jacm.ps">Concurrent threads and optimal parallel minimum spanning trees algorithm</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092741
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.046 seconds
+Real time usage: 0.308 seconds
+Preprocessor visited node count: 933/1000000
+Post‐expand include size: 7366/2097152 bytes
+Template argument size: 1823/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 2/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 16254/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.193      1 -total
+ 74.47%    4.612      1 Шаблон:Algorithm
+ 48.26%    2.989      1 Шаблон:Level-a
+ 24.75%    1.533      1 Шаблон:Assignment
+ 18.32%    1.135      1 Шаблон:Infobox
+ 15.66%    0.970      1 Шаблон:Плашка
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:601-0!canonical and timestamp 20260611092741 and revision id 19014. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:SenderovichNikita/Алгоритм_кластеризации,_основанный_на_построении_каркаса&amp;oldid=19014">https://algowiki-project.org/w/ru/index.php?title=Участник:SenderovichNikita/Алгоритм_кластеризации,_основанный_на_построении_каркаса&amp;oldid=19014</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Formal" title="Категория:Assignments/Formal">Assignments/Formal</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9D%D0%B0%D1%87%D0%B0%D1%82%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Категория:Начатые статьи">Начатые статьи</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ASenderovichNikita%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%2C+%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BD%D0%B0+%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8+%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3ASenderovichNikita%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%2C+%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9+%D0%BD%D0%B0+%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8+%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/SenderovichNikita" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/SenderovichNikita"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/SenderovichNikita"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0&amp;oldid=19014" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:SenderovichNikita/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8,_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%B0&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 23 ноября 2016 года в 14:12.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":409,"wgPageParseReport":{"limitreport":{"cputime":"0.046","walltime":"0.308","ppvisitednodes":{"value":933,"limit":1000000},"postexpandincludesize":{"value":7366,"limit":2097152},"templateargumentsize":{"value":1823,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":2,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":16254,"limit":5000000},"timingprofile":["100.00%    6.193      1 -total"," 74.47%    4.612      1 Шаблон:Algorithm"," 48.26%    2.989      1 Шаблон:Level-a"," 24.75%    1.533      1 Шаблон:Assignment"," 18.32%    1.135      1 Шаблон:Infobox"," 15.66%    0.970      1 Шаблон:Плашка"]},"cachereport":{"timestamp":"20260611092741","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

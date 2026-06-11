@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Алгоритм DCSC поиска компонент сильной связности — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"4e700bad82006afbb027b21b","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Алгоритм_DCSC_поиска_компонент_сильной_связности","wgTitle":"Алгоритм DCSC поиска компонент сильной связности","wgCurRevisionId":28990,"wgRevisionId":28990,"wgArticleId":314,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма","Статьи в работе"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Алгоритм_DCSC_поиска_компонент_сильной_связности","wgRelevantArticleId":314,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":28990,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%7Cext.pygments%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Алгоритм_DCSC_поиска_компонент_сильной_связности rootpage-Алгоритм_DCSC_поиска_компонент_сильной_связности skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Алгоритм DCSC поиска компонент сильной связности</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм DCSC поиска компонент сильной связности
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V| \ln(|V|)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V| + |E|) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V|) }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ C * O(ln(u)) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|E|) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Elijah" title="Участник:Elijah">И.В.Афанасьев</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.2</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Результаты_прогонов"><span class="tocnumber">2.3</span> <span class="toctext">Результаты прогонов</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.4</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p><b>Алгоритм DCSC</b><sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup> (англ. Divide and Conquer Strong Components – компоненты сильной связности по принципу «Разделяй и властвуй») находит <a href="/ru/%D0%A1%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B2_%D0%B3%D1%80%D0%B0%D1%84%D0%B0%D1%85" title="Связность в графах">компоненты сильной связности</a> ориентированного графа с ожидаемой работой <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V| \ln |V|) }[/math]</span> (при условии ограниченной константой степени вершин). 
+</p><p>Также алгоритм носит другое название - Forward-Backward (сокр. FB-algorithm), в основном в литературе, связанной с его GPU-реализациями. <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>Алгоритм изначально предназначен для параллельной реализации: на каждом шаге он находит одну компоненту сильной связности и выделяет до трёх подмножеств графа, которые содержат другие компоненты связности и могут обрабатываться параллельно. Кроме того, выделение данных подмножеств и сильно связанной компоненты на каждом шаге также может производиться параллельно (с использованием параллельных поисков в ширину). Следует отметить, что в данном случае не требуется синхронизации между итерациями поиска в ширину, поскольку требуется только определить достижимые вершины, но не расстояния до них.
+</p><p>Алгоритм хорошо подходит для графов, имеющих небольшое число сильно-связанных компонент большого размера. При значительном увеличении числа сильно связанных компонент сложность данного алгоритма также значительно увеличивается (пропорционально числу компонент), из-за чего данный алгоритм может стать менее эффективным в сравнении с последовательным алгоритмом Тарьяна, выделяющим сильно-связанные компоненты за один проход по графу. 
+</p><p>Для увеличения эффективности работы алгоритма на графах с большим числом тривиальных сильно-связанных компонент (размера 1 или 2), предложена модификация алгоритма: перед началом работы классического алгоритма производится шаг Trim, описанный в следующих разделах, позволяющий выделять все тривиальные сильно-связанные компоненты. В результате, к примеру в RMAT графах, после шага Trim в графе остается всего лишь несколько компонент сильной связанности большого размера, на которых алгоритм будет иметь небольшую алгоритмическую сложность.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span>  – некоторая вершина графа. Определим следующие множества вершин:
+</p><p>⎯ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Fwd(v) }[/math]</span>  –&#160;вершины, достижимые из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> .
+</p><p>⎯ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Pred(v) }[/math]</span> – вершины, из которых достижима <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> (эквивалентно – вершины, достижимые из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> в графе, полученном из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G }[/math]</span> обращением всех рёбер).
+</p><p>Используя эти множества, разобьём все вершины графа на четыре области:
+</p><p>⎯ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_1 =  Fwd(v) \cap Pred(v)  }[/math]</span>
+</p><p>⎯ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_2 =  Fwd(v) \setminus Pred(v)  }[/math]</span>
+</p><p>⎯ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_3 =   Pred(v) \setminus Fwd(v) }[/math]</span>
+</p><p>⎯ <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_4 =   V \setminus Pred(v) \setminus Fwd(v) }[/math]</span>
+</p><p>Тогда можно утверждать следующее:
+</p><p>1.	Область <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_1 }[/math]</span> является компонентой сильной связности.
+</p><p>2.	Любая другая компонента сильной связности полностью содержится в одной из областей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_2 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_3 }[/math]</span>, или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_4 }[/math]</span>.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Основными вычислительными операциями алгоритма являются поиск вершин, достижимых из выбранной вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span>, а также поиск вершин, из которых достижима выбранная вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span>. Обе данные операции могут быть реализованы через поиски в ширину, устроенные следующим образом:
+</p><p>1.    Вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v_0 }[/math]</span> помещается в начало очереди и помечается как посещенная. 
+</p><p>2.    Верхняя вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> извлекается из очереди. Для всех ребер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (v, u) }[/math]</span>, исходящих из вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span>, проверяется, является ли посещенной вершина  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span>. В случае, если является, вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span> помещается в начало очереди.
+</p><p>3.    Происходит переход на шаг 2 до тех пор, пока в очереди есть вершины.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Алгоритм DCSC состоит в следующем:
+</p><p>1.	Поместить в очередь множество <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V }[/math]</span>.
+</p><p>2.	Параллельно обрабатывать очередь. Для каждого элемента очереди <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V }[/math]</span>:
+</p><p>а)	Выбрать произвольную ведущую вершину <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v \in V }[/math]</span>.
+</p><p>б)	Вычислить множества <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Fwd(v) }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Pred(v) }[/math]</span> (эти два вычисления можно производить параллельно, кроме того, как указано выше, сами эти вычисления хорошо параллелизуются).
+</p><p>в)	Добавить множество <span style="opacity:.5" class="smj-container">[math]\displaystyle{  V_1 }[/math]</span> в список компонент сильной связности.
+</p><p>г)	Добавить множества <span style="opacity:.5" class="smj-container">[math]\displaystyle{  V_2 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_3 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ V_4 }[/math]</span> в очередь.
+</p><p>3.	Алгоритм завершает работу, когда очередь пуста и не осталось активных процессов-обработчиков.
+</p><p>Для улучшения балансировки нагрузки на первых шагах можно выбирать не одну ведущую вершину, а сразу несколько. Тогда, если они принадлежат различным компонентам связности, граф будет сразу разбит на большое количество областей, которые будут далее обрабатываться параллельно.
+</p><p>Важной модификацией алгоритма является шаг Trim, производимый перед основными вычислениями алгоритма DCSC, который может быть описан следующим образом:
+</p><p>1.     Пометить все вершины из  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v \in V }[/math]</span> активными.
+</p><p>2.     Для каждой вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span>вычислить число входящих (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ in(v) }[/math]</span>) и исходящих (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ out(v) }[/math]</span>) дуг <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (v, u) \in E }[/math]</span>, таких, что вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span> - активная.
+</p><p>3.    Все вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v \in V }[/math]</span> , для которых <span style="opacity:.5" class="smj-container">[math]\displaystyle{ in(v) }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ out(v) }[/math]</span> равно нулю, пометить как неактивные.
+</p><p>4.    Переходить на шаг 2, до тех пор, пока число активных вершин не перестанет изменяться.
+</p><p>Кроме того, в зависимости от схемы хранения графа может потребоваться предварительное нахождение транспонированного к нему для более эффективной реализации как шага trim, так и поиска вершин, из которых достижима заданная вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> в вычислительном ядре алгоритма.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p>Последовательный алгоритм реализуется следующим псевдокодом:
+</p>
+<pre><b>Входные данные</b>:
+  граф с вершинами <i>V</i>, рёбрами <i>E</i>;
+<b>Выходные данные</b>: номера компонент сильной связанности <i>c(v)</i> для каждой вершины <i>v</i> ∈ <i>V</i>.
+</pre>
+<div class="mw-highlight mw-highlight-lang-c++ mw-content-ltr" dir="ltr"><pre><span></span><span class="n">compute_scc_with_trim</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="n">G</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transpose</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="w">	</span><span class="n">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trim</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="w">	</span><span class="n">compute_scc</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">compute_scc</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="err">’</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pivot</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+
+<span class="w">	</span><span class="n">fwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">	</span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bfs</span><span class="p">(</span><span class="n">G</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+
+<span class="w">	</span><span class="n">compute_scc</span><span class="p">(</span><span class="n">fwd</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pred</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="err">’</span><span class="p">)</span>
+<span class="w">	</span><span class="n">compute_scc</span><span class="p">(</span><span class="n">pred</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fwd</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="err">’</span><span class="p">)</span>
+<span class="w">	</span><span class="n">compute_scc</span><span class="p">(</span><span class="n">V</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fwd</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="err">’</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">pivot</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">V</span>
+<span class="p">}</span>
+
+<span class="n">trim</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">V</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="w">		</span><span class="n">active</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+
+<span class="w">	</span><span class="n">changes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="w">	</span><span class="k">do</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">V</span>
+<span class="w">			</span><span class="n">in_deg</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">compute_in_degree</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="w">			</span><span class="n">out_deg</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">compute_out_degree</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="w">		</span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">V</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">in_deg</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">out_deg</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">				</span><span class="n">active</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="w">				</span><span class="n">changes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">changes</span><span class="p">)</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">active</span>
+<span class="p">}</span>
+</pre></div>
+<p>bfs здесь стандартный поиск в ширину, описанный в соответствующем разделе, результатом которого являются все узлы, достижимые из вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{  p  }[/math]</span> в графе <span style="opacity:.5" class="smj-container">[math]\displaystyle{  G  }[/math]</span>
+</p>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Ожидаемая последовательная сложность алгоритма составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V| \ln(|V|)) }[/math]</span> при условии, что степень вершин ограничена сверху константой.
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>На рисунке 1 представлен информационный граф алгоритма DCSC, демонстрирующий связь между его основными частями.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:DCSC_full_ig.png" class="mw-file-description"><img src="/w/ru/images/thumb/9/99/DCSC_full_ig.png/500px-DCSC_full_ig.png" decoding="async" width="500" height="388" class="mw-file-element" srcset="/w/ru/images/thumb/9/99/DCSC_full_ig.png/750px-DCSC_full_ig.png 1.5x, /w/ru/images/thumb/9/99/DCSC_full_ig.png/1000px-DCSC_full_ig.png 2x" /></a><figcaption>Рисунок 1. Информационный граф алгоритма DCSC(Forward-Backward-Trim).</figcaption></figure>
+<p>Итак, алгоритм состоит из первоначального шага Trim, выбора pivot-вершины [1], поиска в ширину в прямом и транспонированном графах (forward и backward BFS), обработки результатов поиска [2], проверки необходимости проведения последующих рекурсивных шагов [3],  а также рекурсивных вызовов FB-шага. Далее будут приведены более подробные информационные графы для каждой из частей, а также дана подробная расшифровка соответствующих операций, а в следующем разделе мы оценим ресурс параллелизма для каждой части алгоритма. 
+</p><p>На рисунке 2 представлен информационный граф шага Trim. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:DCSC_trim_step.png" class="mw-file-description"><img src="/w/ru/images/thumb/4/46/DCSC_trim_step.png/500px-DCSC_trim_step.png" decoding="async" width="500" height="396" class="mw-file-element" srcset="/w/ru/images/thumb/4/46/DCSC_trim_step.png/750px-DCSC_trim_step.png 1.5x, /w/ru/images/thumb/4/46/DCSC_trim_step.png/1000px-DCSC_trim_step.png 2x" /></a><figcaption>Рисунок 2. Информационный граф шага Trim алгоритма DCSC.</figcaption></figure>
+<p>[1] - выделение памяти под массивы данных числа входящих и исходящих дуг, а также активных вершин
+</p><p>[2] - инциализация переменной наличия изменений
+</p><p>[3] - инициализация массива сильно связанных компонент, а также массива активных вершин.
+</p><p>[4] - установка переменной наличия изменений в позицию "нет изменений"
+</p><p>[5] - обнуление массивов числа входящих и исходящих дуг
+</p><p>[6] - проверка, активны ли вершины на концах каждого ребра, увеличение числа входящих/исходящих дуг для соответствующих вершин, изменение переменной наличия изменений
+</p><p>[7] - проверка активности всех вершин графа
+</p><p>[8] - присваивание номеров сильно связанных компонентам с нулевой степенью входящих или исходящих вершин
+</p><p>[9] - проверка, происходили ли изменения на шаге 6, переход к следующей итерации
+</p><p>Информационный граф этапа поиска в ширину (Forward и Backward BFS) приведен в соответствующем разделе (<a href="/ru/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_%D0%B2_%D1%88%D0%B8%D1%80%D0%B8%D0%BD%D1%83_(BFS)" title="Поиск в ширину (BFS)">Поиск_в_ширину_(BFS)</a>).
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Алгоритм изначально предназначен для параллельной реализации и имеет несколько уровней параллелизма. 
+</p><p>На верхнем уровне алгоритм DCSC может параллельно выполнять FB-шаги, продемонстрированные на рисунке 1. Таким образом, на каждом рекурсивном шаге алгоритма могут рекурсивно порождаться до 3 новых параллельных процессов, общее число которых равно числу сильно связанных компонент графа. Кроме того, поиски в ширину в исходном и транспонированном графах независимы и также могут выполняться параллельно друг с другом. Таким образом, на верхнем уровне может выполняться до <span style="opacity:.5" class="smj-container">[math]\displaystyle{  2*u/log|u| }[/math]</span> параллельных потоков, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{  u  }[/math]</span> - это число сильно связанных компонент графа. Важно заметить, что вычисления FB-шагов одного уровня (а также всех последующих рекурсивных) абсолютно независимы по данным, так как производятся в непересекающихся множествах вершин графа, поэтому могут производиться в том числе и на различных узлах. Кроме того, составные шаги алгоритма (поиск в ширину и шаг Trim) также имеют значительный потенциал параллелизма, описанный далее.
+</p><p>Этап Trim алгоритма, информационный граф которого приведен на рисунке 2, обладает значительным ресурсом параллелизма: единственной последовательной частью является  инициализация массивов и переменных (1)(2), а также проверка условия выхода из цикла (9). Операции (3),(5),(7) и (8) абсолютно независимы и могут производиться параллельно, их число составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V|) }[/math]</span>. Проверки и обновления данных в операции (6) также могут производиться параллельно, однако обновления данных должны производиться атомарно. Число операций (6) равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(E) }[/math]</span>. Таким образом, почти все операции шага Trim могут выполняться параллельно, при этом число параллельно выполняемых операций составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |V| }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |E| }[/math]</span>. Учитывая, что величины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |V| }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |E| }[/math]</span> для графов большого размера крайне велики, потенциал параллелизма данной части алгоритма очень значителен и достаточен для полной загрузки современных вычислительных узлов/сопроцессоров. Кроме того, операции (3),(5),(7),(8) могут быть успешно векторизованы. 
+</p><p>Ресурс параллелизма операции поиска в ширину подробно описан в соответствующем разделе (<a href="/ru/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_%D0%B2_%D1%88%D0%B8%D1%80%D0%B8%D0%BD%D1%83_(BFS)" title="Поиск в ширину (BFS)">Поиск_в_ширину_(BFS)</a>). В зависимости от выбора формата хранения графа, подход к параллельной реализации поиска в ширину может быть линейным или квадратичным (в худшем случае). 
+</p><p>В случае линейного подхода на каждом шаге алгоритма поиска в ширину может выполняться <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span> параллельных операций, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> - это число вершин, добавленных для просмотра на предыдущем шаге. Перед началом работы алгоритма для просмотра добавляется вершина-источник, на первом шаге - все еще не посещенные смежные с ней, на втором - все еще не посещенные смежные с вершинами на первом шаге, и т.д. Максимальное (или даже среднее) число вершин на каждом шаге оценить проблематично, так как число шагов алгоритма, число достижимых вершин, а также структура связей между ними определены лишь структурой конкретного входного графа. В случае, если все вершины достижимы, а число шагов поиска в ширину составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{  r  }[/math]</span>, то среднее число параллельно обрабатываемых вершин на каждом шаге составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{  O(|V|)/r  }[/math]</span>. Важно заметить, что наибольший уровень параллелизма достигается на средних шагах алгоритма, в то время как число вершин для обработки на начальных и конечных шагах может быть небольшим.
+</p><p>В случае квадратической параллелизации алгоритм поиска в ширину на каждом шаге обходит все ребра графа, таким образом выполняя <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|E|) }[/math]</span> параллельных операций, что совпадает с аналогичной оценкой для шага trim. Кроме того, поиск в ширину при реализации с использованием формата списка ребер графа может быть векторизован.
+</p><p>Таким образом, на начальном этапе алгоритма может выполняться <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V|) }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|E|) }[/math]</span> параллельных операций. Далее следует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(log(u)) }[/math]</span> шагов, в каждом из которых в среднем присутствует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2*u/O(log(u)) }[/math]</span> поисков в ширину, которые так же обладают внутренним ресурсом параллелизма: каждый поиск в ширину имеет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|E|) }[/math]</span> параллельных операций на каждом шаге при квадратическом подходе к параллелизации.
+</p><p>Высота и ширина ярусно-параллельной формы зависит от структуры графа (числа и расположения сильно связанных компонент), по причине аналогичной зависимости шагов FB_step от входных данных.
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><b>Входные данные</b>: граф <span style="opacity:.5" class="smj-container">[math]\displaystyle{ G(V, E) }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |V| }[/math]</span> вершин <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v_i }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |E| }[/math]</span> рёбер <span style="opacity:.5" class="smj-container">[math]\displaystyle{ e_j = (v^{(1)}_{j}, v^{(2)}_{j}) }[/math]</span>.
+</p><p><b>Объём входных данных</b>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V| + |E|) }[/math]</span>.
+</p><p><b>Выходные данные</b>: для каждой вершины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ v }[/math]</span> исходного графа – номер компоненты сильной связанности, в которую входит данная вершина <span style="opacity:.5" class="smj-container">[math]\displaystyle{  c(v)  }[/math]</span>, вершины, принадлежащие одной компоненте сильно связанности имеют одинаковые номера
+</p><p><b>Объём выходных данных</b>: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(|V|) }[/math]</span>.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>Вычислительное ядро алгоритма основано на поисках в ширину, поэтому многие свойства (локальность, масштабируемость) этих алгоритмов также схожи.
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<h3><span id=".D0.A0.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B_.D0.BF.D1.80.D0.BE.D0.B3.D0.BE.D0.BD.D0.BE.D0.B2"></span><span class="mw-headline" id="Результаты_прогонов">Результаты прогонов</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Fleischer, Lisa K, Bruce Hendrickson, and Ali Pınar. “On Identifying Strongly Connected Components in Parallel.” In Lecture Notes in Computer Science, Volume 1800, Springer, 2000, pp. 505–11. doi:10.1007/3-540-45591-4_68.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">McLendon, William, III, Bruce Hendrickson, Steven J Plimpton, and Lawrence Rauchwerger. “Finding Strongly Connected Components in Distributed Graphs.” Journal of Parallel and Distributed Computing 65, no. 8 (August 2005): 901–10. doi:10.1016/j.jpdc.2005.03.007.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Hong, Sungpack, Nicole C Rodia, and Kunle Olukotun. “On Fast Parallel Detection of Strongly Connected Components (SCC) in Small-World Graphs,” Proceeedings of SC'13, 1–11, New York, New York, USA: ACM Press, 2013. doi:10.1145/2503210.2503246.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"> Jiˇr ́ı Barnat, Petr Bauch, Lubosˇ Brim, and Milan Cˇesˇka. Computing Strongly Connected Components in Parallel on CUDA. Faculty of Informatics, Masaryk University, Botanicka ́ 68a, 60200 Brno, Czech Republic. </span>
+</li>
+</ol></div></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Алгоритм_DCSC_поиска_компонент_сильной_связности&amp;oldid=28990">https://algowiki-project.org/w/ru/index.php?title=Алгоритм_DCSC_поиска_компонент_сильной_связности&amp;oldid=28990</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%B2_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5" title="Категория:Статьи в работе">Статьи в работе</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+DCSC+%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82+%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9+%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+DCSC+%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82+%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9+%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8&amp;oldid=28990" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_DCSC_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82_%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D0%B8&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/DCSC_algorithm_for_finding_the_strongly_connected_components" title="DCSC algorithm for finding the strongly connected components — English" lang="en" hreflang="en" data-title="DCSC algorithm for finding the strongly connected components" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 6 июля 2022 года в 15:13.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":118,"wgPageParseReport":{"limitreport":{"cputime":"0.029","walltime":"0.031","ppvisitednodes":{"value":644,"limit":1000000},"postexpandincludesize":{"value":5125,"limit":2097152},"templateargumentsize":{"value":1346,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":16414,"limit":5000000},"timingprofile":["100.00%    5.483      1 Шаблон:Algorithm","100.00%    5.483      1 -total"," 55.06%    3.019      1 Шаблон:Level-a"," 26.44%    1.450      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092750","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

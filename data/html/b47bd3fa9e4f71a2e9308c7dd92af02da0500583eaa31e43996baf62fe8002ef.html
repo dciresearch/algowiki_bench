@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Алгоритм Качмажа — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"f181eb62e6bd3da76e483e7b","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Алгоритм_Качмажа","wgTitle":"Алгоритм Качмажа","wgCurRevisionId":29116,"wgRevisionId":29116,"wgArticleId":447,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма","Статьи в работе"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Алгоритм_Качмажа","wgRelevantArticleId":447,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgStableRevisionId":29116,"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","mediawiki.codex.messagebox.styles":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%7Cext.pygments%7Cmediawiki.codex.messagebox.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Алгоритм_Качмажа rootpage-Алгоритм_Качмажа skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Алгоритм Качмажа</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Алгоритм Качмажа (S.&#160;Kaczmarz)
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \cdot O(n) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> - количество итераций, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> - количество неизвестных.
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ m \cdot n + m + n }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> - количество уравнений в системе.
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Elena_Kozlova" title="Участник:Elena Kozlova">Е.С. Козлова</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ivanov_Andrey" title="Участник:Ivanov Andrey"> А.А. Иванов</a>.
+</p><p>Синонимы названия алгоритма: <b>метод алгебраической реконструкции</b>, <b>Algebraic Reconstruction Technique</b>, <b>Projection onto Convex Sets</b>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритмов"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритмов</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Библиография"><span class="tocnumber">1.1.1</span> <span class="toctext">Библиография</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Математическое_описание"><span class="tocnumber">1.2.1</span> <span class="toctext">Математическое описание</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Геометрическая_интерпретация"><span class="tocnumber">1.2.2</span> <span class="toctext">Геометрическая интерпретация</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.2</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Результаты_прогонов"><span class="tocnumber">2.3</span> <span class="toctext">Результаты прогонов</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.4</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#ЧАСТЬ._Дополнительная_информация"><span class="tocnumber">3</span> <span class="toctext">ЧАСТЬ. Дополнительная информация</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Классификация_проекционных_последовательностей"><span class="tocnumber">3.1</span> <span class="toctext">Классификация проекционных последовательностей</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Рандомизированная_версия_алгоритма_и_скорость_сходимости"><span class="tocnumber">3.2</span> <span class="toctext">Рандомизированная версия алгоритма и скорость сходимости</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Алгоритм_Качмажа_с_четной_перестановкой"><span class="tocnumber">3.3</span> <span class="toctext">Алгоритм Качмажа с четной перестановкой</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Литература"><span class="tocnumber">4</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2"></span><span class="mw-headline" id="Свойства_и_структура_алгоритмов">Свойства и структура алгоритмов</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p>Метод алгебраической реконструкции - полностью последовательный строковый (row-action method) метод с длинной историей, богато описанный в литературе. В классическом виде метод был впервые сформулирован и предложен польским математиком С.&#160;Качмажем (Stefan Kaczmarz) для решения систем линейных алгебраических уравнений  с квадратными и невырожденными матрицами, а в последствии независимо был использован Р.&#160;Гордоном и др. (R.&#160;Gordon; R.&#160;Bender; Herman) для реконструкции изображений по их проекционным данным в задаче рентгеновской компьютерной томографии.
+</p><p>В более общем случае последовательность, полученная по методу итераций С.&#160;Качмажа, также сходится к решению и для переопределенных, но обязательно совместных систем линейных алгебраических уравнений. На каждой итерации алгоритма используется только одно уравнение системы линейных алгебраических уравнений, но в результате пересчитывается каждая компонента приближенного решения на данной итерации. 
+</p><p>Далее представим наивный вывод итерационного метода следуя общим представлениям. Запишем систему линейных алгебраических уравнений с невырожденной матрицей коэффициентов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A \cdot u=f,\, A\in \mathbb{R}^{n\times n},\, u\in \mathbb{R}^{n},\, f\in \mathbb{R}^{n} }[/math]</span>. Проследим процедуру минимизации с использованием метода оптимального координатного спуска, описанную, например, в <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>. Рассмотрим функцию ошибки: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Phi\left(u\right)=\Vert u_{*}-u\Vert^{2} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_{*} }[/math]</span> - единственное решение системы в смысле метода наименьших квадратов.
+</p><p>Будем искать решение системы на некотором линейном подпространстве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Lambda\left(\varphi_{1},\ldots,\varphi_{p}\right) }[/math]</span> в виде итерационной последовательности: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u^{0}=\Theta,\, u^{k+1}=u^{k}\,+\, C_{k}\varphi_{j\left(k\right)} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right)\in\left\{ 1,2,\ldots,p\right\} }[/math]</span>, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{k} }[/math]</span> - некоторый неизвестный коэффициент. Легко заметить, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Phi\left(u^{k+1}\right)=\Vert u_{*}-u^{k+1}\Vert^{2}=\Vert u_{*}-u^{k}-C_{k}\varphi_{j\left(k\right)}\Vert^{2} }[/math]</span>
+</p><p>Обозначим вектор <span style="opacity:.5" class="smj-container">[math]\displaystyle{ z^{k}=u_{*}-u^{k} }[/math]</span> - вектор ошибок приближения решения системы уравнений на шаге с номером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>. Предположим также, что  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Vert\varphi_{i}\Vert=1,\,\forall i=\overline{1,p} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ p=m }[/math]</span>. С учетом этого: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Phi\left(u^{k+1}\right)=\Vert z^{k}-C_{k}\varphi_{j\left(k\right)}\Vert^{2}=\Vert z^{k}\Vert^{2}-2C_{k}\left(z^{k},\varphi_{j\left(k\right)}\right)+C_{k}^{2} }[/math]</span>.
+</p><p>Продифференцируем последнее уравнение по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{k} }[/math]</span> и приравняем к нулю, в результате получим, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C_{k}=\left(z^{k},\varphi_{j\left(k\right)}\right) }[/math]</span>. 
+</p><p>Возвращаясь к системе уравнений, пусть вектора в линейной оболочке <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Lambda }[/math]</span> выбраны как <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \varphi_{i}=\frac{a_{i}}{\Vert a_{i}\Vert} }[/math]</span>, тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left(z^{k},a_{j\left(k\right)}\right)=f_{j\left(k\right)}-a_{j\left(k\right)}^{T}u^{k} }[/math]</span> и последовательность приобретает законченный вид. Основная формула алгоритма:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ u^{k+1}=u^{k}+\frac{f_{j\left(k\right)}-\left(a_{j\left(k\right)},u^{k}\right)}{\Vert a_{j\left(k\right)}\Vert^{2}}a_{j\left(k\right)} }[/math]</span>. 
+</p><p>Мы показали достаточно наивное построение алгоритма, которое не доказывает ни факт сходимости, ни тем более к решению задачи - это предмет доказательства теоремы о сходимости при определенном задании отображения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> (при построении мы не накладывали на него никаких ограничений). Однако данное построение позволяет проследить идею о минимизации ошибки решения (а не невязки системы) и связь алгоритма Качмажа с методом координатного спуска по векторам <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \varphi_{i} }[/math]</span>.
+</p><p>Все дальнейшие модификации данной формулы, а, соответственно, и самого алгоритма, основаны на:
+</p>
+<ul><li>введения параметра релаксации,</li>
+<li>экзотических способах задания отображения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span>,</li>
+<li>выборе специальных критериев останова итераций,</li>
+<li>переходе к блочным модификациям.</li></ul>
+<h4><span id=".D0.91.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D1.8F"></span><span class="mw-headline" id="Библиография">Библиография</span></h4>
+<p>Стефан Качмаж - польский математик, родился 1895 г. в городе Самбор (Sambor) Галиция (Galicia), Австро-Венгрия (Austria-Hungary), ныне Украина. Стефан Качмаж был профессором математики на факультете машиностроения университета Яна Казимира (Jan Kazimierz University) в городе Львов (Lwów) с 1919 по 1939 год, там же сотрудничал с Стефаном Банахом. Предложенный им итерационный метод решения системы линейных алгебраических уравнений послужил основой для многих современных технологий в обработке изображений, в том числе в задачах компьютерной томографии <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>Применение метода С. Качмажа или так называемого метода алгебраической реконструкции наиболее известно в задачах реконструктивной компьютерной томографии высокого разрешения. Для интерпретации данных, полученных в результате неразрушающего сканирования некоторого объекта, с 60-70-х годов применяются различные аппаратные и программные реализации итерационного метода, разработанного польским математиком С.&#160;Качмажем (S.&#160;Kaczmarz) в 1937 году<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>; этот метод был использован Г.&#160;Хаусфилдом (G.N.&#160;Hounsfield) - конструктором первого томографа «ЭМИ-сканнер»<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> (нобелевская премия по физиологии и медицине в 1979 году).
+</p><p>Так же данный метод можно часто встретить под следующими названиями: Algebraic Reconstruction Technique (ART)<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>, Projection onto Convex Sets (PCS)<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>, Kaczmarz Algorithm <sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup> или метод ортогональных проекций. 
+</p><p>Конструированию различных алгоритмов на основе итераций С. Качмажа посвящено существенное количество работ: согласно исследованию польского математика и библиографа А.&#160;Сигелски (A. Cegielski), на начало 2010 года статья С. Качмажа цитируется более, чем в четырехстах реферируемых и значимых публикациях ученых из различных областей знаний. В Советской и Российской научных школах исследования итераций С.&#160;Качмажа представлены в литературе такими известными учеными как: В.Н.&#160;Ильин, Г.П.&#160;Васильченко, А.А.&#160;Светлаков и другие, например, в работах<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup>. Общие идеи о проекционных методах также представлены в классической работе Л. Г. Гурина, Б. Т. Поляка, Э. В. Райка<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span class="cite-bracket">&#91;</span>12<span class="cite-bracket">&#93;</span></a></sup>, где впервые предлагается и обосновывается идентичный алгоритм для решения систем линейных алгебраических неравенств и уравнений.
+</p><p>В 2008 году американскими математиками Т.&#160;Штромером (T. Strohmer) и Р. Вершининым (R. Vershynin) в <sup id="cite_ref-strohmer_13-0" class="reference"><a href="#cite_note-strohmer-13"><span class="cite-bracket">&#91;</span>13<span class="cite-bracket">&#93;</span></a></sup> была предложена рандомизированная модификация итерационного метода, в которой последовательность приближений к решению для совместных и переопределенных систем линейных алгебраических уравнений сходится с экспоненциальной скоростью.
+</p><p>Множество модификаций идеи метода ортогональных проекций нашли свое практическое применение в различных областях знаний, связанных с обработкой и интерпретацией больших объемов данных: при реконструкции синограмм в медицине, биологии, геологии; при решении задач диагностики плазмы, кристаллографии<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span class="cite-bracket">&#91;</span>14<span class="cite-bracket">&#93;</span></a></sup>, дефектоскопии и микроскопии, параллельных вычислений и распределенного анализа<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span class="cite-bracket">&#91;</span>15<span class="cite-bracket">&#93;</span></a></sup> и др.
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<h4><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Математическое_описание">Математическое описание</span></h4>
+<p>Запишем совместную (в общем случае - переопределенную) систему линейных алгебраических уравнений:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ Au=f,\, A\in \mathbb{R}^{m\times n},\, u\in \mathbb{R}^{n},\, f\in \mathbb{R}^{m}, }[/math]</span>
+</p><p>тогда итерации согласно алгоритму определяются последовательностью
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ u^{k+1}=u^{k}+\lambda_{k}\frac{f_{j\left(k\right)}-\left(a_{j\left(k\right)},u^{k}\right)}{\Vert a_{j\left(k\right)}\Vert^{2}}a_{j\left(k\right)}, }[/math]</span>
+</p><p>где
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=\left(a_{1},\, a_{2},\,\ldots\,,\, a_{m}\right)^{T}\in \mathbb{R}^{m\times n},\, u\in \mathbb{R}^{n},\, f=\left(f_{1},\, f_{2},\,\ldots\,,\, f_{m}\right)\in \mathbb{R}^{m}, }[/math]</span>
+</p><p>а последовательность проектирования в классическом варианте алгоритма определяется как
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right)=\left(k\ \bmod\ m\right)+1,\, k=\overline{0,\infty}, }[/math]</span>
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> - номер итерации, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u^{0} }[/math]</span> - начальное приближение, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lambda_{k} \in \left(0,2\right) }[/math]</span> - параметр релаксации  (Рисунки 1 и 2 построены для случая, когда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \lambda_{k}=1,\,\forall k }[/math]</span>).
+</p>
+<h4><span id=".D0.93.D0.B5.D0.BE.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.BF.D1.80.D0.B5.D1.82.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Геометрическая_интерпретация">Геометрическая интерпретация</span></h4>
+<p>Метод алгебраической реконструкции достаточно просто формулируется с использованием его геометрической интерпретации. Рассмотрим совместную систему уравнений с двумя неизвестными:
+</p>
+<pre><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A=\begin{pmatrix}3 &amp; 2\\
+2 &amp; 3
+\end{pmatrix},\text{ }f=\begin{pmatrix}1\\
+2
+\end{pmatrix} }[/math]</span>
+</pre>
+<p>и несовместную переопределенную, полученную добавлением к этой системе дополнительного уравнения  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ -u_{1}+u_{2}=1.5 }[/math]</span>. Каждое уравнение из системы уравнений можно интерпретировать как гиперплоскость в пространстве координат, а решение совместной системы - как точку пересечения всех этих гиперплоскостей. При использовании метода алгебраической реконструкции для решения системы линейных алгебраических уравнений поиск приближенного решения осуществляется в направлениях, перпендикулярных к гиперплоскостям, каждая из которых описывается отдельным уравнением решаемой системы (см. Рис.1).
+</p>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Kz_geom_in.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/c/c3/Kz_geom_in.png/700px-Kz_geom_in.png" decoding="async" width="700" height="496" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/c/c3/Kz_geom_in.png 1.5x" /></a><figcaption>Рисунок 1. К геометрической интерпретации метода алгебраической реконструкции: слева - случай совместной системы, справа - несовместной системы</figcaption></figure>
+<p>Интерактивная диаграмма для совместного случая подготовлена авторами статьи <a rel="nofollow" class="external text" href="https://www.geogebra.org/m/uSy72FTa">здесь (Notes about S. Kaczmarz algorithm - consistent case)</a>, а для несовместного случая <a rel="nofollow" class="external text" href="https://www.geogebra.org/m/QckSdw7t">здесь (Notes about S. Kaczmarz algorithm - inconsistent case)</a>. Данные диаграммы позволяют регулировать параметры системы уравнений и начальное приближение, что позволяет наглядно демонстрировать сходимость итерационной последовательности.
+</p><p>Описанные результаты наводят на очевидную идею - проекционная последовательность влияет на скорость сходимости метода ортогональных проекций. Обратите внимание на Рис.2.
+</p>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Al_kaz_sequence.png" class="mw-file-description"><img src="/w/ru/images/thumb/d/dc/Al_kaz_sequence.png/700px-Al_kaz_sequence.png" decoding="async" width="700" height="263" class="mw-file-element" srcset="/w/ru/images/d/dc/Al_kaz_sequence.png 1.5x" /></a><figcaption>Рисунок 2. Выбор последовательности проектирования в алгоритме С. Качмажа: К выбору последовательности ортогональных проекций: слева - последовательность проектирования начинается от первого к последнему уравнению и в обратном порядке - от последнего к предпоследнему (symART<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span class="cite-bracket">&#91;</span>16<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span class="cite-bracket">&#91;</span>17<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span class="cite-bracket">&#91;</span>18<span class="cite-bracket">&#93;</span></a></sup>), а справа - последовательность строится циклическим способом (от последнего к первому уравнению и т.д.)</figcaption></figure>
+<p>Как показано на Рис. 2 - итерационная последовательность, в случае Рис. 2 (справа) сходится вообще за конечное число итераций.
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро алгоритма Качмажа состоит из двух частей:
+</p>
+<ul><li>предварительный расчет норм всех строк матрицы и задание начального приближения к решению,</li>
+<li>серия итераций, на каждой из которых приближенное решение пересчитывается с использованием одной операций <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> <i>(scalar multiplication and vector addition)</i> <sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span class="cite-bracket">&#91;</span>19<span class="cite-bracket">&#93;</span></a></sup> и одного скалярного произведения векторов.</li></ul>
+<p>Часть предварительного расчета необходима для оптимизации вычислений внутри итерационного процесса, для этого требуется выделение дополнительной памяти (<span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> числовых ячеек памяти) для хранения норм строк матрицы.
+</p><p>Расчет очередного приближения решения системы линейных алгебраических уравнений и оценки точности его вычисления выполняются в цикле вплоть до выхода по одному из условий:
+</p>
+<ol><li>достижение необходимой точности;</li>
+<li>достижение максимального числа итераций.</li></ol>
+<p>Оценку сходимости последовательности можно проводить, например, по невязке (на что будут потрачены дополнительные вычислительные ресурсы), или контролируя норму разности приближенных решений между итерациями. Количество сложений, умножений и сравнений прямо пропорционально количеству итераций.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>Опуская предварительный расчет, базовой макрооперацией алгоритма является операция <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a>. В подготовительной части алгоритма рассчитываются нормы строк матрицы (заранее могут быть рассчитаны и номера проекций). Далее последовательно в цикле производится запись (перезапись) предыдущего приближения решения, а далее путем обращения к базовым макрооперациям алгоритма: <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> и векторного произведения, вычисляется следующее приближение решения. Выход из цикла осуществляется путем проверки достижения заданной точности (сравнение отклонения двух полученных приближений). Исходя из вышеописанного, можно сказать, что параллелизация алгоритма ограничена его итерационной природой (каждое следующее приближение зависит от предыдущего), а эффективность параллельных реализаций операции <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> и скалярного произведения увеличивается с увеличением размерности задачи (фактически, с увеличением количества неизвестных в системе уравнений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>).
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<ol><li>Инициализируем вектор решения первым приближением: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u = u^{0} }[/math]</span>. В качестве первого приближения зачастую используется нулевой вектор.</li>
+<li>Рассчитываем нормы строк матрицы системы уравнений: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\Vert A \Vert} }[/math]</span>.</li>
+<li>Вычисляем очередной номер проекции: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right)=\left(k\ \bmod\ m\right)+1,\, k=\overline{0,\infty} }[/math]</span>.</li>
+<li>Для целей обеспечения устойчивости, проверяем, что норма соответствующей проекции не близка к нулю и продолжаем вычисления, иначе переходим к новой итерации (пункт 3).</li>
+<li>Запоминаем предыдущее приближение решения и вычисляем новое: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u^{k+1}=u^{k}+\lambda_{k}\frac{f_{j\left(k\right)}-\left(a_{j\left(k\right)},u^{k}\right)}{\Vert a_{j\left(k\right)}\Vert^{2}}a_{j\left(k\right)} }[/math]</span>.</li>
+<li>Если решение вычислено с заданной точностью, то выходим из цикла; иначе переходим к новой итерации (пункт 3).</li></ol>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Вычислительная сложность алгоритма Качмажа определяется сложностью реализации операции <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>. Затраты на предварительный расчет обычно не включают в сложность самого алгоритма. В итоге, общая сложность алгоритма Качмажа зависит от количества итераций и равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k \cdot O(n) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> - количество неизвестных в системы линейных алгебраических уравнений. При этом, в определенных случаях, можно сделать верхние оценки необходимого количества итераций для нахождения приближенного решения с заданной точностью.
+</p><p>К важным особенностям необходимо отнести то, что алгоритмическая сложность каждой итерации не зависит от ее номера, а общий объем памяти, необходимый для реализации алгоритма, линейно зависит от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> (количества неизвестных), но не от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> (количества измерений).
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Исходя из описания алгоритма, можно построить информационный граф алгоритма (см. Рис. 3). В качестве вершин графа выступают следующие операции:
+</p>
+<ol><li>Задание начального приближения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U = Zeros() }[/math]</span> (см. пункт 1 раздела 1.5).</li>
+<li>Вычисление норм строк матрицы: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nrma2 = Norms(A) }[/math]</span> (см. пункт 2 раздела 1.5).</li>
+<li>Вычисление номера проекции (вычисляется в цикле): <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = Index() }[/math]</span> (см. пункт 3 раздела 1.5).</li>
+<li>Сохранение предыдущего приближения решения (вычисляется в цикле): <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U_{prev} = U }[/math]</span>.</li>
+<li>Расчет нового приближения решения (вычисляется в цикле): <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U = Calc(U,j,nrma2) }[/math]</span> (см. пункт 5 раздела 1.5).</li></ol>
+<p>Граф алгоритма является параметризованным (зависит от входных данных) и не детерминированным (в смысле, что количество вычислений зависит от начальных данных).
+</p>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%98%D0%93.jpg" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/3/3e/%D0%98%D0%93.jpg/700px-%D0%98%D0%93.jpg" decoding="async" width="700" height="282" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/3/3e/%D0%98%D0%93.jpg/1050px-%D0%98%D0%93.jpg 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/3/3e/%D0%98%D0%93.jpg/1400px-%D0%98%D0%93.jpg 2x" /></a><figcaption>Рисунок 3. Информационный граф алгоритма Качмажа.</figcaption></figure>
+<p>Из приведенных графов следует, что зависимость каждой итерации цикла от предыдущей исключает параллельную реализацию алгоритма. Фактически, в качестве подготовительных действий возможно одновременно рассчитать начальное приближение, нормы строк матрицы и порядок обхода (номера проекций), остальная часть алгоритма выполняется исключительно последовательно.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Алгоритм Качмажа, как любой итерационный алгоритм, является последовательным и в строковой версии алгоритма ресурс для параллелизма оказывается небольшим - только за счет параллельных реализаций операции <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> и скалярного произведения.
+</p><p>Однако, существуют различные блочные версии алгоритма Качмажа, где проектирование осуществляется не на конкретную гиперплоскость, а на их пересечение в рамках выбранного блока. Такие модификации имеют существенно больший ресурс для распараллеливания и связаны с трудоемкими задачами псевдообращения и задачей выбора оптимального размера блока (в общем случае не предполагается, что система разбивается на блоки равных размеров, что еще больше усложняет задачу).
+</p>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p>Входными данными алгоритма являются:
+</p>
+<ol><li>матрица системы уравнений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A\in \mathbb{R}^{m\times n} }[/math]</span>,</li>
+<li>вектор правых частей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f\in \mathbb{R}^{m} }[/math]</span>,</li>
+<li>требуемая точность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \epsilon\gt 0 }[/math]</span>,</li>
+<li>а так же максимальное количество итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ K_{max}\in \mathbb{N} }[/math]</span>.</li></ol>
+<p>Объем входных данных составляет  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m \cdot n + m + 2 }[/math]</span> ячеек памяти.
+</p><p>Выходными данными алгоритма является вектор решения системы уравнений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u\in \mathbb{R}^{n} }[/math]</span>. Объем выходных данных составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> ячеек памяти.
+</p><p>Важно отметить, что для начала итераций (в случае, когда этап предварительных расчетов опускается) вся система не нужна, достаточно всего одного уравнения, остальные можно подавать в "решатель" последовательно. Таким образом, в задачах обработки результатов измерений нет необходимости запоминать в оперативной памяти все результаты измерений, достаточно результаты каждого измерения подавать в "решатель" и по завершению итерации - забывать их (особенно интересно, в случае, когда провести измерение повторно оказывается дешевле, чем сохранить его результаты). Как считают авторы, данный факт играл решающую роль в выборе алгоритма для решения задач компьютерной томографии, в которых измерения (срезы синограммы) появляются последовательно, а повторение измерения лишь увеличивает лучевую нагрузку на сканируемый объект и само время сканирования (но, объем лучевой нагрузки, естественно, является критичным для биологических объектов).
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Вычислительная_мощность" title="Глоссарий"><i>Вычислительную мощность</i></a> алгоритма подсчитать затруднительно, так как формально, последовательность приближений сходится к точному решению в пределе.
+</p><p>Вопрос о вычислительной устойчивости алгоритма остается открытым, для уменьшения артефактов вычислений в арифметике с плавающей точкой рекомендуется не использовать в проекционной последовательности те строки матрицы, нормы которых близки к нулю.
+</p><p>Алгоритм <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Детерминированность" title="Глоссарий"><i>недетерминирован</i></a> по структуре вычислительного процесса: число итераций, а значит и число операций, зависят от входных данных. С другой стороны, алгоритм детерминирован в том смысле, что выдаёт всегда одинаковый результат при одинаковых входных данных (естественно, исключая рандомизированные модификации алгоритма Качмажа).
+</p>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<p>Ниже представлен прототип программной реализации алгоритма на языке MatLab. Большое количество вариантов реализации и различных модификаций представлено в этих пакетах <sup id="cite_ref-airtools_20-0" class="reference"><a href="#cite_note-airtools-20"><span class="cite-bracket">&#91;</span>20<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-regkaz_21-0" class="reference"><a href="#cite_note-regkaz-21"><span class="cite-bracket">&#91;</span>21<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<div class="mw-highlight mw-highlight-lang-matlab mw-content-ltr" dir="ltr"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ u ] = ART</span><span class="p">(</span>A, f, maxit, tol<span class="p">)</span>
+<span class="c">%ART1 - алгоритм алгебраической реконструкции (С. Качмажа) с циклическим обходом</span>
+<span class="c">%   A, f - исходные данные задачи</span>
+<span class="c">%   tol - чувствительность правила останова</span>
+<span class="w">	</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">	</span><span class="c">% Нормы строк матрицы СЛАУ рассчитываются заранее</span>
+<span class="w">	</span><span class="n">nrma2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">full</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="o">.*</span><span class="n">A</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)));</span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">maxit</span><span class="w">     </span>
+<span class="w">		</span><span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nrma2</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="k">continue</span><span class="p">,</span><span class="w"> </span><span class="k">end</span><span class="p">;</span>
+<span class="w">		</span><span class="n">u_prev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">		</span><span class="n">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">j</span><span class="p">,:)</span><span class="o">*</span><span class="n">u</span><span class="p">))</span><span class="o">/</span><span class="n">nrma2</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="nb">j</span><span class="p">,:)</span><span class="o">&#39;</span><span class="p">;</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">norm</span><span class="p">(</span><span class="n">u_prev</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">tol</span><span class="p">),</span><span class="w"> </span><span class="k">break</span><span class="p">,</span><span class="w"> </span><span class="k">end</span><span class="p">;</span>
+<span class="w">	</span><span class="k">end</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+</pre></div>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>В качестве критерия завершения итераций используют наиболее популярные правила останова (но не всегда эффективные): критерий останова по невязке <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left\Vert A\cdot u_{k}-f\right\Vert \lt \epsilon }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left\Vert u_{k-1}-u_{k}\right\Vert \lt \epsilon }[/math]</span> (как в представленной реализации). Последний критерий может слишком рано завершать итерации, в виду того, что часто алгоритм имеет медленную скорость сходимости.
+</p>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Векторность операции <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> может обеспечить хорошую <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Пространственная_локальность" title="Глоссарий">пространственную локальность</a> алгоритму Качмажа.
+</p><p><b>Важно</b>, при реализации учитывать структуру хранения двумерных массивов в оперативной памяти для выбранной архитектуры. К примеру, в языках С/С++ двумерный массив (матрица) из трех строк и четырех колонок будет сохранен в памяти в следующей последовательности: (1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3),(2,4),(3,1),(3,2),(3,3),(3,4) - элементы матрицы выписываются последовательно, по строкам.
+</p><p>Однако, при реализации на языке FORTRAN эта же матрица будет сохранена в следующей последовательности: (1,1),(2,1),(3,1),(1,2),(2,2),(3,2),(1,3),(2,3),(3,3),(1,4),(2,4),(3,4) - элементы матрицы выписываются последовательно, по столбцам <sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span class="cite-bracket">&#91;</span>22<span class="cite-bracket">&#93;</span></a></sup>. При реализации на FORTRAN-подобных языках, матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> из входных данных следует хранить в оперативной памяти в транспонированном виде, таким образом существенно возрастает пространственная локальность векторных операций, в которых участвуют строки матрицы системы линейных алгебраических уравнений.
+</p><p>Как уже упоминалось выше, параллелизация алгоритма Качмажа возможна за счет распараллеливания реализаций макроопераций алгоритма. Основными операциями, требующими распараллеливания, являются:
+</p>
+<ul><li>операция скалярного произведения векторов;</li>
+<li>операция <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a>;</li>
+<li>вычисление евклидовой нормы вектора.</li></ul>
+<p>При реализации параллельной версии алгоритма на системах с общей памятью параллельную программу можно разделить на следующие этапы. 
+</p>
+<ol><li>Распределение памяти, загрузка исходных данных, уточнение параметров параллелизации.</li>
+<li>Предрасчет проекционной последовательности (для рандомизированной реализации, оказывается эффективнее сгенерировать случайную последовательность из <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j(k) }[/math]</span> заранее).</li>
+<li>Вычисление приближения решения.</li>
+<li>Сохранение результатов.</li></ol>
+<p>Для параллельных реализаций алгоритма достаточно иметь соответсвующие реализации для  <a href="/w/ru/index.php?title=BLAS&amp;action=edit&amp;redlink=1" class="new" title="BLAS (страница не существует)">BLAS</a> <i>(Basic Linear Algebra Subprograms)</i>  операций. К примеру, одна из модификаций алгоритма Качмажа для решения задачи регуляризации А.Н. Тихонова представлена в <sup id="cite_ref-Sidorov_Jdanov_23-0" class="reference"><a href="#cite_note-Sidorov_Jdanov-23"><span class="cite-bracket">&#91;</span>23<span class="cite-bracket">&#93;</span></a></sup> (<i>описание данной модификации выходит за рамки содержания данной публикации</i>). В этой работе использовались функции
+</p>
+<ul><li><i>cblas_ddoti</i> - скалярное произведение векторов,</li>
+<li><i>cblas_daxpyi</i> - реализация операции <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a>,</li></ul>
+<p>из библиотеки базовых математических операций <a rel="nofollow" class="external text" href="https://software.intel.com/en-us/intel-mkl%7C">Intel MKL</a>. В статье отмечается, что за счет распараллеливания макроопераций представленная реализация позволила уменьшить время решения задачи от 2 до 4 раз по сравнению с последовательной версией.
+</p><p>Реализации базовых операций линейной алгебры существуют и для графических процессоров, например, библиотека <a rel="nofollow" class="external text" href="http://docs.nvidia.com/cuda/cublas/#axzz4EsnAK5Tf%7C">cuBLAS</a> для архитектуры параллельных вычислений от NVIDIA. Как отмечено в работе <sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span class="cite-bracket">&#91;</span>24<span class="cite-bracket">&#93;</span></a></sup>, параллельная реализация алгоритма Качмажа на CUDA архитектуре оказывается неэффективной за счет операций первичной инициализации и копирования между различными ОЗУ.
+</p><p>Наиболее перспективными архитектурами для реализации алгоритма Качмажа, по мнению авторов, являются ARM архитектуры (<i>Advanced RISC Machine, Acorn RISC Machine, усовершенствованная RISC-машина</i>). Например, существенное ускорение  можно получить в реализациях для процессоров, построенных по SIMD (<i>single instruction, multiple data — одиночный поток команд, множественный поток данных</i>) принципу. Стоит отметить технологию <a rel="nofollow" class="external text" href="http://www.arm.com/products/processors/technologies/neon.php%7C">ARM NEON</a>, которая может быть применена при разработке приложений для iPhone устройств, в которых, по причине ограниченного заряда батареи и в целом вычислительных ресурсов мобильного устройства, остро стоят задачи оптимизации вычислений при обработке снимков с камеры телефона или видео-ряда в режиме реального времени.
+</p>
+<h3><span id=".D0.A0.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B_.D0.BF.D1.80.D0.BE.D0.B3.D0.BE.D0.BD.D0.BE.D0.B2"></span><span class="mw-headline" id="Результаты_прогонов">Результаты прогонов</span></h3>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<p>Как было сказано выше, ресурсом параллелизма в алгоритме являются векторные операции: <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a> и скалярное произведение векторов. Данные макрооперации имеют высокую степень параллелизма и могут быть реализованы для различных классов архитектур. Однако факт того, что вычисления выполнятюся многократно в цикле, требующем полного вектора решения на этапе проверки достижения необходимой точности, говорит о целесообразности применения архитектур с общей памятью.
+</p><p>Так же стоит отметить, что графические процессоры хорошо зарекомендовали себя для реализации матричных и векторных операций, в частности той же операции <a href="/w/ru/index.php?title=SAXPY&amp;action=edit&amp;redlink=1" class="new" title="SAXPY (страница не существует)">SAXPY</a>, например, в <sup id="cite_ref-saxpy1_25-0" class="reference"><a href="#cite_note-saxpy1-25"><span class="cite-bracket">&#91;</span>25<span class="cite-bracket">&#93;</span></a></sup>. Но, затраты, связанные с операциями инициализации, обращения и копирования между основным ОЗУ и ОЗУ графического устройства, нивелируют какое-либо преимущество, получаемое за счет ускорения времени выполнения одной итерации алгоритма.
+</p><p>Авторы считают, что векторные процессоры, построенные по SIMD принципам, находятся вне конкуренции для реализации алгоритма Качмажа, например, архитектура <a rel="nofollow" class="external text" href="http://www.arm.com/products/processors/technologies/neon.php%7C">ARM NEON</a>.
+</p>
+<h2><span id=".D0.A7.D0.90.D0.A1.D0.A2.D0.AC._.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="ЧАСТЬ._Дополнительная_информация">ЧАСТЬ. Дополнительная информация</span></h2>
+<h3><span id=".D0.9A.D0.BB.D0.B0.D1.81.D1.81.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B5.D0.B9"></span><span class="mw-headline" id="Классификация_проекционных_последовательностей">Классификация проекционных последовательностей</span></h3>
+<p>Под проекционной последовательностью понимается порядок обхода уравнений системы в процессе итераций алгоритма Качмажа. А рассматриваемая последовательность задается с использованием правила <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k\in \mathbb{N}_{0} }[/math]</span>, которое позволяет вычислить номер используемого уравнения на итерации с номером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>.
+Правило  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> следует рассматривать как <i>сюръективное</i> отображение множества <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \mathbb{N}_{0} }[/math]</span> на множество <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left\{ 1,2,\ldots,m\right\} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> - количество уравнений в системе линейных алгебраических уравнений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Au=f,\ A\in \mathbb{R}^{m\times n},\ u\in \mathbb{R}^{n},\ f\in \mathbb{R}^{m} }[/math]</span>.
+</p><p>Отображения такого вида могут быть как детерминированными, так и случайными, рандомизированными. В последнем случае <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> является дискретной случайной величиной с заданным законом распределения. Например, к детерминированным отображениям необходимо отнести:
+</p>
+<ul><li>правило циклического обхода <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right)=\left(k\ \bmod\ m\right)+1,\, k=\overline{0,\infty} }[/math]</span>;</li>
+<li>метод четной перестановки - эвристический метод для задач компьютерной томограции из <sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span class="cite-bracket">&#91;</span>26<span class="cite-bracket">&#93;</span></a></sup>;</li>
+<li>симметричное правило (symmetric ART), в котором последовательность проектирования на гиперплоскости идет в начале в прямом порядке от первого уравнения к последнему, а затем в обратном порядке - от последнего - к первому.</li></ul>
+<p>Существенно важной является классификация рассматриваемых правил по их зависимости от данных. Например, результат из <sup id="cite_ref-strohmer_13-1" class="reference"><a href="#cite_note-strohmer-13"><span class="cite-bracket">&#91;</span>13<span class="cite-bracket">&#93;</span></a></sup>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> является дискретной случайной величиной с заданным законом распределения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ P\left(j\left(k\right)=i\right)=\frac{\left\Vert a_{i}\right\Vert _{2}^{2}}{\left\Vert A\right\Vert _{F}^{2}} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left\Vert \cdot\right\Vert _{F} }[/math]</span> - матричная норма Фробениуса и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left\Vert a_{i}\right\Vert }[/math]</span> - евклидова норма строки матрицы системы уравнений с номером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i=\overline{1,m} }[/math]</span>. Этот результат качественно отличается от всех известных рандомизированных способов наличием зависимости от матрицы системы - от исходных данных задачи.
+</p>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Kz_alg_class.png" class="mw-file-description"><img src="/w/ru/images/thumb/c/cb/Kz_alg_class.png/700px-Kz_alg_class.png" decoding="async" width="700" height="271" class="mw-file-element" srcset="/w/ru/images/c/cb/Kz_alg_class.png 1.5x" /></a><figcaption>Рисунок 3. Классификация правил для задания проекционной последовательности в алгоритме C. Качмажа</figcaption></figure>
+<h3><span id=".D0.A0.D0.B0.D0.BD.D0.B4.D0.BE.D0.BC.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.B0.D1.8F_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D1.8C_.D1.81.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Рандомизированная_версия_алгоритма_и_скорость_сходимости">Рандомизированная версия алгоритма и скорость сходимости</span></h3>
+<p>При решении системы линейных алгебраических уравнений сверхбольшой размерности использование всех уравнений системы может оказаться избыточным. Более того, для учета всех уравнений системы, полученных в результате некоторых измерений, может не быть технической возможности, что обусловлено ограниченными ресурсами ЭВМ. Существуют подходы, связанные с обработкой данных решаемой задачи, цель которых состоит в отборе только информативных результатов измерений. 
+</p><p>Например, при решении задачи идентификации оптических искажающих систем <sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span class="cite-bracket">&#91;</span>27<span class="cite-bracket">&#93;</span></a></sup> следует использовать не весь объем измерений, а только тот, что выполнен для, в определенном смысле, информативных фрагментов изображений. Формально, это соответствует удалению части уравнений из системы, которые оказываются линейно зависимыми и отрицательным образом влияют на обусловленность задачи <sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span class="cite-bracket">&#91;</span>28<span class="cite-bracket">&#93;</span></a></sup>, что, в свою очередь, приводит к крайне медленной скорости сходимости известных итерационных алгоритмов. 
+</p><p>Таким образом, основная цель рандомизации итерационных проекционных алгоритмов решения системы линейных алгебраических уравнений состоит в том, чтобы обеспечить скорость сходимости (а значит и вычислительную сложность), независимую от количества уравнений в системе (количества измерений) <sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span class="cite-bracket">&#91;</span>29<span class="cite-bracket">&#93;</span></a></sup>, но при решении не использовать систему целиком, а только отдельные уравнения, выбранные определенным случайным образом.
+</p><p>Наиболее простым и очевидным способом случайную последовательность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> определяют с использованием дискретного равномерного закона распределения
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ P\left(j\left(k\right)=i\right)=\frac{1}{m} }[/math]</span>.
+</p><p>Таким образом, в процессе итераций все уравнения системы будут участвовать в решении задачи примерно одинаковое число раз. Данный способ задания <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> обширно используют в качестве базового для демонстрации преимущества новых подходов в работах <sup id="cite_ref-strohmer_13-2" class="reference"><a href="#cite_note-strohmer-13"><span class="cite-bracket">&#91;</span>13<span class="cite-bracket">&#93;</span></a></sup> <sup id="cite_ref-30" class="reference"><a href="#cite_note-30"><span class="cite-bracket">&#91;</span>30<span class="cite-bracket">&#93;</span></a></sup>, посвященных рандомизации итерационных алгоритмов. В указанных работах авторы произвели настоящую революцию в рандомизации алгоритма Качмажа, указав закон распределения, определяющий последовательность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> таким образом, что итерационная последовательность имеет экспоненциальную скорость сходимости. Их результат формулируется в виде следующей важной теоремы:
+</p><p>Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Au=f\ A\in \mathbb{R}^{m\times n},\ u\in  \mathbb{R}^{n},\ f\in  \mathbb{R}^{m} }[/math]</span> - совместная переопределенная <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left(m\geq n\right) }[/math]</span> система линейных алгебраических уравнений, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_{0} }[/math]</span> - некоторое начальное приближение к ее решению, и для рекуррентной формулы алгоритма Качмажа значения последовательности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> определяются с использованием закона распределения:
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+P\left(j\left(k\right)=i\right)=\frac{\left\Vert a_{i}\right\Vert _{2}^{2}}{\left\Vert A\right\Vert _{F}^{2}},
+ }[/math]</span>
+где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left\Vert \cdot\right\Vert _{F} }[/math]</span> - матричная норма Фробениуса.
+</p><p>Тогда последовательность приближенных решений в алгоритме Качмажа сходится к решению системы уравнений со средней ошибкой, которая на каждой итерации оценивается с использованием неравенств
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+M\left[\left\Vert u^{k}-u^{*}\right\Vert _{2}^{2}\right]\leq\left(1-\kappa\left(A\right)^{-2}\right)^{k}\left\Vert x^{0}-x^{*}\right\Vert _{2}^{2},
+ }[/math]</span>
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 
+ \left(1-2k\cdot\kappa\left(A\right)^{-2}\right)\left\Vert x^{0}-x^{*}\right\Vert _{2}\leq M\left[\left\Vert u^{k}-u^{*}\right\Vert _{2}\right].
+ }[/math]</span>
+</p><p>В приведенных неравенствах величина <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \kappa\left(A\right)=\left\Vert A\right\Vert _{F}\left\Vert A^{+}\right\Vert _{2} }[/math]</span> является одной из оценок
+<span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1\leq\frac{\kappa\left(A\right)}{\sqrt{n}}\leq k\left(A\right) }[/math]</span>
+спектрального числа обусловленности матрицы системы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k\left(A\right)=\left\Vert A\right\Vert _{2}\left\Vert A^{+}\right\Vert _{2} }[/math]</span>, предложенной в <sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span class="cite-bracket">&#91;</span>31<span class="cite-bracket">&#93;</span></a></sup> (здесь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A^{+} }[/math]</span> - псевдообратная матрица, в то же время <i>левая обратная матрица</i> для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>).
+</p><p>До публикации работ Штромера (Strohmer, T.) не существовало оценок скорости сходимости алгоритма Качмажа <i>в терминах числа обусловленности матрицы системы уравнений</i>. Данная теорема также наиболее точно демонстрирует цель рандомизации - показать, что <i>скорость сходимости не зависит от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> - количества уравнений в системе, но зависит от порядка системы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.</i>
+</p>
+<h3><span id=".D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC_.D0.9A.D0.B0.D1.87.D0.BC.D0.B0.D0.B6.D0.B0_.D1.81_.D1.87.D0.B5.D1.82.D0.BD.D0.BE.D0.B9_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.BE.D0.B9"></span><span class="mw-headline" id="Алгоритм_Качмажа_с_четной_перестановкой">Алгоритм Качмажа с четной перестановкой</span></h3>
+<p>Данная эвристика оказывается, пожалуй, одной из самых изящных и определяет отображение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> следующим образом. В работе <sup id="cite_ref-32" class="reference"><a href="#cite_note-32"><span class="cite-bracket">&#91;</span>32<span class="cite-bracket">&#93;</span></a></sup> предлагается алгоритм MLS (multilevel scheme) для переупорядочивания строк в матрице таким образом, чтобы каждое следующее проецирование в итерационной последовательности осуществлялось на гиперплоскость, наиболее ортогональную к текущей (только для матриц в задачах томографии). Допустим, что имеется 8 проекций (в матрице системы - всего восемь строк), снятых под углами в 0, 22.5, 45 ,67.5, 90, 112.5, 135 и 157.5 градусов, тогда период последовательности <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> выглядит как: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {0,4,2,6,1,5,3,7} }[/math]</span>.
+</p><p>Когда количество проекций (строк в системе) является степенью двойки, то <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span> совпадет с последовательностью, которая используется для реализации алгоритма «на месте» одномерного быстрого преобразования Фурье, например в <sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span class="cite-bracket">&#91;</span>33<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>Формально, данная модификация эквивалентна исходному алгоритму с циклическим правилом обхода, который применяется к системе уравнений. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D \cdot A \cdot u=D \cdot f }[/math]</span> , где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ D\in R^{m\times m} }[/math]</span> суть - перестановочная матрица.
+</p><p>В чем же состоит изящность данного способа задания отображения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j\left(k\right) }[/math]</span>? Правило четной перестановки, было специально разработано для решения задачи восстановления данных по измерениям, выполненным с использованием компьютерного томографа с параллельной схемой сканирования. Правило построено его авторами из интуитивных соображений о структуре самих данных, а не их значений.
+</p>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Бахвалов Н. С., Жидков Н. П., Кобельков Г. Г. Численные методы. — 8-е изд. — М.: Лаборатория Базовых Знаний, 2000.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Natterer, Frank (2001), "V.3 Kaczmarz's method", The Mathematics of Computerized Tomography, Classics in Applied Mathematics 32, SIAM, p. 128, ISBN 9780898714937.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Kaczmarz, S. Angenäherte Auflösung von Systemen linearer Gleichungen [Текст] / S. Kaczmarz // Bulletin International de l'Académie Polonaise des Sciences et des Lettres / Classe des Sciences Mathématiques et Naturelles. Série A, Sciences Mathématiques. — 1937. — Vol. 35. — С. 355-357.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Hounsfield, G. N. A Discussion on Recent Developments in Medical Endoscopy and Related Fields [Текст] / G. N. Hounsfield // Proceedings of the Royal Society of London. Series B, Biological Sciences. — 1977. — Vol. 195, N. 1119. — С. 281-289.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Gordon, R. Algebraic reconstruction techniques (ART) for three-dimensional electron microscopy and x-ray photography [Текст] / R. Gordon, R. Bender, G. T. Herman // Journal of theoretical biology. — 1970. — Vol. 29, Issue 3. — С. 471–481.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Micke, A. The Mathematics of Computerized Tomography [Текст] / A. Micke, F. Natterer // ZAMM - Zeitschrift für Angewandte Mathematik und Mechanik (Journal of Applied Mathematics and Mechanics). — 1987. — Vol. 67, Issue 11. — С. 580. —ISBN 3-519-02103-X and 0-471-90959-9.</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text">Herman, G. T. Fundamentals of computerized tomography: Image reconstruction from projection [Текст]&#160;: 2nd ed. / G. T. Herman. — Springer, 2009. — 300 с.</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text">Sezan, K. M. Applications of convex projection theory to image recovery in tomography and related areas [Текст] / K. M. Sezan, H. Stark // Image Recovery: Theory and Application / H. Stark, editor. — Academic Press, 1987. — С. 415-462.</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">Cegielski, A. Bibliography on the Kaczmarz method [Электронный ресурс]&#160;: Faculty of Mathematics, Computer Science and Econometrics University of Zielona Gora&#160;; Poland, March, 28th, 2010 / Режим доступа: <a rel="nofollow" class="external free" href="http://www.uz.zgora.pl/~acegiels/Publikacje-Kaczmarz.pdf">http://www.uz.zgora.pl/~acegiels/Publikacje-Kaczmarz.pdf</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">Ильин, В. П. Об итерационном методе Качмажа и его обобщениях [Текст] / В. П. Ильин // Сибирский журнал индустриальной математики. — 2006. — Т. 9, вып. 3. — С. 39–49.</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text">Г. П. Васильченко, А. А. Светлаков, “Проекционный алгоритм решения систем линейных алгебраических уравнений большой размерности”, Ж. вычисл. матем. и матем. физ., 20:1 (1980), 3–10.</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite_ref-12">↑</a></span> <span class="reference-text">Л. Г. Гурин, Б. Т. Поляк, Э. В. Райк, “Методы проекций для отыскания общей точки выпуклых множеств”, Ж. вычисл. матем. и матем. физ., 7:6 (1967), 1211–1228</span>
+</li>
+<li id="cite_note-strohmer-13"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-strohmer_13-0">13,0</a></sup> <sup><a href="#cite_ref-strohmer_13-1">13,1</a></sup> <sup><a href="#cite_ref-strohmer_13-2">13,2</a></sup></span> <span class="reference-text">Strohmer, T. A Randomized Kaczmarz Algorithm with Exponential Convergence [Текст] / T. Strohmer, R. Vershynin // Journal of Fourier Analysis and Applications. — 2009. — Vol. 15, Issue 2. — С. 262-278.</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite_ref-14">↑</a></span> <span class="reference-text">Marks, L. D. A feasible set approach to the crystallographic phase problem [Текст] / L. D. Marks, W. Sinkler, E. Landree // Acta Crystallographica Section A. — 1987. — Vol. 55, Issue 4. — С. 601-612.</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite_ref-15">↑</a></span> <span class="reference-text">JElble, J. M. GPU computing with Kaczmarz’s and other iterative algorithms for linear systems [Текст] / J. M. Elble, N. V. Sahinidis, P. Vouzis // Parallel Computing. — 2010. — Vol. 36, Issues 5-6. — С. 215–231.</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite_ref-16">↑</a></span> <span class="reference-text">Bjorck, A. Accelerated projection methods for computing pseudoinverse solutions of systems of linear equations [Текст] / A. Bjorck, T. Elfving // BIT Numerical Mathematics. — 1979. — Vol. 19, Issue 2. — С.145-163.</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite_ref-17">↑</a></span> <span class="reference-text">Nikazad, T. Algebraic Reconstruction Methods [Текст]&#160;: PhD. Thesis, Linköping University / T. Nikazad. — Linköping, 2008.</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite_ref-18">↑</a></span> <span class="reference-text">Kamath, G. Component-Average Based Distributed Seismic Tomography in Sensor Networks [Текст] / G. Kamath, L. Shi, W.-Z. Song // IEEE International Conference on Distributed Computing in Sensor Systems. — 2013. — С. 88-95.</span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite_ref-19">↑</a></span> <span class="reference-text">Mark Harris. Six Ways to SAXPY <a rel="nofollow" class="external free" href="https://devblogs.nvidia.com/parallelforall/six-ways-saxpy/">https://devblogs.nvidia.com/parallelforall/six-ways-saxpy/</a></span>
+</li>
+<li id="cite_note-airtools-20"><span class="mw-cite-backlink"><a href="#cite_ref-airtools_20-0">↑</a></span> <span class="reference-text">Hansen, P. C. AIR Tools – A MATLAB package of algebraic iterative reconstruction methods [Электронный ресурс] / Режим доступа: <a rel="nofollow" class="external free" href="http://www2.compute.dtu.dk/~pcha/AIRtools/">http://www2.compute.dtu.dk/~pcha/AIRtools/</a></span>
+</li>
+<li id="cite_note-regkaz-21"><span class="mw-cite-backlink"><a href="#cite_ref-regkaz_21-0">↑</a></span> <span class="reference-text">Ivanov, A. A. Regularization Kaczmarz Tools Version 1.4 for Matlab, Matlabcentral Fileexchange [Электронный ресурс] / Режим доступа: <a rel="nofollow" class="external free" href="http://www.mathworks.com/matlabcentral/fileexchange/43791">http://www.mathworks.com/matlabcentral/fileexchange/43791</a></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite_ref-22">↑</a></span> <span class="reference-text">How FORTRAN Stores Two-Dimensional Arrays in Memory, <a rel="nofollow" class="external free" href="https://support.microsoft.com/en-us/kb/27780">https://support.microsoft.com/en-us/kb/27780</a></span>
+</li>
+<li id="cite_note-Sidorov_Jdanov-23"><span class="mw-cite-backlink"><a href="#cite_ref-Sidorov_Jdanov_23-0">↑</a></span> <span class="reference-text">А.И. Жданов, Ю.В. Сидоров. Параллельная реализация рандомизированного регуляризованного алгоритма Качмажа / Компьютерная оптика. - 2015. - Т.39(4). - С. 536-541 </span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite_ref-24">↑</a></span> <span class="reference-text">Elble J. M., Sahinidis N. V., Vouzis P. GPU computing with Kaczmarz’s and other iterative algorithms for linear systems //Parallel computing. – 2010. – Т. 36. – №. 5. – С. 215-231.</span>
+</li>
+<li id="cite_note-saxpy1-25"><span class="mw-cite-backlink"><a href="#cite_ref-saxpy1_25-0">↑</a></span> <span class="reference-text">А.Ю. Суравикин, В.В. Коробицын Оценка производительности связывания CUDA с графическим API на примере задачи SAXPY / Математические структуры и моделирование. - 2010ю - Т.21. - С. 96-103.</span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><a href="#cite_ref-26">↑</a></span> <span class="reference-text">Guan H. A projection access order for speedy convergence of ART (algebraic reconstruction technique): a multilevel scheme for computed tomography [Текст] / Guan H., R. Gordon // Physics in Medicine and Biology. — 1994. — Vol. 39, N. 11. — С. 2005-2022.</span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><a href="#cite_ref-27">↑</a></span> <span class="reference-text">Фурсов, В.А. Идентификация оптических искажающих систем с отбором информативных фрагментов изображений [Текст] / В.А. Фурсов // Компьютерная оптика. — 1995. —Вып. 15, ч.1. — С. 79–89.</span>
+</li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><a href="#cite_ref-28">↑</a></span> <span class="reference-text">Фурсов, В.А. Введение в идентификацию по малому числу наблюдений. [Текст] / В.А. Фурсов. — М.&#160;: Изд-во МАИ, 1991. —36 с.</span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><a href="#cite_ref-29">↑</a></span> <span class="reference-text">Sabelfeld, K Stochastic iterative projection methods for large linear systems [Текст] / K. Sabelfeld, N. Loshchina // Monte Carlo Methods and Applications. — 2010. — Vol. 16, Issue 3-4. — С. 343-359.</span>
+</li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><a href="#cite_ref-30">↑</a></span> <span class="reference-text">Strohmer, T. A randomized solver for linear systems with exponential convergence [Текст] / T. Strohmer, R. Vershynin // Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques. — Springer; 2006. С. 499-507.</span>
+</li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><a href="#cite_ref-31">↑</a></span> <span class="reference-text">Demmel, J. The probability that a numerical analysis problem is difficult [Текст] / J. Demmel // Mathematics of Computation. . — 1988. — Vol. 50, Issue 182. — С. 449–480.</span>
+</li>
+<li id="cite_note-32"><span class="mw-cite-backlink"><a href="#cite_ref-32">↑</a></span> <span class="reference-text">Guan H. A projection access order for speedy convergence of ART (algebraic reconstruction technique): a multilevel scheme for computed tomography [Текст] / Guan H., R. Gordon // Physics in Medicine and Biology. — 1994. — Vol. 39, N. 11. — С. 2005-2022.</span>
+</li>
+<li id="cite_note-33"><span class="mw-cite-backlink"><a href="#cite_ref-33">↑</a></span> <span class="reference-text">Cooley, J.W. An algorithm for the machine calculation of complex Fourier series [Текст] / J.W. Cooley, J. W. Tukey // Mathematics of Computation. — 1965. — Vol. 19, N. 90. — С. 297–301.</span>
+</li>
+</ol></div></div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Алгоритм_Качмажа&amp;oldid=29116">https://algowiki-project.org/w/ru/index.php?title=Алгоритм_Качмажа&amp;oldid=29116</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%B2_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5" title="Категория:Статьи в работе">Статьи в работе</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC+%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0&amp;oldid=29116" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%87%D0%BC%D0%B0%D0%B6%D0%B0&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-en mw-list-item"><a href="http://algowiki-project.org/en/Kaczmarz%27s_algorithm" title="Kaczmarz&#039;s algorithm — English" lang="en" hreflang="en" data-title="Kaczmarz&#039;s algorithm" data-language-autonym="English" data-language-local-name="English" class="interlanguage-link-target"><span>English</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 12 июля 2022 года в 15:43.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":413,"wgPageParseReport":{"limitreport":{"cputime":"0.062","walltime":"0.303","ppvisitednodes":{"value":1150,"limit":1000000},"postexpandincludesize":{"value":4069,"limit":2097152},"templateargumentsize":{"value":1823,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":35677,"limit":5000000},"timingprofile":["100.00%    5.778      1 Шаблон:Algorithm","100.00%    5.778      1 -total"," 58.67%    3.390      1 Шаблон:Level-a"," 24.35%    1.407      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092755","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

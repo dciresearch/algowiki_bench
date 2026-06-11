@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Janyell/Хранение ненулевых элементов разреженной матрицы. Умножение разреженной матрицы на вектор — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"fb48db2cbf5d4ad1e676298a","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Janyell/Хранение_ненулевых_элементов_разреженной_матрицы._Умножение_разреженной_матрицы_на_вектор","wgTitle":"Janyell/Хранение ненулевых элементов разреженной матрицы. Умножение разреженной матрицы на вектор","wgCurRevisionId":19781,"wgRevisionId":19781,"wgArticleId":563,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Janyell/Хранение_ненулевых_элементов_разреженной_матрицы._Умножение_разреженной_матрицы_на_вектор","wgRelevantArticleId":563,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Janyell","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Janyell_Хранение_ненулевых_элементов_разреженной_матрицы_Умножение_разреженной_матрицы_на_вектор rootpage-Участник_Janyell skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Janyell/Хранение ненулевых элементов разреженной матрицы. Умножение разреженной матрицы на вектор</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell" title="Участник:Janyell">Участник:Janyell</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Умножение разреженной матрицы на вектор
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(nz) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz + m }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+<b>Авторы описания:</b> <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell" title="Участник:Janyell">Е.А. Сычева</a> (разделы <a href="#Диагональная_схема_хранения_ленточных_матриц">1.1.1.1</a>, 
+<a href="#Профильная_схема_хранения_симметричных_матриц">1.1.1.2</a>,
+<a href="#Умножение_разреженной_матрицы_на_вектор">1.1.2</a>,
+<a href="#Математическое_описание_алгоритма">1.2</a> - <a href="#Последовательная_сложность_алгоритма">1.6</a>,
+<a href="#Входные_и_выходные_данные_алгоритма">1.9</a>,
+<a href="#Свойства_алгоритма">1.10</a>) и <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Ahahalin" title="Участник:Ahahalin">А.С. Хахалин</a> (разделы <a href="#Связные_схемы_разреженного_хранения">1.1.1.3</a> - <a href="#Хранение_блочных_матриц">1.1.1.6</a>,
+<a href="#Информационный_граф">1.7</a>,
+<a href="#Ресурс_параллелизма_алгоритма">1.8</a>,
+<a href="#Масштабируемость_алгоритма_и_его_реализации">2.4</a>,
+<a href="#Существующие_реализации_алгоритма">2.7</a>)
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритмов"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритмов</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Хранение_ненулевых_элементов_разреженной_матрицы"><span class="tocnumber">1.1.1</span> <span class="toctext">Хранение ненулевых элементов разреженной матрицы</span></a>
+<ul>
+<li class="toclevel-4 tocsection-4"><a href="#Диагональная_схема_хранения_ленточных_матриц"><span class="tocnumber">1.1.1.1</span> <span class="toctext">Диагональная схема хранения ленточных матриц</span></a></li>
+<li class="toclevel-4 tocsection-5"><a href="#Профильная_схема_хранения_симметричных_матриц"><span class="tocnumber">1.1.1.2</span> <span class="toctext">Профильная схема хранения симметричных матриц</span></a></li>
+<li class="toclevel-4 tocsection-6"><a href="#Связные_схемы_разреженного_хранения"><span class="tocnumber">1.1.1.3</span> <span class="toctext">Связные схемы разреженного хранения</span></a></li>
+<li class="toclevel-4 tocsection-7"><a href="#Разреженный_строчный_формат"><span class="tocnumber">1.1.1.4</span> <span class="toctext">Разреженный строчный формат</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="#Неупорядоченные_представления"><span class="tocnumber">1.1.1.5</span> <span class="toctext">Неупорядоченные представления</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="#Хранение_блочных_матриц"><span class="tocnumber">1.1.1.6</span> <span class="toctext">Хранение блочных матриц</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-10"><a href="#Умножение_разреженной_матрицы_на_вектор"><span class="tocnumber">1.1.2</span> <span class="toctext">Умножение разреженной матрицы на вектор</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h1><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.BE.D0.B2"></span><span class="mw-headline" id="Свойства_и_структура_алгоритмов">Свойства и структура алгоритмов</span></h1>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h2>
+<p><b>Разреженная матрица</b> — матрица с большим количеством нулевых элементов.
+</p><p>Среди специалистов нет единства в определении того, какое именно количество ненулевых элементов делает матрицу разреженной. Матрицу порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> называют <i>разреженной</i>, если число ее ненулевых элементов <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>:
+</p>
+<ul><li>есть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>. Приве­денное определение полезно только для теоретических целей типа попытки оценить асимптотическое поведение алгоритма.</li>
+<li>ограничено в строке, в типичном случае от 2 до 10.</li>
+<li>выражается как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^{1+\gamma} }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \gamma \lt  1 }[/math]</span>.</li>
+<li>таково, что для данной матрицы, данного алгоритма и данной вычислительной машины имеет смысл извлекать выгоду из на­личия в ней многих нулей.</li></ul>
+<p>Всякую разреженную матрицу можно обрабатывать так, как если бы она была плотной: напротив, вся­кую плотную, или заполненную, матрицу можно обрабатывать алгоритмами для разреженных матриц. В обоих случаях полу­чатся правильные численные результаты, но вычислительные затраты возрастут. Приписывание матрице свойства разреженности эквивалентно утверждению о существовании алгоритма, исполь­зующего ее разреженность и делающего вычисления с ней дешевле по сравнению со стандартными алгоритмами.
+</p><p>Три основных идеи, которые направляли развитие большей части технологии разреженных матриц: 
+</p>
+<ul><li><b>хранить только ненулевые элементы</b>. Разреженная матрица, будучи множеством чисел, не имеющим регулярности, не может быть представлена в памяти машины тем же простым способом, что и полная матрица - регулярным числовым массивом. Поэтому возникает необходимость дополнительно хранить индексную информацию, указывающую расположение каждого элемента в регулярном массиве.</li>
+<li><b>оперировать только с ненулевыми элементами</b>. Число операций, производимых машиной при исполнении алгоритма, пропорционально числу ненулевых элементов, а не числу всех элементов матрицы.</li>
+<li><b>сохранять разреженность</b>. Хоро­ший алгоритм для разреженных матриц пытается сохранить раз­реженность, по возможности уменьшая заполнение.</li></ul>
+<p>В целях упрощения операций с разреженными матрицами многие алгоритмы разрешают также хранить небольшое количество нулевых элементов и оперировать с ними как с ненулевыми.
+</p>
+<h3><span id=".D0.A5.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BD.D1.83.D0.BB.D0.B5.D0.B2.D1.8B.D1.85_.D1.8D.D0.BB.D0.B5.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.B2_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B"></span><span class="mw-headline" id="Хранение_ненулевых_элементов_разреженной_матрицы">Хранение ненулевых элементов разреженной матрицы</span></h3>
+<h4><span id=".D0.94.D0.B8.D0.B0.D0.B3.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D1.85.D0.B5.D0.BC.D0.B0_.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BB.D0.B5.D0.BD.D1.82.D0.BE.D1.87.D0.BD.D1.8B.D1.85_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86"></span><span class="mw-headline" id="Диагональная_схема_хранения_ленточных_матриц">Диагональная схема хранения ленточных матриц</span></h4>
+<p>Матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> называют <i>ленточной</i>, если все ее ненулевые элементы заключены внутри ленты, образованной диагоналями, параллельными главной диагонали. Таким образом, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} = 0 }[/math]</span>, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |i - j| \gt  b }[/math]</span>, и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{k, k-b} \ne 0 }[/math]</span>, либо <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{k, k+b} \ne 0 }[/math]</span> хотя бы для одного значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>. Здесь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> — <i>полуширина</i>, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2b + 1 }[/math]</span> — <i>ширина ленты</i>. <i>Лентой</i> матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> называется множество элементов, для которых <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |i - j| \leq b }[/math]</span>. Другими словами, для всякой строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> ленте принадлежат все элементы со столбцовыми индексами от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - b }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i + b }[/math]</span>, т. е. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2b + 1 }[/math]</span> элементов.
+</p><p>Если матрица симметрична, то достаточно хранить ее <i>полу­ленту</i>. Верхняя полулента состоит из элементов, находящихся в верхней части ленты, т. е. таких, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0 \lt  j - i \leq \beta  }[/math]</span>; нижняя полулента состоит из элементов нижней части ленты, т. е. таких, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0 \lt  i - j \leq \beta }[/math]</span>; в обоих случаях в строке <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta }[/math]</span> элементов.
+</p><p>С ленточными матрицами связана простейшая и наиболее широко применяемая стратегия использования нулевых элементов матрицы. <i>Диагональная схема</i> хранения симметричной ленточной ма­трицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> и полуширины ленты  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta }[/math]</span> представляет собой массив <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN (I, J) }[/math]</span> размером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \times (\beta + 1) }[/math]</span>. Главная диагональ хранится в последнем столбце, а нижние кодиагонали — в остальных столбцах со сдвигом на одну позицию вниз при каждом смещении влево. 
+</p><p>Для несимметричной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> необходим массив размером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \times(2\beta + 1) }[/math]</span>; нижняя полулента и главная
+диагональ хранятся прежним образом, а верхние кодиагонали — в правой части массива со сдвигом на одну позицию вверх при каждом смещении вправо. Диагональная схема удобна, если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta \lt \lt  n  }[/math]</span>. Она является схемой прямого доступа в том смысле, что имеется простое взаимно однозначное соответствие между положением элемента в матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и его положением в массиве: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>
+хранится компонентой <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN (i, j - i + \beta + 1) }[/math]</span>.
+</p>
+<h4><span id=".D0.9F.D1.80.D0.BE.D1.84.D0.B8.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D1.85.D0.B5.D0.BC.D0.B0_.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B8.D0.BC.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86"></span><span class="mw-headline" id="Профильная_схема_хранения_симметричных_матриц">Профильная схема хранения симметричных матриц</span></h4>
+<p>Ленточная матрица высокого порядка может иметь широкую ленту и большое число нулей внутри ее. Для такой матрицы диагональная схема может быть очень неэкономной. <i>Профильная схема</i> или <i>схема переменной ленты</i> является более эффективной схемой хранения симметричных матриц.
+</p><p>Для каждой строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> симметричной матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> положим: 
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta_{i} = i - j_{min} (i) }[/math]</span>,
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j_{min} (i) }[/math]</span> — минимальный столбцовый индекс строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>, для которого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} \ne 0 }[/math]</span>. Таким образом, первый ненулевой элемент строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> находится на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta_{i} }[/math]</span>- позиций левее главной диагонали.
+</p><p><i>Оболочка</i> матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> — это множество элементов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>, для которых <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 0 \lt  i - j \lt  \beta_{i} }[/math]</span> В строке <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> оболочке принадлежат все элементы со столбцовыми индексами от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j_{min} (i) }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1 }[/math]</span>, всего <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \beta_{i} }[/math]</span> элементов. Диагональные элементы не входят в оболочку. <i>Про­филь</i> матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> определяется как число элементов в оболочке:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ profile (A) = \sum\limits_{i}\beta_{i} }[/math]</span>
+</p><p>При использовании профильной схемы все элементы оболочки, упорядоченные по строкам, хранятся, включая нули, в одномер­ном массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span>. Диагональный элемент данной строки помещается в ее конец. Длина массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span> равна сумме профиля и порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Кроме того, необходим массив указателей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA }[/math]</span>; элементы этого массива - указатели расположения диагональ­ных элементов в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span>. Так, при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \gt  1 }[/math]</span> элементы строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> находятся в позициях от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA (i - 1) + 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA (i) }[/math]</span>. Единственный элемент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{11} }[/math]</span> 1-й строки хранится в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN (1) }[/math]</span>. 
+</p><p>Схема переменной ленты строчно-ориентирована в том смысле, что любая строка матрицы сканируется эффективно; в то же время всякая попытка сканировать столбцы будет неэффективной. Кроме того, схема является <i>статической</i> - заготовленной до начала численной обработки, - потому что включение нового элемента, лежащего вне оболочки, требует изменения всей структуры.
+</p>
+<h4><span id=".D0.A1.D0.B2.D1.8F.D0.B7.D0.BD.D1.8B.D0.B5_.D1.81.D1.85.D0.B5.D0.BC.D1.8B_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Связные_схемы_разреженного_хранения">Связные схемы разреженного хранения</span></h4>
+<p>Рассмотрим разреженную матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>. Ее ненулевые элементы, которых очень мало в сравнении с числом нулей, рассеяны по всей матрице, образуя <i>портрет</i> матрицы или <i>шаблон нулей—ненулей</i>. Опишем схему хранения предложенную Кнутом. Ненулевые элементы хранятся в компактной форме и в произвольном порядке в одномерном массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span>.  Информация о положении элементов может храниться двумя дополнительными параллельными одномерными массивами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ J }[/math]</span>; здесь для каждого ненулевого элемента содержатся его строчный и столбцовый индексы. Таким образом, для каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij}\ne0 }[/math]</span> в памяти находится тройка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (a_{ij},i,j) }[/math]</span>. Далее, чтобы можно было легко отыскать элементы произвольной строки или столбца, необходимы ещё пара указателей для каждой тройки, а также <i>указатели входа</i> для <i>строк</i> и <i>столбцов</i>, сообщающие начало каждого строчного или столбцового списка. Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ NR }[/math]</span> ("next nonzero element in the same row" — "следующий ненулевой элемент той же строки") — массив, хранящий строчные указатели, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ NC }[/math]</span> ("next nonzero element in the same column" — "следующий ненулевой элемент того же столбца") — массив столбцовых указателей. Пять массивов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN,I,J,NR,NC }[/math]</span> имеют общую длину, и их одноименные позиции соответствуют друг другу. Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JR }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JC }[/math]</span> — массивы, содержащие указатели входа для строк и столбцов, расположенные в соответствии с порядком строк и столбцов матрицы. Тогда, например, для просмотра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> строки необходимо:
+</p>
+<ol><li>определить входной индекс <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j=JR[i] }[/math]</span></li>
+<li>определить элемент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN[j] }[/math]</span></li>
+<li>найти индекс следующего элемента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j=NR[j] }[/math]</span></li>
+<li>если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j=0 }[/math]</span>, то мы обошли все элемент <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>-ой строки, иначе, перейти в п.2</li></ol>
+<p>Заметим, что рассмотренная схема требует пять ячеек памяти для каждого ненулевого элемента, а также 2 массива указателей входа для строк и столбцов. Вследствие большой накладной памяти такая схема весьма неэкономна. Достоинства её в том, что в любом месте можно включить или исключить элемент, а также можно эффективно сканировать строки и столбцы.
+</p>
+<h4><span id=".D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.82"></span><span class="mw-headline" id="Разреженный_строчный_формат">Разреженный строчный формат</span></h4>
+<p>Рассмотрим матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>(рис. 1). 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:SuperSparseStoreAndMultiplyMatrix1.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/2/2e/SuperSparseStoreAndMultiplyMatrix1.png/200px-SuperSparseStoreAndMultiplyMatrix1.png" decoding="async" width="200" height="174" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/2/2e/SuperSparseStoreAndMultiplyMatrix1.png 1.5x" /></a><figcaption>Рисунок 1. Матрица A</figcaption></figure><p>
+Значения ненулевых элементов и соответствующие столбцовые индексы хранятся в этой схеме по строкам в двух массивах — <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA }[/math]</span> соответственно. Дополнительно также используется массив указателей <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA }[/math]</span>, отмечающих позиции массивов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA }[/math]</span>, с которых начинается описание очередной строки. Дополнительная компонента в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA }[/math]</span> содержит указатель первой свободной позиции в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA }[/math]</span>. В общем случае описание <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r }[/math]</span>-й строки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> хранится в позициях с <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA (r) }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA (r + 1) - 1 }[/math]</span> массивов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span>, за исключением равенства <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA (r + 1) = IA (r) }[/math]</span>, означающего, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ r }[/math]</span>-я строка пуста. Если матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> имеет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> строк, то <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA }[/math]</span> содержит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m + 1 }[/math]</span> позиций. </p><figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:SuperSparseStoreAndMultiplyRRCOFormat.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/1/1f/SuperSparseStoreAndMultiplyRRCOFormat.png" decoding="async" width="297" height="88" class="mw-file-element" /></a><figcaption>Рисунок 2. Формат RR (C) O на примере матрицы А(рис.1)</figcaption></figure>
+<p>Данный способ представления называют <i>полным</i>, поскольку представлена вся матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, и <i>упорядоченным</i>, поскольку элементы каждой строки хранятся в соответствии с возрастанием столбцовых индексов. Таким образом, это строчное представление, полное и упорядоченное, или сокращенно <b>RR (C) O</b> (рис. 2). Сокращенное название данного формата происходит от английского словосочетания "Row - wise Representation Complete and Ordered" (строчное представление, полное и упорядоченное).
+</p><p>Схема предъявляет минимальные требования к памяти и в то же время оказывается очень удобной для нескольких важных операций над разряженными матрицами: сложения, умножения, перестановок строк и столбцов, транспонирования, решения линейных систем с разреженными матрицами коэффициентов как прямым, так и итерационными методами.
+</p>
+<h4><span id=".D0.9D.D0.B5.D1.83.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Неупорядоченные_представления">Неупорядоченные представления</span></h4>
+<p>Рассмотрим формат <b>RR(C)U</b> (рис. 3). Сокращенное название данного формата происходит от английского словосочетания "Row - wise Representation Complete and Unordered" (строчное представление, полное, но неупорядоченное).
+</p><p>
+Аналогично RR(C)O формат RR(C)U представлен тремя массивами — <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN,JA,IA }[/math]</span>, но элементы в массивах <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN,JA }[/math]</span> относящиеся к одной строке, могут идти в произвольном порядке.</p><figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:SuperSparseStoreAndMultiplyRRCUFormat.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/1/12/SuperSparseStoreAndMultiplyRRCUFormat.png" decoding="async" width="299" height="88" class="mw-file-element" /></a><figcaption>Рисунок 3. Формат RR (C) U на примере матрицы А (рис.1)</figcaption></figure>
+<p>Формат RR(C)U вводится по следующим причинам. Представления разреженных матриц необязательно должны быть упорядочены в том смысле, что, хотя упорядоченность строк соблюдается, внутри каждой строки элементы исходных матриц могут храниться в произвольном порядке. Такие неупорядоченные представления могут быть весьма удобны в практических вычислениях. Результаты большинства матричных операций получаются неупорядоченными, а их упорядочение стоило бы значительных затрат машинного времени. В то же время, за немногими исключениями, алгоритмы для разреженных матриц не требуют, чтобы их представления были упорядоченными.
+</p><p>
+Ещё одним форматом неупорядоченного представления является <b>RR (U) U</b> (рис. 4). Сокращенное название формата RR (U) U происходит от английского словосочетания "Row - wise Representation, Upper, Unordered" (строчное представление, верхний треугольник, неупорядоченное).</p><figure class="mw-halign-right" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:SuperSparseStoreAndMultiplyRRUUFormat.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/3/3e/SuperSparseStoreAndMultiplyRRUUFormat.png" decoding="async" width="152" height="117" class="mw-file-element" /></a><figcaption>Рисунок 4. Формат RR (U) U на примере матрицы А (рис.1)</figcaption></figure>
+<p>Данный формат используется для симметричных и верхних треугольных матриц, у которых большинство диагональных элементов отличны от нуля. В этом формате представляется только верхний треугольник матрицы (внутри каждой строки элементы могут храниться в произвольном порядке), а ее диагональные элементы хранятся в отдельном одномерном массиве. Верхняя треугольная матрица представляется  тремя массивами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN,JA,IA }[/math]</span>, которые аналогичны массивам в формате RR(C)U.
+</p>
+<h4><span id=".D0.A5.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B1.D0.BB.D0.BE.D1.87.D0.BD.D1.8B.D1.85_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86"></span><span class="mw-headline" id="Хранение_блочных_матриц">Хранение блочных матриц</span></h4>
+<p>Идея разбиения большой матрицы на подматрицы или блоки возникает естественным образом. С блоками можно обращаться, как если бы они были элементами матрицы, и блочная матрица превращается в матрицу из матриц. Разбиение на блоки играет важную роль в технологии разреженных матриц, потому что многие алгоритмы, сконструированные первоначально для числовых матриц, можно обобщить на случай матриц из матриц. Большая гибкость, связанная с понятием разбиения, может давать определенные  вычислительные преимущества. С другой стороны, разбиение можно рассматривать просто как инструмент управления данными, помогающий организовать обмен информацией между оперативной памятью и внешними запоминающими устройствами. 
+</p><p>Хранение блочной матрицы подразумевает хранение множества её подматриц. Рассмотрим <i>неявную схему хранения</i>, предназначенную главным образом для симметричных матриц с квадратными диагональными блоками. Диагональные блоки рассматриваются так, как если бы они составляли единую матрицу, и хранятся в соответствие с <a href="#Профильная_схема_хранения_симметричных_матриц">профильной схемой</a>. Численные значения элементов хранятся по строкам в массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span>, а указатели на диагональные элементы каждой строки — в целом массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA }[/math]</span>. Поддиагональные блоки рассматриваемые так, как если бы они составляли единую матрицу, хранятся посредством <a href="#Разреженный_строчный_формат">разреженного строчного формата</a>. Ненулевые элементы размещаются по строкам в вещественном массиве  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AP }[/math]</span>, а соответствующие столбцовые индексы — в параллельном целом массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA }[/math]</span>. Указатели начала строк хранятся в массиве <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IP }[/math]</span>.
+</p>
+<h3><span id=".D0.A3.D0.BC.D0.BD.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D1.86.D1.8B_.D0.BD.D0.B0_.D0.B2.D0.B5.D0.BA.D1.82.D0.BE.D1.80"></span><span class="mw-headline" id="Умножение_разреженной_матрицы_на_вектор">Умножение разреженной матрицы на вектор</span></h3>
+<p><b>Умножение разреженной матрицы на вектор</b> используется при вычислении векторов Ланцоша, необходимом при итерационном решении линейных уравнений методом сопряженных градиентов, а также при вычислении собственных значений и собственных векторов матрицы. Достоинство этих процедур, с вычислительной точки зрения, состоит в том, что единственная требуемая матрич­ная операция — это повторное умножение матрицы на последо­вательность заполненных векторов; сама матрица не меняется. Следовательно, наиболее релевантными для этих задач являются статические схемы хранения.
+</p><p>В зависимости от формы представления матрицы используются различные алгоритмы. Далее рассмотрим простейший случай — это когда матрица, прямоугольная или квадратная, хранится в форме RR (С) U.
+</p>
+<h2><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h2>
+<p>Исходные данные: разреженная матрица общего вида <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, \ldots, n }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = 1, \ldots, m }[/math]</span>), заполненный вектор-столбец <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_{j} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = 1, \ldots, m }[/math]</span>)
+</p><p>Вычисляемые данные: заполненный вектор-столбец <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_{i} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, \ldots, n }[/math]</span>).
+</p><p>Формулы метода:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_{i} = \sum\limits_{k = 1}^{nz{_i}} a_{i,j=j(k)}b_{j=j(k)} }[/math]</span>,
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz{_i} }[/math]</span> - количество ненулевых элементов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = 1, \ldots, m }[/math]</span>,
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = j(k) }[/math]</span> - индексная информация, указывающая расположение ненулевого элемента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, \ldots, n }[/math]</span> и соответствующего элемента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_{j} }[/math]</span>.
+</p><p>Существует также блочная версия метода, однако в данном описании разобран только точечный метод.
+</p>
+<h2><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h2>
+<p>Вычислительное ядро умножения разреженной матрицы на вектор можно составить из множественных (всего их <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>) вычислений скалярных произведений вектор-строк <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a^i }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a^i_{k} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = 1, \ldots, nz_{i} }[/math]</span>), состоящих из ненулевых элементов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{i, j=j(k)} }[/math]</span>, на вектор-столбцы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b^i }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b^i_{k} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = 1, \ldots, nz_{i} }[/math]</span>), состоящих из элементов <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_{j=j(k)} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, \ldots, n }[/math]</span>:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sum\limits_{k = 1}^{nz_{i}} a^i_k b^i_k }[/math]</span>
+</p><p>в <i>режиме накопления</i> или без него, в зависимости от требований задачи.
+</p>
+<h2><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h2>
+<p>Как записано и в <a href="#Вычислительное_ядро_алгоритма">описании ядра алгоритма</a>, основную часть метода составляют множественные (всего <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>) вычисления сумм:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \sum\limits_{k = 1}^{nz_{i}} a^i_k b^i_k }[/math]</span>
+</p><p>в режиме накопления или без него.
+</p>
+<h2><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h2>
+<p>Последовательность исполнения метода следующая:
+</p><p>Далее описывается простейший случай — матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> хранится в форме RR (С) U.
+</p><p>1. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k^0_{nz} = IA(1) }[/math]</span>
+</p><p>Далее для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> по нарастанию выполняются
+</p><p>2. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_i = 0 }[/math]</span>
+</p><p>3. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k^i_0 = k^{i - 1}_{nz} }[/math]</span>
+</p><p>4. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k^i_{nz} = IA(i + 1) - 1 }[/math]</span>
+</p><p>5. <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_{i} = \sum\limits_{k = k^i_0}^{k^i_{nz}} AN(k) b_{JA(k)} }[/math]</span>
+</p><p>После этого (если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \le n }[/math]</span>) происходит переход к шагу 2 с бо́льшим <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span>. 
+</p><p>Особо отметим, что вычисления <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_{i} }[/math]</span> производят в режиме накопления сложением произведений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN(k) b_{JA(k)} }[/math]</span> для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k^i_0 }[/math]</span> до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k^i_{nz} }[/math]</span>, c нарастанием <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>.
+</p>
+<h2><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h2>
+<p>Для алгоритма умножения разреженной матрицы размером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n \times m }[/math]</span>, представленной в формате RR (C) U, на вектор длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> в последовательном (наиболее быстром) варианте требуется:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz }[/math]</span> сложений (вычитаний),</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz }[/math]</span> умножений,</li></ul>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz }[/math]</span> - количество ненулевых элементов матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+</p><p>Умножения и сложения (вычитания) составляют <i>основную часть алгоритма</i>.
+</p><p>При этом использование режима накопления требует совершения умножений и вычитаний в режиме двойной точности, что ещё больше увеличивает долю умножений и сложений/вычитаний во времени, требуемом для выполнения умножения разреженной матрицы на вектор.
+</p><p>При классификации по последовательной сложности, таким образом, алгоритм умножения разреженной матрицы на вектор относится к алгоритмам со сложностью <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(nz) }[/math]</span>.
+</p>
+<h2><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h2>
+<p>Опишем <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Граф_алгоритма" title="Глоссарий">граф алгоритма</a><sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup><sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> как аналитически, так и в виде рисунка. Далее предполагается, что матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> представлена в формате RR (C) U.
+</p><p>Граф алгоритма состоит из двух групп вершин, расположенных в целочисленных узлах двух областей.
+</p><p><b>Первая</b> группа вершин расположена в двумерной области, соответствующая ей операция  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a*b }[/math]</span>.  Естественно введённые координаты области таковы:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> — меняется в диапазоне от 1 до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>, принимая все целочисленные значения;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>— меняется в диапазоне от 1 до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, принимая все целочисленные значения.</li></ul>
+<p>Здесь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> зависит от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> и соответствует числу ненулевых элементов в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>-ой строке матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, которое равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA[j+1] - IA[j] }[/math]</span>.
+</p><p>Аргументы операции следующие:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span> — элемент массива <span style="opacity:.5" class="smj-container">[math]\displaystyle{ AN }[/math]</span> с индексом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA_{j} + i }[/math]</span>;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> — элемент входного вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> с индексом <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA[IA_{j} + i] }[/math]</span>.</li></ul>
+<p><b>Вторая</b> группа вершин расположена в двумерной области, соответствующая ей операция  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a+b }[/math]</span>.  Естественно введённые координаты области таковы:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> — меняется в диапазоне от 3 до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k+1 }[/math]</span>, принимая все целочисленные значения;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>— меняется в диапазоне от 1 до <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>, принимая все целочисленные значения.</li></ul>
+<p>Здесь <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span> зависит от <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span> и соответствует числу ненулевых элементов в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j }[/math]</span>-ой строке матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, которое равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ IA[j+1] - IA[j] }[/math]</span>.
+</p><p>Аргументы операции следующие:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ a }[/math]</span>:
+<ul><li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i=3 }[/math]</span> — результат срабатывания операции, соответствующей вершине из первой группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 2, j }[/math]</span>;</li>
+<li>при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i\gt 3 }[/math]</span> — результат срабатывания операции, соответствующей вершине из второй группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1, j }[/math]</span>;</li></ul></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> — результат срабатывания операции, соответствующей вершине из первой группы, с координатами <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i - 1, j }[/math]</span>.</li></ul>
+<p>Результат срабатывания операции является <i>промежуточным данным</i> алгоритма.
+</p><p>Описанный граф можно посмотреть на рис. 5. Граф отображает параллельную версию произведения разреженной матрицы на вектор, где каждая строка показывает ядро алгоритма (произведение строки на вектор). Вершины, соответствующие входным и выходным данным обозначены прямоугольниками, а вершины, соответствующие операциям — окружностями. Здесь вершины первой группы обозначены зеленым цветом и буквосочетанием multi, вершины второй — синим цветом и знаком сложения.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:SuperSparseStoreAndMultiply_RRCU.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/f/fe/SuperSparseStoreAndMultiply_RRCU.png" decoding="async" width="745" height="645" class="mw-file-element" /></a><figcaption>Рисунок 5. Граф алгоритма. multi — произведение.</figcaption></figure>
+<h2><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h2>
+<p>Для алгоритма умножения разреженной матрицы размером <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n\times m }[/math]</span>, представленной в формате RR (C) U, на вектор длины <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> в параллельном варианте требуется последовательно выполнить следующие ярусы:
+</p>
+<ul><li>по <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz_{\max} }[/math]</span> ярусов умножений и сложений (в каждом из ярусов — <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> операций),</li></ul>
+<p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz_{\max} = \max_{1 \leq i \leq n} nz_i \leq m }[/math]</span>.
+</p><p>При этом использование режима накопления требует совершения умножений и сложений в режиме двойной точности, а в параллельном варианте это означает, что практически все промежуточные вычисления для выполнения алгоритма в режиме накопления должны быть двойной точности. В отличие от последовательного варианта это означает некоторое увеличение требуемой памяти.
+</p><p>При классификации по высоте ЯПФ, таким образом, алгоритм умножения разреженной матрицы на вектор относится к алгоритмам <i>с линейной сложностью</i>. При классификации по высоте ЯПФ его сложность также будет <i>линейной</i>.
+</p>
+<h2><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h2>
+<p><b>Входные данные:</b>
+</p>
+<ul><li>разреженная матрица общего вида <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a_{ij} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, \ldots, n }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = 1, \ldots, m }[/math]</span>), заданная в формате RR (C) U;</li></ul>
+<ul><li>заполненный вектор-столбец <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b_{j} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j = 1, \ldots, m }[/math]</span>).</li></ul>
+<p><b>Объём входных данных:</b> 
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ nz }[/math]</span> (без учета индексной информации, составляющей накладные расходы - массивы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ JA, IA }[/math]</span>);</li></ul>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span>.</li></ul>
+<p><b>Выходные данные:</b> заполненный вектор-столбец <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c }[/math]</span> (элементы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ c_{i} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, \ldots, n }[/math]</span>).
+</p><p><b>Объём выходных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.
+</p>
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h2>
+<p>Соотношение последовательной и параллельной сложности в случае неограниченных ресурсов равно <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\frac{nz}{n}) }[/math]</span>.
+</p><p>При этом вычислительная мощность алгоритма умножения разреженной матрицы на вектор, как отношение числа операций к суммарному объему входных и выходных данных – <i>константа</i>.
+</p><p>При этом алгоритм умножения матрицы на вектор полностью детерминирован. Использование другого порядка выполнения ассоциативных операций в данной версии нами не рассматривается.
+</p>
+<h1><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h1>
+<h2><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h2>
+<h2><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h2>
+<h2><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h2>
+<h2><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h2>
+<p>Проведём исследование масштабируемости параллельной реализации умножения разреженной матрицы в формате RR(C)U на вектор. Исследование проводилось на <a rel="nofollow" class="external text" href="http://hpc.cmc.msu.ru/bgp">вычислительном комплексе IBM Blue Gene/P</a><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>. В качестве программной реализации была использована модифицированная версия <a rel="nofollow" class="external text" href="https://github.com/taoito/matvec-mpi">программы</a><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup>. 
+</p><p>Набор и границы значений изменяемых <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Параметры_запуска" title="Глоссарий">параметров запуска</a> реализации алгоритма: 
+</p>
+<ul><li>число процессоров [1, 10, 25, 50, 100]</li>
+<li>количество ненулеввых элементов в матрице [1500, 40000, 150000, 600000, 3750000].</li></ul>
+<p>На следующем рисунке приведен график времени выполнения выбранной реализации умножение разреженной матрицы в формате RR(C)U на вектор в зависимости от изменяемых параметров запуска.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:RRCOMultiplaction_Graphic.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/3/3c/RRCOMultiplaction_Graphic.png/700px-RRCOMultiplaction_Graphic.png" decoding="async" width="700" height="467" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/3/3c/RRCOMultiplaction_Graphic.png/1050px-RRCOMultiplaction_Graphic.png 1.5x, https://algowiki-project.org/algowiki/pool/images/3/3c/RRCOMultiplaction_Graphic.png 2x" /></a><figcaption>Рисунок 6. Параллельная реализация умножение разреженной матрицы в формате RR(C)U на вектор.</figcaption></figure>
+<p>Можно заметить, что скорость вычисления при переходе с последовательной на параллельную версию возросла значительно. В то время как дальнейшее увеличение числа вычислительных устройств не дает такого эффекта. Это объясняется быстрым ростом накладных расходов на организацию параллельного выполнения. Это подтверждает предположение о том, что накладные расходы начинают сильно превалировать над вычислениями.
+</p>
+<h2><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h2>
+<h2><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h2>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<p>Алгоритм умножения разреженной матрицы на вектор входит в состав таких библиотек для вычислений с разреженными матрицами, как: SparseLib++<a rel="nofollow" class="external autonumber" href="http://math.nist.gov/sparselib++/">[1]</a>, uBLAS <a rel="nofollow" class="external autonumber" href="http://www.boost.org/doc/libs/1_62_0/libs/numeric/ublas/doc/">[2]</a>, Intel MKL <a rel="nofollow" class="external autonumber" href="https://software.intel.com/en-us/intel-mkl">[3]</a>, cuSPARSE <a rel="nofollow" class="external autonumber" href="http://docs.nvidia.com/cuda/cusparse/">[4]</a> и др.
+</p>
+<h1><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h1>
+<p>&lt;references \&gt;
+</p>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">С.Писсанецки. Технология разреженных матриц. - М.: Мир, 1988</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Воеводин В.В.  Математические основы параллельных вычислений// М.: Изд. Моск. ун-та, 1991. 345 с.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Воеводин В.В., Воеводин Вл.В. Параллельные вычисления. – СПб.: БХВ - Петербург, 2002. – 608 с.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Фролов А.В.. Принципы построения и описание языка Сигма. Препринт ОВМ АН N 236. М.: ОВМ АН СССР, 1989.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Вычислительный комплекс IBM Blue Gene/P <a rel="nofollow" class="external free" href="http://hpc.cmc.msu.ru/bgp">http://hpc.cmc.msu.ru/bgp</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Thao Nguyen A sparse matrix-vector parallel multiplication implementation using MPI</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092724
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.045 seconds
+Real time usage: 0.048 seconds
+Preprocessor visited node count: 1430/1000000
+Post‐expand include size: 5086/2097152 bytes
+Template argument size: 1307/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 21040/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.978      1 Шаблон:Algorithm
+100.00%    4.978      1 -total
+ 63.50%    3.161      1 Шаблон:Level-a
+ 23.75%    1.182      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:563-0!canonical and timestamp 20260611092724 and revision id 19781. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Janyell/Хранение_ненулевых_элементов_разреженной_матрицы._Умножение_разреженной_матрицы_на_вектор&amp;oldid=19781">https://algowiki-project.org/w/ru/index.php?title=Участник:Janyell/Хранение_ненулевых_элементов_разреженной_матрицы._Умножение_разреженной_матрицы_на_вектор&amp;oldid=19781</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категория</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AJanyell%2F%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B.+%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BD%D0%B0+%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AJanyell%2F%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B.+%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BD%D0%B0+%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/Janyell" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/Janyell"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/Janyell"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80&amp;oldid=19781" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Janyell/%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B._%D0%A3%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 1 декабря 2016 года в 02:52.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":156,"wgPageParseReport":{"limitreport":{"cputime":"0.045","walltime":"0.048","ppvisitednodes":{"value":1430,"limit":1000000},"postexpandincludesize":{"value":5086,"limit":2097152},"templateargumentsize":{"value":1307,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":21040,"limit":5000000},"timingprofile":["100.00%    4.978      1 Шаблон:Algorithm","100.00%    4.978      1 -total"," 63.50%    3.161      1 Шаблон:Level-a"," 23.75%    1.182      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092724","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

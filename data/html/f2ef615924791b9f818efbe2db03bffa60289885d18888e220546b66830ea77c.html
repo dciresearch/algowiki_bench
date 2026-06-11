@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:F-morozov/Нахождение собственных чисел квадратной матрицы методом QR разложения (4) — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"d71a3f2fdadccdd8274e3b57","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:F-morozov/Нахождение_собственных_чисел_квадратной_матрицы_методом_QR_разложения_(4)","wgTitle":"F-morozov/Нахождение собственных чисел квадратной матрицы методом QR разложения (4)","wgCurRevisionId":21128,"wgRevisionId":21128,"wgArticleId":573,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Assignments/Done/Frolov","Assignments/Done","Assignments","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:F-morozov/Нахождение_собственных_чисел_квадратной_матрицы_методом_QR_разложения_(4)","wgRelevantArticleId":573,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"F-morozov","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_F-morozov_Нахождение_собственных_чисел_квадратной_матрицы_методом_QR_разложения_4 rootpage-Участник_F-morozov skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">F-morozov/Нахождение собственных чисел квадратной матрицы методом QR разложения (4)</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <bdi dir="ltr"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov" title="Участник:F-morozov">Участник:F-morozov</a></bdi></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><table style="clear: both; width: 80%; background-color: #F0FFFF; border-color:#006e27 #006e27 #006e27 #006e27; border-style: solid; border-width: 1px 1px 1px 10px; padding: 4px; margin: 1px auto; vertical-align: middle; text-align: left;"><tbody><tr><td width="72px" height="auto"><span typeof="mw:File"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Symbol_confirmed.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-120px-Symbol_confirmed.svg.png" decoding="async" width="64" height="66" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Symbol_confirmed.svg/langru-250px-Symbol_confirmed.svg.png 2x" /></a></span></td><td style="vertical-align: middle"><b><span style="font-size:16px">Эта работа успешно выполнена<br />Преподавателю: <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;wpNewTitle=%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85+%D1%87%D0%B8%D1%81%D0%B5%D0%BB+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC+QR+%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+%284%29&amp;wpReason=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE">в основное пространство</a>, <a rel="nofollow" class="external text" href="https://algowiki-project.org/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Movepage/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;wpNewTitle=%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8%3A%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%2F%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85+%D1%87%D0%B8%D1%81%D0%B5%D0%BB+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC+QR+%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+%284%29&amp;wpReason=%D0%9D%D0%B0+%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83">в подстраницу</a></span></b><br />Данное задание было проверено и зачтено.<br />Проверено <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Frolov" title="Участник:Frolov">Frolov</a> и <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:VadimVV" title="Участник:VadimVV">VadimVV</a>.</td></tr></tbody></table>
+<p><br />
+</p><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Нахождение собственных чисел квадратной матрицы методом QR-разложения
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3 + N \times n^2) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^2 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times O(n) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov" title="Участник:F-morozov">Ф.&#160;В.&#160;Морозов</a>, <a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Nataliya" title="Участник:Nataliya">Н.&#160;Ф.&#160;Пащенко</a>
+</p><p>Описание составлено совместно, точно выделить вклад отдельных авторов невозможно.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#QR-алгоритм"><span class="tocnumber">1.2.1</span> <span class="toctext">QR-алгоритм</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Сходимость_QR-алгоритма"><span class="tocnumber">1.2.2</span> <span class="toctext">Сходимость QR-алгоритма</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Сокращение_затрат_на_одну_итерацию"><span class="tocnumber">1.2.3</span> <span class="toctext">Сокращение затрат на одну итерацию</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Уменьшение_числа_итераций"><span class="tocnumber">1.2.4</span> <span class="toctext">Уменьшение числа итераций</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Локальность_данных_и_вычислений"><span class="tocnumber">2.2</span> <span class="toctext">Локальность данных и вычислений</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.3</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Масштабируемость_алгоритма_и_его_реализации"><span class="tocnumber">2.4</span> <span class="toctext">Масштабируемость алгоритма и его реализации</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Динамические_характеристики_и_эффективность_реализации_алгоритма"><span class="tocnumber">2.5</span> <span class="toctext">Динамические характеристики и эффективность реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.6</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Существующие_реализации_алгоритма"><span class="tocnumber">2.7</span> <span class="toctext">Существующие реализации алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h1><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h1>
+<h2><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h2>
+<p>Для решения ряда задач механики, физики, химии требуется получение всех собственных значений (собственных чисел), а иногда и всех собственных векторов некоторых матриц. Эту задачу называют полной проблемой собственных значений<sup id="cite_ref-Бахвалов_1-0" class="reference"><a href="#cite_note-Бахвалов-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>. Если рассматриваются матрицы общего вида, порядок которых не больше тысячи (нескольких тысяч), то для вычисления всех собственных значений (и собственных векторов) можно рекомендовать <b>QR-алгоритм</b>. Он был разработан в начале 1960-х годов независимо В.&#160;Н.&#160;Кублановской (Россия) и Дж.&#160;Фрэнсисом (Великобритания)<sup id="cite_ref-Тыртышников_2-0" class="reference"><a href="#cite_note-Тыртышников-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p><p>Нахождение собственных чисел матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> методом QR-разложения (QR-алгоритм) заключается в построении последовательности матриц, сходящейся по форме к клеточному правому треугольному виду. Матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k }[/math]</span> данной последовательности строятся с использованием QR-разложения таким образом, что они подобны между собой и подобны исходной матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>, поэтому их собственные значения равны. Характеристический многочлен клеточной правой треугольной матрицы равен произведению характеристических многочленов ее диагональных клеток<sup id="cite_ref-Бахвалов_1-1" class="reference"><a href="#cite_note-Бахвалов-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>. Его корни — собственные значения матрицы, которые согласно вышесказанному и являются искомыми.
+</p>
+<h2><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h2>
+<p>Известно, что произвольная квадратная матрица может быть представлена в виде произведения унитарной (<i>в вещественном случае ортогональной</i>) и верхней треугольной матриц. Такое разложение называется QR-разложением.
+</p>
+<h3><span id="QR-.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC"></span><span class="mw-headline" id="QR-алгоритм">QR-алгоритм</span></h3>
+<p>Пусть <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_0 = A }[/math]</span> — исходная матрица.
+Для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = 1, 2, \ldots }[/math]</span>:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{k-1} = Q_kR_k }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_k }[/math]</span> — унитарная (<i>ортогональная</i>) матрица, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R_k }[/math]</span> — верхняя треугольная матрица;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k = R_kQ_k }[/math]</span>.</li></ul>
+<p>Заметим, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k = R_kQ_k = Q_k^{-1}A_{k-1}Q_k }[/math]</span>, то есть матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{k-1} }[/math]</span> подобны для любого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k }[/math]</span>.
+Таким образом, матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_1, A_2, \ldots }[/math]</span> подобны исходной матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> и имеют те же собственные значения.
+При выполнении <a href="#Сходимость_QR-алгоритма">некоторых условий</a> последовательность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \{A_k\} }[/math]</span> сходится к верхней треугольной матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \hat{A} }[/math]</span>, на диагонали которой расположены искомые собственные значения.
+</p>
+<h3><span id=".D0.A1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D1.8C_QR-.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Сходимость_QR-алгоритма">Сходимость QR-алгоритма</span></h3>
+<p>Сходимость QR-алгоритма трактуется как сходимость к нулю поддиагонального блока матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k }[/math]</span>.
+</p><p>Предположим, что для матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A \in \mathbb{C}^{n \times n} }[/math]</span> выполнены следующие условия:
+</p>
+<ol><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A = X \Lambda X^{-1}, \quad \Lambda = \begin{bmatrix} \Lambda_1 &amp; 0 \\ 0 &amp; \Lambda_2 \end{bmatrix}, \quad \Lambda_1 \in \mathbb{C}^{m \times m}, \quad \Lambda_2 \in \mathbb{C}^{r \times r} }[/math]</span>;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left | \lambda_1  \right | \ge \ldots \ge \left | \lambda_m  \right | \gt  \left | \lambda_{m+1} \right | \ge \ldots \ge  \left | \lambda_{m+r} \right | \gt  0, \quad \{ \lambda_1, \ldots, \lambda_m \} = \lambda(\Lambda_1), \quad \{ \lambda_{m+1}, \ldots, \lambda_{m+r} \} = \lambda(\Lambda_2) }[/math]</span>;</li>
+<li>ведущая подматрица порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ X^{-1} }[/math]</span> невырожденная.</li></ol>
+<p>И пусть QR-алгоритм порождает последовательность матриц
+</p>
+<dl><dd><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k = \begin{bmatrix}A_{11}^{(k)} &amp; A_{12}^{(k)} \\ A_{21}^{(k)} &amp; A_{22}^{(k)}\end{bmatrix} }[/math]</span>.</dd></dl>
+<p>Тогда <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{21}^{(k)} \rightarrow O }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{  k \rightarrow \infty }[/math]</span>.
+</p><p>Если блок <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{21}^{(k)} }[/math]</span> достаточно мал, то он заменяется нулевым, и собственные значения ищутся для диагональных блоков <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{11}^{(k)} }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{22}^{(k)} }[/math]</span>. 
+</p><p>Если условия 1-3 выполнены для всех <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 1 \le m \le n - 1 }[/math]</span>, то к нулю сходятся все поддиагональные блоки. А это значит, что все поддиагональные элементы матриц <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k }[/math]</span> стремятся к нулю, и диагональные элементы матриц <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k }[/math]</span> сходятся к искомым собственным значениям матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span><sup id="cite_ref-Тыртышников_2-1" class="reference"><a href="#cite_note-Тыртышников-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h3><span id=".D0.A1.D0.BE.D0.BA.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D1.82.D1.80.D0.B0.D1.82_.D0.BD.D0.B0_.D0.BE.D0.B4.D0.BD.D1.83_.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D1.8E"></span><span class="mw-headline" id="Сокращение_затрат_на_одну_итерацию">Сокращение затрат на одну итерацию</span></h3>
+<p>Одна QR-итерация для матрицы общего вида требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3) }[/math]</span> арифметических операций. Это очень большие затраты, даже если итераций не очень много (обычно их требуется не больше 5 на каждое собственное значение). 
+Для решения данной проблемы используют тот факт, что с помощью отражений или вращений матрицу <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> можно привести к унитарно подобной верхней хессенберговой (почти треугольной) матрице:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ H = (h_{ij}), \quad h_{ij} = 0 }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i \gt  j + 1 }[/math]</span>;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ H = PAP^* }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ P }[/math]</span> — произведение конечного числа отражений (или вращений).</li></ul>
+<p>Затем QR-алгоритм применяется к матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_0 = H }[/math]</span>.
+</p><p>Приведение к хессенберговой форме требует <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3) }[/math]</span> операций, но после него любая QR-итерация будет выполняться за <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span> операций. Сокращение затрат на одну итерацию объясняется инвариантностью хессенберговой формы по отношению к QR-итерациям<sup id="cite_ref-Тыртышников_2-2" class="reference"><a href="#cite_note-Тыртышников-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>.
+</p>
+<h3><span id=".D0.A3.D0.BC.D0.B5.D0.BD.D1.8C.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B8.D1.81.D0.BB.D0.B0_.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.B9"></span><span class="mw-headline" id="Уменьшение_числа_итераций">Уменьшение числа итераций</span></h3>
+<p>Скорость сходимости алгоритма зависит от отношения модулей собственных значений: чем больше отношение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |\lambda_{m+1}| / |\lambda_m| }[/math]</span>, тем медленнее убывает поддиагональный <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (n-m) \times m  }[/math]</span> блок.
+Для увеличения скорости сходимости алгоритма можно перейти от матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> к матрице <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (A - sI) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ s \in \mathbb{C} }[/math]</span>, а <span style="opacity:.5" class="smj-container">[math]\displaystyle{ I }[/math]</span> — единичная матрица, в надежде, что <span style="opacity:.5" class="smj-container">[math]\displaystyle{ |\lambda_{m+1} - s| / |\lambda_m - s| \ll |\lambda_{m+1}| / |\lambda_m| }[/math]</span>.
+</p><p>Такой подход называется QR-алгоритмом со сдвигами и имеет следуюший вид:
+</p><p><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_0 = A }[/math]</span> — исходная матрица.
+Для <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = 1, 2, \ldots }[/math]</span>:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_{k-1} - s_kI= Q_kR_k }[/math]</span> (QR-разложение);</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k = R_kQ_k + s_kI }[/math]</span>.</li></ul>
+<p>QR-алгоритм со сдвигами является частным случаем обобщенного QR-алгоритма (QR-алгоритма с мультисдвигами), в котором на каждой итерации используется полином <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_k }[/math]</span>:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ f_k(A_{k-1}) = Q_kR_k }[/math]</span>;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ A_k = Q_k^{-1}A_{k-1}Q_k }[/math]</span>.</li></ul>
+<h2><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h2>
+<p>Основное время работы алгоритма приходится на вычисление QR-разложения на итерациях алгоритма. 
+</p><p>Для получения QR-разложения могут использоваться <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%B0%D1%83%D1%81%D1%85%D0%BE%D0%BB%D0%B4%D0%B5%D1%80%D0%B0_(%D0%BE%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9)_QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" title="Метод Хаусхолдера (отражений) QR-разложения матрицы">метод Хаусхолдера</a>, <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0_(%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9)_QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" title="Метод Гивенса (вращений) QR-разложения матрицы">метод Гивенса</a> или процесс ортогонализации Грама-Шмидта.
+</p><p>При использовании хессенберговой формы приведение к ней имеет сложность, сравнимую с последующими итерациями QR-алгоритма.
+</p>
+<h2><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h2>
+<p>Основные элементы алгоритма:
+</p>
+<ul><li>(опционально) приведение к хессенберговой форме;</li>
+<li>QR-разложение;</li>
+<li>умножение плотных матриц.</li></ul>
+<h2><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h2>
+<p>Пример реализации на языке Python:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_eigenvalues</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">use_hessenberg_form</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Вычисление собственных значений матрицы методом QR-разложения</span>
+
+<span class="sd">    Параметры:</span>
+<span class="sd">    A -- квадратная матрица</span>
+<span class="sd">    use_hessenberg_form -- использовать ли приведение к хессенберговой форме</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">use_hessenberg_form</span><span class="p">:</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">to_hessenberg_form</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1">#Матрица приводится к хессенберговой форме</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">is_upper_triangular</span><span class="p">(</span><span class="n">A</span><span class="p">):</span> <span class="c1">#Является ли матрица верхней треугольной</span>
+        <span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">QR_decomposition</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1">#Производится QR-разложение матрицы</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">Q</span>
+    <span class="c1">#Собственными значениями являются диагональные элементы полученной матрицы</span>
+    <span class="k">return</span> <span class="n">diagonal_items</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+<h2><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h2>
+<p>Рассмотрим сложность отдельных элементов алгоритма:
+</p>
+<ul><li>QR-разложение имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3) }[/math]</span> арифметических операций;</li>
+<li>сложность перемножения квадратных матриц равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^3 + O(n^2) }[/math]</span>;</li>
+<li>для проверки, является ли матрица верхней треугольной, необходимо <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span> операций.</li></ul>
+<p>Таким образом, каждая итерация имеет кубическую сложность и, если алгоритм сходится через <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> итераций, общая сложность составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times O(n^3) }[/math]</span> арифметических операций.
+</p><p>Сложность построения хессенберговой формы составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3) }[/math]</span>, одна итерация алгоритма для хессенберговой матрицы имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>. Общая сложность QR-алгоритма с предварительным приведением матрицы к хессенберговой форме равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^3 + N \times n^2) }[/math]</span> арифметических операций, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> — число итераций алгоритма.
+</p>
+<h2><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h2>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qr_algorithm_graph.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/9/9b/Qr_algorithm_graph.png/640px-Qr_algorithm_graph.png" decoding="async" width="640" height="131" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/9/9b/Qr_algorithm_graph.png/960px-Qr_algorithm_graph.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/9/9b/Qr_algorithm_graph.png/1280px-Qr_algorithm_graph.png 2x" /></a><figcaption>Рисунок 1. Информационный граф.</figcaption></figure>
+<p>Узлы графа:
+</p>
+<ul><li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ QR }[/math]</span> — QR-разложение;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ \times }[/math]</span> — перемножение матриц;</li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ isUT }[/math]</span> — проверка, является ли матрица верхней треугольной.</li></ul>
+<h2><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h2>
+<p>Несмотря на то что QR-алгоритм является последовательным, действия, выполняемые на каждой итерации, могут быть эффективно выполнены параллельно:
+</p>
+<ul><li>параллельная сложность QR-разложения составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span> при использовании <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%93%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%B0_(%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9)_QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" title="Метод Гивенса (вращений) QR-разложения матрицы">метода Гивенса</a> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span> при использовании <a href="/ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%A5%D0%B0%D1%83%D1%81%D1%85%D0%BE%D0%BB%D0%B4%D0%B5%D1%80%D0%B0_(%D0%BE%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9)_QR-%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" title="Метод Хаусхолдера (отражений) QR-разложения матрицы">метода Хаусхолдера</a>;</li>
+<li>параллельная сложность умножения матриц равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>;</li>
+<li>для проверки, является ли матрица верхней треугольной, достаточно одного яруса.</li></ul>
+<p>Таким образом, при классификации по высоте ярусно-параллельной формы сложность равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times O(n) }[/math]</span> или <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times O(n^2) }[/math]</span> в зависимости от используемого метода QR-разложения.
+</p><p>При классификации по ширине ярусно-параллельной формы, сложность QR-алгоритма составляет <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n^2) }[/math]</span>.
+</p>
+<h2><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h2>
+<p><b>Входные данные:</b> плотная квадратная матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> порядка <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.
+</p><p><b>Объем входных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n^2 }[/math]</span>.
+</p><p><b>Выходные данные:</b> собственные числа матрицы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span>.
+</p><p><b>Объем выходных данных:</b> <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span>.
+</p>
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h2>
+<ul><li>Соотношение последовательной и параллельной сложности является квадратичным или линейным в зависимости от метода QR-разложения.</li>
+<li><a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Вычислительная_мощность" title="Глоссарий">Вычислительная мощность</a> алгоритма равна <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N \times O(n) }[/math]</span>.</li>
+<li>Число итераций <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N }[/math]</span> заранее неизвестно, то есть алгоритм недетерминирован.</li>
+<li>Если рассмотренные в разделе «<a href="#Сходимость_QR-алгоритма">Сходимость QR-алгоритма</a>» условия 1-3 не выполнены, то, возможно, ни один из поддиагональных блоков не сходится к нулю. Это означает, что в общем случае QR-алгоритм не обязан сходиться. Однако внеся в элементы матрицы сколь угодно малые возмущения, всегда можно удовлетворить указанным условиям.</li>
+<li>Скорость сходимости алгоритма зависит от отношения собственных значений, чем ближе по модулю собственные значения, тем медленее скорость сходимости.</li>
+<li>Если матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ A }[/math]</span> эрмитова, то хессенбергова матрица <span style="opacity:.5" class="smj-container">[math]\displaystyle{ H }[/math]</span> будет трехдиагональной, и сложность одной QR-итерации составит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span> операций.</li></ul>
+<h1><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h1>
+<h2><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h2>
+<h2><span id=".D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.B8_.D0.B2.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Локальность_данных_и_вычислений">Локальность данных и вычислений</span></h2>
+<h2><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h2>
+<h2><span id=".D0.9C.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0_.D0.B8_.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Масштабируемость_алгоритма_и_его_реализации">Масштабируемость алгоритма и его реализации</span></h2>
+<p>Исследование проводилось на узлах раздела test суперкомпьютера "Ломоносов"<sup id="cite_ref-Lomonosov_3-0" class="reference"><a href="#cite_note-Lomonosov-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup> <a rel="nofollow" class="external text" href="http://parallel.ru/cluster">Суперкомпьютерного комплекса Московского университета</a>.
+</p><p>Исследовалась реализация QR-алгоритма из библиотеки <a rel="nofollow" class="external text" href="https://software.intel.com/en-us/node/521079">Intel MKL</a> версии 11.2.0 (функции LAPACKE_sgehrd и LAPACKE_shseqr). Была написана программа на языке C, использовался компилятор <a rel="nofollow" class="external text" href="https://software.intel.com/en-us/c-compilers">Intel C++</a>. Пример компиляции программы и запуска для матрицы размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 8000 \times 8000 }[/math]</span>:
+</p>
+<pre> $ mpicc qr.c -o _scratch/qr -L${MKLROOT}/lib/intel64 -lmkl_rt -lpthread -lm -ldl
+ $ sbatch -n 1 -p test run _scratch/qr 8000
+</pre>
+<p>Оценивалось время вычисления собственных чисел произвольной квадратной матрицы для различных значений порядка матрицы (Matrix size) и числа потоков (Threads). Ввиду того, что количество операций зависит от числа итераций алгоритма, оценить <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Производительность" title="Глоссарий">производительность</a> не удается.
+</p><p>Набор и границы значений изменяемых <a href="/ru/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9#Параметры_запуска" title="Глоссарий">параметров запуска</a> реализации алгоритма: 
+</p>
+<ul><li>число потоков [1&#160;: 8];</li>
+<li>размер матрицы [2000&#160;: 8000] с шагом 500.</li></ul>
+<p>На рисунке приведен график времени работы выбранной реализации QR-алгоритма в зависимости от изменяемых параметров запуска. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Qr_algorithm_lapack.png" class="mw-file-description"><img src="https://algowiki-project.org/algowiki/pool/images/thumb/7/73/Qr_algorithm_lapack.png/700px-Qr_algorithm_lapack.png" decoding="async" width="700" height="420" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/7/73/Qr_algorithm_lapack.png/1050px-Qr_algorithm_lapack.png 1.5x, https://algowiki-project.org/algowiki/pool/images/thumb/7/73/Qr_algorithm_lapack.png/1400px-Qr_algorithm_lapack.png 2x" /></a><figcaption>Рисунок 2. Производительность QR-алгоритма.</figcaption></figure>
+<p>Из рисунка видно, что алгоритм хорошо масштабируется. Время выполнения в зависимости от размера задачи растет значительно быстрее при использовании одного потока по сравнению с использованиемм нескольких потоков. Увеличение числа потоков при фиксированном размере задачи приводит к уменьшению времени выполнения. Для матрицы размера <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 8000 \times 8000 }[/math]</span> время работы однопоточной реализации более чем в два раза превосходит время работы параллельной.
+</p><p>Исходный код программы на языке C и скрипт для обработки результатов доступны на <a rel="nofollow" class="external text" href="https://github.com/f-morozov/algowiki-qr">github</a>.
+</p>
+<h2><span id=".D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D0.B8_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Динамические_характеристики_и_эффективность_реализации_алгоритма">Динамические характеристики и эффективность реализации алгоритма</span></h2>
+<h2><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h2>
+<h2><span id=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Существующие_реализации_алгоритма">Существующие реализации алгоритма</span></h2>
+<ol><li><a rel="nofollow" class="external text" href="http://www.netlib.org/lapack/">LAPACK</a> (Fortran, C). Имеется <a rel="nofollow" class="external text" href="https://software.intel.com/en-us/node/521079">реализация в Intel MKL</a>:
+<ul><li>?geev - нахождение собственных значений матрицы;</li>
+<li>?gehrd - приведение к хессенберговой форме;</li>
+<li>?hseqr - нахождение собственных значений матрицы в хессенберговой форме.</li></ul></li>
+<li><a rel="nofollow" class="external text" href="http://www.netlib.org/scalapack/">ScaLAPACK</a> (Fortran, C). Имеется <a rel="nofollow" class="external text" href="https://software.intel.com/en-us/node/521526">реализация в Intel MKL</a>:
+<ul><li>p?gehrd- приведение к хессенберговой форме;</li>
+<li>p?hseqr - нахождение собственных значений матрицы в хессенберговой форме.</li></ul></li>
+<li><a rel="nofollow" class="external text" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eigvals.html">numpy.linalg.eigvals</a> (Python) - использует ?geev из LAPACK.</li>
+<li><a rel="nofollow" class="external text" href="http://eigen.tuxfamily.org/dox/group__Eigenvalues__Module.html">Eigen</a> (C++).</li>
+<li><a rel="nofollow" class="external text" href="http://www-03.ibm.com/systems/power/software/essl/">IBM ESSL</a> (Fortran, C, C++).</li></ol>
+<h1><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-Бахвалов-1"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-Бахвалов_1-0">1,0</a></sup> <sup><a href="#cite_ref-Бахвалов_1-1">1,1</a></sup></span> <span class="reference-text">Бахвалов&#160;Н.&#160;С.,  Жидков&#160;Н.&#160;П., Кобельков&#160;Г.&#160;М. Численные методы. — 6-е изд. — М.: БИНОМ. Лаборатория знаний, 2008. — 636 с.</span>
+</li>
+<li id="cite_note-Тыртышников-2"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-Тыртышников_2-0">2,0</a></sup> <sup><a href="#cite_ref-Тыртышников_2-1">2,1</a></sup> <sup><a href="#cite_ref-Тыртышников_2-2">2,2</a></sup></span> <span class="reference-text">Тыртышников&#160;Е.&#160;Е. Методы численного анализа. — М.: Академия, 2007. — 320 c.</span>
+</li>
+<li id="cite_note-Lomonosov-3"><span class="mw-cite-backlink"><a href="#cite_ref-Lomonosov_3-0">↑</a></span> <span class="reference-text">Воеводин Вл., Жуматий С., Соболев С., Антонов А., Брызгалов П., Никитенко Д., Стефанов К., Воеводин Вад. Практика суперкомпьютера «Ломоносов» // Открытые системы, 2012, N 7, С. 36-39.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092719
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.039 seconds
+Real time usage: 0.209 seconds
+Preprocessor visited node count: 844/1000000
+Post‐expand include size: 19993/2097152 bytes
+Template argument size: 6538/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 12512/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.483      1 -total
+ 73.96%    4.795      1 Шаблон:Algorithm
+ 49.30%    3.196      1 Шаблон:Level-a
+ 25.38%    1.645      1 Шаблон:Assignment
+ 17.23%    1.117      1 Шаблон:Infobox
+ 17.07%    1.107      1 Шаблон:Плашка
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:573-0!canonical and timestamp 20260611092719 and revision id 21128. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:F-morozov/Нахождение_собственных_чисел_квадратной_матрицы_методом_QR_разложения_(4)&amp;oldid=21128">https://algowiki-project.org/w/ru/index.php?title=Участник:F-morozov/Нахождение_собственных_чисел_квадратной_матрицы_методом_QR_разложения_(4)&amp;oldid=21128</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done/Frolov" title="Категория:Assignments/Done/Frolov">Assignments/Done/Frolov</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments/Done" title="Категория:Assignments/Done">Assignments/Done</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:Assignments" title="Категория:Assignments">Assignments</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AF-morozov%2F%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85+%D1%87%D0%B8%D1%81%D0%B5%D0%BB+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC+QR+%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+%284%29" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3AF-morozov%2F%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85+%D1%87%D0%B8%D1%81%D0%B5%D0%BB+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC+QR+%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+%284%29" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/F-morozov" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/F-morozov"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/F-morozov"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;oldid=21128" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:F-morozov/%D0%9D%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB_%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BC_QR_%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_(4)&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 17 декабря 2016 года в 18:02.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":305,"wgPageParseReport":{"limitreport":{"cputime":"0.039","walltime":"0.209","ppvisitednodes":{"value":844,"limit":1000000},"postexpandincludesize":{"value":19993,"limit":2097152},"templateargumentsize":{"value":6538,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":1,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":12512,"limit":5000000},"timingprofile":["100.00%    6.483      1 -total"," 73.96%    4.795      1 Шаблон:Algorithm"," 49.30%    3.196      1 Шаблон:Level-a"," 25.38%    1.645      1 Шаблон:Assignment"," 17.23%    1.117      1 Шаблон:Infobox"," 17.07%    1.107      1 Шаблон:Плашка"]},"cachereport":{"timestamp":"20260611092719","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>

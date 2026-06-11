@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Участник:Морозов Егор Павлвочи/Метод решения недетерминированных обратных задач идентификации входных параметров с BS регуляризацией — Алговики</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )algowiki_rumwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"ec9c497f45ac6c9d69e62ce1","wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"Участник:Морозов_Егор_Павлвочи/Метод_решения_недетерминированных_обратных_задач_идентификации_входных_параметров_с_BS_регуляризацией","wgTitle":"Морозов Егор Павлвочи/Метод решения недетерминированных обратных задач идентификации входных параметров с BS регуляризацией","wgCurRevisionId":30209,"wgRevisionId":30209,"wgArticleId":2719,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Уровень алгоритма"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Участник:Морозов_Егор_Павлвочи/Метод_решения_недетерминированных_обратных_задач_идентификации_входных_параметров_с_BS_регуляризацией","wgRelevantArticleId":2719,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"Морозов Егор Павлвочи","wgCiteReferencePreviewsActive":true,"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3}}},"wgSmjUseCdn":true,"wgSmjUseChem":true,"wgSmjDisplayMath":[],"wgSmjExtraInlineMath":[],"wgSmjScale":1,"wgSmjEnableMenu":true,"wgSmjDisplayAlign":"left","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"]};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.pygments":"ready","ext.bootstrap.styles":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["ext.SimpleMathJax","ext.cite.ux-enhancements","ext.pygments.view","mediawiki.page.media","ext.bootstrap.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=ext.bootstrap.styles%7Cext.cite.styles%7Cext.pygments%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/ru/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/ru/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.5">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="icon" href="/algowiki/resources/algowiki-favicon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/ru/rest.php/v1/search" title="Алговики (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://algowiki-project.org/w/ru/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Алговики — Atom-лента" href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject page-Участник_Морозов_Егор_Павлвочи_Метод_решения_недетерминированных_обратных_задач_идентификации_входных_параметров_с_BS_регуляризацией rootpage-Участник_Морозов_Егор_Павлвочи skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	<div id="mw-indicator-level-a" class="mw-indicator"><div class="mw-parser-output"><span typeof="mw:File"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A3%D1%80%D0%BE%D0%B2%D0%BD%D0%B8_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8" title="Уровень алгоритма"><img alt="Уровень алгоритма" src="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/32px-A-chameleon-square-64x64.png" decoding="async" width="32" height="32" class="mw-file-element" srcset="https://algowiki-project.org/algowiki/pool/images/thumb/1/19/A-chameleon-square-64x64.png/48px-A-chameleon-square-64x64.png 1.5x, https://algowiki-project.org/algowiki/pool/images/1/19/A-chameleon-square-64x64.png 2x" /></a></span></div></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-namespace">Участник</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Морозов Егор Павлвочи/Метод решения недетерминированных обратных задач идентификации входных параметров с BS регуляризацией</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Алговики</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><p><br />
+</p>
+<table style="border-collapse: separate; border-spacing: 4px; border: 1px solid darkgray; margin: 1em 1em 1em 0; background-color: #f9f9f9; border: 1px #aaa solid; clear: right; float: right; max-width: 40%">
+<tbody><tr>
+<td colspan="2" style="background-color:#cfc; text-align: center; font-size: 120%; font-weight: bold;">Метод решения недетерминированных <br />обратных задач идентификации <br />входных параметров <br />с BS регуляризацией
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Последовательный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Последовательная сложность
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(nm+m^2) }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём входных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 2m+n+1 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Объём выходных данных
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 4n+1 }[/math]</span>
+</td></tr>
+<tr>
+<td colspan="2" style="background-color:#ddf; text-align: center; font-size: 110%; font-weight: bold;">Параллельный алгоритм
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Высота ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ 5 }[/math]</span>
+</td></tr>
+<tr>
+<td style="background-color:#eef; padding: 0.2em; font-weight: bold;">Ширина ярусно-параллельной формы
+</td>
+<td style="padding: 0.2em;"><span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span>
+</td></tr>
+</tbody></table>
+<p><br />
+Основные авторы описания: <a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8&amp;action=edit&amp;redlink=1" class="new" title="Участник:Морозов Егор Павлвочи (страница не существует)">Е.П.Морозов</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Свойства_и_структура_алгоритма"><span class="tocnumber">1</span> <span class="toctext">Свойства и структура алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Общее_описание_алгоритма"><span class="tocnumber">1.1</span> <span class="toctext">Общее описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Математическое_описание_алгоритма"><span class="tocnumber">1.2</span> <span class="toctext">Математическое описание алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Вычислительное_ядро_алгоритма"><span class="tocnumber">1.3</span> <span class="toctext">Вычислительное ядро алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Макроструктура_алгоритма"><span class="tocnumber">1.4</span> <span class="toctext">Макроструктура алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Схема_реализации_последовательного_алгоритма"><span class="tocnumber">1.5</span> <span class="toctext">Схема реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Последовательная_сложность_алгоритма"><span class="tocnumber">1.6</span> <span class="toctext">Последовательная сложность алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Информационный_граф"><span class="tocnumber">1.7</span> <span class="toctext">Информационный граф</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ресурс_параллелизма_алгоритма"><span class="tocnumber">1.8</span> <span class="toctext">Ресурс параллелизма алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Входные_и_выходные_данные_алгоритма"><span class="tocnumber">1.9</span> <span class="toctext">Входные и выходные данные алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Свойства_алгоритма"><span class="tocnumber">1.10</span> <span class="toctext">Свойства алгоритма</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Программная_реализация_алгоритма"><span class="tocnumber">2</span> <span class="toctext">Программная реализация алгоритма</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Особенности_реализации_последовательного_алгоритма"><span class="tocnumber">2.1</span> <span class="toctext">Особенности реализации последовательного алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Возможные_способы_и_особенности_параллельной_реализации_алгоритма"><span class="tocnumber">2.2</span> <span class="toctext">Возможные способы и особенности параллельной реализации алгоритма</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Результаты_прогонов"><span class="tocnumber">2.3</span> <span class="toctext">Результаты прогонов</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Выводы_для_классов_архитектур"><span class="tocnumber">2.4</span> <span class="toctext">Выводы для классов архитектур</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Литература"><span class="tocnumber">3</span> <span class="toctext">Литература</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_и_структура_алгоритма">Свойства и структура алгоритма</span></h2>
+<h3><span id=".D0.9E.D0.B1.D1.89.D0.B5.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Общее_описание_алгоритма">Общее описание алгоритма</span></h3>
+<p>Недетерминированные обратные задачи идентификации входных параметров относятся к классу задач, в которых искомое решение зависит от входных данных с некоторым разбросом и характеризуется отсутствием однозначной связи между наблюдаемыми данными и решением. Формально постановка такой задачи выглядит следующим образом. Пусть имеется некоторый вектор неизвестных величин <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{x} }[/math]</span>, который мы хотим восстановить по наблюдениям <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{\theta} }[/math]</span>. Между ними существует связь вида:
+\begin{equation}
+	\vec{\theta} = F(\vec{x}, \vec{\varepsilon}), 
+\end{equation}
+где F — оператор прямого преобразования, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{\varepsilon} }[/math]</span> — случайная ошибка измерения или воздействия среды.
+Задача восстановления входных параметров <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{x} }[/math]</span> называется обратной задачей идентификации входных параметров. Недетерминированные обратные задачи зачастую являются в том числе некорректными. Чтобы понять какие задачи лежат в данном классе, рассмотрим его антоним - корректные задачи. Согласно определению, которое было дано Тихоновым А.Н. <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>: 
+</p><p>Задача определения решения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{\theta} }[/math]</span> из пространства F по «исходным данным» и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{x} }[/math]</span> из пространства U называется корректно поставленной на паре метрических пространств (F, U), если удовлетворяются требования (условия):
+</p>
+<ul><li>для всякого элемента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x \in U }[/math]</span> существует решение  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ {\theta} }[/math]</span>  из пространства F;</li></ul>
+<ul><li>решение определяется однозначно;</li></ul>
+<ul><li>задача устойчива на пространствах (F, U).</li></ul>
+<p>В математической литературе длительное время существовала точка зрения, согласно которой всякая математическая задача должна удовлетворять этим требованиям <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>. Задачи, не удовлетворяющие перечисленным требованиям, называются некорректно поставленными. Следует отметить, что определение некорректно поставленных задач относится к данной паре метрических пространств (F, U), так как в других метриках та же задача может быть корректно поставленной. В рассматриваемом классе задач нарушается устойчивость и однозначность решения. Согласно А.Н. Тихонову, для таких задач существуют квазирешения. Однако чтобы перейти к решению, а поняв его структуру, — к вычислению обратной задачи, необходимо восстановить приблизительную зависимость между входными и выходными параметрами.
+</p><p>Для этого рассмотрим B-сплайны и NURBS. Их полное геометрическое описание и вывод основных свойств были представлены в «NURBS book» <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>. Помимо их основного применения — создания и сглаживания поверхностей и сложных форм на основе реперных точек, — мы можем применить их для аппроксимации исходных данных и получения системы алгебраических уравнений.
+</p><p>\begin{equation}
+	B\vec{x} \approx \vec{\theta}, 
+\end{equation}
+</p><p>Данные системы функциональных уравнений и связанные с ними обратные задачи можно решать различными способами. Пример решения подобных задач для уравнений математической физики представлен в книге <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>, где они называются обратными задачами идентификации правой части. Однако представленный алгоритм ориентирован не на применение конечно-разностных схем, не на регуляризацию по Тихонову или иные традиционные методы, а на использование нового регуляризатора, основанного на B-сплайнах. При аппроксимации наших данных мы вводили B-сплайны как многочлены порядка m, обозначим их как  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_m(u) }[/math]</span>, где u - наш новый параметр. Для более точного решения нам необходимо, чтобы данный аппроксимативный многочлен удовлетворял условиям альтернанса Чебышева. Тем самым <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_m(u) }[/math]</span> будет полиномом наилучшего приближения. Тем самым мы можем за основу взять условия альтернанса
+\begin{equation}
+	F(\vec{x_i})-Q_m(u)=\alpha(-1)^i||{F- Q_m (u)}||,
+\end{equation}
+где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i=1\ldots m+1 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \alpha=\pm1 }[/math]</span> одновременно для всех i.
+Для обобщения решения будем рассматривать Гильбертовы пространства и в качестве нормы введём интегральную гильбертову норму. А в качестве  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ F(\vec{x_i}) }[/math]</span> рассмотрим наше известное значение для наблюдения, идентификацию начальных параметров для которого мы хотим получить, обозначим его как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Theta }[/math]</span>, таким образом для решения исходной обратной задачи с учётом аппроксимации B-сплайнами, нам необходимо найти параметр U, который вычисляется из выражения
+\begin{equation}
+	U = \operatorname*{argmin}_u ((Q_m (u) - \Theta)^2 + \Theta - \int_{0}^{1}Q_m (u)\,du)
+\end{equation}
+</p><p>Подставив значение которой в наши уравнения по аппроксимации параметров мы получим квазирешение
+</p>
+<h3><span id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Математическое_описание_алгоритма">Математическое описание алгоритма</span></h3>
+<p>Для математического описания алгоритма рассмотрим рассуждения которые были описаны в пункте 1.1, но акцент сделаем именно не его математической части. Таким образом 
+пусть дан определённый массив наблюдений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{\theta} = (\theta_1, \theta_2, \ldots, \theta_m) }[/math]</span>, где m - количество наблюдений, которые были получены при начальных параметрах <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec{x_i} = (x_{1i}, x_{2i}, \ldots, x_{ni}) }[/math]</span>, где n - количество исходных параметров для рассматриваемой системы, а также дано целевое значение наблюдения, параметры которого мы хотим узнать, обозначим его <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Theta, i = 0 \ldots m }[/math]</span>. 
+</p><p>Для построения нашего приближения и создания связей между входными данными рассмотрим не глобальную аппроксимацию, а локальную, то есть согласно Рис.1 
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Bspline_regulation_1.png" class="mw-file-description"><img src="/w/ru/images/thumb/2/2a/Bspline_regulation_1.png/500px-Bspline_regulation_1.png" decoding="async" width="500" height="368" class="mw-file-element" srcset="/w/ru/images/thumb/2/2a/Bspline_regulation_1.png/750px-Bspline_regulation_1.png 1.5x, /w/ru/images/thumb/2/2a/Bspline_regulation_1.png/1000px-Bspline_regulation_1.png 2x" /></a><figcaption>Рисунок 1. Схема аппроксимативных связей начальных параметров.</figcaption></figure>
+<p>При этом в виду особенностей B-сплайнов, о которых было упомянуто ранее мы получим, что они зависят от определённых значений параметра u, следовательно узнав при каком значении параметра U будет выполнено наблюдение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Theta }[/math]</span> и благодаря связи параметров мы получим искомые значения. Или же учитывая введённые обозначения получим связь параметров как: 
+</p><p>\begin{equation}
+x_k^* \approx \sum_{i = 0}^{m}\frac{U^i(1-U)^{m-i}}{iB(i,m-i+1)}x_{ki},
+\end{equation}
+где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ k = \overline{1,n} }[/math]</span>, n - количество исходных параметров системы, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_k^* }[/math]</span> вычисленные параметры системы, при которых возможно наблюдение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Theta }[/math]</span> 
+</p><p>Как писалось в пункте 1.1 для введения регуляризатора нам необходимо, чтобы выполнялся альтернанс Чебышёва, то есть
+чтобы многочлен <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Q_m(u) = \sum_{i = 0}^{m}\frac{U^i(1-U)^{m-i}}{iB(i,m-i+1)}\vec{x} }[/math]</span> при i = const, степени m был многочленом наилучшего равномерного приближения непрерывной функции <span style="opacity:.5" class="smj-container">[math]\displaystyle{  F(\vec{x_i})  }[/math]</span>, необходимо и достаточно существования на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \left[a,\ \ b\right] }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ a=\min{Q_m\left(u\right)} }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ b=\max{Q_m\left(u\right)} }[/math]</span> по крайней мере m + 2 точек <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_1\lt \ldots\lt x_{m+1} }[/math]</span> таких, что 
+\begin{equation}\label{iline-shevtsova-eq1}
+	F(\vec{x_i})-Q_m(u)=\alpha(-1)^i||{F- Q_m (u)}||,
+\end{equation}
+где <span style="opacity:.5" class="smj-container">[math]\displaystyle{  i=1 \ldots m+1, \alpha= \pm1  }[/math]</span> одновременно для всех i.
+</p><p>Или с учётом введённых обозначений и интегральной нормы гильбертова пространства
+</p><p>\begin{equation}
+\Theta-Q_m\left(u\right)=\alpha\left(-1\right)^i\sqrt{\int_{0}^{1}{\left[\Theta-\ Q_m\left(u\right)\right]\ du}}, 
+\end{equation}
+</p><p>Тогда для решения нашей исходной задачи нам необходимо ввести сетку для параметра u, в данной реализации вводится равномерная сетка с шириной клетки в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \frac{1}{m} }[/math]</span> и вычисляется  
+</p><p>\begin{equation}
+	U = \operatorname*{argmin}_u ((Q_m (u) - \Theta)^2 + \Theta - \int_{0}^{1}Q_m (u)\,du)
+\end{equation}
+</p><p>А находя значение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \int_{0}^{1}Q_m (u)\,du }[/math]</span> получим окончательное условие в для решения обратной задачи, как
+</p><p>\begin{equation}
+	U = \operatorname*{argmin}_u ((\sum_{i=0}^{m}B_{mi}(u)\theta_i(u) - \Theta)^2 + \Theta - \delta_m)
+\end{equation}
+где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \theta_i\left(u\right) }[/math]</span> – i-е значение наблюдения,  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B_{mi}(u) }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \delta_m }[/math]</span>– расчётные коэффициенты, которые вычисляются согласно формулам
+</p><p>\begin{equation}
+B_{mi}(u) = \frac{U^i(1-U)^{m-i}}{iB(i,m-i+1)} ,
+\end{equation}
+</p><p><br />
+\begin{equation}
+\delta_m = \sum_{i=0}^{m}\theta_i(u)\frac{m(1+i)^2}{i\Gamma(i)^2}\sum_{j=0}^{m-i}\frac{(-1)^j B(m+i, j+1)B(m,i)}{\Gamma(j+1)^2(j+i+1)},
+\end{equation}
+</p><p>где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B(x,y) }[/math]</span> - Бета функция, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \Gamma(x) }[/math]</span> - Гамма функция
+</p>
+<h3><span id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Вычислительное_ядро_алгоритма">Вычислительное ядро алгоритма</span></h3>
+<p>Вычислительное ядро для данного алгоритма по сути модно поделить на две части. Первая часть - это операции связанные с введением регулятора и частичным нахождением метрики для решения обратной задачи. То есть в данном алгоритме большую часть времени превалирует операция по расчёту  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B_{mi}(u) }[/math]</span>, которую можно рассчитать как:
+\begin{equation}
+B_{mi}(u) = \frac{U^i(1-U)^{m-i}}{iB(i,m-i+1)}.
+\end{equation}
+При вычислении данного коэффициента, основное время работы занимают операции возведения в степень <span style="opacity:.5" class="smj-container">[math]\displaystyle{  U^i  }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{  (1-U)^{m-i}  }[/math]</span>, а также вычисление Бета-функции.
+</p><p>Вычисление Бета-функции в области натуральных чисел, которым и являются <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m-i+1 }[/math]</span>, можно свести к вычислению количества сочетаний, то есть к: 
+\begin{equation}
+\frac{m!}{i!(m-i)!}.
+\end{equation}
+Реализация данного алгоритма состоит из последовательных умножений и делений.
+Второй частью вычислительного ядра является является расчёт параметра: 
+\begin{equation}
+\delta_m = \sum_{i=0}^{m}\theta_i(u)\frac{m(1+i)^2}{i\Gamma(i)^2}\sum_{j=0}^{m-i}\frac{(-1)^j B(m+i, j+1)B(m,i)}{\Gamma(j+1)^2(j+i+1)},
+\end{equation}
+Ядром которого является вычисление гамма-функций, в свою очередь для натуральных чисел мы можем заменить его вычислением факториала по свойствам Гамма-функций, то есть:
+\begin{equation}
+\Gamma(n-1) = n!
+\end{equation}
+Таким образом мы свели наш алгоритм к вычислению множества сочетай, факториалов и возведений в степень, что и будет вычислительным ядром нашего алгоритма.
+</p>
+<h3><span id=".D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Макроструктура_алгоритма">Макроструктура алгоритма</span></h3>
+<p>1.	Инициализация и чтение данных
+</p>
+<ul><li>Чтение пар <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (x, y) }[/math]</span> из CSV файла</li>
+<li>Разделение на два вектора: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec x }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \vec y }[/math]</span></li></ul>
+<p>2.	Создание сетки параметра u
+</p>
+<ul><li>Генерация равномерной сетки от 0.01 до 0.99 с шагом 0.001</li></ul>
+<p>3.	Вычисление полиномов Бернштейна (функция bernstein_polynomial)
+</p>
+<ul><li>Для каждого u вычисляется сумма:<span style="opacity:.5" class="smj-container">[math]\displaystyle{  \sum x_i × C_{m-1}^i × u^i × (1-u)^{m-1-i} }[/math]</span></li>
+<li>Используется эффективный алгоритм с накоплением</li></ul>
+<p>4.	Вычисление метрики (функция calculate_metric)
+</p>
+<ul><li>Вычисление основного члена: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (Bernstein(u) - f)^2 + f }[/math]</span></li>
+<li>Вычисление регуляризации через бета- и гамма-функции</li>
+<li>Использование кэша факториалов для ускорения</li></ul>
+<p>5.	Поиск оптимума
+</p>
+<ul><li>Поиск минимального значения метрики по сетке <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span></li>
+<li>Вывод оптимального значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x }[/math]</span></li></ul>
+<p>6.	Сохранение результатов
+</p>
+<ul><li>Запись аппроксимации в output_aprox.dat</li>
+<li>Запись значений метрики в output_metric.dat</li></ul>
+<p><br />
+</p>
+<h3><span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Схема_реализации_последовательного_алгоритма">Схема реализации последовательного алгоритма</span></h3>
+<p>Последовательность исполнения алгоритма следующая: 
+</p><p>1. Инициализация и ввод данных
+</p>
+<ul><li>Загрузка экспериментальных данных из CSV-файла</li>
+<li>Парсинг и преобразование строковых данных в числовые значения</li>
+<li>Разделение данных на векторы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec x }[/math]</span> (входные параметры) и <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \vec y  }[/math]</span> (наблюдения)</li>
+<li>Инициализация параметрической сетки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U = [0.01, 0.02, ..., 0.99] }[/math]</span></li></ul>
+<p>2. Вычисление комбинаторных коэффициентов
+</p>
+<ul><li>Для каждого элемента сетки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u ∈ U }[/math]</span> и каждого индекса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i ∈ [0, m-1] }[/math]</span>:
+<ul><li>Вычисление биномиального коэффициента <span style="opacity:.5" class="smj-container">[math]\displaystyle{ C(m, m-i) }[/math]</span></li>
+<li>Вычисление степенных членов  <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u^i }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (1-u)^{(m-i)} }[/math]</span></li>
+<li>Формирование взвешенной суммы элементов вектора <span style="opacity:.5" class="smj-container">[math]\displaystyle{ \vec x }[/math]</span></li></ul></li></ul>
+<p>3. Решение прямой задачи аппроксимации
+</p>
+<ul><li>Для каждого параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u ∈ U }[/math]</span>:
+<ul><li>Инициализация накопительной суммы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S = 0 }[/math]</span></li>
+<li>Для каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i ∈ [0, m-1] }[/math]</span>:
+<ul><li>Вычисление комбинаторного веса: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ w = C(m, m-i) × u^i × (1-u)^{(m-i)} }[/math]</span></li>
+<li>Добавление взвешенного элемента: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S = S + w × x[i] }[/math]</span></li></ul></li>
+<li>Сохранение результата <span style="opacity:.5" class="smj-container">[math]\displaystyle{ F(x, u) = S }[/math]</span></li></ul></li></ul>
+<p>4. Вычисление регуляризационного слагаемого
+</p>
+<ul><li>Инициализация суммы регуляризации <span style="opacity:.5" class="smj-container">[math]\displaystyle{ R = 0 }[/math]</span></li>
+<li>Для каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i ∈ [1, m-1] }[/math]</span>:
+<ul><li>Инициализация внутренней суммы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_{reg} = 0 }[/math]</span></li>
+<li>Для каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ j ∈ [0, m-i-1] }[/math]</span>:
+<ul><li>Вычисление знака: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ sign = (-1)^j }[/math]</span></li>
+<li>Вычисление бета-функций: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ B1 = β(m+i, j+1), B2 = β(m, i) }[/math]</span></li>
+<li>Вычисление гамма-функций: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ Γ1 = Γ(j+1), Γ2 = Γ(j+1) }[/math]</span></li>
+<li>Формирование слагаемого: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ term = \frac{sign × B1 × B2}{(Γ1 × Γ2 × (j+i+1))} }[/math]</span></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ S_{reg} = S_{reg} + term }[/math]</span></li></ul></li>
+<li>Вычисление весового множителя: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ weight = \frac{m × (1+i)^2 }{(i × Γ(i)^2)} }[/math]</span></li>
+<li><span style="opacity:.5" class="smj-container">[math]\displaystyle{ R = R +  S_{reg} × y[i] × weight }[/math]</span></li></ul></li></ul>
+<p>5. Формирование целевого функционала с регуляризацией
+</p>
+<ul><li>Для каждого параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u ∈ U }[/math]</span>:
+<ul><li>Вычисление невязки: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ residual = F(y, u) - f }[/math]</span></li>
+<li>Вычисление квадратичного члена: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ fidelity_{term} = residual^2 }[/math]</span></li>
+<li>Формирование полного функционала: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ J(u) = fidelity_{term} + f - R }[/math]</span></li></ul></li></ul>
+<p>6. Минимизация функционала и определение оптимального решения
+</p>
+<ul><li>Инициализация минимального значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ J_{min} = \infty  }[/math]</span> и индекса <span style="opacity:.5" class="smj-container">[math]\displaystyle{ min_{index} = 0 }[/math]</span></li>
+<li>Для каждого <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u ∈ U }[/math]</span>:
+<ul><li>Если <span style="opacity:.5" class="smj-container">[math]\displaystyle{ J(u) \lt  J_{min} }[/math]</span>:
+<ul><li>Обновление <span style="opacity:.5" class="smj-container">[math]\displaystyle{ J_{min} = J(u) }[/math]</span></li>
+<li>Сохранение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ min_{index} = index(u) }[/math]</span></li></ul></li></ul></li>
+<li>Определение оптимального решения: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{opt} = F(x, U[min_{index}]) }[/math]</span></li></ul>
+<p>7. Вывод результатов
+</p>
+<ul><li>Отображение оптимального значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_{opt} }[/math]</span></li>
+<li>Завершение работы алгоритма</li></ul>
+<h3><span id=".D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.BB.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Последовательная_сложность_алгоритма">Последовательная сложность алгоритма</span></h3>
+<p>Как писалось ранее основными функциями, которые входят в вычислительное ядро алгоритма - то вычисление полинома Бернштейна <span style="opacity:.5" class="smj-container">[math]\displaystyle{  B_{mi}(u)  }[/math]</span> и вычисление метрики, в которую основную сложность вносит параметр <span style="opacity:.5" class="smj-container">[math]\displaystyle{  \delta_m  }[/math]</span>. Рассмотрим их сложность вычисления: 
+</p><p>1. Вычисление <span style="opacity:.5" class="smj-container">[math]\displaystyle{  B_{mi}(u)  }[/math]</span>: 
+</p>
+<ul><li>Инициализация, содержит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n  }[/math]</span> операций. Сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span></li>
+<li>Возведение в степень, содержит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n×O(\log m) }[/math]</span> операций. Сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n \log m) }[/math]</span></li>
+<li>Основной цикл, содержит <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n × m }[/math]</span> операций. Сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n×m) }[/math]</span></li></ul>
+<p>Итого получили сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n×m) }[/math]</span>
+</p><p>2. Вычисление метрики: 
+</p>
+<ul><li>Кэш факториалов. Сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m) }[/math]</span></li>
+<li>Регуляризация. Сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m^2) }[/math]</span></li>
+<li>Конечная метрика. Сложность - <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span></li></ul>
+<p>Итого получили сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m^2 + n) }[/math]</span>
+</p><p>Таким образом финальная сложность алгоритма будет составлять:<span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n×m + m^2) }[/math]</span> 
+</p>
+<h3><span id=".D0.98.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B3.D1.80.D0.B0.D1.84"></span><span class="mw-headline" id="Информационный_граф">Информационный граф</span></h3>
+<p>Информационный граф алгоритма представляет собой направленный ациклический граф (DAG), отражающий поток данных и управляющие зависимости между основными вычислительными модулями (Рис. 2). Граф имеет ярко выраженную ярусно-параллельную структуру, что указывает на наличие значительного ресурса параллелизма, в основном на уровне обработки независимых точек заданной сетки.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Info_graph_BS_REGULATION.png" class="mw-file-description"><img src="/w/ru/images/thumb/4/41/Info_graph_BS_REGULATION.png/500px-Info_graph_BS_REGULATION.png" decoding="async" width="500" height="127" class="mw-file-element" srcset="/w/ru/images/thumb/4/41/Info_graph_BS_REGULATION.png/750px-Info_graph_BS_REGULATION.png 1.5x, /w/ru/images/thumb/4/41/Info_graph_BS_REGULATION.png/1000px-Info_graph_BS_REGULATION.png 2x" /></a><figcaption>Рисунок 2. Информационный граф алгоритма</figcaption></figure>
+<p><b>Высокоуровневые узлы и их семантика</b>.<br /> Граф можно декомпозировать на семь логических узлов:
+</p><p>1. main — корневой узел, инициирующий выполнение всего алгоритма. Он задаёт параметры и запускает независимые процессы чтения данных и построения вычислительной сетки.
+</p><p>2. readData — узел ввода. Выполняет синтаксический разбор CSV-файла data.csv, используя регулярные выражения для токенизации строк, и формирует два вектора исходных данных: x (аргументы) и y (значения).
+</p><p>3. buildGrid — узел генерации области исследования. Создаёт равномерную одномерную сетку U в диапазоне от 0.01 до 0.99 с фиксированным шагом 0.001, определяя множество точек, в которых будет оцениваться интерполирующая функция.
+</p><p>4. func — вычислительное ядро сглаживания. Для каждой точки u из сетки U вычисляет взвешенную сумму элементов вектора x. Веса рассчитываются на основе заданных параметров (C_func, pow_m, gcd), что реализует непараметрическую оценку функции.
+</p><p>5. metric — вычислительное ядро анализа. Для каждой точки u вычисляет значение целевой метрики, используя исходные данные y, результаты работы узла func для текущего u, а также ряд специальных функций (beta_function, gamma_int, factorial). Данный узел содержит наиболее сложные и затратные операции, включая вложенные суммирования и работу с числами произвольной точности (GMP).
+</p><p>6. minSearch — узел редукции. Выполняет последовательный линейный поиск минимального значения в массиве metric_arr, полученном от узла metric, и определяет индекс min_idx, соответствующий оптимальной точке сетки.
+</p><p>7. output — терминальный узел. Формирует итоговый результат работы алгоритма, выводя значение U[min_idx] — оценку аргумента, минимизирующего целевую метрику.
+</p><p>Потоки данных и зависимости. Рёбра графа отображают передачу данных и управляющие зависимости:
+</p>
+<ul><li>Узел main активирует параллельное выполнение узлов readData и buildGrid.</li>
+<li>Узлы func и metric являются потребителями исходных данных: они начинают работу после завершения readData и получения векторов x и y.</li>
+<li>Оба вычислительных ядра (func и metric) также требуют задания области исследования, поэтому зависят от узла buildGrid, поставляющего сетку U.</li>
+<li>Между ядрами существует строгая зависимость по данным: для вычисления метрики в точке u необходимо предварительно рассчитать значение сглаженной функции в этой же точке. Таким образом, узел metric для конкретного u ожидает результат работы узла func для того же u.</li>
+<li>После полного формирования массива метрик управление передаётся узлу minSearch, который, завершив поиск минимума, инициирует финальный вывод в узле output.</li></ul>
+<p><b>Ярусно-параллельная форма (ЯПФ)</b>. Вычислительный процесс естественным образом распределяется по пяти последовательным ярусам:
+</p><p>Ярус 0: Содержит единственный узел main, запускающий вычисления.
+</p><p>Ярус 1: Состоит из двух независимых узлов readData и buildGrid, которые могут выполняться параллельно. Это максимальный по ширине ярус.
+</p><p>Ярус 2: Включает вычислительные узлы func и metric. Между ними существует тонкая зависимость: начало вычисления метрики для точки u возможно только после получения сглаженного значения для этой точки от func. Однако, если рассматривать обработку всей сетки U, эти узлы могут работать в конвейерном режиме: пока func вычисляет значение для точки u_{k+1}, узел metric может обрабатывать предыдущую точку u_k.
+</p><p>Ярус 3: Представлен узлом minSearch, который начинает работу после полного завершения расчётов на предыдущем ярусе и выполняет редукционную операцию.
+</p><p>Ярус 4: Финальный ярус с узлом output, выводящим результат.
+</p><p>Таким образом, высота ЯПФ равна 5, что характеризует длину критического пути. Ширина графа (степень параллелизма) достигает максимума на первом вычислительном ярусе (равна 2) и теоретически может быть расширена до размера сетки U на втором ярусе при распараллеливании циклов по точкам. Информационный граф наглядно демонстрирует, что основная вычислительная нагрузка сосредоточена на втором ярусе, а потенциальным узким местом является последовательный поиск минимума и, в меньшей степени, этапы ввода-вывода.
+</p>
+<h3><span id=".D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D0.B8.D0.B7.D0.BC.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Ресурс_параллелизма_алгоритма">Ресурс параллелизма алгоритма</span></h3>
+<p>Анализ информационного графа и структуры вычислений демонстрирует наличие значительного потенциала для параллельного исполнения алгоритма. Ресурс параллелизма проявляется на нескольких уровнях, что позволяет адаптировать реализацию к различным вычислительным архитектурам — от многоядерных процессоров до распределённых кластерных систем.
+</p><p>1. Параллелизм на уровне макроопераций (задач). На верхнем уровне алгоритм содержит независимые ветви исполнения, которые могут выполняться одновременно:
+</p>
+<ul><li>Процесс чтения входных данных из файла (readData) полностью независим от построения вычислительной сетки (buildGrid). Эта независимость позволяет выполнять эти операции параллельно, что особенно актуально при работе с большими файлами данных или при необходимости динамического построения сложных сеток.</li></ul>
+<ul><li>Оба указанных процесса не требуют синхронизации и могут быть запущены одновременно сразу после инициализации параметров в узле main.</li></ul>
+<p>2. Параллелизм на уровне данных (data parallelism). Наиболее существенный ресурс параллелизма заключён в обработке точек вычислительной сетки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span>. Основные вычислительные ядра алгоритма обладают следующими характеристиками:
+</p>
+<ul><li>Функция func: Вычисление сглаженного значения в точке u_k не зависит от вычислений в точках <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_m }[/math]</span> при <span style="opacity:.5" class="smj-container">[math]\displaystyle{  k ≠ m }[/math]</span>. Таким образом, обработка всех точек сетки может быть распределена между вычислительными элементами без необходимости обмена промежуточными данными.</li></ul>
+<ul><li>Функция metric: Аналогично, расчёт значения метрики в точке<span style="opacity:.5" class="smj-container">[math]\displaystyle{  u_k  }[/math]</span>зависит только от сглаженного значения в этой же точке и исходных данных, но не от значений метрики в других точках. Это позволяет независимо и параллельно вычислять метрику для разных точек сетки.</li></ul>
+<p><b>Теоретическая оценка</b>: Максимальная степень параллелизма на этом уровне ограничена только размером сетки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ N = |U| }[/math]</span> и может достигать <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(N) }[/math]</span>, что для типичных параметров (сетка с шагом 0.001 на интервале <span style="opacity:.5" class="smj-container">[math]\displaystyle{ [0.01, 0.99) }[/math]</span>) составляет порядка 980 параллельно выполняемых задач.
+</p><p>3. Внутренний параллелизм вычислительных ядер. Внутри отдельных операций также существуют возможности для параллельного выполнения:
+</p><p><b>Взвешенное суммирование в func</b>: Вычисление суммы <span style="opacity:.5" class="smj-container">[math]\displaystyle{ S(u) = \sum w_i(u) * x_i }[/math]</span> по всем входным точкам <span style="opacity:.5" class="smj-container">[math]\displaystyle{  i = 1..n }[/math]</span> представляет собой операцию редукции, которая может быть эффективно распараллелена с использованием техник параллельного суммирования (например, методом сдваивания).
+</p><p><b>Вложенные циклы в metric</b>: Расчёт метрики содержит двойные и тройные вложенные циклы по индексам входных данных. Эти циклы могут быть распараллелены, однако требуется аккуратное обращение с операциями над числами произвольной точности (GMP), которые могут создавать contention при работе с общими ресурсами памяти.
+</p><p>4. Конвейерный параллелизм (pipelining). Между основными вычислительными стадиями существует возможность организации конвейерной обработки:
+</p><p>После вычисления сглаженного значения для первой точки сетки <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u_1 }[/math]</span> в модуле func, модуль metric может начать обработку этой точки, в то время как func продолжает вычисления для точки <span style="opacity:.5" class="smj-container">[math]\displaystyle{  u_2 }[/math]</span>.
+</p><p>Данный подход позволяет уменьшить простои вычислительных ресурсов и может быть эффективно реализован на архитектурах с поддержкой аппаратной многопоточности или на кластерных системах.
+</p><p>5. Параллелизм на уровне инструкций (ILP). Благодаря регулярной структуре вычислений и отсутствию сложных условных переходов в основных циклах, алгоритм обладает хорошим потенциалом для использования возможностей современных процессоров:
+</p><p>Векторизация (SIMD): операции с плавающей точкой и целочисленной арифметикой в циклах могут быть векторизованы с использованием инструкций AVX/SSE (для частей кода, не задействующих GMP).
+</p><p>Суперскалярное исполнение: независимые инструкции внутри итераций циклов могут выполняться параллельно на нескольких исполнительных устройствах процессора.
+</p><p><b>Ограничения и последовательные участки</b>. Несмотря на значительный ресурс параллелизма, алгоритм содержит несколько принципиально последовательных участков, ограничивающих общее ускорение:
+</p>
+<ul><li>Чтение данных из файла — операция ввода-вывода, которая может стать узким местом, хотя и может быть перекрыта с другими вычислениями.</li></ul>
+<ul><li>Поиск минимума в массиве метрик — требует полного завершения вычислений метрик для всех точек и является операцией редукции, которую, впрочем, можно распараллелить специализированными алгоритмами (параллельное сведение).</li></ul>
+<ul><li>Инициализация и финализация GMP-объектов — некоторые операции с числами произвольной точности требуют последовательного доступа к управляющим структурам.</li></ul>
+<h3><span id=".D0.92.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Входные_и_выходные_данные_алгоритма">Входные и выходные данные алгоритма</span></h3>
+<p><b>Входные данные</b><br />
+Алгоритм принимает на вход набор экспериментальных данных, представленный в виде пар значений <span style="opacity:.5" class="smj-container">[math]\displaystyle{ (x_i, y_i) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ i = 1, 2, ..., m }[/math]</span>. Данные считываются из текстового файла в формате CSV (Comma-Separated Values), где каждая строка содержит два числа, разделенных запятой или пробелом: координату <span style="opacity:.5" class="smj-container">[math]\displaystyle{ x_i  }[/math]</span> и соответствующее значение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ y_i }[/math]</span>. Формат файла допускает использование различных разделителей (запятые, пробелы, переводы строк) благодаря применению регулярных выражений при парсинге.
+</p><p>Дополнительным входным параметром алгоритма является вещественное число <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f }[/math]</span>, которое используется в расчете метрики качества. В представленной реализации значение <span style="opacity:.5" class="smj-container">[math]\displaystyle{ f }[/math]</span> жестко задано как 20.0, но может быть легко модифицировано для конфигурации через аргументы командной строки или конфигурационный файл.
+</p><p><b>Выходные данные</b><br />
+В результате работы алгоритма генерируются два выходных файла с данными и одно значение, выводимое в стандартный поток вывода:
+</p><p>Файл output_aprox.dat — содержит аппроксимированные значения функции. В каждой строке файла записаны два вещественных числа с высокой точностью (12 знаков после десятичной точки), разделенные пробелом:
+</p>
+<ul><li>Первое число — значение аппроксимации для координаты x</li>
+<li>Второе число — значение аппроксимации для координаты y</li></ul>
+<p>Файл output_metric.dat — содержит значения метрики качества для различных значений параметра u. Каждая строка содержит:
+</p><p>Значение параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span> в диапазоне <span style="opacity:.5" class="smj-container">[math]\displaystyle{ [0.01, 0.99] }[/math]</span> с шагом 0.001
+</p><p>Соответствующее значение метрики качества с точностью 12 знаков после десятичной точки
+</p><p>Стандартный вывод — в консоль выводится оптимальное значение аппроксимации, соответствующее минимальному значению метрики качества. Также выводится информация о времени выполнения программы с указанием количества использованных MPI-процессов и OpenMP-нитей.
+</p>
+<h3><span id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Свойства_алгоритма">Свойства алгоритма</span></h3>
+<p>1. Детерминированность
+Алгоритм является детерминированным — при одинаковых входных данных и одинаковых параметрах параллельного выполнения (количестве MPI-процессов и OpenMP-нитей) результаты вычислений будут идентичны. Это обеспечивается:
+</p>
+<ul><li>Отсутствием случайных элементов в вычислениях</li>
+<li>Детерминированными формулами для расчета значений функций</li>
+<li>Фиксированными диапазонами параметров (U от 0.01 до 0.99 с шагом 0.001)</li></ul>
+<p>2. Устойчивость
+Алгоритм обладает высокой численной устойчивостью благодаря:
+</p>
+<ul><li>Использованию библиотеки GMP (GNU Multiple Precision) для вычислений с произвольной точностью</li>
+<li>Реализации собственных функций для операций с высокой точностью (fast_pow, gcd)</li>
+<li>Кэшированию значений факториалов для ускорения вычислений гамма- и бета-функций</li>
+<li>Обработке особых случаев (например, деления на ноль в вычислении отношения)</li></ul>
+<p>3. Точность
+</p>
+<ul><li>Входные данные: представлены числами с плавающей запятой двойной точности (double)</li>
+<li>Промежуточные вычисления: выполняются с использованием библиотеки GMP, обеспечивающей произвольную точность</li>
+<li>Выходные данные: выводятся с точностью 12 знаков после десятичной точки</li>
+<li>Контроль точности: обеспечивается за счет использования точных рациональных вычислений для суммирования</li></ul>
+<p>4. Вычислительная мощность
+Алгоритм характеризуется высокой вычислительной сложностью:
+</p>
+<ul><li>Основные вычисления сосредоточены в функциях func и metric</li>
+<li>Количество операций растет как <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m × n) }[/math]</span>, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> — количество экспериментальных точек, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> — количество значений параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span></li></ul>
+<p>Используются вычисления комбинаторных коэффициентов через гамма- и бета-функции
+</p><p>5. Вычислительная сложность
+</p>
+<ul><li>Временная сложность: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m^2 × n) }[/math]</span> в наихудшем случае, где <span style="opacity:.5" class="smj-container">[math]\displaystyle{ m }[/math]</span> — размер входных данных, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ n }[/math]</span> — количество точек параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span></li>
+<li>Пространственная сложность: <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(m + n) }[/math]</span> для хранения входных данных и промежуточных результатов</li>
+<li>Сложность параллельной части: эффективно распараллеливается как по данным (разные значения <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span>), так и по операциям (внутренние циклы)</li></ul>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Программная_реализация_алгоритма">Программная реализация алгоритма</span></h2>
+<h3><span id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Особенности_реализации_последовательного_алгоритма">Особенности реализации последовательного алгоритма</span></h3>
+<p>В базовом варианте алгоритм реализуется через последовательное вычисление значений метрики качества для каждого параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ u }[/math]</span>. Основные вычислительные ядра алгоритма представлены следующими функциями:
+</p><p><b>Функция вычисления базовой суммы (func)</b><br />
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">func</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">U</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sum_arr</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"> </span><span class="o">++</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">u_val</span><span class="p">,</span><span class="w"> </span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">ratio</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Инициализация переменных GMP</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">u_val</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="p">[</span><span class="n">idx</span><span class="p">]);</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_sub</span><span class="p">(</span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="n">u_val</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Быстрое возведение в степень (1-u)^m</span>
+<span class="w">        </span><span class="n">fast_pow</span><span class="p">(</span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">));</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Вычисление отношения u/(1-u) с обработкой особого случая</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mpf_cmp_ui</span><span class="p">(</span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mpf_set_ui</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mpf_div</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span><span class="w"> </span><span class="n">u_val</span><span class="p">,</span><span class="w"> </span><span class="n">one_minus_u</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Добавление слагаемого: x[i] * term</span>
+<span class="w">            </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">            </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mpf_add</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="c1">// Рекуррентное обновление term для следующего i:</span>
+<span class="w">            </span><span class="c1">// term = term * (m-i)/(i+1) * u/(1-u)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mpf_cmp_ui</span><span class="p">(</span><span class="n">one_minus_u</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<span class="w">                </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">                </span><span class="n">mpf_div</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="p">,</span><span class="w"> </span><span class="n">ratio</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">mpf_set</span><span class="p">(</span><span class="n">sum_arr</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Освобождение переменных GMP</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum_arr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p><b>Функция вычисления метрики (metric)</b><br />
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">metric</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span>
+<span class="w">                          </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">U</span><span class="p">,</span>
+<span class="w">                          </span><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sum_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Построение кэша факториалов</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">gamma_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factorial_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">build_factorial_cache</span><span class="p">(</span><span class="n">gamma_limit</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">MPFWrapper</span><span class="w"> </span><span class="n">sum_2_wrapper</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mpf_set_ui</span><span class="p">(</span><span class="n">sum_2_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Вычисление регуляризирующего слагаемого</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MPFWrapper</span><span class="w"> </span><span class="n">sum_2_regulation_wrapper</span><span class="p">;</span>
+<span class="w">        </span><span class="n">mpf_set_ui</span><span class="p">(</span><span class="n">sum_2_regulation_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">beta_m_i</span><span class="p">,</span><span class="w"> </span><span class="n">gamma_i</span><span class="p">,</span><span class="w"> </span><span class="n">numerator</span><span class="p">,</span><span class="w"> </span><span class="n">gamma_j</span><span class="p">,</span><span class="w"> </span><span class="n">denominator</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">temp3</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Инициализация переменных GMP</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Вычисление B(m, i) через гамма-функции</span>
+<span class="w">        </span><span class="n">beta_cached</span><span class="p">(</span><span class="n">beta_m_i</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">factorial_cache</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gamma_cached</span><span class="p">(</span><span class="n">gamma_i</span><span class="p">,</span><span class="w"> </span><span class="n">factorial_cache</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Вычисление B(m+i, j+1)</span>
+<span class="w">            </span><span class="n">beta_cached</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">factorial_cache</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">numerator</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">beta_m_i</span><span class="p">);</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="c1">// Вычисление (j+1)! = gamma(j+2)</span>
+<span class="w">            </span><span class="n">gamma_cached</span><span class="p">(</span><span class="n">gamma_j</span><span class="p">,</span><span class="w"> </span><span class="n">factorial_cache</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="c1">// Знаменатель: (j+1)!^2 * (j+i+1)</span>
+<span class="w">            </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">gamma_j</span><span class="p">,</span><span class="w"> </span><span class="n">gamma_j</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">            </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">denominator</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="c1">// Слагаемое с чередующимся знаком</span>
+<span class="w">            </span><span class="n">mpf_div</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">numerator</span><span class="p">,</span><span class="w"> </span><span class="n">denominator</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sign</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mpf_neg</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">mpf_add</span><span class="p">(</span><span class="n">sum_2_regulation_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">sum_2_regulation_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">sign</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Коэффициент C_i = m * (1+i)^2 / (i * (i-1)!^2)</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">));</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp3</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp3</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp3</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">gamma_i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp3</span><span class="p">,</span><span class="w"> </span><span class="n">temp3</span><span class="p">,</span><span class="w"> </span><span class="n">gamma_i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_div</span><span class="p">(</span><span class="n">coeff</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp3</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Умножение на x[i] и коэффициент</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">sum_2_regulation_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_add</span><span class="p">(</span><span class="n">sum_2_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">sum_2_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Финальное вычисление метрики</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">out</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">u_idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"> </span><span class="n">u_idx</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">diff</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// M(u) = (S(u) - f)^2 + f - R</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_sub</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span><span class="w"> </span><span class="n">sum_1</span><span class="p">[</span><span class="n">u_idx</span><span class="p">].</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">diff</span><span class="p">,</span><span class="w"> </span><span class="n">diff</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_add</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_sub</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="n">u_idx</span><span class="p">].</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">sum_2_wrapper</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">out</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Помимо основных оптимизированных вычислительных алгоритмов, особое внимание уделялось "подсобным" операциями таким как:
+</p><p><b>Алгоритм быстрого возведения в степень</b><br />
+Для реализации возведения в целую степень используется алгоритм быстрого возведения, основанный на двоичном разложении показателя степени:
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">fast_pow</span><span class="p">(</span><span class="n">mpf_t</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">exp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mpf_set_ui</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">multiplier</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mpf_init_set</span><span class="p">(</span><span class="n">multiplier</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exp</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">power</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">power</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">multiplier</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mpf_set</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">power</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">power</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">multiplier</span><span class="p">,</span><span class="w"> </span><span class="n">multiplier</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mpf_set</span><span class="p">(</span><span class="n">multiplier</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">multiplier</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Этот алгоритм имеет сложность <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(\log n) }[/math]</span> вместо <span style="opacity:.5" class="smj-container">[math]\displaystyle{ O(n) }[/math]</span> при наивном умножении. Важно отметить, что функция работает с типом mpf_t из библиотеки GMP, что обеспечивает высокую точность вычислений даже для больших степеней.
+</p><p><b>Вычисление факториалов и биномиальных коэффициентов</b><br />
+Вместо прямого вычисления факториалов и комбинаторных коэффициентов, которые могут вызывать переполнение при больших m, алгоритм использует следующие оптимизации:
+</p><p><b>1. Кэширование факториалов:</b><br />
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_factorial_cache</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">limit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cache</span><span class="p">(</span><span class="n">limit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_set_ui</span><span class="p">(</span><span class="n">cache</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">limit</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mpf_set_d</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">cache</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cache</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p><b>2. Вычисление гамма-функции для целых аргументов через факториал:</b><br />
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">gamma_cached</span><span class="p">(</span><span class="n">mpf_t</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Γ(n) = (n-1)!</span>
+<span class="w">    </span><span class="n">mpf_set</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><b>3. Вычисление бета-функции через гамма-функции:</b><br />
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">beta_cached</span><span class="p">(</span><span class="n">mpf_t</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MPFWrapper</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cache</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// B(a,b) = Γ(a)Γ(b)/Γ(a+b)</span>
+<span class="w">    </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">temp3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">temp3</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">gamma_cached</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gamma_cached</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gamma_cached</span><span class="p">(</span><span class="n">temp3</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">mpf_mul</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_div</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">temp1</span><span class="p">,</span><span class="w"> </span><span class="n">temp3</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">temp1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">temp2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">temp3</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><b>Использование библиотеки GMP для высокой точности</b><br />
+Особенностью данной реализации является использование библиотеки GNU Multiple Precision (GMP) для всех критичных вычислений. Это обеспечивает:
+</p><p>1.Произвольную точность: В отличие от стандартных типов double (53 бита мантиссы) или long double (64 бита), GMP позволяет работать с числами произвольной точности, ограниченной только доступной памятью.
+</p><p>2.Контроль над округлением: При умножении двух чисел с плавающей запятой стандартных типов результат получается с удвоенной длиной мантиссы и порядка, и только при присваивании происходит округление до точности типа переменной. В GMP это поведение контролируется явно через установку точности чисел.
+</p><p>3.Оптимизированные алгоритмы: GMP использует высокооптимизированные алгоритмы для арифметических операций с большими числами, включая умножение Карацубы и алгоритмы быстрого преобразования Фурье для очень больших чисел.
+</p><p><br />
+Для интеграции типов GMP с контейнерами STL реализованы специальные обертки:
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">MPFWrapper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">MPFWrapper</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">MPFWrapper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MPFWrapper</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mpf_set</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="o">~</span><span class="n">MPFWrapper</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// ... операторы присваивания и приведения типов</span>
+<span class="p">};</span>
+</pre></div>
+<p>Эти обертки обеспечивают корректное управление памятью GMP (инициализация, копирование, освобождение) в контексте C++ RAII (Resource Acquisition Is Initialization).
+</p>
+<h3><span id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.B8_.D0.BE.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BB.D0.BB.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0"></span><span class="mw-headline" id="Возможные_способы_и_особенности_параллельной_реализации_алгоритма">Возможные способы и особенности параллельной реализации алгоритма</span></h3>
+<p>Как видно из структуры алгоритма, вариантов распараллеливания существует несколько. Алгоритм демонстрирует высокую степень параллелизма, поскольку вычисления для разных значений параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span> являются полностью независимыми. Это позволяет эффективно распределять работу между вычислительными ресурсами без необходимости сложной синхронизации.
+</p><p>В представленной реализации используются два основных подхода к параллелизации:
+</p><p><b>1. Межпроцессный параллелизм (MPI)</b><br />
+Основной массив вычислений разбивается на блоки по значениям параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span>, которые распределяются между MPI-процессами. Каждый процесс работает со своей порцией данных, что минимизирует необходимость в обменах информацией во время вычислений.
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">total_U</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_U</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">world_size</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">remainder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_U</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">world_size</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">local_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">world_rank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">remainder</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+<p>Такое блочное распределение обеспечивает хорошую балансировку нагрузки, поскольку максимальная разница в количестве элементов между процессами не превышает 1. После завершения вычислений результаты собираются на главном процессе с помощью операции MPI_Gatherv.
+</p><p><b>2. Внутрипроцессный параллелизм (OpenMP)</b><br />
+Внутри каждого MPI-процесса используется параллелизм на уровне потоков с помощью технологии OpenMP. Особенностью реализации является применение динамического планирования:
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"> </span><span class="o">++</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Вычисления для каждого значения U</span>
+<span class="p">}</span>
+</pre></div>
+<p>Динамическое планирование позволяет адаптироваться к возможной неоднородности вычислений для разных значений параметра <span style="opacity:.5" class="smj-container">[math]\displaystyle{ U }[/math]</span>, что улучшает балансировку нагрузки между потоками внутри процесса.
+</p><p>Основная сложность при параллелизации данного алгоритма связана с использованием библиотеки точной арифметики GMP (GNU Multiple Precision Arithmetic Library). Библиотека GMP не является потокобезопасной, что требует специальных мер при использовании в многопоточной среде.
+</p><p>В реализации эта проблема решается следующим образом:
+</p><p>1. Локальные переменные в каждом потоке - каждая параллельная область создает собственные экземпляры переменных GMP, что исключает конфликты при обращении к разделяемым данным.
+</p><p>2. Обертки с автоматическим управлением памятью - используются структуры MPFWrapper и MPZWrapper, которые обеспечивают безопасное копирование и освобождение ресурсов:
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">MPFWrapper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mpf_t</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">MPFWrapper</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mpf_init</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="o">~</span><span class="n">MPFWrapper</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mpf_clear</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// ... методы копирования и присваивания ...</span>
+<span class="p">};</span>
+</pre></div>
+<p>3. Минимизация критических секций - синхронизация между потоками сведена к минимуму и используется только там, где это действительно необходимо (например, при накоплении суммы).
+</p>
+<h3><span id=".D0.A0.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B_.D0.BF.D1.80.D0.BE.D0.B3.D0.BE.D0.BD.D0.BE.D0.B2"></span><span class="mw-headline" id="Результаты_прогонов">Результаты прогонов</span></h3>
+<p>Для рассмотрения работы алгоритма для разных случаев вычислений лучше всего подходит решение задачи пролонгации значений. Так алгоритм позволяет пролонгировать значение например 515 на другие подробные сетки и при этом решение обратной задачи никак не изменится, но при этом сильно растёт вычислительная нагрузка и время расчёта. Рассмотрим результат прогонов одной и той же задачи сначала с пролонгацией или точностью, как указано на графике, сначала на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^3 }[/math]</span> точек, потом на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^4 }[/math]</span>, <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^5 }[/math]</span> и на <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^6 }[/math]</span> отразим зависимость времени вычисления от количества процессоров - Рис. 3
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Execution_time_log_plot.png" class="mw-file-description"><img src="/w/ru/images/thumb/d/d8/Execution_time_log_plot.png/500px-Execution_time_log_plot.png" decoding="async" width="500" height="332" class="mw-file-element" srcset="/w/ru/images/thumb/d/d8/Execution_time_log_plot.png/750px-Execution_time_log_plot.png 1.5x, /w/ru/images/thumb/d/d8/Execution_time_log_plot.png/1000px-Execution_time_log_plot.png 2x" /></a><figcaption>Рисунок 3. Зависимость времени выполнения задачи о пролонгации 515 точек на различные точности от числа процессоров в логарифмическом масштабе</figcaption></figure>
+<p>Но пред тем как делать окончательные выводы по работе алгоритма рассмотрим другой график, который показывает зависимость ускорения от числа процессоров для анализа суперскалярности также от разной точности. Для этого рассмотрим Рис. 4
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a href="/ru/%D0%A4%D0%B0%D0%B9%D0%BB:Speedup_plot_BS_REGULATION.png" class="mw-file-description"><img src="/w/ru/images/thumb/f/f6/Speedup_plot_BS_REGULATION.png/500px-Speedup_plot_BS_REGULATION.png" decoding="async" width="500" height="332" class="mw-file-element" srcset="/w/ru/images/thumb/f/f6/Speedup_plot_BS_REGULATION.png/750px-Speedup_plot_BS_REGULATION.png 1.5x, /w/ru/images/thumb/f/f6/Speedup_plot_BS_REGULATION.png/1000px-Speedup_plot_BS_REGULATION.png 2x" /></a><figcaption>Рисунок 4. Зависимость ускорения выполнения задачи о пролонгации 515 точек на различные точности от числа процессоров</figcaption></figure>
+<p>На основе этих данных мы можем сделать вывод, что при увеличении сложности решения задачи всё больше будет эффект или ускорение от её паралелизации и тем ближе мы к линейному ускорению. Также если обратимся к не сложным решениям с малым числом точек - при точности в <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^3 }[/math]</span> и <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^4 }[/math]</span> мы можем даже заметить увеличение времени расчёта программы при большом числе процессоров - это связанно с тем, что время вычислений на одном процессоре меньше, чем накладные расходы на выделение памяти, распределения ресурсов и т.п.
+</p><p>Таким образом, модно сделать вывод о том, что данный алгоритм в своей параллельной реализации имеет большой вес при работе с большим числом данных или их размерностью, а также нахождения решения с высокой точностью, то есть при  погрешности выходных значений ниже <span style="opacity:.5" class="smj-container">[math]\displaystyle{ 10^{-4} }[/math]</span>
+</p><p><br />
+</p>
+<h3><span id=".D0.92.D1.8B.D0.B2.D0.BE.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80"></span><span class="mw-headline" id="Выводы_для_классов_архитектур">Выводы для классов архитектур</span></h3>
+<h2><span id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"></span><span class="mw-headline" id="Литература">Литература</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Тихонов А. Н. и др. Численные методы решения некорректных задач. – 1990.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Курант Р., Вентцель Т. Д. Уравнения с частными производными. – Москва.–&#160;: Мир, 1964. – Т. 2. – С. 832.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Piegl L., Tiller W. The NURBS book. – Springer Science &amp; Business Media, 2012.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Самарский А. А., Вабищевич П. Н. Численные методы решения обратных задач математической физики. – 2004.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260611092829
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.084 seconds
+Real time usage: 1.518 seconds
+Preprocessor visited node count: 1035/1000000
+Post‐expand include size: 5470/2097152 bytes
+Template argument size: 1691/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 10/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 66524/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.808      1 Шаблон:Algorithm
+100.00%    4.808      1 -total
+ 63.56%    3.056      1 Шаблон:Level-a
+ 23.75%    1.142      1 Шаблон:Infobox
+-->
+
+<!-- Saved in parser cache with key algowiki_ru:pcache:idhash:2719-0!canonical and timestamp 20260611092829 and revision id 30209. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://algowiki-project.org/w/ru/index.php?title=Участник:Морозов_Егор_Павлвочи/Метод_решения_недетерминированных_обратных_задач_идентификации_входных_параметров_с_BS_регуляризацией&amp;oldid=30209">https://algowiki-project.org/w/ru/index.php?title=Участник:Морозов_Егор_Павлвочи/Метод_решения_недетерминированных_обратных_задач_идентификации_входных_параметров_с_BS_регуляризацией&amp;oldid=30209</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/w/ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source&amp;action=edit&amp;redlink=1" class="new" title="Категория:Страницы, использующие устаревший тег source (страница не существует)">Страницы, использующие устаревший тег source</a></li><li><a href="/ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0" title="Категория:Уровень алгоритма">Уровень алгоритма</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3A%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2+%D0%95%D0%B3%D0%BE%D1%80+%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8%2F%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87+%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8+%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85+%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2+%D1%81+BS+%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%3A%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2+%D0%95%D0%B3%D0%BE%D1%80+%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8%2F%D0%9C%D0%B5%D1%82%D0%BE%D0%B4+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87+%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8+%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85+%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2+%D1%81+BS+%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-user" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9" title="Персональная страница участника [c]" accesskey="c"><span>Участник</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9&amp;action=edit" title="Эта страница защищена от изменений.&#10;Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/ru/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Алговики" aria-label="Искать в Алговики" autocapitalize="sentences" title="Искать в Алговики [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/ru/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-Общий-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%B1%D1%89%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Общий форум</span></a></li><li id="n-Технический-форум" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%BE%D1%80%D1%83%D0%BC"><span>Технический форум</span></a></li><li id="n-Справка" class="mw-list-item"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0"><span>Справка</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-pool" class="mw-portlet mw-portlet-pool vector-menu-portal portal vector-menu" aria-labelledby="p-pool-label"  >
+	<h3
+		id="p-pool-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Хранилище файлов</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-NewFiles" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:NewFiles"><span>Новые файлы</span></a></li><li id="n-upload" class="mw-list-item"><a href="http://algowiki-project.org/pool/Special:Upload"><span>Загрузить файл</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-contributions" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D0%BA%D0%BB%D0%B0%D0%B4/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8" title="Список страниц, которые изменял этот участник"><span>Вклад участника</span></a></li><li id="t-log" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8"><span>Журналы</span></a></li><li id="t-userrights" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8"><span>Посмотреть группы участника</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9&amp;oldid=30209" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2_%D0%95%D0%B3%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%B2%D0%BE%D1%87%D0%B8/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%81_BS_%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 8 декабря 2025 года в 01:42.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О Алговики</a></li>
+	<li id="footer-places-disclaimers"><a href="/ru/%D0%90%D0%BB%D0%B3%D0%BE%D0%B2%D0%B8%D0%BA%D0%B8:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by/3.0/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/ru/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1676,"wgPageParseReport":{"limitreport":{"cputime":"0.084","walltime":"1.518","ppvisitednodes":{"value":1035,"limit":1000000},"postexpandincludesize":{"value":5470,"limit":2097152},"templateargumentsize":{"value":1691,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":10,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":66524,"limit":5000000},"timingprofile":["100.00%    4.808      1 Шаблон:Algorithm","100.00%    4.808      1 -total"," 63.56%    3.056      1 Шаблон:Level-a"," 23.75%    1.142      1 Шаблон:Infobox"]},"cachereport":{"timestamp":"20260611092829","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+        var ct_checkjs_val = 'b20da31efe5dd5c5bde1ad068749678e',
+            d = new Date(),
+            ctTimeMs = new Date().getTime(),
+            ctMouseEventTimerFlag = true, //Reading interval flag
+            ctMouseData = "[",
+            ctMouseDataCounter = 0;
+        
+        function ctSetCookie(c_name, value) {
+            document.cookie = c_name + "=" + encodeURIComponent(value) + "; path=/; samesite=lax;";
+        }
+        
+        ctSetCookie("ct_ps_timestamp", Math.floor(new Date().getTime()/1000));
+        ctSetCookie("ct_fkp_timestamp", "0");
+        ctSetCookie("ct_pointer_data", "0");
+        ctSetCookie("ct_timezone", "0");
+        ctSetCookie("ct_checkjs", ct_checkjs_val);        
+        setTimeout(function(){
+            ctSetCookie("ct_timezone", d.getTimezoneOffset()/60*(-1));
+        },1000);
+        
+        //Reading interval
+        var ctMouseReadInterval = setInterval(function(){
+                ctMouseEventTimerFlag = true;
+            }, 150);
+            
+        //Writting interval
+        var ctMouseWriteDataInterval = setInterval(function(){
+                var ctMouseDataToSend = ctMouseData.slice(0,-1).concat("]");
+                ctSetCookie("ct_pointer_data", ctMouseDataToSend);
+            }, 1200);
+        
+        //Stop observing function
+        function ctMouseStopData(){
+            if(typeof window.addEventListener == "function")
+                window.removeEventListener("mousemove", ctFunctionMouseMove);
+            else
+                window.detachEvent("onmousemove", ctFunctionMouseMove);
+            clearInterval(ctMouseReadInterval);
+            clearInterval(ctMouseWriteDataInterval);                
+        }
+        
+        //Logging mouse position each 300 ms
+        var ctFunctionMouseMove = function output(event){
+            if(ctMouseEventTimerFlag === true){
+                var mouseDate = new Date();
+                ctMouseData += "[" + Math.round(event.pageY) + "," + Math.round(event.pageX) + "," + Math.round(mouseDate.getTime() - ctTimeMs) + "],";
+                ctMouseDataCounter++;
+                ctMouseEventTimerFlag = false;
+                if(ctMouseDataCounter >= 100)
+                    ctMouseStopData();
+            }
+        };
+        
+        //Stop key listening function
+        function ctKeyStopStopListening(){
+            if(typeof window.addEventListener == "function"){
+                window.removeEventListener("mousedown", ctFunctionFirstKey);
+                window.removeEventListener("keydown", ctFunctionFirstKey);
+            }else{
+                window.detachEvent("mousedown", ctFunctionFirstKey);
+                window.detachEvent("keydown", ctFunctionFirstKey);
+            }
+        }
+        
+        //Writing first key press timestamp
+        var ctFunctionFirstKey = function output(event){
+            var KeyTimestamp = Math.floor(new Date().getTime()/1000);
+            ctSetCookie("ct_fkp_timestamp", KeyTimestamp);
+            ctKeyStopStopListening();
+        };
+
+        if(typeof window.addEventListener == "function"){
+            window.addEventListener("mousemove", ctFunctionMouseMove);
+            window.addEventListener("mousedown", ctFunctionFirstKey);
+            window.addEventListener("keydown", ctFunctionFirstKey);
+        }else{
+            window.attachEvent("onmousemove", ctFunctionMouseMove);
+            window.attachEvent("mousedown", ctFunctionFirstKey);
+            window.attachEvent("keydown", ctFunctionFirstKey);
+        }</script><noscript><p><b>Please enable JavaScript to pass antispam protection!</b><br />Here are the instructions how to enable JavaScript in your web browser <a href="http://www.enable-javascript.com" rel="nofollow" target="_blank">http://www.enable-javascript.com</a>.<br />Antispam by CleanTalk.</p></noscript><div style='width:100%;text-align:center;display: flow-root;'><a href='https://cleantalk.org'>MediaWiki spam</a> blocked by CleanTalk.</div>
+</body>
+</html>
